@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_Mailer3Pane.html 2376 2014-04-10 06:56:34Z jl_zhou $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_Mailer3Pane.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title><TMPL_VAR NAME=HTML_TITLE></title>
+<style>
+/*Placeholder! DO NOT REMOVE. */
+</style>
+
+<TMPL_VAR NAME=HEAD_BEFORE>
+
+<script src="<TMPL_VAR NAME=APP_RDIR>/thirdparty-all.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<script src="<TMPL_VAR NAME=APP_RDIR>/all-nodebug-comp.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<link rel="stylesheet" type="text/css" href="<TMPL_VAR NAME=APP_RDIR>/all.css?<TMPL_VAR NAME=URI_PREFIX>"/>
+
+
+<TMPL_VAR NAME=HEAD_AFTER>
+
+<style>
+/* Move the yui log so that it does not obscure our panel*/
+#yui-log {
+   right: 250px;
+}
+.yui-log .test {background-color:#7B0099;}
+.yui-log h5,h4,h3,h2,h1 {
+   margin: 0px; padding: 0px;
+}
+
+/*3-pane related*/
+div.custom_left {
+}
+div#three_pane_container {
+   height:85%;
+   width: 100%;
+}
+body,html {
+   height: 100%;
+   width:  100%;
+}
+div#three_pane {
+   width:auto;
+   margin: 0px 6px 0px 6px;
+   height:100%;
+}
+div.loading {
+   background-image: url('/images/wait.gif');
+   background-repeat: no-repeat;
+   z-index: 999;
+   display: block;
+}
+div#top_panel_container {
+   width: 100%;
+   height: 75px;
+}
+div#middle_panel_container {
+   width: 100%;
+}
+div.top_panel {
+}
+/*Grid related*/
+div#mailbox_grid_view_container {
+   overflow: hidden;
+   display: block;
+   height: 100%;
+}
+
+div#right_top_pane {
+   overflow: hidden;
+}
+/*tree-related*/
+div#foldertree {
+}
+/*mail-details*/
+div#message_header {
+}
+div#message_body {
+   margin-right: 4px;
+   overflow: hidden;
+}
+div#message_viewer_container {
+   height: 100%;
+   overflow: hidden;
+}
+div.da_statusbar {
+   position:    absolute;
+   left:        8px;
+   bottom:      8px;
+   border:      1px solid #555555;
+   padding:     2px;
+   overflow:    hidden;
+}
+div.da_nomessage {
+   position: absolute;
+   left:     8px;
+   top:      52px;
+   width:    100%;
+   height:   100%;
+   overflow: hidden;
+   z-index:  99;
+}
+div.pane_caption {
+   height:      20px;
+   margin:      1px;
+   border:      1px solid #bbbbbb;
+   white-space: nowrap;
+   vertical-align: middle;
+}
+/*簡易検索*/
+#mboxGrid_simple_search_container {
+   height     : 20px;
+   margin     : 0px;
+}
+#mboxGrid_simple_search_container select {
+   height     : 15px;
+   font-size  : 12px;
+}
+#mboxGrid_simple_search_container input {
+   height     : 17px;
+   font-size  : 12px;
+   margin     : 0px 5px 0px 5px;
+}
+#mboxGrid_simple_search_container button {
+   height       : 18px;
+   font-size    : 12px;
+   margin-right : 5px;
+}
+/*デザイン*/
+div.threePaneDesign_folderTitle {
+   width:95%;
+   height:30px;
+   overflow:hidden;
+   display:block;
+   font-size:12px;
+}
+div.threePaneDesign_folderContents {
+   width:95%;
+   height:100%;
+   overflow:auto;
+   display:block;
+}
+
+/*Needed to provide a width for the title so that text wrapping will work*/
+.da_leftPane .da_panel div.top-left .useful { /*3-pane leftPane = フォルダー一覧*/
+   width    : 85%;
+}
+.da_leftPane .da_panel div.top-left div.top-right {
+   width    : 5%;
+}
+
+.da_rightPane .da_panel div.top-left .useful { /*3-pane leftPane = フォルダー一覧*/
+}
+.da_rightPane .da_panel div.top-left div.top-right {
+}
+
+div#message_header div.da_messageViewerHeader {
+    margin-left: 2px; /*DA.widget.panel already gives us 3 px on the left*/
+}
+</style>
+
+</head>
+
+<body>
+<TMPL_VAR NAME=BODY_BEFORE>
+
+  <div id="top_panel_container" oncontextmenu="return false;">
+    <div id="top_panel" class="top_panel"></div>
+    <div id="panel_menu" class="panel_menu"></div>
+  </div>
+  
+  <!-- Not remove! (for callback) -->
+  <div id="middle_panel_container" style="display:none;"></div>
+
+  <!-- 3 pane -->
+  <div id="three_pane_container">
+    <div id="three_pane" class="da_threePaneContainer">
+ 
+      <!-- folder treeview (フォルダー一覧) -->
+      <div id="left_pane" class="custom_left" oncontextmenu="return false;" style="height:100%;display:none;">
+        <div class="threePaneDesign_folderContents" oncontextmenu="return false;">
+          <div id="foldertop"></div>
+          <div id="foldertree"></div>
+        </div>
+      </div>
+      
+      <div id="vdivider" oncontextmenu="return false;"></div>
+      
+      <div id="right_pane" style="display:none;">
+ 
+        <!-- mailbox view (メール一覧) -->
+        <div id="right_top_pane">
+            <!-- START: 簡易検索 -->
+            <span id="mboxGrid_simple_search_container">
+              <span id="mboxGrid_search_field"></span>
+              <input id="mboxGrid_search_keyword" maxlength="200"/>
+	      <!-- The string "search" will be overwritten by Javascript -->
+              <button id="mboxGrid_search_button">search</button>
+            </span>
+            <!-- END: 簡易検索 -->
+            <!-- container -->
+            <div id="mailbox_grid_view_container" oncontextmenu="return false;"> </div>
+        </div>
+        <!-- end (メール一覧) -->
+        
+        <!-- mail header -->
+        <div id="hdivider" oncontextmenu="return false;"></div>
+        
+        <!-- mail body -->
+        <div id="right_bottom_pane">
+          <div id="message_viewer_container" style="z-index:4;">
+            <div id="message_header"></div>
+            <div id="message_body"></div>
+          </div>
+        </div>
+      
+      </div>
+
+    </div>
+
+  </div>
+ 
+  <script>
+
+  function setupResizeHandlers(oHndlrs) {
+    
+      if (!oHndlrs) { return; }
+
+      var fX = YAHOO.lang.isFunction(oHndlrs.X) ? oHndlrs.X : Prototype.emptyFunction;
+      var fY = YAHOO.lang.isFunction(oHndlrs.Y) ? oHndlrs.Y : Prototype.emptyFunction;
+
+      DA.windowController.onGentleResize.subscribe(fY);
+      DA.windowController.onGentleResize.subscribe(fX);
+
+      window.__threePane.onYResized = fY;
+      window.__threePane.onXResized = fX;
+  }
+ 
+  function onFolderSelect(fid, type) {
+
+        window.__topPanel.messageUnselectedMenu();
+        
+        // Bar UP
+        DA.mailer.connection.titleBar();
+        DA.mailer.connection.titleHide();
+
+        if (!window.__mboxGrid) {
+            
+            // make a new one
+            // Make the container HTMLElement visible
+            window.__mboxGrid =  new DA.mailer.widget.MboxGrid({
+              containerElem:   $('mailbox_grid_view_container'),
+              folderId:        fid,
+              folderType:      type,
+              folderTreeController: window.__folderTree,
+              onLoading:       function() {
+                  Element.show( __displayMsg.mbgridLoading );
+              },
+              onLoadDone: function() {
+                  Element.hide( __displayMsg.mbgridLoading );
+              },
+              onDeletePress: function() {
+                  if (window.__topPanel.panelMenu._enableOk('delete')) {
+                      window.__mboxGrid.deleteSelected();
+                  }
+              }
+            });
+            window.__mboxGrid.onDoubleClick.subscribe(function (type, args) {
+                var mail = args[0];
+                if (!mail) { return; }
+                var view = function() {
+                    if (DA.util.existsLock("loadingMail_" + mail.fid + ":" + mail.uid)) {
+                        setTimeout(function() {
+                            view();
+                        }, 500);
+                    } else {
+			if (DA.util.lock("loadingMail_" + mail.fid + ':' + mail.uid)) {
+                            try {
+                                if (DA.util.cmpNumber(mail.open_m, 2)) {                                 
+                                    if (DA.mailer.util.isBackupFolder(mail.type)) {   
+                                        DA.mailer.windowController.editorOpenBackUp('edit', mail.fid, mail.uid, mail.backup_maid, mail.backup_org_clrRdir);
+                                    }else {
+                                         DA.mailer.windowController.editorOpen('edit', mail.fid, mail.uid);
+                                    }
+                                } else {
+                                    DA.mailer.windowController.viewerOpen(mail.fid, mail.uid);
+                                }
+                            } catch( e ) {
+                            }
+                            DA.util.unlock("loadingMail_" + mail.fid + ':' + mail.uid);
+                         } else {
+                            setTimeout(function() {
+                                view();
+                            }, 500);
+                         }
+
+                        // window.__messageViewer.view(mail, '', 1);
+                    }
+                };
+                view();
+            });
+
+            // Hook up the Selection events with the topPanel, and the preview pane
+            var selectionChangedTimeout;
+            window.__mboxGrid.onSelectionChanged.subscribe(function (type, args){
+                var tp = window.__topPanel;
+                if (args && args[0]) {
+                    var selection = args[0];
+                    var right = args[1];
+                    var key = args[2];
+                    // number of selected items
+                    var count =  selection.count || 0;
+                    var func;
+                    if (right) {
+                        func = function() {
+                            window.__messageViewer.clear();
+                            tp.messageSelectedMenu(selection.single.fid, selection.single.uid);
+                        }
+                    } else if (count === 0) {
+                        func = function() {
+                            // nothing selected
+                            tp.messageUnselectedMenu();
+                            window.__messageViewer.clear();
+                        };
+                    } else if (count === 1 && selection.single) { // exactly one message selected
+                        func = function(){
+                            window.__messageViewer.view(selection.single);
+                            tp.messageSelectedMenu(selection.single.fid, selection.single.uid);
+                        };
+                    } else if (count > 1) {
+                        func = function(){
+                            window.__messageViewer.clear();
+                            tp.messageUnselectedMenu();
+                            tp.panelMenu.enable("delete");
+                        };
+                    }
+                    if (func) {
+                        if (selectionChangedTimeout) {
+                            clearTimeout(selectionChangedTimeout);
+                        }
+                        selectionChangedTimeout = setTimeout(func, key ? 300 : 1);
+                    }
+                } 
+
+            });
+
+            // Hook up the top-panel's delete button
+            window.__topPanel.panelMenu.menuData.items['delete'].onSelect = function(){ 
+                window.__mboxGrid.deleteSelected(); // delete all the selected messages
+            };
+
+            __displayMsg.mbgridLoading.className = 'da_statusbar';
+            $('mailbox_grid_view_container').appendChild(__displayMsg.mbgridLoading);
+            __displayMsg.mbgridLoading.innerHTML = DA.locale.GetText.t_('MBOXGRID_LOADING');
+            
+            __displayMsg.mbgridNoMessages.className = 'da_nomessage';
+            $('mailbox_grid_view_container').appendChild(__displayMsg.mbgridNoMessages);
+            __displayMsg.mbgridNoMessages.innerHTML = DA.locale.GetText.t_('MBOXGRID_NOMESSAGE');
+
+            // Using a function generator pattern to make a closure; This is good for performance (caching)
+            // as well as encapsulation (local references to DOM elements, etc)
+            var resizeThreePane = (function () { 
+                var YUD = YAHOO.util.Dom;
+                var topPanel    = $('top_panel_container');
+                var middlePanel = $('middle_panel_container');
+                var threePane   = $('three_pane_container');
+                return function () {
+                    var vpH = YUD.getViewportHeight();
+                    if (vpH <= 0) { // Avoid divide-by-zero errors
+                        return; 
+                    }
+                    var availableH = Math.max(100, vpH - (topPanel.offsetHeight + 10) - (middlePanel.offsetHeight)); // FIXME: hardcoding
+                    var availablePerc = (availableH / vpH) * 100;
+                    threePane.style.height = availablePerc + '%';
+
+                };
+            })();
+
+            function makeMboxGridResizer (container, grid) {
+                return function() {
+                    grid.resizeHeight(container.offsetHeight);
+                }
+            }
+
+            var resizeMboxGrid = makeMboxGridResizer(
+                __panels.rightTop.contentsNode,
+                __mboxGrid
+            );
+
+            var handleResizeY = function () {
+                
+                resizeThreePane();
+                __messageViewer.recalculateHeights();
+                __panels.rightTop.fixHeights(); 
+                __panels.rightBottomPane.fixHeights();
+                resizeMboxGrid();
+                
+            };
+	        var handleResizeX = function () {
+                var lp = __panels.left;
+                lp.titleNode.style.width = Math.max((lp._middleNode.offsetWidth - lp.topRightNode.parentNode.offsetWidth - 15), 10) + 'px';
+                __messageViewer.nvPairs.resize();
+    	    };
+            handleResizeY();
+	        handleResizeX();
+
+            // setup our window resize handler right now.
+            setupResizeHandlers({
+                Y: handleResizeY,
+                X: handleResizeX
+	        });
+
+            
+            // Events
+            DA.mailer.Events.onMessagesMoving.subscribe(function(type, args) {
+                window.__topPanel.messageUnselectedMenu();
+            });
+            DA.mailer.Events.onMessagesMoved.subscribe(function(type, args) {
+                var response = args[2];
+                if (response && response.total && 
+                    parseInt(response.total.messages, 10) === 0) {
+                    Element.show( __displayMsg.mbgridNoMessages );
+                }
+            });
+
+            DA.mailer.Events.onMboxGridLoadRows.subscribe(function(type, args) {
+                if (args[0].count === 0) {
+                    Element.show( __displayMsg.mbgridNoMessages );
+                } else {
+                    Element.hide( __displayMsg.mbgridNoMessages );
+                }
+            });
+
+            // FIXME: need to properly modularize this:
+            
+            // START: setup the simple-search conrols
+            // Connect the simple-search button to the mboxGrid's searchInCurrentFolder method
+	    $("mboxGrid_search_button").innerHTML = DA.locale.GetText.t_("SEARCH_BUTTON");
+            window.__simpleSearch = Object.extend(
+                    new DA.widget.SearchBox($("mboxGrid_search_field"), $("mboxGrid_search_keyword"), $("mboxGrid_search_button"), {
+                        order: [
+                            ['to', 'from', 'subject'],
+                            ['advance']
+                        ],
+                        items: {
+                            to : {
+                                text: DA.locale.GetText.t_('SIMPLESEARCH_MENUTITLE_TO'),
+                                onclick: function() {
+                                    window.__simpleSearch.changeField('to');
+                                }
+                            },
+                            from : {
+                                text: DA.locale.GetText.t_('SIMPLESEARCH_MENUTITLE_FROM'),
+                                onclick:  function() {
+                                    window.__simpleSearch.changeField('from');
+                                }
+                            },
+                            subject : {
+                                text: DA.locale.GetText.t_('SIMPLESEARCH_MENUTITLE_SUBJECT'),
+                                onclick: function() {
+                                    window.__simpleSearch.changeField('subject');
+                                }
+                            },
+                            advance : {
+                                text: DA.locale.GetText.t_('SIMPLESEARCH_MENUTITLE_ADVANCE'),
+                                onclick: function() {
+                                    window.__simpleSearch.changeField('advance');
+                                }
+                            }
+                        }
+                    }), {
+                        getConditions: function() {
+                            return { // conditions
+                                field: this.selectedField
+                            }
+                        },
+                        
+                        changeField: function(field) {
+                            if (field === 'advance') {
+                                DA.mailer.windowController.searcherOpen(window.__mboxGrid.folderId);
+                            } else {
+                                this.selectedField    = field;
+                                this.select.innerHTML = DA.locale.GetText.t_('SIMPLESEARCH_MENUTITLE_' + field.toUpperCase());
+                            }
+                        }
+                    });
+            window.__simpleSearch.changeField('from');
+            window.__simpleSearch.onSearch.subscribe(function(type, args) {
+                if (!args || !args[0]) { return; }
+                var text  = args[0].text;
+                var field = args[0].conditions.field;
+                if (text.match(/^\s*$/)) {
+                    DA.util.warn(DA.locale.GetText.t_('MBOXGRID_KEYWORD_EMPTY'));
+                } else {
+                    window.__mboxGrid.searchInCurrentFolder(field, text);
+                }
+            });
+            window.__mboxGrid.onFolderChanged.subscribe(function (type, args) {
+                window.__simpleSearch.reset();
+                if (DA.mailer.util.isLocalFolder(args[0].type) || DA.mailer.util.isBackupFolder(args[0].type)) {
+                    $("mboxGrid_search_keyword").disabled = true;
+                    $("mboxGrid_search_button").disabled  = true;
+                } else {
+                    $("mboxGrid_search_keyword").disabled = false;
+                    $("mboxGrid_search_button").disabled  = false;
+                }
+            });
+            // END: Done setting up the simple-search conrols
+
+            // メール一覧のため状態保存
+            DA.session.UIState.registerWidget("mboxgrid", window.__mboxGrid);
+
+        } else {
+            // update
+            window.__mboxGrid.changeFolder(fid, type);
+            if (DA.mailer.util.isDraft(type) || DA.mailer.util.isSent(type) || DA.mailer.util.isLocalFolder(type) || DA.mailer.util.isBackupFolder(type)) {
+                window.__simpleSearch.changeField('to');
+                if (__messageViewer) {
+                    __messageViewer.nvPairs.reorder(['Subject','To','Date','Attachment','Cc', 'From']);
+                }
+            } else {
+                window.__simpleSearch.changeField('from');
+                if (__messageViewer) {
+                    __messageViewer.nvPairs.reorder(['Subject','From','Date', 'Attachment','To', 'Cc']);
+                }
+            }
+        }
+  }
+  
+  function onFolderDelete(fid /*folder ID*/) {
+      if (fid === __mboxGrid.folderId) {
+          // We are deleting the currently selected folder
+          __mboxGrid.clear();
+          $("mboxgrid_title").innerHTML = '<strong>' + DA.locale.GetText.t_('MBOXGRID_NOFOLDERSELECTED') + '</strong>';
+          Element.show( __displayMsg.mbgridNoMessages );
+
+          // 詳細画面のクリア
+          window.__messageViewer.clear();
+      }
+  }
+  
+  function setThreePaneSize() {
+      // Three pane resize.
+      var leftWidth = DA.vars.config.dir_width;
+      window.__threePane.setLeftWidth(leftWidth); /*Any value OK: "30"(30 pixels), 30 (30 pixels) "30%" (30%)*/
+
+      var rtHpx   = parseInt(DA.vars.config.list_height, 10);
+      if (!YAHOO.lang.isNumber(rtHpx)) {
+          // TODO: log this error?
+          return;
+      }
+      window.__threePane.setRightTopHeight(rtHpx); /*Any value OK: "30"(30 pixels), 30 (30 pixels) "30%" (30%)*/
+  }
+
+  Event.observe(window, 'load', function(){
+
+      
+      
+      DA.init();
+      DA.mailer.connection.login();
+
+      DA.mailer.Application.init();
+      
+      // Bar UP
+      DA.mailer.connection.titleBar();
+      
+      Element.show("left_pane", "right_pane");
+      
+      window.__threePane = new DA.widget.ThreePane({
+          leftPane:        $("left_pane"),
+          rightPane:       $("right_pane"),
+          rightTopPane:    $("right_top_pane"),
+          rightBottomPane: $("right_bottom_pane"),
+          vDivider:        $("vdivider"),
+          hDivider:        $("hdivider")
+      });
+      
+      // Bar UP
+      DA.mailer.connection.titleBar();
+
+      function makePanel(name, node, opts) {
+          var n = node;
+          var p = new DA.widget.Panel(null, opts);
+          DA.dom.moveAllChildren(n, p.contentsNode);
+          n.appendChild(p.node);
+          window.__panels[name] = p;
+          p.fixHeights();
+      }
+
+      window.__panels = {};
+
+      ['left','rightTop'].each(function(name){
+          makePanel(name, __threePane[name+'Pane']);
+      });
+
+      makePanel("rightBottomPane", __threePane.rightBottomPane, {titleBar:false});
+      
+      // Bar UP
+      DA.mailer.connection.titleBar();
+      
+      // Three pane resize.
+      setThreePaneSize();
+      
+      //$("mboxGrid_simple_search_container").parentNode.removeChild($("mboxGrid_simple_search_container"));
+      __panels.rightTop.topRightNode.appendChild($("mboxGrid_simple_search_container"));
+      __panels.rightTop.titleNode.innerHTML = '<span id="mboxgrid_title"></span>'; // FIXME: NLS
+      __panels.left.titleNode.innerHTML = '<b>' + DA.locale.GetText.t_('FOLDER_TREE_TITLE') + '</b>&nbsp;' + 
+                                          '<span id="quota_storage"></span>&nbsp;' +
+                                          '<span id="quota_message"></span>'; // FIXME: NLS
+
+      // 状態保存
+      DA.session.UIState.registerWidget('threePane', window.__threePane);
+      
+      // Bar UP
+      DA.mailer.connection.titleBar();
+
+      window.__topPanel = new DA.mailer.TopPanelController43PANE (
+          $("top_panel"), $("panel_menu")
+      );
+      
+      // Bar UP
+      DA.mailer.connection.titleBar();
+     
+      window.__displayMsg = {
+          mbgridLoading    : document.createElement('div'),
+          mbgridNoMessages : document.createElement('div')
+      };
+
+      window.__folderTree = new DA.mailer.FolderTreeController (
+          $("foldertop"),
+          $("foldertree"),
+          $("quota_storage"),
+          $("quota_message"),
+          $("mboxgrid_title"),
+          {
+              onSelect: onFolderSelect,
+              onDelete: onFolderDelete,
+              onUpdating: function (fid) {
+                  // Bar UP
+                  DA.mailer.connection.titleBar();
+                  DA.log("Updating folder: " + fid, 'test', "FolderTreeController");
+              },
+              onUpdateDone: function (fid) {
+                  // Bar UP
+                  DA.mailer.connection.titleBar();
+                  DA.log("Update complete: folder: " + fid, 'test', "FolderTreeController");
+              }
+
+          }
+      );
+      
+      // Bar UP
+      DA.mailer.connection.titleBar();
+      
+      window.__messageViewer = new DA.mailer.MessageViewer (
+          $('message_header'), $('message_body'), $('message_viewer_container'), {
+	      onLoading:    function(o) { DA.util.lock("loadingMail_" + o.fid + ':' + o.uid);},
+              onLoadDone:   function(o) { DA.util.unlock("loadingMail_" + o.fid + ':' + o.uid);},
+              onLoadFailed: function(o) { DA.util.unlock("loadingMail_" + o.fid + ':' + o.uid);}
+          }, true
+      );
+      window.__messageViewer.onMessagesMoved = function () {
+          // If a message has been moved to another folder, show nothing.
+          __messageViewer.close();
+      };
+      
+      // 状態保存
+      DA.session.UIState.registerWidget('messageViewer', window.__messageViewer);
+      
+      window.__topPanel.setFunction(window.__messageViewer);
+      window.__topPanel.messageUnselectedMenu();
+      
+      // Bar UP
+      DA.mailer.connection.titleBar();
+	  
+      <TMPL_VAR NAME=ON_LOAD_JS> 
+  });
+
+  </script>
+
+<TMPL_VAR NAME=BODY_AFTER>
+
+</body>
+
+</html>

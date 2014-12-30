@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_MessageSearcher.html 2483 2014-09-29 01:58:56Z xc_zhai $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_MessageSearcher.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title><TMPL_VAR NAME=HTML_TITLE></title>
+<style>
+/*Placeholder! DO NOT REMOVE. */
+</style>
+
+<TMPL_VAR NAME=HEAD_BEFORE>
+
+<script src="<TMPL_VAR NAME=APP_RDIR>/thirdparty-all.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<script src="<TMPL_VAR NAME=APP_RDIR>/all-nodebug-comp.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<link rel="stylesheet" type="text/css" href="<TMPL_VAR NAME=APP_RDIR>/all.css?<TMPL_VAR NAME=URI_PREFIX>"/>
+
+
+<TMPL_VAR NAME=HEAD_AFTER>
+
+<style>
+
+html,body {
+   width:  100%;
+   height: 100%;
+}
+
+/* container */
+div#top_panel_container {
+   width: 100%;
+   height: 51px;
+}
+div#search_container {
+   width: 100%;
+}
+
+div#result_pane {
+   margin: 10px;
+}
+</style>
+
+</head>
+
+<body>
+<TMPL_VAR NAME=BODY_BEFORE>
+
+  <div id="top_panel_container" oncontextmenu="return false;">
+    <div id="top_panel" class="top_panel"></div>
+    <div id="panel_menu" class="panel_menu"></div>
+  </div>
+  
+  <div id="search_container">
+
+  <!-- search item -->
+  <div id="search_item_outer">
+    <div id="search_item"></div>
+  </div>
+
+  <!-- search grid -->
+  <div id="result_pane">
+    <div id="search_grid" oncontextmenu="return false;"></div>
+  </div>
+
+  </div>
+ 
+  <script>
+
+  function setupWindowResizeHandler() {
+      var body = document.body;
+      var tpc  = $('top_panel_container');
+      var sc   = $('search_container');
+      var si  = $('search_item');
+      var rp   = $('result_pane');
+      var YDOM = YAHOO.util.Dom;
+
+      function handleResize() {
+          var vpH   = YDOM.getViewportHeight();
+          var tpcH  = tpc.offsetHeight;
+          var scH   = sc.offsetHeight;
+          __mboxGrid.resizeHeight(Math.max(50, vpH - (tpcH + si.offsetHeight + 35)), true);
+      }
+
+      DA.windowController.onGentleResize.subscribe(handleResize);
+
+      return handleResize;
+  }
+
+  Event.observe(window, 'load', function(){
+
+      
+
+      DA.init();
+      
+      window.__topPanel = new DA.widget.TopTitleController (
+          $("top_panel"), $("panel_menu"), {
+              icon: DA.vars.imgRdir + '/ico_fc_sceml.gif',
+              name: DA.locale.GetText.t_('POPUP_TITLENAME_SEARCH')
+          }
+      );
+      
+      window.__panels = {};
+      function makePanel(name, node, opts) {
+          var n = node;
+          var p = new DA.widget.Panel(null, opts);
+          DA.dom.moveAllChildren(n, p.contentsNode);
+          n.appendChild(p.node);
+          window.__panels[name] = p;
+          p.fixHeights();
+      }
+     
+      makePanel("resultPane", $("result_pane"), {titleBar: false});
+      $("result_pane").style.visibility = 'hidden';
+      
+      function renderSearchResult(o) {
+          if (!window.__mboxGrid) {
+              window.__mboxGrid = new DA.mailer.widget.MboxGrid({
+                  containerElem: $('search_grid'),
+                  searchMode:    true,
+                  fid:           o.fid,
+                  srid:          o.srid,
+                  type:          o.type,
+                  totalMessages: o.total.messages,
+                  onDeletePress: function() {
+                      window.__mboxGrid.deleteSelected();
+                  }
+              });
+              // handle double-clicking of messages
+              window.__mboxGrid.onDoubleClick.subscribe(function (type, args) {
+                  var mail = args [0];
+                  if (!mail) { return; }
+                  if (DA.util.cmpNumber(mail.open_m, 2)) {
+                      DA.mailer.windowController.editorOpen('edit', mail.fid, mail.uid, mail.srid);
+                  } else {
+                      DA.mailer.windowController.viewerOpen(mail.fid, mail.uid, mail.srid);
+                  }
+              });
+              var handleResize = setupWindowResizeHandler();
+              handleResize();
+          } else {
+             window.__mboxGrid.loadSearchResults(o.total.messages, o.fid, o.srid, o.type);
+          }
+          document.getElementsByClassName("middle")[0].style.height='100%';
+      }
+
+      window.__messageSearcher = new DA.mailer.MessageSearcher (
+          $('search_item'), $('result_pane'), {
+              onSearch: renderSearchResult
+          },window.opener.DA.mailer.FolderTreeController.prototype.treeData
+      );
+      
+      var query = DA.util.parseQuery();
+      window.__messageSearcher.select(query.fid);
+
+  });
+
+  </script>
+
+<TMPL_VAR NAME=BODY_AFTER>
+
+</body>
+
+</html>

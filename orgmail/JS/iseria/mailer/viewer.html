@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_MessageViewer.html 2234 2011-04-06 03:58:35Z kadowaki $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_MessageViewer.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<TMPL_IF NAME="IE8_COMPATIBLE">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+</TMPL_IF>
+<title><TMPL_VAR NAME=HTML_TITLE></title>
+<style>
+/*Placeholder! DO NOT REMOVE. */
+</style>
+
+<TMPL_VAR NAME=HEAD_BEFORE>
+
+<script src="<TMPL_VAR NAME=APP_RDIR>/thirdparty-all.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<script src="<TMPL_VAR NAME=APP_RDIR>/all-nodebug-comp.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<link rel="stylesheet" type="text/css" href="<TMPL_VAR NAME=APP_RDIR>/all.css?<TMPL_VAR NAME=URI_PREFIX>"/>
+
+
+<TMPL_VAR NAME=HEAD_AFTER>
+
+<style>
+
+body,html {
+   width:100%;
+   height:100%;
+}
+
+/* container */
+div#top_panel_container {
+   width: 100%;
+   height: 51px;
+}
+div#message_container {
+   width: 100%;
+   float: left;
+}
+
+/* message-details */
+div#message_header_outer {
+}
+div#message_body_outer {
+    margin-left: 4px;
+}
+
+</style>
+
+</head>
+
+<body onLoad="init();" onBeforeUnload="finish();">
+
+<TMPL_VAR NAME=BODY_BEFORE>
+
+  <div id="top_panel_container" oncontextmenu="return false;">
+    <div id="top_panel" class="top_panel"></div>
+    <div id="panel_menu" class="panel_menu"></div>
+  </div>
+  
+  <div id="message_container">
+
+    <!-- mail header -->
+    <div id="message_header_outer">
+      <div id="message_header"></div>
+    </div>
+          
+    <!-- mail body -->
+    <div id="message_body_outer">
+      <div id="message_body"></div>
+    </div>
+
+  </div>
+ 
+  <script>
+  
+  function setupWindowResizeHandler() {
+      var hd   = YAHOO.util.Dom.get('message_header_outer');
+      var tp   = YAHOO.util.Dom.get('top_panel_container');
+      var body = YAHOO.util.Dom.get('message_body');
+      var text = window.__messageViewer.bodyContentsNode;
+      var getViewportWidth  = YAHOO.util.Dom.getViewportWidth;
+      var getViewportHeight = YAHOO.util.Dom.getViewportHeight;
+      
+      function handleResize() {
+          // resize the body element
+          var junk = 0;
+              junk = (document.body.offsetHeight + 1);
+              junk = (DA.dom.height(tp) + 1);
+              junk = (DA.dom.height(hd) + 1);
+          
+          var win_x = getViewportWidth();
+          var win_y = getViewportHeight();
+          var hd_y  = DA.dom.height(hd);
+          var tp_y  = DA.dom.height(tp);
+          var x     = win_x;
+          var y     = win_y - tp_y - hd_y;
+          
+          if (x > 100) {
+              text.style.width  = (x - 15) + 'px';
+          }
+          if (y > 100) {
+              body.style.height = (y - 35) + 'px';
+              text.style.height = (y - 35) + 'px';
+          }
+          
+          window.__messageViewer.nvPairs.resize();
+      }
+      
+      handleResize();
+    
+      DA.windowController.onGentleResize.subscribe(handleResize);
+      
+      return handleResize;
+  }
+  
+  function init() {
+      var url   = '<!-- requestUrl -->';
+          url   = (url === '<!-- requestUrl -->') ? '' : url;
+      var query = (url === '<!-- requestUrl -->') ? DA.util.parseQuery() : DA.util.parseQuery(url);
+      
+      DA.init();
+      
+      window.__topPanel = new DA.mailer.TopPanelController4Viewer (
+          $("top_panel"), $("panel_menu")
+      );
+      
+      window.__messageViewer = new DA.mailer.MessageViewer (
+          $('message_header'), $('message_body'), $('message_container'), {
+              onLoadDone: function(o) {
+                  window.__topPanel.setFunction(window.__messageViewer);
+                  window.__messageViewer.doResize = setupWindowResizeHandler();
+                  if (DA.mailer.util.isJoin(o.type)) {
+                      window.__topPanel.panelMenu.disable('delete');
+                      window.__topPanel.panelMenu.disable('filter');
+                      window.__topPanel.panelMenu.disable('prev');
+                      window.__topPanel.panelMenu.disable('next');
+                  } else {
+                      window.__topPanel.panelMenu.enable('delete');
+                      window.__topPanel.panelMenu.enable('filter');
+                      window.__topPanel.panelMenu.enable('prev');
+                      window.__topPanel.panelMenu.enable('next');
+                  }
+				  <TMPL_VAR NAME=ON_LOAD_JS>
+              }
+          }, null, url);
+          
+      window.__messageViewer.onClose = function () {
+          window.close();
+      };
+      
+      window.__messageViewer.view(query);
+  };
+
+  function finish() {
+	  <TMPL_VAR NAME=ON_BEFOREUNLOAD_JS>
+  }
+
+  </script>
+
+<TMPL_VAR NAME=BODY_AFTER>
+
+</body>
+
+</html>
