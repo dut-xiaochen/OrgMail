@@ -79,7 +79,6 @@ sub main {
 								$result->{title} .= DA::Ajax::Mailer::convert_mailer(t_(" メール詳細"));
 							} else {
 								$result->{title} .= DA::Ajax::Mailer::convert_mailer(t_(" メール作成"));
-								warn "$result->{title}";
 							}
 							
 							my $html = &get_template($session, "$base/$name\.html", $result, $messages, 1, $query->param("org_mail_gid"), false);
@@ -190,7 +189,8 @@ window.onclick = function(e){
 window.onfocus = function(){
 	OrgMailer.vars.is_blured = false;
 	if (DA.mailer.util.getOperationFlag() !== '' && DA.mailer.util.getOperationFlag() !== OrgMailer.vars.org_mail_gid.toString()){
-		if (DA.mailer.util.getOperationWarnedFlag().indexOf(OrgMailer.vars.org_mail_gid.toString() + window.name) < 0){
+		if ((!OrgMailer.vars.is_mail_box && OrgMailer.vars.org_mail_gid.toString() !== DA.mailer.util.getOperationFlag()) || 
+			(OrgMailer.vars.is_mail_box && (DA.mailer.util.getOperationWarnedFlag().indexOf(OrgMailer.vars.org_mail_gid.toString() + window.name) < 0))){
 			if (OrgMailer.vars.operation_warned === 0){
 				OrgMailer.vars.operation_warned = 1;
 				DA.mailer.util.setOperationWarnedFlag(OrgMailer.vars.org_mail_gid.toString() + window.name);
