@@ -5279,6 +5279,7 @@ DA.mailer.util = {
 			if (DA.mailer.util.getOperationFlag() === ""){
 				DA.waiting.hide();
 				OrgMailer.vars.operation_warned = 0;
+				console.log(OrgMailer.vars.is_blured);
 				window.clearInterval(atuoCloser);
 				if (!OrgMailer.vars.is_blured){
 					document.cookie = OrgMailer.vars.cookie_key + "-org_mail=" + OrgMailer.vars.org_mail_gid + ";";
@@ -23554,4 +23555,29 @@ YAHOO.extend(DA.mailer.widget.AddressAutoComplete, YAHOO.widget.AutoComplete, {
      */
     minQueryLength: DA.vars.system.inc_search_min_chars ?
             parseInt(DA.vars.system.inc_search_min_chars, 10) :  // From the config settings
-           
+            1, // Default to 1 (YUI recommendation)
+
+	_openBulk: function(oResultData){
+		var me = this;
+        var io = new DA.io.JsonIO( DA.vars.cgiRdir + '/ajx_addr.cgi' );
+        io.callback = function(o) {
+            if (DA.mailer.util.checkResult(o)) {
+            	me.listController.addList(o.user_list);
+            }
+        };
+
+        io.errorHandler = function(e) {
+            DA.util.warn(DA.locale.GetText.t_("BULKINFO_ERROR"));
+        };
+        
+        io.execute({
+            proc: 'extract',
+            aid: oResultData.id,
+            lang: oResultData.lang
+        });
+    }
+});
+
+
+
+

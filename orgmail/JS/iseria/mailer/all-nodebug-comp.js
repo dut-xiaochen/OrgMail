@@ -2775,6 +2775,7 @@ var _372=window.setInterval(function(){
 if(DA.mailer.util.getOperationFlag()===""){
 DA.waiting.hide();
 OrgMailer.vars.operation_warned=0;
+console.log(OrgMailer.vars.is_blured);
 window.clearInterval(_372);
 if(!OrgMailer.vars.is_blured){
 document.cookie=OrgMailer.vars.cookie_key+"-org_mail="+OrgMailer.vars.org_mail_gid+";";
@@ -12802,4 +12803,24 @@ _c3c.style.display="none";
 }
 },doBeforeExpandContainer:function(_c3d,_c3e,_c3f,_c40){
 var _c41=_c40?_c40.length:0;
-_c3e._oConte
+_c3e._oContent.style.height=(Math.min(_c41,this.maxResultsBeforeScroll)*this.resultRowHeight)+4+"px";
+if(BrowserDetect.browser==="Explorer"){
+_c3e._oContent.style.width="100%";
+}else{
+_c3e._oContent.style.width="80%";
+}
+return _c41>0;
+},maxResultsBeforeScroll:20,maxResultsDisplayed:DA.vars.system.max_incsearch_hits?parseInt(DA.vars.system.max_incsearch_hits,10):100,resultRowHeight:18,queryDelay:DA.vars.system.inc_search_interval?parseFloat(DA.vars.system.inc_search_interval,10):0.25,minQueryLength:DA.vars.system.inc_search_min_chars?parseInt(DA.vars.system.inc_search_min_chars,10):1,_openBulk:function(_c42){
+var me=this;
+var io=new DA.io.JsonIO(DA.vars.cgiRdir+"/ajx_addr.cgi");
+io.callback=function(o){
+if(DA.mailer.util.checkResult(o)){
+me.listController.addList(o.user_list);
+}
+};
+io.errorHandler=function(e){
+DA.util.warn(DA.locale.GetText.t_("BULKINFO_ERROR"));
+};
+io.execute({proc:"extract",aid:_c42.id,lang:_c42.lang});
+}});
+
