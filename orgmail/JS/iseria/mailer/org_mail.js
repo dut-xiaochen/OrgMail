@@ -14,8 +14,9 @@ var OrgMail = {
         document.getElementById('org_mail_icon').style.visibility='hidden';
         var Param = 'width='+OrgMail.width+',height='+OrgMail.height+',resizable=1';
         var Url  = '/cgi-bin/ajax_mailer.cgi?html=index&login=1&time='+new Date();
+			Url += "&org_mail_gid=" + sec + "&org_mail_box=" + sec;
             Url += OrgMail.check_key;
-        var AjaxMailerWindow = window.open(Url, OrgMail.user+'_AjaxMailer', Param);
+        var AjaxMailerWindow = window.open(Url, OrgMail.user+'_AjaxMailer_'+sec, Param);
             AjaxMailerWindow.moveTo(OrgMail.xPos, OrgMail.yPos);
             AjaxMailerWindow.focus();
 		return;
