@@ -442,7 +442,7 @@ function AjaxMailer(x, y, w, h) {
 		}
 	}
 	if (operation_flag !== "" && operation_flag !== $session->{user}){
-		alert("他のメールアカウントは操作しています、ちょっと待てください。");
+		alert("@{[t_('他のメールアカウントは操作しています、ちょっと待てください。')]}");
 	} else{
 		document.cookie = '$session->{sid}\-org_mail=$session->{user};';
 	    var Param = 'width=' + w + ',height=' + h + ',resizable=1';

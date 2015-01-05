@@ -2749,6 +2749,9 @@ var key=OrgMailer.vars.cookie_key+"-operation_flag";
 var _36a=document.cookie.split(";");
 for(var i=0;i<_36a.length;i++){
 if(_36a[i].split("=")[0].replace(/(^\s*)|(\s*$)/g,"")===key){
+if(typeof _36a[i].split("=")[1]==="undefined"){
+return "";
+}
 return _36a[i].split("=")[1];
 }
 }
@@ -2758,6 +2761,9 @@ var key=OrgMailer.vars.cookie_key+"-operation_warned";
 var _36d=document.cookie.split(";");
 for(var i=0;i<_36d.length;i++){
 if(_36d[i].split("=")[0].replace(/(^\s*)|(\s*$)/g,"")===key){
+if(typeof _36d[i].split("=")[1]==="undefined"){
+return "";
+}
 return _36d[i].split("=")[1];
 }
 }
@@ -2775,7 +2781,6 @@ var _372=window.setInterval(function(){
 if(DA.mailer.util.getOperationFlag()===""){
 DA.waiting.hide();
 OrgMailer.vars.operation_warned=0;
-console.log(OrgMailer.vars.is_blured);
 window.clearInterval(_372);
 if(!OrgMailer.vars.is_blured){
 document.cookie=OrgMailer.vars.cookie_key+"-org_mail="+OrgMailer.vars.org_mail_gid+";";
