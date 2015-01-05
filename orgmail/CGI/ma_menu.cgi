@@ -53,8 +53,9 @@ if ($mail->{default_mail_account}) {
 	$mail_account = $session->{user};
 }
 my $cookie = "$session->{sid}\-org_mail=$mail_account";
-$cookie_script = "document.cookie='$cookie';";
-
+$cookie_script  = "document.cookie='$cookie';";
+$cookie_script .= "document.cookie='$session->{sid}\-operation_flag=';";
+$cookie_script .= "document.cookie='$session->{sid}\-operation_warned=';";
 
 my $check_key = DA::IS::get_check_key_param('&');
 my $pagemove=<<buf_end;
