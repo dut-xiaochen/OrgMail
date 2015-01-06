@@ -1,0 +1,57 @@
+<html><head>
+<title>INSUITE POPUP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=<TMPL_VAR NAME=CHARSET>">
+<TMPL_IF NAME=CHAR_STYLE>
+<link rel="stylesheet" type="text/css" href="<TMPL_VAR NAME=CHAR_STYLE_RDIR>/<TMPL_VAR NAME=CHAR_STYLE>.css?<TMPL_VAR NAME=URI_PREFIX>">
+<TMPL_ELSE>
+<link rel="stylesheet" type="text/css" href="<TMPL_VAR NAME=CHAR_STYLE_RDIR>/normal_style.css?<TMPL_VAR NAME=URI_PREFIX>">
+</TMPL_IF>
+<STYLE type="text/css"><!--
+	html,body { overflow-x:hidden; overflow-y:hidden; }
+    TD { word-break: break-all; }
+    a:visited {color: #1d39bb}
+    a.tab,a.tab:visited { color: black; text-decoration: none}
+    .blk,.blk:visited {color: black}
+    .sel,.sel:visited {color: a90a08; font-weight: bold}
+    .title,.title:visited {color: white}
+//--></STYLE>
+<SCRIPT LANGUAGE="JavaScript"><!--
+var DApopupParams = {
+	chkKey: '<TMPL_VAR NAME=CHK_KEY>',
+	cgiRdir: '<TMPL_VAR NAME=CGI_RDIR>'
+};
+//--></SCRIPT>
+<script type="text/javascript" src="<TMPL_VAR NAME=JS_RDIR>/portal/common.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<script type="text/javascript" src="<TMPL_VAR NAME=JS_RDIR>/common/popup.js?<TMPL_VAR NAME=URI_PREFIX>"></script>
+<SCRIPT LANGUAGE="JavaScript"><!--
+var onChanging = 0;
+function ChangeSelect() {
+    if (onChanging == 0) {
+        onChanging = 1;
+        document.forms[0].submit();
+    }
+}
+function resizeProc() {
+    if (!document.getElementById('info_body')) { return; }
+    var height;
+    if (window.innerHeight) {
+        height = window.innerHeight;
+    } else if (document.documentElement && document.documentElement.clientHeight != 0) {
+        height = document.documentElement.clientHeight;
+    } else if ( document.body ) {
+        height = document.body.clientHeight;
+    }
+    if (height < 220) { height=220; }
+    document.getElementById('info_body').style.height = height - 100;
+}
+//--></SCRIPT>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="7" topmargin="7" marginwidth="7" marginheight="7" rightmargin="7">
+<TMPL_VAR NAME=CONTENTS>
+<input type="hidden" id="portal_mail_cookie_key" value='<TMPL_VAR NAME=MAIL_COOKIE_KEY>'>
+</body>
+<SCRIPT LANGUAGE="JavaScript"><!--
+    resizeProc();
+    window.onresize = function() { resizeProc(); }
+//--></SCRIPT>
+</html>

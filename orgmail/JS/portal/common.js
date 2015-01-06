@@ -58,14 +58,22 @@ function Pop4Ajax(Url,Width,Height,POSX,POSY){
 function Pop4AjaxWithMailAccount(Url,Width,Height,POSX,POSY){
 	var Param='width='+Width+',height='+Height+',resizable=1';
 	var key = document.getElementById("portal_mail_cookie_key").value + "-org_mail";
-	var mailAccount = document.getElementById("protal_mail_data_account").value;
+	
 	var cookies = document.cookie.split(";");
 	var cookieAccount = "";
+	var loginAccount = "";
 	for (var i = 0; i < cookies.length ; i++) {
 		if (cookies[i].split("=")[0].replace(/(^\s*)|(\s*$)/g, "") === key) {
 			cookieAccount = cookies[i].split("=")[1];
 		}
+		if (cookies[i].split("=")[0].replace(/(^\s*)|(\s*$)/g, "") === "INSUITE-Enterprise") {
+			loginAccount = cookies[i].split("=")[1].split(".")[0];
+		}
 	}
+	if (cookieAccount === ""){
+		cookieAccount = loginAccount;
+	}
+	var mailAccount = (document.getElementById("protal_mail_data_account")) ? document.getElementById("protal_mail_data_account").value : cookieAccount;
 	if (mailAccount !== cookieAccount){
 		var result = confirm("Are you sure?");
 		if (!result){
