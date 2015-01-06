@@ -179,13 +179,6 @@ window.onload = function(){
 	document.cookie = '$session->{sid}\-org_mail=$org_mail_gid;';
 }
 
-window.onclick = function(e){
-	OrgMailer.vars.is_blured = false;
-	if (DA.mailer.util.getOperationFlag() === '' || DA.mailer.util.getOperationFlag().indexOf(OrgMailer.vars.org_mail_gid.toString() >=0)){
-		document.cookie = '$session->{sid}\-org_mail=$org_mail_gid;';
-	}
-}
-
 window.onfocus = function(){
 	OrgMailer.vars.is_blured = false;
 	if (DA.mailer.util.getOperationFlag() !== ''){

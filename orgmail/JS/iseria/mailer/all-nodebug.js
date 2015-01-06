@@ -5169,6 +5169,9 @@ DA.mailer.util = {
 		var cookies = document.cookie.split(";");
 		for (var i = 0; i < cookies.length ; i++) {
 			if (cookies[i].split("=")[0].replace(/(^\s*)|(\s*$)/g, "") === key) {
+				if ( typeof cookies[i].split("=")[1] === "undefined"){
+					return "";
+				}
 				return cookies[i].split("=")[1];
 			}
 		}
@@ -23189,4 +23192,3 @@ YAHOO.extend(DA.mailer.widget.AddressAutoComplete, YAHOO.widget.AutoComplete, {
 
 
 
-                                                                                                                                                                                                                                                                                     
