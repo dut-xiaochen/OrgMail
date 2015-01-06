@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_FileUpload.html 1837 2009-02-16 08:35:00Z ya_song $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_FileUpload.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/treeview/treeview.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<script src="/js/yui/v2.2.0a/connection/connection.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="StyleSheet" type="text/css"/>
+
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/logging/logging.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/fileupload-io.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/treeview/assets/tree.css"/>
+<style>
+#treeDiv {
+  border:3px solid green;
+  background:#eeddbb;
+  height:60%;
+  width:60%;
+  overflow:auto;
+  margin: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+body {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+  height: 80%;
+}
+div.container {
+  height: 600px;
+}
+.yui-log {
+  top: 200px;
+}
+</style>
+</head>
+
+<body>
+
+  <table border=0>
+  <tr>
+    <td>Url:</td><td><input type=text id="urlId" size=60 value=""></td>
+  </tr>
+  </table>
+  <form id=uploadForm target=_blank>
+  <table border=0>
+  <tr>
+    <td>&nbsp;</td><td>Name</td><td>Value</td>
+  </tr>
+  <tr>
+    <td>File:</td><td><input type=text id="fileName" value=""></td><td><input type=file id="fileId" size=60 value=""></td>
+  </tr>
+  <tr>
+    <td>Item1:</td><td><input type=text id="itemName1" value=""></td><td><input type=text id="itemId1" size=60 value=""></td>
+  </tr>
+  <tr>
+    <td>Item2:</td><td><input type=text id="itemName2" value=""></td><td><input type=text id="itemId2" size=60 value=""></td>
+  </tr>
+  <tr>
+    <td>Item3:</td><td><input type=text id="itemName3" value=""></td><td><input type=text id="itemId3" size=60 value=""></td>
+  </tr>
+  <tr>
+    <td>Item4:</td><td><input type=text id="itemName4" value=""></td><td><input type=text id="itemId4" size=60 value=""></td>
+  </tr>
+  <tr>
+    <td>Item5:</td><td><input type=text id="itemName5" value=""></td><td><input type=text id="itemId5" size=60 value=""></td>
+  </tr>
+  </table></form>
+  <button id="goupload">Upload</button>
+  
+  <hr />
+
+  <div class="container">
+    <div id="treeDiv">
+    <i>JSON response object will be displayed here.</i>
+    </div>
+  </div>
+  
+  <script>
+function clearTree() { $("treeDiv").innerHTML = "" ; }
+function buildTree(obj) {
+    var tree = new YAHOO.widget.TreeView($("treeDiv"));
+    var root = tree.getRoot();
+    function nv(p, v, node) {
+        if (typeof(v) != "function") { 
+          var tmpNode = new YAHOO.widget.TextNode({
+            label: p + " (" + ((v && v.length && v.grep) ? "array" : typeof(v)) + ")"
+          }, node, false);
+          populate(v, tmpNode);
+        }
+    }
+    function populate(o, node){
+        if (typeof(o) == "object") {
+          //var props = (o && o.length && o.grep) ? o.toArray() : $H(o).keys().sort();
+          if (o && o.length && o.grep) {
+            for (var i=0; i<o.length; i++){
+              var v = o[i];
+              nv(i,v, node);
+            }
+          } else {
+            $H(o).keys().sort().each(function(p){
+              var v = o[p];
+              nv(p,v, node);
+            });
+          }
+        } else {
+          var tmpNode = new YAHOO.widget.TextNode({label:o}, node);
+        }
+    }
+    populate(obj, root);
+    tree.draw();
+}
+function upload() {
+  var url = document.getElementById("urlId").value;
+
+  document.getElementById("fileId").name = document.getElementById("fileName").value;
+  if (!DA.util.isEmpty(document.getElementById("itemName1").value)) {
+    document.getElementById("itemId1").name = document.getElementById("itemName1").value;
+  }
+  if (!DA.util.isEmpty(document.getElementById("itemName2").value)) {
+    document.getElementById("itemId2").name = document.getElementById("itemName2").value;
+  }
+  if (!DA.util.isEmpty(document.getElementById("itemName3").value)) {
+    document.getElementById("itemId3").name = document.getElementById("itemName3").value;
+  }
+  if (!DA.util.isEmpty(document.getElementById("itemName4").value)) {
+    document.getElementById("itemId4").name = document.getElementById("itemName4").value;
+  }
+  if (!DA.util.isEmpty(document.getElementById("itemName5").value)) {
+    document.getElementById("itemId5").name = document.getElementById("itemName5").value;
+  }
+
+  var io = new DA.io.FileUploadIO(url, document.getElementById("uploadForm"));
+            
+  io.callback = function(o) {
+    buildTree(o);
+  };
+
+  io.errorHandler = function(e) {
+     var s = "";
+     for (var p in e) {
+       try {
+         var v = e[p];
+         if (typeof v == 'function') {continue}
+         s += (p + ":" + v + "\n");
+       } catch (er) {  }
+     }
+     alert("error:" + s);
+  };
+        
+  io.execute();
+            
+}
+
+  Event.observe(window, 'load', function(){
+    DA.log = YAHOO.log; // Just use the YAHOO logger...
+    new YAHOO.widget.LogReader(); 
+  });
+
+  Event.observe($("goupload"), "click", upload);
+  
+  </script>
+
+</body>
+
+</html>

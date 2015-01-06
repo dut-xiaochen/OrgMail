@@ -1,0 +1,65 @@
+div.da_threePaneContainer {
+    height: 100%;
+    width:  100%;
+    position: relative; /*Needed because the child Elements use absolute positioning.*/
+}
+div.da_leftPane {
+    width:    30%; /*default; rihgt*/
+    height:   100%;
+    /*positioned hugging the left edge*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+/*    overflow: auto;*/
+}
+div.da_vDivider {
+    width:   0.3%;
+    height:  100%;
+    cursor:  w-resize;
+    background-image    : url(/images/mf_line_h.gif);
+    background-repeat   : no-repeat;
+    background-position : center center;
+    /*positioned right after the da_leftPane*/
+    position: absolute;
+    top: 0px;
+    left: 30%;
+}
+div.da_rightPane {
+    height:   100%;
+    overflow: hidden;
+    width:    69.5%; /*Ought to br 69.7, since the da_vDivider is 0.3, but a buffer never hurts*/
+    /*position hugging the right edge*/
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+div.da_rightTopPane {
+    position: relative;
+    height:   50%;
+/*    overflow: auto;*/
+}
+div.da_hDivider {
+    position: relative;
+    height: 3px;
+    font-size: 1pt;
+    overflow: hidden;
+    cursor: n-resize;
+    background-image  : url(/images/mf_line_w.gif);
+    background-repeat : no-repeat;
+    background-position : center center;
+}
+div.da_rightBottomPane {
+    position: relative;
+    height:   49%;
+/*    overflow: auto;*/
+}
+div#da_threePaneResizerDragProxy {
+    background-color: #1111CC;
+    width: 1px;
+    height: 4px;
+    font-size: 1pt;
+    position: absolute;
+    visibility: hidden;
+    cursor: move;
+    z-index: 999;
+}

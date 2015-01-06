@@ -1,0 +1,141 @@
+/* Menu */
+
+div.da_popupMenu {
+
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color:#ffffff;
+	border:solid 1px #efefef !important;
+	border-width:1px 1px 0px 1px;
+	padding:0px;
+}
+
+/* default */
+
+div.da_popupMenu div.da_popupMenu {
+
+    position:absolute;
+    visibility:hidden;
+
+}
+
+/* UL */
+
+div.da_popupMenu ul {
+
+    list-style-type:none;
+	border:solid 1px #cccccc;
+	border-width:0px 0px 1px 0px;
+	margin:0px;
+	padding:0px;
+}
+
+/* MenuItem */
+
+div.da_popupMenu li {
+ 
+ 	cursor:pointer;
+	cursor:hand;
+	white-space:nowrap;
+	text-align:left;
+	border:solid 1px #ffffff;
+	border-width:1px 1px 0px 1px;
+	background-color: #efefef;
+	padding:4px !important;
+
+}
+
+div.da_popupMenu li.da_popupMenuItem {
+
+    padding:3px 2px 2px 2px;
+    
+}
+
+div.da_popupMenu li li {
+
+    font-size:100%;
+
+}
+
+div.da_popupMenu li a {
+    
+    zoom:1;
+    color:#000;
+    text-decoration:none;
+    
+}
+
+/* selected */
+
+div.da_popupMenu li.selected {
+
+    background-color:#d3d3d3;
+
+}
+
+div.da_popupMenu li.selected a.selected {
+
+    text-decoration:none;
+
+}
+
+div.da_popupMenu li.selected a.selected {
+
+    color:#000000;
+
+}
+
+/* disalbed */
+
+div.da_popupMenu li.disabled {
+
+    cursor:default;
+
+}
+
+div.da_popupMenu li.disabled a.disabled {
+
+    color:#b9b9b9;
+    cursor:default;
+    
+}
+
+/* OrgMail Styles*/
+
+div.da_topPanel4uPanePulldownMenu {
+	background-color:#ffffff; 
+	border:solid 1px #ffffff; 
+	border-width:1px 1px 1px 1px; 
+} 
+div.da_topPanel4uPanePulldownMenu ul { 
+	border:solid 1px #9dbaca; 
+	border-width:0px 0px 0px 0px; 
+}
+div.da_topPanel4uPanePulldownMenu ul li.da_topPanel4uPanePulldownMenu{ 
+	margin:0px !important; 
+	padding:0px 0px 1px 0px !important; 
+	border-width:0px 0px 0px 0px; 
+	background:none; 
+}
+div.da_topPanel4uPanePulldownMenu ul li.da_topPanel4uPanePulldownMenu a { 
+	white-space:nowrap; 
+	text-align:left; 
+	border:solid 1px #ffffff; 
+	border-width:0px 1px 0px 1px; 
+	background-color: #ebf1f4; 
+	padding:4px 4px 4px 20px !important; 
+	display:block; 
+	zoom:normal; 
+} 
+div.da_topPanel4uPanePulldownMenu ul li.da_topPanel4uPanePulldownMenu a:hover { 
+	background-color:#c6d7e0; 
+}
+div.da_topPanel4uPanePulldownMenu ul li.disabled a{ 
+	color: #000000 !important; 
+	background-color:#c6d7e0; 
+	background-image:url('/images/ico_mail_ucheck.gif'); 
+	background-position:7px 7px; 
+	background-repeat:no-repeat; 
+}

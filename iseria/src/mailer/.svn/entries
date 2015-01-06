@@ -1,0 +1,111 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/mailer
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2014-10-16T11:37:47.510087Z
+2498
+xc_zhai
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+dialog
+dir
+
+autocomplete
+dir
+
+toppanel
+dir
+
+message
+dir
+
+mailer.js
+file
+
+
+
+
+2014-11-17T11:59:08.000000Z
+6cb0585e75057841923c10123b2192f6
+2014-04-13T08:31:57.005662Z
+2378
+jl_zhou
+has-props
+
+org_mail.js
+file
+
+
+
+
+2014-03-24T10:59:29.000000Z
+dbf8d91199973ebbe8f594fb512b56a1
+2011-10-19T03:05:51.293892Z
+2274
+gx_sun
+has-props
+
+search
+dir
+
+mboxrw.js
+file
+
+
+
+
+2014-03-24T10:59:29.000000Z
+969faa9b9c83af7cd41ef013ce77fec6
+2007-07-30T18:04:15.652355Z
+1468
+faiz_kazi
+
+folder
+dir
+
+mboxgrid
+dir
+
+Makefile
+file
+
+
+
+
+2014-03-24T10:59:29.000000Z
+1c9dc40a36f3b07d5c5bc3ac3e8f2ecc
+2010-04-07T04:19:03.859977Z
+2091
+kadowaki
+
+application.js
+file
+
+
+
+
+2014-10-17T03:10:48.000000Z
+8f1e769c04f3dcfc94a0b46aefc48a33
+2014-09-18T04:39:39.119058Z
+2474
+xc_zhai
+

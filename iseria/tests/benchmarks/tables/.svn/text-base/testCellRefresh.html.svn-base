@@ -1,0 +1,156 @@
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<script src="../../../src/common/DA/DA.js"></script>
+<script src="../../../src/common/tables/tables.js"></script>
+<script src="../../..//src/common/logging/logging.js"></script>
+<script src="./random_data.js"></script>
+<script src="./testCellRefresh.js"></script>
+<script>
+	function toggle( toggle_id , button ){
+
+		if ( button.checked == true ){
+			document.getElementById( toggle_id ).style.display = "inline";
+		}else{
+			document.getElementById( toggle_id ).style.display = "none";
+		}
+	}
+</script>
+
+<style>
+	table {
+		border-collapse : collapse;
+	}
+	td {
+		border : 1px solid gray;
+/*
+		font-size : 1px;
+*/
+	}
+
+	div.lipton  {
+/*
+		background-color : #ff8;
+		color  : #630;
+*/
+background-color: red;
+		font-family : "MS Pゴシック, monospace";
+		font-size : 9px;
+		padding : 2px 2px 2px 2px;
+	}
+
+	div.commands{
+		padding : 10px;
+		margin : 10px;
+		background-color : #599;
+		border: 3px groove gray;
+	}
+</style>
+</head>
+
+<body>
+<!--
+セルの内容を置き換えるjavascriptのベンチマーク。<br>
+方法として、innerHTMLを書き換えるか、テキストエレメントをappendChildで追加するか、選択可能。
+<pre>
+	td.innerHTML = "hoge";
+	--------
+	td.innerHTML = "";
+	td.appendChild(  document.createTextNode( "hoge" );
+</pre>
+-->
+
+<script>
+	var set_cols = 20;
+	var set_rows = 50;
+	var set_cols = 3;
+	var set_rows = 5;
+  var logger = new DA.logging.Logger();
+  var time_diff = DA.logging.time_diff; // function import
+
+</script>
+
+
+<ol id="ol_results">
+</ol>
+<div class="commands">
+<input type="button" value="change innerHTML on static table" onClick="change_innerHTML( 'static', 1 );" />
+<input type="button" value="change innerHTML on dynamic table" onClick="change_innerHTML( 'dynamic', 1 );" />
+<br>
+<input type="button" value="change TextNode on static table" onClick="append_TextNode( 'static', 2 );" />
+<input type="button" value="change TextNode on dynamic table" onClick="append_TextNode( 'dynamic', 2 );" />
+</div>
+
+<div class="commands">
+<table>
+<tr>
+	<th> Target Table </th>
+<td>
+	<input type="radio" name="target" value="static" id="target_static" checked> <label for="target_static">Static Table</label><br>
+</td>
+<td>
+	<input type="radio" name="target" value="dynamic" id="target_dynamic"> <label for="target_dynamic">Dynamic Table</label>
+</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<td>
+	&lt;td&gt;<br>
+	&nbsp; &nbsp; &lt;div
+	<span id="div_lipton" STYLE="display:none;"> CLASS="lipton" </span>
+	<span id="style_4a4" STYLE="display:none;"> STYLE="color:red;" </span>
+	&gt; hogehoge &lt;/div&gt;<br>
+	&lt;/td&gt;<br>
+</td>
+
+<td rowspan=2>
+<input type="button"  onClick='refresh_cell_nest(1);' value="innerHTML"><br>
+<input type="button"  onClick='refresh_cell_nest(2);' value="div.innerHTML"><br>
+<input type="button"  onClick='refresh_cell_nest(3);' value="div.textNode"><br>
+</td>
+</tr>
+<tr>
+<td>
+	<input type="checkbox" id="check_lipton" name="add_class" onChange="toggle('div_lipton', this);"> <label for="check_lipton"> add_classCLASS="lipton" ( BGCOLR is YELLOW 	)</label><br>
+	<input type="checkbox" id="check_4a4" name="add_style" onChange="toggle('style_4a4', this);"> <label for="check_4a4">STYLE="color:red;" </label> <br>
+</td>
+</tr>
+</table>
+</div>
+
+<hr>
+Below is STATIC TABLE;
+
+<div id="crystal">
+<table  id="static">
+<tbody>
+<tr><td>　 AあAあAあAあAあAあAあAあAあAあAあAあ</td><td>　ああああああああああああああ</td><td>　 AAAAAAAAAAAAAA</td></tr>
+<tr><td>　あああああああああああああああああ</td><td>　 AAAAAAAAAAAA</td><td> AAA</td></tr>
+<tr><td>ああああああああああああああああああ</td><td>ああああああああああ</td><td>あああああああああああああああああああああああああああああ</td></tr>
+<tr><td>　 あああああああああああああああああああああああああ</td><td>ああああああああああああああああああああ</td><td>　AAAAAAAAAAAAAAAAA</td></tr>
+<tr><td>　 AあAあAあAあAあAあAあAあAあAあAあAあ</td><td> あああああああああ</td><td> あああああああああああああ</td></tr>
+</tbody>
+</table>
+</div>
+
+
+<hr>
+BELOW is Created TABLE;
+<div id="geyser">
+</div>
+
+<script>
+	var table = DA.widget.makeATable(set_rows, set_cols, "", cell_data );
+	table.id = "dynamic";
+	document.getElementById("geyser").appendChild( table );
+</script>
+
+
+
+</body>
+</html>
+

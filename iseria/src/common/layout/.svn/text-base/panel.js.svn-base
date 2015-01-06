@@ -1,0 +1,165 @@
+/* $Id$ -- $HeadURL$ */
+/*for JSLINT undef checks*/
+/*extern $A $H DA YAHOO */
+
+
+
+
+// Begin a Private scope..
+(function() {
+
+var clrRdir = DA.vars ? (DA.vars.clrRdir) : null;
+
+DA.widget.Panel = function(id, config) {
+    // Dynamically set our StyleSheet based on the color-directory path
+    $H({
+        ".da_panel div.left-edge"             : "mf_l_c.gif",
+        ".da_panel div.right-edge"            : "mf_r.gif",
+        ".da_panel div.top-left"              : "mf_head_l.gif",
+        ".da_panel div.top-right-edge"        : "mf_head_r.gif",
+        ".da_panel div.bottom-edge-left"      : "mf_l_b.gif",
+        ".da_panel div.bottom-edge-right-tip" : "mf_r_b.gif",
+        ".da_panel div.top-edge-left"         : "mf_l_t.gif",
+        ".da_panel div.top-edge-right-tip"    : "mf_r_t.gif"
+    }).each(function(entry){
+        var selector = entry.key; 
+        var fileName = entry.value;
+        var rule = clrRdir ? 
+                "background-image: url(" + clrRdir + "/" + fileName + ")" :
+                "border : 1px solid #aaa";
+        DA.dom.createCSSRule(selector, rule);
+    });
+    this.config = Object.extend({
+            titleBar : true
+    }, config || {});
+    this.init(id);
+};
+
+
+function div(attrs) {
+    var el = document.createElement('div');
+    if (attrs) {
+        $H(attrs).each(function(attr){
+            var key = attr.key;
+            var val = attr.value;
+            if (key === 'class' || key === 'className') {
+                el.className = val;
+            } else {
+                el.setAttribute(key,val);
+            }
+        });
+    }
+    var children = [];
+    if (arguments.length === 2) {
+        // second arg could be an array
+        if (arguments[1].constructor === Array) {
+            children = arguments[1];
+        } else {
+            children.push(arguments[1]);
+        }
+    } else if (arguments.length > 2) {
+        children = $A(arguments);
+        children.shift();
+    }
+    if (children && children.each) {
+        children.each(function(child){
+            if ('string' === typeof child) {
+                el.appendChild(document.createTextNode(child));
+            } else if (child.tagName) { // is a DOM element?
+                el.appendChild(child);
+            }
+        });
+    }
+    return el;
+}
+
+var templates = {
+    panelBottom: div({className: 'bottom-edge-left'},
+                     div({className: 'bottom-edge-right-tip'}))
+};
+
+
+
+
+DA.widget.Panel.prototype = {
+
+
+
+    /**
+     * DOM Element of the title node. (applicaple if titleBar == true)
+     * @property titleNode 
+     * @type {Object} HTMLElement
+     */
+    titleNode: null,
+
+    /**
+     * DOM Element of the right-corner of the titleBar. (applicaple if titleBar == true)
+     * @property topRightNode
+     * @type {Object} HTMLElement
+     */
+    topRightNode: null,
+
+
+    init: function(panelId) {
+        var id = panelId ? panelId : "da_panel_" + (new Date()).getTime();
+        this.contentsNode = div({className: 'contents'});
+        var topNode;
+
+        if (this.config.titleBar) {
+            this.titleNode    = div({className: 'useful'});
+            this.topRightNode = this.titleNode.cloneNode(true);
+            topNode = div({className: 'top-left'}, 
+                          div({className: 'top-right-edge'}),
+                          div({className: 'top-right'}, this.topRightNode),
+                          this.titleNode);
+        } else {
+            topNode = div({className: 'top-edge-left'},
+                          div({className: 'top-edge-right-tip'}));
+        }
+
+        var bottom = templates.panelBottom.cloneNode(true);
+        var middle = div({className: 'middle'},
+                             div({className: 'left-edge'},
+                                 div({className: 'right-edge'}, this.contentsNode)));
+
+        this.node =  div({id: id, className: 'da_panel'},
+                         topNode, middle, bottom);
+        
+        this._topNode    = topNode;
+        this._middleNode = middle;
+        this._bottomNode = bottom;
+
+        YAHOO.util.Event.on(window, 'resize', this.fixHeights, this, true);
+
+    },
+
+
+    /**
+     * TENTATIVE METHOD
+     * Based on the panel's parent DOM node's height, recalculates the height of the
+     * middle node (the content, or the portion excluding the header/lower border)
+     * @method fixHeights
+     */
+    fixHeights: function () {
+        // Bug found during performance testing/profiling: 
+        // The correct DOM Element on which to base the total height for the
+        // percentage calculation should be the parentNode, not the node itself.
+        var referenceNode = this.node.parentNode ? this.node.parentNode : this.node;
+        var totalH = referenceNode.offsetHeight;
+        if (totalH <= 0) { // Avoid divide-by-zero errors
+            return;
+        }
+        var fixedHeights = this._topNode.offsetHeight + this._bottomNode.offsetHeight;
+        // FIXME: The IE fix which involves setting an onresize for a DIV, leads to
+        //        this method being called unnecessarily (onmousedown of threePane.hdd)
+        var remaining = (totalH - fixedHeights) - 1; // kindness (1px)
+        remaining = Math.max(remaining, 0); // Protect from negative values
+        this._middleNode.style.height = ((remaining/totalH)*100) + "%";
+    }
+
+
+
+
+};
+
+})();

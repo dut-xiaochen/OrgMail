@@ -1,0 +1,53 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/common/reset
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2008-07-10T00:46:39.477512Z
+1782
+kadowaki
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+reset.css
+file
+
+
+
+
+2013-03-05T01:14:59.000000Z
+611954a5eb81b37bb8b9271ad8c23400
+2007-06-13T02:17:47.471009Z
+1397
+faiz_kazi
+has-props
+
+reset-min.css
+file
+
+
+
+
+2013-03-05T01:14:59.000000Z
+d2e228c1c30e8f2784b4b2e1e7199ad5
+2008-07-10T00:46:39.477512Z
+1782
+kadowaki
+

@@ -1,0 +1,16 @@
+.da_autoCompleteContainer .yui-ac-content { 
+    position:absolute;
+    width:500px;
+    border:1px solid #404040;
+    height: 100%;
+    background:#fff;
+    overflow-y:auto; /*IE only?*/
+    overflow-x:hidden;
+    z-index:9050;
+} 
+.da_autoCompleteContainer .yui-ac-shadow {position:absolute;margin:.3em;width:100%;background:#a0a0a0;z-index:9049;} 
+.da_autoCompleteContainer ul {margin:0px;padding:5px 0;width:100%;} 
+.da_autoCompleteContainer li {margin:0px;padding:0 5px;cursor:default;white-space:nowrap;} 
+.da_autoCompleteContainer li.yui-ac-highlight {background:#aaaadd;} 
+.da_autoCompleteContainer li.yui-ac-prehighlight {background:#aaaaCC;} 
+

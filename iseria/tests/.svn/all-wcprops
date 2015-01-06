@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/iseria/!svn/ver/2483/insuite-ui/trunk/tests
+END
+test_textCalendar.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/iseria/!svn/ver/2291/insuite-ui/trunk/tests/test_textCalendar.html
+END
+test_TimeRangeSlider.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_TimeRangeSlider.html
+END
+test_DateSelector.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_DateSelector.html
+END
+test_JSON-IO.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/iseria/!svn/ver/1433/insuite-ui/trunk/tests/test_JSON-IO.html
+END
+test_TreeViewContextMenu.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_TreeViewContextMenu.html
+END
+test_FileUpload.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_FileUpload.html
+END
+test_GetText.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_GetText.html
+END
+test_LocalMailer.html
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_LocalMailer.html
+END
+test_Grid.html
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/iseria/!svn/ver/1397/insuite-ui/trunk/tests/test_Grid.html
+END
+test_TopPanelController.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_TopPanelController.html
+END
+test_SimpleViewPort.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/iseria/!svn/ver/1774/insuite-ui/trunk/tests/test_SimpleViewPort.html
+END
+test_JSON-RPC.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/iseria/!svn/ver/1496/insuite-ui/trunk/tests/test_JSON-RPC.html
+END
+test_MessageEditor.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/iseria/!svn/ver/2376/insuite-ui/trunk/tests/test_MessageEditor.html
+END
+test_PopupMenuController.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_PopupMenuController.html
+END
+test_AccountSelector.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_AccountSelector.html
+END
+test_FolderTreeController.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_FolderTreeController.html
+END
+test_Dialog.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_Dialog.html
+END
+test_Panel.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/iseria/!svn/ver/1398/insuite-ui/trunk/tests/test_Panel.html
+END
+test_Mailer3Pane.html
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/iseria/!svn/ver/2376/insuite-ui/trunk/tests/test_Mailer3Pane.html
+END
+test_MessageSearcher.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/iseria/!svn/ver/2483/insuite-ui/trunk/tests/test_MessageSearcher.html
+END
+test_ScheduleEdit.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_ScheduleEdit.html
+END
+test_GridWithResizableCols.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/iseria/!svn/ver/1398/insuite-ui/trunk/tests/test_GridWithResizableCols.html
+END
+test_MessageViewer.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/iseria/!svn/ver/2234/insuite-ui/trunk/tests/test_MessageViewer.html
+END
+test_TopTitleController.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_TopTitleController.html
+END
+test_Tables.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/iseria/!svn/ver/1398/insuite-ui/trunk/tests/test_Tables.html
+END
+test_ThreePaneWithPanels.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/iseria/!svn/ver/1398/insuite-ui/trunk/tests/test_ThreePaneWithPanels.html
+END
+test_Mboxgrid.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_Mboxgrid.html
+END
+test_NVPairSet.html
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/iseria/!svn/ver/1837/insuite-ui/trunk/tests/test_NVPairSet.html
+END
+test_ThreePane.html
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/iseria/!svn/ver/1398/insuite-ui/trunk/tests/test_ThreePane.html
+END

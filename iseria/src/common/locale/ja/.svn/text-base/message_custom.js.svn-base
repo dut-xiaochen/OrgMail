@@ -1,0 +1,11 @@
+/* $Id$ -- $HeadURL$ */
+/*for JSLINT undef checks*/
+/*extern DA */
+/**
+ * ja custom message.
+ */
+
+DA.locale.message.custom = {
+    // 'KEYWORD' : 'TEXT'
+};
+

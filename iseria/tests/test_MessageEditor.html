@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_MessageEditor.html 2376 2014-04-10 06:56:34Z jl_zhou $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_MessageEditor.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<TMPL_IF NAME="IE8_COMPATIBLE">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+</TMPL_IF>
+<title><TMPL_VAR NAME=HTML_TITLE></title>
+<style>
+/*Placeholder! DO NOT REMOVE. */
+</style>
+
+<TMPL_VAR NAME=HEAD_BEFORE>
+<TMPL_VAR NAME=RICHTEXT_HEAD>
+
+<!-- REPLACE_AREA_TO_PATCH_START -->
+<link rel="stylesheet" type="text/css" href="/js/richText/rte.css">
+<script type="text/javascript" src="/js/richText/richtext.js"></script>
+<script type="text/javascript" src="/js/richText/prototype.lite.js"></script>
+<script type="text/javascript" src="/js/richText/moo.fx.js"></script>
+<script type="text/javascript" src="/js/richText/moo.fx.pack.js"></script>
+<script type="text/javascript" src="/js/richText/common.js"></script>
+<script type="text/javascript" src="/js/richText/base.js"></script>
+<script type="text/javascript" src="/dui/richtext/editor/fckeditor.js"></script>
+
+
+<script src="/cgi-bin/ajax_mailer.cgi?richtext=1"></script>
+
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/connection/connection-debug.js"></script>
+<script src="/js/yui/v2.2.0a/container/container.js"></script>
+<script src="/js/yui/v2.2.0a/autocomplete/autocomplete-debug.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="../src/common/reset/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/logger/assets/logger.css"/>
+
+<!--DA-->
+<link href="../src/common/menu/menu.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/DA/DA.js"></script>
+<!--Locale-->
+<script src="../src/common/locale/message.js"></script>
+<script src="../src/common/locale/ja/message_core.js"></script>
+<script src="../src/common/locale/ja/message_custom.js"></script>
+<!--JSON/IO-->
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/io/fileupload-io.js"></script>
+
+<!-- Common -->
+<!-- TopPanel -->
+<script src="../src/common/menu/panel.js"></script>
+<script src="../src/common/event/event.js"></script>
+<!-- pulldown-menu needed -->
+<script src="../src/common/menu/popup.js"></script>
+<link href="../src/common/dialog/dialog.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/dialog/dialog.js"></script>
+
+<!-- Mailer -->
+<script src="../src/mailer/mailer.js"></script>
+<!-- TopPanel -->
+<script src="../src/mailer/toppanel/editor.js"></script>
+<link href="../src/mailer/toppanel/editor.css" rel="StyleSheet" type="text/css"/>
+<!-- Message -->
+<link href="../src/common/account/info.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/account/info.js"></script>
+<link href="../src/common/file/info.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/file/info.js"></script>
+<link href="../src/common/misc/nvpairs.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/misc/nvpairs.js"></script>
+<link href="../src/mailer/message/common.css" rel="StyleSheet" type="text/css"/>
+<link href="../src/mailer/message/editor.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/mailer/message/editor.js"></script>
+<!-- address inc search-->
+<script src="../src/mailer/autocomplete/autocomplete.js"></script>
+<link href="../src/mailer/autocomplete/autocomplete.css" rel="StyleSheet" type="text/css"/>
+
+<!-- REPLACE_AREA_TO_PATCH_END -->
+
+<TMPL_VAR NAME=HEAD_AFTER>
+
+<style>
+
+body,html {
+   width:100%;
+   height:100%;
+}
+
+/* container */
+div#top_panel_container {
+   width: 100%;
+   height: 51px;
+}
+div#message_container {
+   width: 100%;
+   float: left;
+}
+
+/* message-details */
+div#message_header_outer {
+}
+div#message_body_outer {
+}
+
+
+
+</style>
+<!-- REMOVE_AREA_TO_PATCH_START -->
+<style>
+/* Move the yui log so that it does not obscure our panel*/
+#yui-log {
+   right: 250px;
+}
+.yui-log .test {background-color:#7B0099;}
+</style>
+<!-- REMOVE_AREA_TO_PATCH_END -->
+
+</head>
+
+<body onLoad="init();" onBeforeUnload="finish();">
+
+<TMPL_VAR NAME=BODY_BEFORE>
+  <div id="top_panel_container" oncontextmenu="return false;">
+    <div id="top_panel" class="top_panel"></div>
+    <div id="panel_menu" class="panel_menu"></div>
+  </div>
+  
+  <div id="message_container">
+
+  <!-- mail header -->
+  <div id="message_header_outer">
+    <div id="message_header"></div>
+  </div>
+        
+  <!-- mail body -->
+  <div id="message_body_outer">
+    <div id="message_body_text"></div>
+    <div id="message_body_html"></div>
+    <div id="message_body_preview"></div>
+  </div>
+  
+  </div>
+ 
+  <script>
+  
+  function setupWindowResizeHandler() {
+      var hd    = YAHOO.util.Dom.get('message_header_outer');
+      var tp    = YAHOO.util.Dom.get('top_panel_container');
+      var text  = YAHOO.util.Dom.get('da_messageEditorItemText');
+      var html1 = YAHOO.util.Dom.get('message_body_html');
+      var html2 = window.__messageEditor.htmlContentsNode;
+      // var html3   = YAHOO.util.Dom.get('Buttons1_message_body_htmlContents');
+      // var html4   = YAHOO.util.Dom.get('Buttons2_message_body_htmlContents');
+      if(DA.vars.richText.type === 'fckeditor'){
+          var html5 = YAHOO.util.Dom.get('message_body_htmlContents___Frame');
+      }
+      var preview = window.__messageEditor.previewContentsNode;
+      var getViewportWidth  = YAHOO.util.Dom.getViewportWidth;
+      var getViewportHeight = YAHOO.util.Dom.getViewportHeight;
+      
+      function handleResize() {
+          // resize the body element
+          var junk = 0;
+              junk = (document.body.offsetHeight + 1);
+              junk = (DA.dom.height(tp) + 1);
+              junk = (DA.dom.height(hd) + 1);
+              // junk = (DA.dom.height(html3) + 1);
+              // junk = (DA.dom.height(html4) + 1);
+          
+          var win_x   = getViewportWidth();
+          var win_y   = getViewportHeight();
+          var tp_y    = DA.dom.height(tp);
+          var hd_y    = DA.dom.height(hd);
+          // var html3_y = DA.dom.height(html3);
+          // var html4_y = DA.dom.height(html4);
+          var x       = win_x;
+          var y       = win_y - tp_y - hd_y;
+          if(DA.vars.richText.type === 'fckeditor'){
+               html5.style.width  = "100%";
+               html5.style.height = "100%";
+          }
+          if (x > 100) {
+              text.style.width     = (x - 15) + 'px';
+              if(DA.vars.richText.type === 'fckeditor'){
+	              html1.style.width    = (x - 15) + 'px';
+	              html2.width          = (x - 15);
+	          }else{
+              	  html1.style.width    = (x - 5) + 'px';
+                  html2.width          = (x - 5);	              
+	          }
+              preview.style.width  = (x - 15) + 'px';
+          }
+          if (y > 100) {
+              text.style.height    = (y - 35) + 'px';
+              if(DA.vars.richText.type === 'fckeditor'){
+	              html1.style.height   = (y - 35) + 'px';
+	              html2.height         = (y - 35);
+	          }else{
+              	  html1.style.height   = (y - 85) + 'px';
+                  html2.height         = (y - 85);	          	  
+	          }
+              preview.style.height = (y - 35) + 'px';
+          }
+      }
+       if (BrowserDetect.browser === 'Explorer') {
+          var ac_to    = YAHOO.util.Dom.get('da_messageEditorItemToTextACContainer');
+          var ac_cc    = YAHOO.util.Dom.get('da_messageEditorItemCcTextACContainer');
+          var ac_bcc   = YAHOO.util.Dom.get('da_messageEditorItemBccTextACContainer');
+          ac_to.style.height  = "0";
+          ac_cc.style.height  = "0";
+          ac_bcc.style.height  = "0";
+      }     
+      handleResize();
+  
+      DA.windowController.onGentleResize.subscribe(handleResize);
+        
+      return handleResize;
+  }
+  
+  function init() {
+      var url   = '<!-- requestUrl -->';
+          url   = (url === '<!-- requestUrl -->') ? '' : url;
+      var query = (url === '<!-- requestUrl -->') ? DA.util.parseQuery() : DA.util.parseQuery(url);
+
+      <!-- REMOVE_AREA_TO_PATCH_START -->
+      DA.log = YAHOO.log; // Just use the YAHOO logger...
+      var logReader = new YAHOO.widget.LogReader(null /*create for us*/, 
+          { fontSize:"75%" }
+      ); 
+      logReader.collapse();
+      <!-- REMOVE_AREA_TO_PATCH_END -->
+
+      DA.init(true);
+      window.document.onkeydown = function(e){
+          var elementType;
+          if (BrowserDetect.browser === 'Explorer') {
+              e = window.event;
+              elementType = e.srcElement.type;
+          } else {
+              elementType = e.target.type;
+          }
+          if (elementType === 'text' || elementType === 'textarea' || elementType === 'file') {
+              return true;
+          }
+
+          if (e.keyCode === 8) {
+              return false;
+          }
+      };
+      
+      window.__topPanel = new DA.mailer.TopPanelController4Editor (
+          $("top_panel"), $("panel_menu"), query
+      );
+      
+      window.__messageEditorAAC = {};
+      window.__messageEditor = new DA.mailer.MessageEditor (
+          $('message_header'), $('message_body_text'), $('message_body_html'), $('message_body_preview'), {
+              onLoad: function() {
+                  window.__topPanel.setFunction(window.__messageEditor);
+
+                  ["to" , "cc", "bcc" ].each(function(target){
+                    var ucTarget = target.charAt(0).toUpperCase() + target.substr(1);
+                    var input     = "da_messageEditorItem" + ucTarget + "Text";
+                    var container = "da_messageEditorItem" + ucTarget + "TextACContainer";
+                    window.__messageEditorAAC[target] = new DA.mailer.widget.AddressAutoComplete(
+                            input, container, target,
+                            window.__messageEditor[target + "Controller"]);
+                    window.__messageEditorAAC[target].containerCollapseEvent.subscribe(function() {
+                        if (BrowserDetect.browser === 'Firefox') {
+                            window.__messageEditor.showTextArea();
+                        } else {
+                            window.__messageEditor.showRichTextSelectForm();
+                        }
+						window.__messageEditor._refreshGroupName();
+                        window.__messageEditor.doResize();
+                        return true;
+                    });
+                    window.__messageEditorAAC[target].containerExpandEvent.subscribe(function() {
+                        if (target !== 'to') {
+                            window.__messageEditorAAC.to._toggleContainer(false);
+                        }
+                        if (target !== 'cc') {
+                            window.__messageEditorAAC.cc._toggleContainer(false)
+                        }
+                        if (target !== 'bcc') {
+                            window.__messageEditorAAC.bcc._toggleContainer(false)
+                        }
+                        if (BrowserDetect.browser === 'Firefox') {
+                            window.__messageEditor.hideTextArea();
+                        } else {
+                            window.__messageEditor.hideRichTextSelectForm();
+                        }
+                        return true;
+                    });
+                  });
+                  
+                  window.__messageEditor.doResize = setupWindowResizeHandler();
+				  
+/* REMOVE_COMMENTOUT_TO_PATCH
+				  <TMPL_VAR NAME=ON_LOAD_JS>
+*/
+              },
+              onPreview: function() {
+                  DA.customEvent.fire('messageEditorOnPreviewBefore', this);
+                  window.__topPanel.panelMenu.hide('template');
+                  window.__topPanel.panelMenu.hide('preview');
+                  window.__topPanel.panelMenu.show('back');
+                  window.__messageEditor._hide_spellcheck_menu();
+                  DA.customEvent.fire('messageEditorOnPreviewAfter', this);
+              },
+              onForcedInterruption: function() {
+                  window.__topPanel.panelMenu.disable('transmit');
+                  window.__topPanel.panelMenu.disable('save');
+                  window.__topPanel.panelMenu.disable('template');
+                  window.__topPanel.panelMenu.disable('preview');
+                  window.__topPanel.panelMenu.disable('back');
+                  window.__topPanel.panelMenu.disable('print');
+              },
+              onBack: function() {
+                  DA.customEvent.fire('messageEditorOnBackBefore', this);
+                  window.__topPanel.panelMenu.hide('back');
+                  window.__topPanel.panelMenu.show('template');
+                  window.__topPanel.panelMenu.show('preview');
+                  window.__messageEditor._show_spellcheck_menu();
+                  DA.customEvent.fire('messageEditorOnBackAfter', this);
+              },
+              onEnable: function() {
+                  window.__topPanel.panelMenu.enable('transmit');
+                  window.__topPanel.panelMenu.enable('save');
+                  if (DA.vars.config.template && DA.vars.config.template.length > 0) {
+                      window.__topPanel.panelMenu.enable('template');
+                  }
+                  window.__topPanel.panelMenu.enable('preview');
+                  window.__topPanel.panelMenu.enable('print');
+                  var sels = document.getElementsByTagName('select');
+                  for (var i=0;i<sels.length;i++) { sels[i].disabled = "";}
+              }
+          }, null, url, { 
+              uploadCompleted: "ddAppletUploadCompleted",
+              beforeUpload: "ddAppletBeforeUpload",
+              afterUpload: "ddAppletAfterUpload",
+              afterMoreThanMax: "ddAppletAfterMoreThanMax"
+          }
+      );
+      
+      window.__messageEditor.edit(query);
+      
+  }
+
+  function ddAppletUploadCompleted() {
+      window.__messageEditor.enableUploadForm();
+      window.__topPanel.panelMenu.enable('transmit');
+      window.__topPanel.panelMenu.enable('save');
+      if (DA.vars.config.template && DA.vars.config.template.length > 0) {
+          window.__topPanel.panelMenu.enable('template');
+      }
+      window.__topPanel.panelMenu.enable('preview');
+      window.__topPanel.panelMenu.enable('print');
+  }
+  
+  function ddAppletBeforeUpload() {
+	  document.cookie = OrgMailer.vars.cookie_key + '\-org_mail=' + OrgMailer.vars.org_mail_gid;
+      window.__messageEditor.disableUploadForm();
+      window.__topPanel.panelMenu.disable('transmit');
+      window.__topPanel.panelMenu.disable('save');
+      window.__topPanel.panelMenu.disable('template');
+      window.__topPanel.panelMenu.disable('preview');
+      window.__topPanel.panelMenu.disable('print');
+  }
+  
+  function ddAppletAfterUpload(str) {
+      var o  = DA.util.parseJson(str);
+      var me = window.__messageEditor;
+
+      if (DA.mailer.util.checkResult(o)) {
+          me.add(o);
+          me.doResize();
+      }
+  }
+  
+  function ddAppletAfterMoreThanMax() {
+      window.__messageEditor.enableUploadForm();
+      window.__topPanel.panelMenu.enable('transmit');
+      window.__topPanel.panelMenu.enable('save');
+      if (DA.vars.config.template && DA.vars.config.template.length > 0) {
+          window.__topPanel.panelMenu.enable('template');
+      }
+      window.__topPanel.panelMenu.enable('preview');
+      window.__topPanel.panelMenu.enable('print');
+  }
+
+  function finish() {
+/* REMOVE_COMMENTOUT_TO_PATCH
+		<TMPL_VAR NAME=ON_BEFOREUNLOAD_JS> 
+*/
+  }
+  
+  </script>
+
+<TMPL_VAR NAME=BODY_AFTER>
+
+</body>
+
+</html>

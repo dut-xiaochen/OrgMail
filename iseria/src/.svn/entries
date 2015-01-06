@@ -1,0 +1,49 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2014-10-16T11:37:47.510087Z
+2498
+xc_zhai
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+SmartPhone
+dir
+
+dui
+dir
+
+common
+dir
+
+mailer
+dir
+
+base
+dir
+
+rssreader
+dir
+
+scheduler
+dir
+

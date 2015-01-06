@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/iseria/!svn/ver/2417/insuite-ui/trunk/src/common/calendar
+END
+calendar.css
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/iseria/!svn/ver/1610/insuite-ui/trunk/src/common/calendar/calendar.css
+END
+calendar.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/iseria/!svn/ver/2291/insuite-ui/trunk/src/common/calendar/calendar.js
+END
+timerangeslider.css
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/iseria/!svn/ver/1951/insuite-ui/trunk/src/common/calendar/timerangeslider.css
+END
+rangeselector.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/iseria/!svn/ver/2292/insuite-ui/trunk/src/common/calendar/rangeselector.js
+END
+textcalendar.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/iseria/!svn/ver/2291/insuite-ui/trunk/src/common/calendar/textcalendar.js
+END
+timerangeslider.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/iseria/!svn/ver/2141/insuite-ui/trunk/src/common/calendar/timerangeslider.js
+END
+selector.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/iseria/!svn/ver/2417/insuite-ui/trunk/src/common/calendar/selector.js
+END

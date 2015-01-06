@@ -1,0 +1,98 @@
+div.da_panel {
+    height              : 100%;
+}
+
+.da_panel div.left-edge {
+    background-repeat   : repeat-y;
+    background-position : left;
+    height              : 100%;
+    padding-left        : 8px;
+}
+
+.da_panel div.right-edge {
+    background-repeat   : repeat-y;
+    background-position : right;
+    height              : 100%;
+}
+
+.da_panel div.top-left {
+    background-repeat   : no-repeat;
+    background-position : top left;
+    height              : 33px;
+    overflow            : hidden;
+}
+
+.da_panel div.top-left .useful {
+    position            : relative;
+    top                 : 6px;
+    left                : 6px;
+    margin-right        : 10px;
+    overflow            : hidden;
+    white-space         : nowrap;
+}
+
+.da_panel div.top-right-edge {
+    float               : right;
+    background-repeat   : no-repeat;
+    background-position : top right;
+    width               : 8px;
+    height              : 100%;
+}
+
+.da_panel div.top-right {
+    float               : right;
+}
+
+.da_panel div.bottom-edge-left {
+    background-repeat   : no-repeat;
+    background-position : top left;
+    background-color    : #ddd;
+    height              : 5px;
+    overflow            : hidden;
+}
+
+.da_panel div.bottom-edge-right-tip {
+    float               : right;
+    width               : 5px;
+    background-repeat   : no-repeat;
+    background-position : top right;
+    height              : 100%;
+
+}
+
+.da_panel div.top-edge-left {
+    background-repeat   : no-repeat;
+    background-position : top left;
+    background-color    : #ddd;
+    height              : 5px;
+    overflow            : hidden;
+}
+.da_panel div.top-edge-right-tip {
+    float               : right;
+    background-repeat   : no-repeat;
+    background-position : top right;
+    height              : 100%;
+    width               : 5px;
+}
+
+.da_panel div.middle {
+}
+
+.da_panel div.contents  {
+    margin              : 0px;
+    padding-left        : 0px;
+    padding-right       : 2px;
+    height              : 100%;
+}
+
+div.tryabsd {
+    position            : absolute;
+    bottom              : 10px;
+    left                : 28px;
+}
+
+div.tryabsu {
+    position            : absolute;
+    top                 : 10px;
+    left                : 28px;
+}

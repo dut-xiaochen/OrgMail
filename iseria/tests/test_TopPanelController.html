@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_TopPanelController.html 1837 2009-02-16 08:35:00Z ya_song $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_TopPanelController.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/container/container_core.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/menu/menu.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="StyleSheet" type="text/css"/>
+<link href="../src/common/menu/menu.css" rel="StyleSheet" type="text/css"/>
+<link href="../src/mailer/toppanel/three-pane.css" rel="StyleSheet" type="text/css"/>
+
+<script src="/cgi-bin/ajax_mailer.cgi"></script>
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/event/event.js"></script>
+
+<script src="../src/common/logging/logging.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/locale/message.js"></script>
+<script src="../src/common/locale/ja/message_core.js"></script>
+<script src="../src/common/locale/ja/message_custom.js"></script>
+<script src="../src/mailer/mailer.js"></script>
+<script src="../src/common/menu/panel.js"></script>
+<script src="../src/common/menu/popup.js""></script>
+<script src="../src/mailer/toppanel/three-pane.js"></script>
+
+<style>
+</style>
+</head>
+
+<body>
+
+  <div id="topPanel"></div>
+  <div id="panelMenu"></div>
+
+
+  <button id="my_button">Make a Top Panel.</button>
+  
+  <script>
+  /*Event.observe(window, 'load', function(){
+      DA.log = YAHOO.log; // Just use the YAHOO logger...
+      new YAHOO.widget.LogReader(); 
+  });*/
+
+  Event.observe( $("my_button"), 'click', function() {
+      // MAIN
+      var tpc = new DA.mailer.TopPanelController43PANE (
+        $("topPanel"), $("panelMenu")
+      );
+  });
+  
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+.da_fileInformationListLine {
+}
+
+.da_fileInformationListIcon {
+}
+
+.da_fileInformationListName {
+}
+
+.da_fileInformationListEmail {
+}
+
+.da_fileInformationListTitle {
+}
+
+.da_fileInformationListDocument {
+	cursor: pointer;
+}
+
+.da_fileInformationListPopup {
+	cursor: pointer;
+}
+
+.da_fileInformationListDelete {
+	cursor: pointer;
+}
+
+.da_fileInformationListLink {
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+}
+
+.da_fileInformationListNoLink {
+	cursor: default;
+	color: black;
+	text-decoration: none;
+}
+
+.da_fileInformationListOverflowAuto {
+	overflow: auto;
+}

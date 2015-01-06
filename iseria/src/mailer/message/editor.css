@@ -1,0 +1,167 @@
+.da_messageEditorHeader {
+	border: 0px;
+	margin: 5px;
+	padding: 0px;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.da_messageEditorBody {
+	border: 0px;
+	margin: 5px;
+	padding: 0px;
+}
+
+.da_messageEditorBodyBoarder {
+	border:solid 1px #999999;
+	border-width:1px 1px 1px 1px;	
+}
+
+.da_messageEditorText {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.da_messageEditorHTML {
+	width: 100%;
+	overflow: auto;
+}
+
+.da_messageEditorPreview {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.da_messageEditorHeaderTable {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.da_messageEditorHeaderContents {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.da_messageEditorBodyContents {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	overflow: auto;
+	height: 96%;
+}
+
+.da_messageEditorHeaderTableTopLeft {
+	background: url(/images/mailwaku_br_tl.gif) 0px 0px no-repeat;
+	align: right;
+}
+
+.da_messageEditorHeaderTableTopRight {
+	background: url(/images/mailwaku_br_tr.gif) 0px 0px no-repeat;
+}
+
+.da_messageEditorHeaderTableMiddleLeft {
+	background: url(/images/mailwaku_br_l_bg.gif) 0px 0px repeat-y;
+	width: 2px;
+}
+
+.da_messageEditorHeaderTableMiddleCenter {
+	background: url(/images/mailwaku_br_bg.gif) 0px 0px;
+}
+
+.da_messageEditorHeaderTableMiddleRight {
+	background: url(/images/mailwaku_br_r_bg.gif) 0px 0px repeat-y;
+}
+
+.da_messageEditorHeaderTableBottomLeft {
+	background: url(/images/mailwaku_br_bl.gif) 0px 0px no-repeat;
+}
+
+.da_messageEditorHeaderTableBottomRight {
+	background: url(/images/mailwaku_br_br.gif) 0px 0px no-repeat;
+}
+
+.da_messageEditorItemAddressPopupMenu {
+
+    background-color:#fefff0;
+    border:solid 1px #a5a69c;
+    border-width:1px 1px 0px 1px;
+    
+}
+
+.da_messageEditorItemAddressPopupMenu ul {
+
+    border:solid 1px #a5a69c;
+    border-width:0px 0px 1px 0px;
+    
+}
+
+.da_messageEditorItemAddressPopupMenu li {
+ 
+    border:solid 1px #fefff0;
+	background-color: #e3e4d4;
+    border-width:1px 1px 0 1px;
+	
+}
+
+.da_messageEditorItemAddressPopupMenu li.selected {
+
+    background-color:#cbccbb;
+
+}
+
+.da_messageEditorItemOuter {
+	white-space: nowrap;
+	margin: 1px;
+}
+
+.da_messageEditorItemInner {
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.da_messageEditorItemText {
+	width: 400px;
+}
+
+.da_messageEditorItemFile {
+}
+
+.da_messageEditorPointer {
+	cursor: pointer;
+}
+
+.da_messageEditorHidden {
+	display: none;
+}
+
+.da_messageEditorSilver {
+	background-color: Silver;
+}
+
+.da_messageEditorGray {
+	background-color: Gray;
+}
+
+.da_messageEditorWarn {
+	color: red;
+}
+
+div.da_messageEditorAddressDummy {
+    position: absolute;
+    border: 0px;
+    filter: alpha(opacity=50);
+    opacity: 0.8;
+    z-index: 999;
+    cursor: pointer;
+    white-space: nowrap;
+    width: auto;
+    height: auto;
+}

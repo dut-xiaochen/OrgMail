@@ -1,0 +1,313 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+<head>
+<title>
+ Overview
+</title>
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script>
+function asd() {
+	
+		parent.document.title="json-io.js Overview";
+	
+}
+</script>
+</head>
+<body bgcolor="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> 	<font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top">
+<em>
+<b></b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<center>
+	
+	   <h2>json-io.js</h2>
+	
+</center>
+
+	
+
+
+<h4>Summary</h4>
+<p>
+	
+		No overview generated for 'json-io.js'<BR/><BR/>
+	
+</p>
+
+<hr>
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+        <pre class="sourceview"><span class="comment">/*
+Copyright (c) 2007, DreamArts. All rights reserved.
+TODO: message
+version: ??
+*/</span>
+<span class="reserved">if</span> (!DA || !DA.io) {
+    alert(<span class="literal">"ERROR: missing DA.js or io.js"</span>); <span class="comment">// TODO: formalize/cleanup</span>
+}
+
+
+<span class="comment">/**
+ * TODO: comments, docs
+ *
+ */</span>
+DA.io.JsonIO = <span class="reserved">function</span>(url, defaultParams){
+   
+    <span class="comment">// DA_DEBUG_START</span>
+    DA.log(<span class="literal">"Setup up JSON-IO, url: "</span> + url, <span class="literal">'info'</span>, <span class="literal">'json-io.js'</span>);
+    <span class="comment">// DA_DEBUG_END</span>
+    
+    <span class="reserved">this</span>.defaultParams = defaultParams;
+    <span class="reserved">this</span>.url = url;
+
+};
+
+DA.io.JsonIO.<span class="reserved">prototype</span> = {
+
+    defaultParams: undefined,
+
+    <span class="comment">/**
+     * This will be be called after the JSON response has been eval'ed
+     * to a Javascript object.
+     * Users of JsonIO must assign a function to callback to be able to
+     * do something with the object (eval'ed server response)
+     * <span class="attrib">@method</span> callback 
+     * <span class="attrib">@param</span> obj (Object) Eval'ed server JSON response
+     * <span class="attrib">@protected</span>
+     */</span>
+    callback: <span class="reserved">function</span>(obj) { <span class="comment">/* EMPTY FUNCTION */</span> },
+
+    <span class="comment">/**
+     * This will be called when an error has been encountered.
+     * Users of JsonIO must assign a function to errorHandler
+     * to be able to customize the error handling method.
+     * Default errorHandler just pops up a Javascript alert...
+     * <span class="attrib">@param</span> e (Object) error information in a hash 
+     * <span class="attrib">@method</span> errorHandler
+     * <span class="attrib">@protected</span>
+     */</span>
+    errorHandler: <span class="reserved">function</span>(e) { 
+        <span class="comment">/*
+        if (e &amp;&amp; e.type == 'INVALID_CONTENTTYPE') {
+            // TODO
+            //something.innerHTML = e.body; 
+        }
+        */</span>
+        var s = <span class="literal">""</span>;
+        <span class="reserved">for</span> (var p in e) {
+            try {
+                var v = e[p];
+                <span class="reserved">if</span> (typeof v == <span class="literal">'function'</span>) {continue}
+                s += (p + <span class="literal">":"</span> + v + <span class="literal">"\n"</span>);
+                <span class="comment">// TODO: truncate (or rather, quite appending to) s</span>
+                <span class="comment">//       when the string gets too long...</span>
+            } catch (er) {  }
+        }
+        DA.log(<span class="literal">"JSON-IO ERROR:"</span> + e, <span class="literal">"json-io.js"</span>);
+        alert(<span class="literal">"ERROR: JSON-IO: response was: "</span> + s);
+    },
+
+    <span class="comment">/**
+     * Perform the IO.
+     * Optionally, use the parameters passed (a HASH of name-value pairs)
+     * <span class="attrib">@method</span> execute
+     * <span class="attrib">@param</span> params (HASH) optional hash of name-value pairs
+     */</span>
+    execute: <span class="reserved">function</span>( params ) {
+
+        var me = <span class="reserved">this</span>;
+
+        var _params = undefined;
+
+        <span class="reserved">if</span> (<span class="reserved">this</span>.defaultParams) {
+            _params = {};
+            Object.extend(_params, <span class="reserved">this</span>.defaultParams);
+        } 
+        
+        <span class="reserved">if</span> (params) {
+            _params = _params ? _params : {};
+            Object.extend(_params, params);
+        }
+
+        var _url = _params ? 
+                   (<span class="reserved">this</span>.url + <span class="literal">'?'</span> + $H(_params).toQueryString()) <span class="comment">// params added</span>
+                   <span class="comment">// FIXME: PERFORMANCE -- $H(..), toQueryString might be slow</span>
+                   : <span class="reserved">this</span>.url;                                    <span class="comment">// no params</span>
+        
+        <span class="comment">// DA_DEBUG_START</span>
+        var __start_time = new Date();
+        <span class="comment">// DA_DEBUG_END</span>
+
+        <span class="comment">// TODO: Verify if Ajax.Request is fast enough. (seems synchy)</span>
+        new Ajax.Request( _url, {
+            method: <span class="literal">'get'</span>,
+            onSuccess: <span class="reserved">function</span>(transport) { <span class="comment">/* assuming transport will never be null*/</span>
+                <span class="comment">// DA_DEBUG_START</span>
+                var __io_done_time = new Date();
+                <span class="comment">// DA_DEBUG_END</span>
+                var contentType = transport.getResponseHeader(<span class="literal">'Content-Type'</span>);
+                <span class="reserved">if</span> (!contentType || !contentType.match(/(js|json|javascript)/i)) {
+                    me.errorHandler({
+                        type:        <span class="literal">"INVALID_CONTENTTYPE"</span>,
+                        contentType: contentType,
+                        body:        transport.responseText
+                    });
+                    <span class="reserved">return</span>;
+                } 
+                <span class="comment">// all OK</span>
+                var jsonText = transport.responseText;
+                try {
+                    var obj = eval(<span class="literal">'('</span>+ jsonText +<span class="literal">')'</span>);
+                    <span class="comment">// DA_DEBUG_START</span>
+                    var __eval_done_time = new Date();
+                    <span class="comment">// DA_DEBUG_END</span>
+                    <span class="reserved">if</span> (<span class="literal">'object'</span> == typeof obj) {
+                        me.callback(obj);
+                        <span class="comment">// DA_DEBUG_START</span>
+                        DA.log(<span class="literal">"JSON-IO:"</span> + 
+                               <span class="literal">" IO: "</span> + DA.util.time_diff(__start_time, __io_done_time) + <span class="literal">"ms,"</span> + 
+                               <span class="literal">" EVAL: "</span> + DA.util.time_diff(__io_done_time, __eval_done_time) + <span class="literal">"ms,"</span> +
+                               <span class="literal">" callback: "</span> + DA.util.time_diff(__eval_done_time) + <span class="literal">"ms."</span>,
+                               <span class="literal">"time"</span>, <span class="literal">"json-io.js"</span>);
+                        <span class="comment">// DA_DEBUG_END</span>
+                    } <span class="reserved">else</span> {
+                        me.errorHandler({
+                            type:        <span class="literal">"NOT_AN_OBJECT"</span>,
+                            contentType: contentType,
+                            body:        transport.responseText
+                        });
+                    }
+                } catch(e) {
+                    me.errorHandler(e);
+                }
+            },
+            onFailure: <span class="reserved">function</span>(err) {
+                <span class="comment">// DA_DEBUG_START</span>
+                DA.log(<span class="literal">"JSON-IO failure: "</span> + err + <span class="literal">": "</span> + 
+                       <span class="literal">"time: "</span> + DA.util.time_diff(__start_time) + <span class="literal">"ms"</span>, 
+                       <span class="literal">"error"</span>, <span class="literal">"json-io.js"</span>);
+                <span class="comment">// DA_DEBUG_END</span>
+                me.errorHandler(err);
+            }
+        
+        });
+        
+    }
+
+};
+
+</pre>
+	<hr>
+
+
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> <font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top"><em>
+<b></b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<font size="-1">
+
+</font>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Mon Mar 26 12:11:18 2007</div>
+</body>
+</html>

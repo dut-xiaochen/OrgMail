@@ -1,0 +1,7 @@
+.da_nonProportionalFont,
+.da_nonProportionalFont div,
+.da_nonProportionalFont pre,
+.da_nonProportionalFont textarea {
+	font-family: MS Gothic,Osaka,Arial,sans-serif;
+	font-size: 100%;
+}

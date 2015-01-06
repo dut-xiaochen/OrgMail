@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id$ $HeadURL$ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Mbox Grid Unit Test</title>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/rico/v1.1.2/rico-livegrid.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/reset/reset.css"/>
+
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/logger/assets/logger.css"/>
+
+<script src="/cgi-bin/ajax_mailer.cgi"></script>
+<script src="../src/common/DA/DA.js"></script>
+<!--Locale-->
+<script src="../src/common/locale/message.js"></script>
+<script src="../src/common/locale/ja/message_core.js"></script>
+<script src="../src/common/locale/ja/message_custom.js"></script>
+<script src="../src/common/tables/tables.js"></script>
+<link href="../src/common/tables/tables.css" rel="stylesheet" type="text/css"/>
+<script src="../src/common/logging/logging.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/grid/virtual-scroll.js"></script>
+<link href="../src/common/grid/virtual-scroll.css" rel="stylesheet" type="text/css"/>
+<script src="../src/common/menu/popup.js"></script>
+<link href="../src/common/menu/menu.css" rel="stylesheet" type="text/css"/>
+<script src="../src/common/event/event.js"></script>
+<script src="../src/mailer/mailer.js"></script>
+<script src="../src/mailer/folder/folder-tree.js"></script><!-- FIXME: Must not require this! -->
+<script src="../src/mailer/mboxgrid/mboxgrid.js"></script>
+<link href="../src/mailer/mboxgrid/mboxgrid.css" rel="stylesheet" type="text/css"/>
+
+<script src="../src/common/layout/panel.js"></script>
+<link rel="StyleSheet" href="../src/common/layout/panel.css" type="text/css">
+
+
+<style>
+div.thecontainer {
+  padding: 40px;
+  width:   60%;
+  height:  75%;
+}
+div.gridcontainer {
+  margin:  10px;
+  width:   100%;
+  height:  100%;
+  border:  1px dotted gray;
+}
+.yui-log .test {background-color:#7B0099;}
+
+</style>
+</head>
+
+<body style="width:100%;height:760px;">
+
+  <select id="folderid1">
+  </select>
+  <button id="generate_grid">Generate a grid.</button>
+  <button id="btn_chfolder">Change Folder (by ID)</button>
+  <ol class='optimizations'>
+     <li>Tiny-Scroll (Row-shuffling): <input id='toggle_scroll_optimization' type="checkbox" checked='true'/> (row-shuffle optimization for tiny scroll distances (1-2 rows))</li>
+     <li>Fake-Table <input id='use_fake_table' type="checkbox" value='false'/> </li>
+     <li>Render in a Panel <input id='with_panel' type="checkbox" value='false'/> </li>
+  </ol>
+  
+  <script>
+  Event.observe($('toggle_scroll_optimization'), 'click', function(){
+      if (window.__mboxGrid) {
+          window.__mboxGrid.liveGrid.options.optimizeTinyScroll = $('toggle_scroll_optimization').checked;
+      }
+  });
+  </script>
+  
+  <div class="thecontainer">
+    <button id="btn_mk_taller">taller</button>
+    <button id="btn_mk_shorter">shorter</button>
+    <div id="generated_grid_container" class="gridcontainer" oncontextmenu="return false;"></div>
+    <div id='status' style='border:1px solid gray;width:100%;margin:10px;'></div>
+  </div>
+  
+  <script>
+
+
+  Event.observe(window, 'load', function(){
+      var selectbox = $("folderid1");
+      var io = new DA.io.JsonIO("/cgi-bin/ajx_ma_dir.cgi");
+      var folder_num;
+      io.callback = function(o){
+          for (folder_num = 0; folder_num < o.folder_list.length; folder_num++)
+          {
+              var opt = document.createElement("option");
+              opt.value = o.folder_list[folder_num].fid;
+              opt.innerHTML = o.folder_list[folder_num].name;
+              selectbox.appendChild(opt);
+          }
+      };
+      io.execute();
+      
+      DA.log = YAHOO.log; // Just use the YAHOO logger...
+      var l = new YAHOO.widget.LogReader(null, {fontSize:"75%", verboseOutput: false}); 
+      l.collapse();
+      document.body.style.height = YAHOO.util.Dom.getViewportHeight() + "px";
+      
+
+      
+  });
+  
+
+  Event.observe($('generate_grid'), 'click', function () {
+
+      var statusDiv = $('status');
+
+      function sayLoading() {
+          statusDiv.innerHTML = 'Loading...';
+      }
+
+      function sayLoadDone() {
+          statusDiv.innerHTML = 'Ready.';
+      }
+    
+
+      var btn = $('generate_grid');
+      var container = $('generated_grid_container');
+      window.__mboxGrid = new DA.mailer.widget.MboxGrid({
+          containerElem: container,
+          onSelect: function(mail, isDoubleClick) {
+              DA.log((isDoubleClick ? "[DOUBLE]" : "[SINGLE]") + 
+                    "folderId:" + mail.fid + ",uid:" + mail.uid, "test", "Click|DblClick");
+          },
+          isUsingFakeTable: $('use_fake_table').checked,
+          onLoading: sayLoading,
+          onLoadDone: sayLoadDone
+      });
+
+      
+      function makePanel(name, node, opts) {
+          var n = node;
+          var p = new DA.widget.Panel(null, opts);
+          DA.dom.moveAllChildren(n, p.contentsNode);
+          n.appendChild(p.node);
+          window.__panels[name] = p;
+          p.fixHeights();
+      }
+
+      window.__panels = {};
+
+      if ($("with_panel").checked === true) {
+          makePanel( "mboxgridtest", container );
+      }
+     
+      function handler1(type,args){
+          DA.log(type + $H(args[0]).inspect())
+      }
+      DA.mailer.Events.onMessagesFlagging.subscribe(handler1);
+      DA.mailer.Events.onMessagesFlagged.subscribe(handler1);
+      DA.mailer.Events.onMessagesFlagFailure.subscribe(handler1);
+      
+      $('use_fake_table').disabled = true;
+      $('with_panel').disabled = true;
+      btn.disabled = true;
+      $('btn_chfolder').disabled = false;
+
+      $('btn_mk_taller').onclick = function(){
+         var ph = window.__mboxGrid.liveGrid.viewPort.visibleHeight();
+         ph += __mboxGrid.liveGrid.sort.headerTable.offsetHeight;
+         window.__mboxGrid.resizeHeight(ph+10);
+      }
+      $('btn_mk_shorter').onclick = function(){
+         var ph = window.__mboxGrid.liveGrid.viewPort.visibleHeight();
+         ph += __mboxGrid.liveGrid.sort.headerTable.offsetHeight;
+         window.__mboxGrid.resizeHeight(ph-10);
+      }
+  });
+
+  Event.observe($('btn_chfolder'), 'click', function(){
+      var id = $('folderid1').value;
+      window.__mboxGrid.changeFolder(id);
+  });
+
+  </script>
+ 
+
+
+</body>
+
+</html>
+

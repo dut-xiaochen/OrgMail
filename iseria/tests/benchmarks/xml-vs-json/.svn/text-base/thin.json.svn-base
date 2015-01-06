@@ -1,0 +1,296 @@
+[
+["25305","708","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:57:28","2007/02/13-09:57:33",	"r23735 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow/archive"
+],
+["25304","709","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-18:53:18","2007/02/13-09:53:24",	"r23734 - AddOn/Autobacs/trunk/src/com/autobacs/absx/noticestatus"
+],
+["25303","710","3","1","0","0","0","1","0","0","13","svn-commit@moe.dreamarts.co.jp","tis1@dreamarts.co.jp","2007/02/13-18:52:52","2007/02/13-09:52:59",	"r23733 - in AddOn/QDX/trunk/module/template/portal/document: businesslink demand enactment examination faq manual provisional review stipulation"
+],
+["25302","711","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-18:52:42","2007/02/13-09:52:50",	"[trac-HIBIKI] #1302: [本108]配信先状況一覧のCSV出力においてタイトルと内容がずれている"
+],
+["25301","712","3","0","0","0","0","0","1","0","13","irie@tis.co.jp","小谷 明美 ","2007/02/13-18:51:11","2007/02/13-09:51:18",	"[QDP:03268] 【SmartDB定期リリース】20070213版をリリースしました"
+],
+["25300","713","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","a_kodani@dreamarts.co.jp","2007/02/13-18:46:35","2007/02/13-09:46:40",	"r23732 - AddOn/QDX/hibikibin/webapp/WEB-INF/lib"
+],
+["25299","714","3","1","0","0","0","1","0","0","86","svn-commit@moe.dreamarts.co.jp","a_kodani@dreamarts.co.jp","2007/02/13-18:46:24","2007/02/13-09:46:35",	"r23731 - in AddOn/QDX/trunk/documents/javadoc: iseqdx-javadoc iseqdx-javadoc/jp/co/dreamarts /insuite/qdx iseqdx-javadoc/jp/co/dreamarts/insuite/qdx/category iseqdx-javadoc/jp/co/dreamarts/insuite /qdx/netit iseqdx-javadoc/jp/co/dreamarts/insuite/qdx/search iseqdx-javadoc/jp/co/dreamarts/insuite/qdx /version iseqdx-javadoc/jp/co/dreamarts/insuite/qdx/workflow smartcab-javadoc smartcab-javadoc/jp/co /dreamarts/insuite/smartcab smartcab-javadoc/jp/co/dreamarts/insuite/smartcab/impl smartdb-javadoc smartdb-javadoc /jp/co/dreamarts/insuite/brd smartdb-javadoc/jp/co/dreamarts/insuite/brd/binder smartdb-javadoc/jp/co /dreamarts/insuite/brd/button smartdb-javadoc/jp/co/dreamarts/insuite/brd/service" ],
+["25298","715","3","1","0","0","0","1","0","0","6","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:45:04","2007/02/13-09:45:10",	"r23730 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/telephonebook"
+],
+["25297","716","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:44:39","2007/02/13-09:44:44",	"r23729 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup /publicrange"
+],
+["25296","717","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:44:13","2007/02/13-09:44:17",	"r23728 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup /destination"
+],
+["25295","718","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:43:47","2007/02/13-09:43:53",	"r23727 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /wholecompany"
+],
+["25294","719","3","1","0","0","0","1","0","0","7","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:43:23","2007/02/13-09:43:35",	"r23726 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /department"
+],
+["25293","720","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-18:43:21","2007/02/13-09:43:28",	"Verify 1301585"
+],
+["25292","721","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:42:47","2007/02/13-09:42:55",	"r23725 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /department/category"
+],
+["25291","722","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:42:27","2007/02/13-09:42:31",	"r23724 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /branchoffice"
+],
+["25290","723","3","1","0","0","0","1","0","0","7","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:41:51","2007/02/13-09:42:00",	"r23723 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /documentreceptionbox"
+],
+["25289","724","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:41:18","2007/02/13-09:41:25",	"r23722 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /documentreceptionbox/category"
+],
+["25288","725","3","1","0","0","0","1","0","0","6","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:40:52","2007/02/13-09:41:00",	"r23721 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /archive"
+],
+["25287","726","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:40:24","2007/02/13-09:40:29",	"r23720 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /archive/category"
+],
+["25286","727","3","0","0","0","0","0","0","0","3","TIS 稲富様 ","寺田 渉 ","2007/02/13-18:38:33","2007/02/13-09:38:48",	"[QDP:03267] QA_全社ポータル_20070213（DA）.xls を更新"
+],
+["25285","728","3","1","0","0","0","0","0","0","3","TIS 西川様 ","寺田 渉 ","2007/02/13-18:27:55","2007/02/13-09:28:10",	"[QDP:03266] ワークフロー_文書管理 を更新"
+],
+["25284","729","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-18:27:39","2007/02/13-09:27:46",	"[trac-HIBIKI] #1096: [店81]　「担当者」＋「店長秘」で送信できないようにする。"
+],
+["25283","730","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-18:26:26","2007/02/13-09:26:32",	"[trac-HIBIKI] #1226: [本56]ソートすると、過去５日分配信の表示がすべての期間での抽出に変更になる。"
+],
+["25282","731","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-18:22:35","2007/02/13-09:22:41",	"Verify 1301589"
+],
+["25281","732","3","1","0","0","0","0","0","0","3","TIS 春岡様 ","寺田 渉 ","2007/02/13-18:18:23","2007/02/13-09:18:41",	"[QDP:03265] ワークフロー_Office WOP-0006 を更新"
+],
+["25280","733","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-18:17:41","2007/02/13-09:17:48",	"r23719 - AddOn/Autobacs/trunk/src/com/autobacs/absx/category"
+],
+["25279","734","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-18:17:00","2007/02/13-09:17:08",	"r23718 - AddOn/Autobacs/trunk/src/com/autobacs/resources"
+],
+["25278","735","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-18:16:48","2007/02/13-09:16:54",	"r23717 - Stores/trunk/src/jp/co/dreamarts/insuite/resources"
+],
+["25277","736","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-18:11:20","2007/02/13-09:11:28",	"r23716 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/documentworkflow/documentreceptionbox "
+],
+["25276","737","3","0","0","0","0","0","1","0","9","ファイズさん ","武藤孝司 ","2007/02/13-18:08:20","2007/02/13-09:08:21",	"【コクヨ】バグDB「1301609」について  ファイズさん"
+],
+["25275","738","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-18:08:10","2007/02/13-09:08:18",	"Fixed 1301600"
+],
+["25274","739","3","1","0","0","0","1","0","0","3","e-support@dreamarts.co.jp","Hiroyuki_Nagai@kokuyo.co.jp","2007/02/13-18:00:47","2007/02/13-09:04:18",	"【コクヨ】スマートページの利用状況リスト出力について"
+],
+["25273","740","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","bai@dreamarts.co.jp","2007/02/13-18:03:00","2007/02/13-09:03:09",	"r23715 - SmartCabinet/trunk/src/jp/co/dreamarts/insuite/smartcab/impl"
+],
+["25272","741","3","1","0","0","0","1","0","0","5","e-support@dreamarts.co.jp","kennaka@tis.co.jp","2007/02/13-18:00:55","2007/02/13-08:59:17",	"本番稼動後のエラーログ出力内容問合せ"
+],
+["25271","742","3","1","0","0","0","1","0","0","5","Kentaro_Nakajima@kokuyo.co.jp","高橋 直樹 ","2007/02/13-17:57:50","2007/02/13-08:57:52",	"Re: 【仕様確認】SmartDBについて：【通知定義：Velocityマクロ】"
+],
+["25270","743","3","1","0","0","0","1","1","0","20","M. Sato","ikuo takahashi","2007/02/13-17:51:46","2007/02/13-08:51:56",	"Re: ログイン後のエラー画面について"
+],
+["25269","744","3","0","0","0","0","0","0","0","3","m_kanaya@dreamarts.co.jp","haruoka ","2007/02/13-17:48:06","2007/02/13-08:48:15",	"[QDP:03264] 【オフィス支援】　追加変更_Office_20070213（TIS）.xls　更新しました。"
+],
+["25268","745","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:43:02","2007/02/13-08:43:10",	"r23714 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/telephonebook "
+],
+["25267","746","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:42:25","2007/02/13-08:42:30",	"r23713 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup /publicrange"
+],
+["25266","747","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:41:58","2007/02/13-08:42:05",	"r23712 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup /destination"
+],
+["25265","748","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:41:26","2007/02/13-08:41:31",	"r23711 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /wholecompany"
+],
+["25264","749","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:40:59","2007/02/13-08:41:03",	"r23710 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /department"
+],
+["25263","750","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:40:31","2007/02/13-08:40:35",	"r23709 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /branchoffice"
+],
+["25262","751","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:39:54","2007/02/13-08:40:04",	"r23708 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /documentreceptionbox"
+],
+["25261","752","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-17:39:30","2007/02/13-08:39:36",	"r23707 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /archive"
+],
+["25260","753","3","1","0","0","0","1","0","0","9","ikuo190@gmail.com","M.Sato ","2007/02/13-17:29:13","2007/02/13-08:29:15",	"Re: ログイン後のエラー画面について"
+],
+["25259","754","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis1@dreamarts.co.jp","2007/02/13-17:25:13","2007/02/13-08:25:19",	"r23706 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/document/stipulation"
+],
+["25258","755","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","tis1@dreamarts.co.jp","2007/02/13-17:24:30","2007/02/13-08:24:37",	"r23705 - AddOn/QDX/trunk/module/template/portal/document/enactment"
+],
+["25257","756","3","0","0","0","0","0","1","0","851","Kiyoshi Ohama ","mmaru@tis.co.jp","2007/02/13-17:17:19","2007/02/13-08:23:01",	"[QDP:03263] 【ＱＡ、不具合報告、機能追加変更依頼】(2007/02/09現在）状況報告"
+],
+["25256","757","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","t_taguchi@dreamarts.co.jp","2007/02/13-17:16:15","2007/02/13-08:16:22",	"r23704 - AddOn/QDX/branches/DA/module/template/brd/EditFilter/items/custom"
+],
+["25255","758","3","1","0","0","0","1","0","0","16","svn-commit@moe.dreamarts.co.jp","tis1@dreamarts.co.jp","2007/02/13-17:15:46","2007/02/13-08:15:59",	"r23703 - in AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/informationsharing: branchoffice department"
+],
+["25254","759","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","zhang@dreamarts.co.jp","2007/02/13-17:14:51","2007/02/13-08:14:55",	"r23702 - Sales/trunk/module/template/erm/AccountInfoCSV"
+],
+["25253","760","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-17:10:39","2007/02/13-08:10:50",	"Fixed 1301594"
+],
+["25252","761","3","1","0","0","0","1","0","0","6","svn-commit@moe.dreamarts.co.jp","yz_xu@dreamarts.co.jp","2007/02/13-17:04:51","2007/02/13-08:04:55",	"r23701 - in SmartCabinet/trunk/src/jp/co/dreamarts/insuite: resources smartcab/account"
+],
+["25251","762","3","1","0","0","0","1","1","0","15","M. Sato","ikuo takahashi","2007/02/13-17:00:43","2007/02/13-08:00:51",	"Re: ログイン後のエラー画面について"
+],
+["25250","763","3","0","0","0","0","0","0","0","3","西田　利誌 ","金谷　正伸 ","2007/02/13-16:58:48","2007/02/13-07:58:55",	"[QDP:03262] 【オフィス支援】　不具合等_Office_20070213（DA）.xls　更新しました。"
+],
+["25249","764","3","1","0","0","0","1","0","0","7","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-16:58:24","2007/02/13-07:58:28",	"r23700 - in Stores/trunk/src/jp/co/dreamarts/insuite/scp: action form"
+],
+["25248","765","3","1","0","0","0","1","0","0","7","ikuo190@gmail.com","M.Sato ","2007/02/13-16:56:38","2007/02/13-07:56:40",	"Re: ログイン後のエラー画面について"
+],
+["25247","766","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-16:55:18","2007/02/13-07:55:26",	"r23699 - SmartDB/trunk/module/template/brd/FormDesign"
+],
+["25246","767","3","1","0","0","0","1","0","0","4","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-16:41:08","2007/02/13-07:41:22",	"Fixed 105000638"
+],
+["25245","768","3","1","0","0","0","1","0","0","5","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-16:41:07","2007/02/13-07:41:16",	"Reopen 1301350"
+],
+["25244","769","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-16:39:48","2007/02/13-07:39:53",	"r23698 - AddOn/Autobacs/trunk/module/template/absx/SetStoreIP"
+],
+["25243","770","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-16:35:57","2007/02/13-07:36:02",	"Verify 1301587"
+],
+["25242","771","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-16:33:49","2007/02/13-07:33:59",	"[trac-HIBIKI] #1238: [本68]無関係な文字列で検索してもヒットしてしまう。"
+],
+["25241","772","3","1","0","0","0","1","0","0","7","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-16:33:48","2007/02/13-07:33:53",	"r23697 - Stores/trunk/src/jp/co/dreamarts/insuite/scp/action"
+],
+["25240","773","3","0","0","0","0","0","0","0","11","Mami Nishikawa ","寺田 渉 ","2007/02/13-16:33:20","2007/02/13-07:33:37",	"[QDP:03261] Re: WN0010 『決定⇒(公開)のみのフェーズ対応』 リリース"
+],
+["25239","774","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-16:28:09","2007/02/13-07:28:16",	"Fixed 1301589"
+],
+["25238","775","3","1","0","0","0","0","0","0","4","Faiz Kazi ","Mari Nishio ","2007/02/13-16:25:55","2007/02/13-07:25:53",	"[Fwd: Re: Questions for Zapatec library]"
+],
+["25237","776","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","bai@dreamarts.co.jp","2007/02/13-16:25:24","2007/02/13-07:25:29",	"r23696 - SmartCabinet/trunk/module/template/smartcab/EditForm/items"
+],
+["25236","777","3","1","0","0","0","1","0","0","4","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-16:24:42","2007/02/13-07:24:48",	"Reopen 1301454"
+],
+["25235","778","3","1","0","0","0","1","0","0","4","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-16:24:25","2007/02/13-07:24:30",	"Fixed 105000613"
+],
+["25234","779","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-16:18:24","2007/02/13-07:18:31",	"r23695 - SmartCabinet/trunk/module/template/smartcab/EditForm/items"
+],
+["25233","780","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-16:10:10","2007/02/13-07:10:17",	"[trac-HIBIKI] #1274: [本88]配信先＝０の通知も登録が可能。エラーにしてもらえないでしょうか？"
+],
+["25232","781","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-16:10:08","2007/02/13-07:10:13",	"r23694 - Stores/trunk/src/jp/co/dreamarts/insuite/scp/action"
+],
+["25231","782","3","1","0","0","0","1","0","0","2","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-16:09:01","2007/02/13-07:09:06",	"B 1301589"
+],
+["25230","783","3","1","0","0","0","1","1","0","12","M. Sato","ikuo takahashi","2007/02/13-16:04:51","2007/02/13-07:04:59",	"Re: ログイン後のエラー画面について"
+],
+["25229","784","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-15:54:49","2007/02/13-06:54:56",	"Defer 1301538"
+],
+["25228","785","3","1","0","0","0","1","0","0","4","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-15:51:59","2007/02/13-06:52:05",	"Fixed 1301578"
+],
+["25227","786","3","1","0","0","0","1","0","0","5","高橋 直樹 ","松尾多香紀 ","2007/02/13-15:51:17","2007/02/13-06:51:24",	"[ESC:00389] Re: 【破棄依頼】 【ESC依頼】【調査状況の確認】Sm@rtDB 文書内のログイン不能ユーザの表示仕様"
+],
+["25226","787","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-15:50:04","2007/02/13-06:50:25",	"[trac-HIBIKI] #1301: [本103]「スタッフ全員宛」+「担当者」の指定が可能で、実際に登録すると「スタッフ全員宛」のみの指定で登録できてしまう "
+],
+["25225","788","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-15:50:03","2007/02/13-06:50:12",	"r23693 - AddOn/Autobacs/trunk/module/template/absx/Notice"
+],
+["25224","789","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-15:49:56","2007/02/13-06:50:10",	"[trac-HIBIKI] #1301: [本103]「スタッフ全員宛」+「担当者」の指定が可能で、実際に登録すると「スタッフ全員宛」のみの指定で登録できてしまう"
+],
+["25223","790","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-15:49:54","2007/02/13-06:50:03",	"r23692 - Stores/trunk/module/template/scp/Notice"
+],
+["25222","791","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-15:49:09","2007/02/13-06:49:15",	"[trac-HIBIKI] #1301: [本103]「スタッフ全員宛」+「担当者」の指定が可能で、実際に登録すると「スタッフ全員宛」のみの指定で登録できてしまう "
+],
+["25221","792","3","1","0","0","0","1","0","0","3","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-15:48:08","2007/02/13-06:48:13",	"Spec 105000639"
+],
+["25220","793","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","t_mutou@dreamarts.co.jp","2007/02/13-15:47:16","2007/02/13-06:47:20",	"r23691 - in SmartDB/trunk: module/template/brd/DocumentList src/jp/co/dreamarts/insuite/brd /action"
+],
+["25219","794","3","1","0","0","0","1","0","0","10","svn-commit@moe.dreamarts.co.jp","tis1@dreamarts.co.jp","2007/02/13-15:46:27","2007/02/13-06:46:33",	"r23690 - in AddOn/QDX/trunk/src/jp/co/kyuden/portal/document: enactment provisional"
+],
+["25218","795","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","t_mutou@dreamarts.co.jp","2007/02/13-15:46:08","2007/02/13-06:46:13",	"r23689 - in SmartDB/trunk/module/template/brd: DocumentList TopPage"
+],
+["25217","796","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","tis1@dreamarts.co.jp","2007/02/13-15:45:37","2007/02/13-06:45:40",	"r23688 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/document/common"
+],
+["25216","797","3","1","0","0","0","1","0","0","6","svn-commit@moe.dreamarts.co.jp","tis1@dreamarts.co.jp","2007/02/13-15:45:09","2007/02/13-06:45:16",	"r23687 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/document/stipulation"
+],
+["25215","798","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-15:40:11","2007/02/13-06:40:17",	"Fixed 1301608"
+],
+["25214","799","3","1","0","0","0","1","0","0","3","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-15:38:56","2007/02/13-06:39:01",	"Spec 105000639"
+],
+["25213","800","3","1","0","0","0","1","0","0","13","svn-commit@moe.dreamarts.co.jp","sakurai@dreamarts.co.jp","2007/02/13-15:37:38","2007/02/13-06:37:48",	"r23686 - Sales/trunk/src/jp/co/dreamarts/insuite/crm/customer/impl"
+],
+["25212","801","3","1","0","0","0","1","0","0","9","svn-commit@moe.dreamarts.co.jp","bai@dreamarts.co.jp","2007/02/13-15:37:29","2007/02/13-06:37:35",	"r23685 - SmartCabinet/trunk/module/template/smartcab/EditForm/items"
+],
+["25211","802","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-15:37:01","2007/02/13-06:37:05",	"Verify 1301599"
+],
+["25210","803","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-15:32:06","2007/02/13-06:32:12",	"B 1301609"
+],
+["25209","804","3","1","0","0","0","1","0","0","2","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-15:25:00","2007/02/13-06:25:05",	"A 105000639"
+],
+["25208","805","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","faiz_kazi@dreamarts.co.jp","2007/02/13-15:20:51","2007/02/13-06:20:56",	"r23684 - AddOn/QDX/branches/DA/media/js/qdx"
+],
+["25207","806","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-15:20:19","2007/02/13-06:20:27",	"[trac-HIBIKI] #1238: [本68]無関係な文字列で検索してもヒットしてしまう。"
+],
+["25206","807","3","1","0","0","0","1","0","0","12","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-15:20:18","2007/02/13-06:20:23",	"r23683 - in Stores/trunk: module/template/scp/NoticeList src/jp/co/dreamarts/insuite/resources src/jp/co/dreamarts/insuite/scp/action src/jp/co/dreamarts/insuite/scp/form"
+],
+["25205","808","3","0","0","0","0","0","0","0","3","石川様 ","金谷　正伸 ","2007/02/13-15:19:06","2007/02/13-06:19:14",	"[QDP:03260] 【文書管理】　不具合等_文書管理_20070213（DA).xls　更新しました。"
+],
+["25204","809","3","0","0","0","0","0","0","0","2","Kiyoshi Ohama ","丸山　毅 ","2007/02/13-15:17:06","2007/02/13-06:17:08",	"Re: 17時から20分～30分くらいお時間いただけますか？"
+],
+["25203","810","3","0","0","0","0","0","0","0","2","丸山　毅 ","Kiyoshi Ohama ","2007/02/13-15:10:02","2007/02/13-06:09:59",	"Re: 17時から20分～30分くらいお時間いただけますか？"
+],
+["25202","811","3","0","0","0","0","0","0","0","2","Kiyoshi Ohama ","丸山　毅 ","2007/02/13-15:07:53","2007/02/13-06:07:55",	"17時から20分～30分くらいお時間いただけますか？"
+],
+["25201","812","3","1","0","0","0","1","0","0","4","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-15:02:39","2007/02/13-06:02:47",	"Verify 105000593"
+],
+["25200","813","3","1","0","0","0","1","0","0","4","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-15:01:38","2007/02/13-06:01:43",	"Verify 1301575"
+],
+["25199","814","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-14:58:28","2007/02/13-05:58:44",	"[trac-HIBIKI] #1229: [本59]宛先でソートしても正しく整列しない。"
+],
+["25198","815","3","1","0","0","0","1","0","0","7","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-14:58:27","2007/02/13-05:58:34",	"r23682 - in Stores/trunk/src/jp/co/dreamarts/insuite/scp: action sorter"
+],
+["25197","816","3","0","0","0","0","0","0","0","3","春岡様 ","金谷　正伸 ","2007/02/13-14:57:52","2007/02/13-05:58:01",	"[QDP:03259] 【オフィス支援】　追加変更_Office_20070213（DA）.xls　更新しました。"
+],
+["25196","817","3","1","0","0","0","1","0","0","11","svn-commit@moe.dreamarts.co.jp","sakurai@dreamarts.co.jp","2007/02/13-14:50:23","2007/02/13-05:50:27",	"r23681 - in Sales/trunk/src/jp/co/dreamarts/insuite: crm/customer/impl resources sales/model /impl"
+],
+["25195","818","3","1","0","0","0","1","0","0","3","svn-commit@moe.dreamarts.co.jp","sakurai@dreamarts.co.jp","2007/02/13-14:48:13","2007/02/13-05:48:17",	"r23680 - Framework/branches/1_0_x/src/jp/co/dreamarts/insuite/common/session"
+],
+["25194","819","3","1","0","0","0","1","0","0","5","ikuo190@gmail.com","M.Sato ","2007/02/13-14:40:54","2007/02/13-05:40:56",	"Re: ログイン後のエラー画面について"
+],
+["25193","820","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-14:23:04","2007/02/13-05:23:09",	"[trac-HIBIKI] #1300: 「店舗」お知らせより表示された通知詳細画面で「戻る」リックをクリックしても戻らない"
+],
+["25192","821","3","0","0","0","0","0","0","0","3","金谷　正伸 ","ishikawa","2007/02/13-14:20:35","2007/02/13-05:21:06",	"[QDP:03258] 【文書管理】追加変更_文書管理_20070213（TIS）.xls更新しました"
+],
+["25191","822","3","0","0","0","0","0","0","0","4","丸山　毅 ","Kiyoshi Ohama ","2007/02/13-14:19:28","2007/02/13-05:19:27",	"Re: [Fwd: （送付）第26回 定例進捗会議 議事録の送付]"
+],
+["25190","823","3","1","0","0","0","1","0","0","6","svn-commit@moe.dreamarts.co.jp","a_kodani@dreamarts.co.jp","2007/02/13-14:16:34","2007/02/13-05:16:44",	"r23679 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/qdx/smartcab/linkItem"
+],
+["25189","824","3","1","0","0","0","1","0","0","9","svn-commit@moe.dreamarts.co.jp","a_kodani@dreamarts.co.jp","2007/02/13-14:13:50","2007/02/13-05:13:56",	"r23678 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/qdx/smartcab/linkItem"
+],
+["25188","825","3","1","0","0","0","1","0","0","11","svn-commit@moe.dreamarts.co.jp","a_kodani@dreamarts.co.jp","2007/02/13-14:11:35","2007/02/13-05:11:40",	"r23677 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/brd/action"
+],
+["25187","826","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-14:00:26","2007/02/13-05:00:36",	"Fixed 1301601"
+],
+["25186","827","3","1","0","0","0","1","0","0","4","松尾 多香紀 ","高橋 直樹 ","2007/02/13-13:59:21","2007/02/13-04:59:33",	"[ESC:00388] 【破棄依頼】 【ESC依頼】【調査状況の確認】Sm@rtDB 文書内のログイン不能ユーザの表示仕様"
+],
+["25185","828","3","1","0","0","0","0","0","0","7","Faiz Kazi ","Mari Nishio ","2007/02/13-13:58:58","2007/02/13-04:58:56",	"Re: AjaxMailer development"
+],
+["25184","829","3","1","0","0","0","1","0","0","4","","trac-HIBIKI","2007/02/13-13:58:34","2007/02/13-04:58:41",	"[trac-HIBIKI] #1295: [本101]回答文書抽出の回答データCSV出力内容について。"
+],
+["25183","830","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:58:22","2007/02/13-04:58:25",	"r23676 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/telephonebook "
+],
+["25182","831","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:57:52","2007/02/13-04:57:57",	"r23675 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup /publicrange"
+],
+["25181","832","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:57:26","2007/02/13-04:57:35",	"r23674 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup /destination"
+],
+["25180","833","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:56:58","2007/02/13-04:57:04",	"r23673 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /wholecompany"
+],
+["25179","834","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:56:30","2007/02/13-04:56:43",	"r23672 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /department"
+],
+["25178","835","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:56:01","2007/02/13-04:56:08",	"r23671 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /department/category"
+],
+["25177","836","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","t_mutou@dreamarts.co.jp","2007/02/13-13:55:42","2007/02/13-04:55:48",	"r23670 - SmartDB/trunk/module/template/brd/DocumentList"
+],
+["25176","837","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:55:32","2007/02/13-04:55:37",	"r23669 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing /branchoffice"
+],
+["25175","838","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:54:57","2007/02/13-04:55:02",	"r23668 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /documentreceptionbox"
+],
+["25174","839","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:54:17","2007/02/13-04:54:25",	"r23667 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /documentreceptionbox/category"
+],
+["25173","840","3","0","0","0","0","0","0","0","3","西田　利誌 ","金谷　正伸 ","2007/02/13-13:53:23","2007/02/13-04:53:32",	"[QDP:03257] 【オフィス支援】　QA_Office_20070213（DA).xls　更新しました。"
+],
+["25172","841","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-13:53:13","2007/02/13-04:53:21",	"Fixed 1301605"
+],
+["25171","842","3","1","0","0","0","1","0","0","2","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-13:52:50","2007/02/13-04:52:54",	"A 105000637"
+],
+["25170","843","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:52:09","2007/02/13-04:52:18",	"r23666 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /archive"
+],
+["25169","844","3","1","0","0","0","1","0","0","5","svn-commit@moe.dreamarts.co.jp","tis2@dreamarts.co.jp","2007/02/13-13:51:21","2007/02/13-04:51:27",	"r23665 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow /archive/category"
+],
+["25168","845","3","0","0","0","0","0","0","0","4","Kiyoshi Ohama ","丸山　毅 ","2007/02/13-13:48:01","2007/02/13-04:48:02",	"Re: [Fwd: （送付）第26回 定例進捗会議 議事録の送付]"
+],
+["25167","846","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","ishida@dreamarts.co.jp","2007/02/13-13:45:56","2007/02/13-04:46:00",	"r23664 - Stores/trunk/src/jp/co/dreamarts/insuite/scp/action"
+],
+["25166","847","3","1","0","0","0","1","1","0","96","Kentaro_Nakajima@kokuyo.co.jp","高橋 直樹 ","2007/02/13-13:44:46","2007/02/13-04:44:49",	"Re: 追検証：Re: SmartDBについて:【アカウント選択部品に選んでいる「廃止ユーザー」の動き】"
+],
+["25165","848","3","1","0","0","0","1","0","0","8","e-support-esc","松尾多香紀 ","2007/02/13-13:38:36","2007/02/13-04:38:49",	"[ESC:00387] Re: 【ESC依頼】Sm@rtDB フィルタ定義の検索キーワードの仕様"
+],
+["25164","849","3","0","0","0","0","0","0","0","3","m_kanaya@dreamarts.co.jp","北村　誠 ","2007/02/13-13:38:19","2007/02/13-04:38:27",	"[QDP:03256] 【文書管理】ワークフロー_文書管理.xls 更新しました"
+],
+["25163","850","3","1","0","0","0","1","0","0","4","svn-commit@moe.dreamarts.co.jp","n_niiya@dreamarts.co.jp","2007/02/13-13:33:09","2007/02/13-04:33:14",	"r23663 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/brd/action"
+],
+["25162","851","3","1","0","0","0","0","0","0","2","金谷 正伸 ","Kiyoshi Ohama ","2007/02/13-13:28:07","2007/02/13-04:28:05",	"本日の定例は中止します。"
+],
+["25161","852","3","1","0","0","0","1","0","0","3","hibiki_bugs@moe.dreamarts.co.jp","hibiki_bugs@moe.dreamarts.co.jp","2007/02/13-13:26:23","2007/02/13-04:26:32",	"Reopen 1301578"
+],
+["25160","853","3","0","0","0","0","0","0","0","3","w_terada@dreamarts.co.jp","稲富　哲憲 ","2007/02/13-13:25:48","2007/02/13-04:25:47",	"[QDP:03255] ＱＡ全社ポータル「Z-134」について"
+],
+["25159","854","3","1","0","0","0","1","0","0","3","kyuden_sdb@moe.dreamarts.co.jp","kyuden_sdb@moe.dreamarts.co.jp","2007/02/13-13:24:18","2007/02/13-04:24:23",	"Fixed 105000507"
+]
+]
+

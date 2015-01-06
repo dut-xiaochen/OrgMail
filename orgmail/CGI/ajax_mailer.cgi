@@ -181,7 +181,7 @@ window.onload = function(){
 
 window.onclick = function(e){
 	OrgMailer.vars.is_blured = false;
-	if (DA.mailer.util.getOperationFlag() === '' || DA.mailer.util.getOperationFlag() === OrgMailer.vars.org_mail_gid.toString()){
+	if (DA.mailer.util.getOperationFlag() === '' || DA.mailer.util.getOperationFlag().indexOf(OrgMailer.vars.org_mail_gid.toString() >=0)){
 		document.cookie = '$session->{sid}\-org_mail=$org_mail_gid;';
 	}
 }
@@ -189,9 +189,9 @@ window.onclick = function(e){
 window.onfocus = function(){
 	OrgMailer.vars.is_blured = false;
 	if (DA.mailer.util.getOperationFlag() !== ''){
-		if ((!OrgMailer.vars.is_mail_box) || 
+		if ((!OrgMailer.vars.is_mail_box && DA.mailer.util.getOperationFlag().indexOf(OrgMailer.vars.org_mail_gid.toString()) < 0) || 
 			(OrgMailer.vars.is_mail_box && (DA.mailer.util.getOperationWarnedFlag().indexOf(OrgMailer.vars.org_mail_gid.toString() + window.name) < 0) && 
-			DA.mailer.util.getOperationFlag() !== OrgMailer.vars.org_mail_gid.toString())){
+			DA.mailer.util.getOperationFlag().indexOf(OrgMailer.vars.org_mail_gid.toString()) < 0)){
 			if (OrgMailer.vars.operation_warned === 0){
 				OrgMailer.vars.operation_warned = 1;
 				DA.mailer.util.setOperationWarnedFlag(OrgMailer.vars.org_mail_gid.toString() + window.name);
@@ -214,7 +214,7 @@ window.onblur = function(e) {
         var w = document.body.clientWidth;
         var h = document.body.clientHeight;
         if (x >= 0 && x <= w && y >= 0 && y <= h) {
-            window.focus();
+
         } else {
 			OrgMailer.vars.is_blured = true;
 		}

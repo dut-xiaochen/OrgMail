@@ -1,0 +1,15 @@
+div.da_columnResizeLineInActive {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  display: none;
+  overflow: hidden;
+}
+div.da_columnResizeLineActive {
+  width: 1px;
+  background-color : #1111CC;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  cursor: w-resize;
+}

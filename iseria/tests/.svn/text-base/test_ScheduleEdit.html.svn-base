@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_Dialog.html 1398 2007-06-13 02:39:35Z faiz_kazi $ $HeadURL: http://yuki.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_Dialog.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link href="/js/extjs/v2.1/resources/css/core.css" rel="StyleSheet" type="text/css"/>
+<link href="/js/extjs/v2.1/resources/css/combo.css" rel="StyleSheet" type="text/css"/>
+<link href="/js/extjs/v2.1/resources/css/form.css" rel="StyleSheet" type="text/css"/>
+<!-- -Adding Firebug-lite: For console.log support in IE, Opera, etc -->
+<script src="/js/firebuglite/v1.0-b1/firebug.js"></script>
+<script src="/js/prototype/v1.6.0_rc1/prototype-comp.js"></script>
+<script src="/js/extjs/v2.1/adapter/ext/ext-base.js"></script>
+<script src="/js/extjs/v2.1/ext-all-debug.js"></script>
+<link href="/js/extjs/v2.1/resources/css/qtips.css" rel="StyleSheet" type="text/css"/>
+<link href="/js/extjs/v2.1/resources/css/resizable.css" rel="StyleSheet" type="text/css"/>
+
+<script>
+window.userConfig = {
+    imgRdir: '/images',
+    cgiRdir: '/cgi-bin'
+};
+</script>
+<link href="../src/common/calendar/calendar.css" rel="StyleSheet" type="text/css"/>
+<link href="../src/common/reset/reset-min.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/dui/DANumberPulldown.js"></script>
+<script src="../src/common/DA/DA-min.js"></script>
+<script src="../src/common/calendar/calendar.js"></script>
+<script src="../src/common/calendar/selector.js"></script>
+<script src="../src/common/calendar/rangeselector.js"></script>
+
+<!-- time range slider... -->
+<script src="/js/extjs/v2.1/ux/Ext.ux.SlideZone.js"></script>
+<link rel="stylesheet" type="text/css" href="../src/common/calendar/timerangeslider.css" />
+<script src="../src/common/calendar/timerangeslider.js"></script>
+
+<!-- Slider will be rendered in a SimpleViewPort. -->
+<script src="../src/common/layout/simpleviewport.js"></script>
+<link href="../src/common/layout/simpleviewport.css" rel="StyleSheet" type="text/css"/>
+
+<!-- Scheduler tests.-->
+<script src="../src/scheduler/scheduler.js"></script>
+<script src="../src/scheduler/pages/edit.js"></script>
+
+<style>
+div#slider-container {
+    border: 1px solid blue;
+    overflow: hidden;
+}
+</style>
+</head>
+
+<body>
+
+  <h3><i>Firebug is available. Please press F12 to see the console.</i></h3>
+
+  <table border=1 width="50%">
+  <tr>
+  <td align="right">A_test_label_that_is_long.
+  </td>
+  <td>
+  <table id="dateSelector">
+  <tr>
+    <td>
+      <select id=s_yy name=s_yy>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+      </select>
+    </td>
+    <td>
+      <select id=s_mm name=s_mm>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+    </td>
+    <td>
+      <select id=s_dd name=s_dd>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+    </td>
+    <td id=s_cal>&nbsp;</td>
+    <td>
+      <select id=s_hh name=s_hh>
+        <option value="--">--</option>
+        <option value="00">00</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+      </select>
+    </td>
+    <td>
+      <select id=s_mi name=s_mi>
+        <option value="--">--</option>
+        <option value="00">00</option>
+        <option value="05">05</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+        <option value="30">30</option>
+        <option value="35">35</option>
+        <option value="40">40</option>
+        <option value="45">45</option>
+        <option value="50">50</option>
+        <option value="55">55</option>
+      </select>
+    </td>
+    <td>
+      <!--
+      <select id=s_ss name=s_ss>
+      </select>
+      -->
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <select id=e_yy name=e_yy>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+      </select>
+    </td>
+    <td>
+      <select id=e_mm name=e_mm>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+    </td>
+    <td>
+      <select id=e_dd name=e_dd>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+    </td>
+    <td id=e_cal>&nbsp;</td>
+    <td>
+      <select id=e_hh name=e_hh>
+        <option value="--">--</option>
+        <option value="00">00</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+      </select>
+    </td>
+    <td>
+      <select id=e_mi name=e_mi>
+        <option value="--">--</option>
+        <option value="00">00</option>
+        <option value="05">05</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+        <option value="30">30</option>
+        <option value="35">35</option>
+        <option value="40">40</option>
+        <option value="45">45</option>
+        <option value="50">50</option>
+        <option value="55">55</option>
+      </select>
+    </td>
+    <td>
+      <!--
+      <select id=e_ss name=e_ss>
+      </select>
+      -->
+    </td>
+  </tr>
+  </table>
+
+  </td>
+  </tr>
+
+  <tr>
+  <td colspan="2">
+  <div id="slider-container">
+    The slider will be rendered here.
+  </div>
+  </td>
+  </tr>
+  </table><!-- end the outer table -->
+
+  <div id="buttons">
+  <button id="start">Start</button><br>
+  </button>
+  
+  <script>
+    
+    Ext.onReady(function() {
+
+    // Setup some default values for the select boxes.
+    var today = new Date();
+    $('s_yy').setValue(today.getFullYear());
+    $('s_mm').setValue(today.getMonth()+1);
+    $('s_dd').setValue(today.getDate());
+    $('e_yy').setValue(today.getFullYear());
+    $('e_mm').setValue(today.getMonth()+1);
+    $('e_dd').setValue(today.getDate());
+
+    Event.observe( "start", 'click', function() {
+        this.disabled = true;
+        // MAIN
+        DA.scheduler.EditPage.init({
+            rangeSelector: {
+                startConfig: {
+                    yyNode: $('s_yy'),
+                    mmNode: $('s_mm'),
+                    ddNode: $('s_dd'),
+                    hhNode: $('s_hh'),
+                    miNode: $('s_mi'),
+                    // ssNode: $('s_ss'),
+                    calNode: $('s_cal')
+                },
+                endConfig: {
+                    yyNode: $('e_yy'),
+                    mmNode: $('e_mm'),
+                    ddNode: $('e_dd'),
+                    hhNode: $('e_hh'),
+                    miNode: $('e_mi'),
+                    // ssNode: $('e_ss'),
+                    calNode: $('e_cal')
+                },
+                commonConfig: {
+                    yearList: [2005,2006,2007,2008,2009,2010],
+                    holidayList: {
+                        2008: {
+                            6: {
+                                25: 1,
+                                26: 1,
+                                27: 1
+                            }
+                        }
+                    },
+                    lang: 'ja',
+                    firstDay: 3
+                }
+            },
+            timeRangeSlider: {
+                renderTo:   'slider-container'
+            }
+        });
+ 
+        // DA_DEBUG_START
+        DA.scheduler.EditPage.dateRangeSelector.on('change', function(start, end) {
+            console.log("start: "+Object.toJSON(start));
+            console.log("end: "+Object.toJSON(end));
+        });
+        // DA_DEBUG_END
+
+        /*********************************************************************/
+        // test code: enable/disable date
+        new Ext.Button({
+            renderTo: Ext.get('buttons'),
+            text: "dateRangeSelector.disableTime()",
+            _dateDisabled: false,
+            handler: function () {
+                if (this._dateDisabled) {
+                    DA.scheduler.EditPage.dateRangeSelector.enableTime();
+                    this._dateDisabled = false;
+                    this.setText("dateRangeSelector.disableTime()");
+                } else {
+                    DA.scheduler.EditPage.dateRangeSelector.disableTime();
+                    this._dateDisabled = true;
+                    this.setText("dateRangeSelector.enableTime()");
+                }
+            }
+        });
+        /*********************************************************************/
+
+        new Ext.Button({
+            renderTo: Ext.get('buttons'),
+            text: "Set Today's Date",
+            handler: function () {
+                var d = new Date();
+                DA.scheduler.EditPage.dateRangeSelector.setValue(
+                    { yy: d.getFullYear(), mm: d.getMonth()+1, dd: d.getDate() },
+                    { yy: d.getFullYear(), mm: d.getMonth()+1, dd: d.getDate() },
+                    true /* fire events*/
+                );
+            }
+        });
+
+        new Ext.Button({
+            renderTo: Ext.get('buttons'),
+            text: "Clear Time",
+            handler: function () {
+                DA.scheduler.EditPage.clearTime();
+            }
+        });
+
+    });
+
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>

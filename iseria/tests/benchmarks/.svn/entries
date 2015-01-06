@@ -1,0 +1,34 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/benchmarks
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2007-08-29T02:28:26.789341Z
+1495
+faiz_kazi
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+tables
+dir
+
+xml-vs-json
+dir
+

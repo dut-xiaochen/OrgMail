@@ -1,0 +1,229 @@
+<html>
+<head>
+<!-- -Adding Firebug-lite: For console.log support in IE, Opera, etc -->
+<script src="/js/firebuglite/v1.0-b1/firebug.js"></script>
+
+<script src="/js/extjs/v2.1/adapter/ext/ext-base.js"></script>
+<script src="/js/extjs/v2.1/ext-all-debug.js"></script>
+<script src="/js/extjs/v2.1/ux/Ext.ux.SlideZone.js"></script>
+
+<script src="../src/common/DA/DA-min.js"></script>
+<script src="../src/common/calendar/timerangeslider.js"></script>
+
+<link href="/js/extjs/v2.1/resources/css/ext-all.css" rel="StyleSheet" type="text/css"/>
+
+<link rel="stylesheet" type="text/css" href="../src/common/calendar/timerangeslider.css" />
+<script>
+
+var Example = {
+    sliders: [],
+    panelTemplate: new Ext.Template(
+        '<div>',
+            '<div class="slide"></div>',
+            '<div class="report">',
+                'Slider Width: <span class="slider-width">??</span>px',
+            '</div>',
+        '</div>'
+    ).compile()
+
+};
+Ext.onReady(function () {
+    
+    var selectNode = Ext.DomQuery.selectNode;
+
+    Ext.get('btn').on('click', function (btn) {
+        
+        var scale = Ext.get('scale').getValue() || 1;
+        var resolution = Ext.get('resolution').getValue(true) || 1;
+        var minValue = Ext.get('select-from').getValue(true) || 0;
+        var maxValue = Ext.get('select-to').getValue(true) || 24;
+
+        var panel = new Ext.Panel({
+            title:  ('Slider: scale='+scale+'; resolution='+resolution+
+                     '; MIN='+minValue+'; MAX='+maxValue),
+            collapsible: true,
+            renderTo: 'mysliders',
+            html: Example.panelTemplate.applyTemplate()
+        });
+
+        var tfFrom = new Ext.form.TimeField({
+            renderTo:   panel.body.dom,
+            increment:  resolution,
+            fieldLabel: 'from',
+            minValue:   minValue+':00',
+            maxValue:   maxValue+':00'
+        });
+
+        var tfTo = new Ext.form.TimeField({
+            renderTo:   panel.body.dom,
+            increment:  resolution,
+            fieldLabel: 'to'
+        });
+
+
+        /***********************************************************
+         * MAIN Object
+         */
+        var trs = new DA.widget.TimeRangeSlider({
+            renderTo:   selectNode('div.slide',panel.body.dom),
+            scale:      scale,
+            resolution: resolution,
+            minValue:   minValue,
+            maxValue:   maxValue,
+            orientation: Ext.get('orientation').getValue(),
+            initialMin: -22,
+            initialMax: -20,
+            // Tool-tip implemented as a plugin
+            plugins:    new DA.widget.TimeRangeSliderTip()
+        });
+        /***********************************************************/
+
+        trs.on('change', function(from, to) {
+            var fromStr = this.toHHMMString(from)
+            var toStr = this.toHHMMString(to)
+            tfFrom.setValue( fromStr );
+            tfTo.setValue( toStr );
+            console.log("change: START: " + fromStr + ", END: " + toStr);
+        });
+
+        var reportWidth = selectNode('div.report span.slider-width',panel.body.dom);
+        if (reportWidth) {
+            reportWidth.innerHTML = trs.getSize().width;
+        }
+
+        var onTimeSelect = function () {
+            var t1 = tfFrom.parseDate(tfFrom.getValue());
+            var t2 = tfTo.parseDate(tfTo.getValue());
+            trs.setValues(
+                t1 ? { HH: t1.getHours(), MM: t1.getMinutes() } : {},
+                t2 ? { HH: t2.getHours(), MM: t2.getMinutes() } : {}
+            );
+        }
+
+        tfTo.on('select', onTimeSelect);
+        tfFrom.on('select', onTimeSelect);
+
+        Example.sliders.push({
+            slider: trs,
+            panel:  panel,
+            timeFieldFrom: tfFrom,
+            timeFieldTo: tfTo
+        });
+
+        new Ext.Button({
+            renderTo: panel.body.dom,
+            handler: function () {
+                if (trs.disabled) {
+                    trs.enable();
+                    this.setText("Disable");
+                } else {
+                    trs.disable();
+                    this.setText("Enable");
+                }
+            },
+            text: "Disable"
+        });
+
+        new Ext.Button({
+            renderTo: panel.body.dom,
+            handler: function () {
+                if (trs.hidden) {
+                    trs.show();
+                    this.setText("Hide");
+                } else {
+                    trs.hide();
+                    this.setText("Show");
+                }
+            },
+            text: "Hide"
+        });
+
+
+    });
+
+});
+</script>
+
+<style>
+div.slide {
+    margin: 20px;
+    background-color: #eee;
+}
+div.slide div.timerangeslider {
+    background-color: white;
+}
+body {
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+<div></div>
+
+Scale: <select id="scale">
+<option value="0.5">0.5</option>
+<option value="1" selected="selected">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+Resolution: <select id="resolution">
+<option value="5" selected="selected">5 mins (00:05)</option>
+<option value="10">10 mins (00:10)</option>
+<option value="15">15 mins (00:15)</option>
+<option value="20">20 mins (00:20)</option>
+<option value="30">30 mins (00:30)</option>
+</select>
+From: <select id="select-from">
+<option value="0" selected="selected">00</option>
+<option value="2">02</option>
+<option value="4">04</option>
+<option value="6">06</option>
+<option value="8">08</option>
+</select>
+To: <select id="select-to">
+<option value="18">18</option>
+<option value="20">20</option>
+<option value="22">22</option>
+<option value="24" selected="selected">24</option>
+</select>
+
+Orientation <select id="orientation">
+<option value="horizontal">Horizontal</option>
+<option value="vertical">Vertical</option>
+</select>
+
+
+<button id="btn">New Slider</button>
+<p>
+Size of slider (in px): <span id="report-calc-width"/>
+</p>
+<br/>
+<div id="mysliders">Sliders:</div>
+
+<hr/>
+<ul>
+  <li><a href="http://developer.yahoo.com/yui/examples/slider/slider_dual_with_highlight_clean.html">YUI's Slider</a>:
+  Has <a href="http://developer.yahoo.com/yui/examples/slider/slider_dual_with_highlight.html">good documentation</a>.
+  </li>
+  <li><a href="http://extjs.com/deploy/dev/examples/slider/slider.html">ExtJS Slider</a>: ExtJS modules
+  have <a href="http://extjs.com/deploy/dev/docs/?class=Ext.Slider">good documentation.</a>
+  <br/>Problems: <ol>
+    <li>No Dual-slider / Range-slider</li>
+  </ol>
+  </li>
+  <li><a href="http://www.jaredgisin.com/software/Ext.ux.SlideZone/ext2/examples_h.html">SlideZone</a> - 
+  <em>Third-party</em> library, ExtJs extension.
+  <br/>Problems: <ol>
+    <li>No Documentation</li>
+    <li>Not enough custom events</li>
+  </ol>
+  </li>
+</ul>
+</body>
+</html>

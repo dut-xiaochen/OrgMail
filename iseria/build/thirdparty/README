@@ -1,0 +1,18 @@
+Packaging tools for third-party Javascript sources.
+
+ * FILE: thirdparty-deps.list
+   This is list of Javascript third-party dependencies for 
+   the project
+
+ * FILE: Makefile
+   Has 3 targets:
+   * test:    test if the dependencies listed under thirdparty-deps.list
+              can be met, if followed in the order listed in the file
+   * testn:   test only the first n lines of the file.
+              (useful to trace failed dependencies)
+   * default: make the combined output file.
+   
+ * FILE: thirdparty-all.js
+   This is the output file (created by the Makefile)
+
+   

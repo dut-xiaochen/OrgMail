@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id$ $HeadURL$ -->
+<html>
+<head>
+<title>JSON Viewer</title>
+<!-- Prototype -->
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<!-- YUI -->
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/container/container.js"></script>
+<script src="/js/yui/v2.2.0a/treeview/treeview.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="stylesheet" type="text/css"/>
+<link href="/js/yui/v2.2.0a/reset/reset-min.css" rel="stylesheet" type="text/css"/>
+<link href="/js/yui/v2.2.0a/treeview/assets/tree.css" rel="stylesheet" type="text/css"/>
+<!-- DA -->
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/treeview/assets/tree.css"/>
+<style>
+#treeDiv {
+  border:3px solid green;
+  background:#eeddbb;
+  height:60%;
+  width:60%;
+  overflow:auto;
+  margin: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+body {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+  height: 80%;
+}
+div.container {
+  height: 600px;
+}
+.yui-log {
+  top: 200px;
+}
+</style>
+
+<script>
+function clearTree() { $("treeDiv").innerHTML = "" ; }
+function buildTree(obj) {
+    var tree = new YAHOO.widget.TreeView($("treeDiv"));
+    var root = tree.getRoot();
+    function nv(p, v, node) {
+        if (typeof(v) != "function") { 
+          var tmpNode = new YAHOO.widget.TextNode({
+            label: p + " (" + ((v && v.length && v.grep) ? "array" : typeof(v)) + ")"
+          }, node, false);
+          populate(v, tmpNode);
+        }
+    }
+    function populate(o, node){
+        if (typeof(o) == "object") {
+          //var props = (o && o.length && o.grep) ? o.toArray() : $H(o).keys().sort();
+          if (o && o.length && o.grep) {
+            for (var i=0; i<o.length; i++){
+              var v = o[i];
+              nv(i,v, node);
+            }
+          } else {
+            $H(o).keys().sort().each(function(p){
+              var v = o[p];
+              nv(p,v, node);
+            });
+          }
+        } else {
+          var tmpNode = new YAHOO.widget.TextNode({label:o}, node);
+        }
+    }
+    populate(obj, root);
+    tree.draw();
+}
+
+var Parameters = Class.create();
+Parameters.prototype = {    
+    initialize: function() {
+        this.value = {};
+        this.containerId = 0;
+    },
+    createInput: function(div) {
+	    var inputDiv = $(div);
+        var me =this;
+        var container = document.createElement('div')
+		var oNewItem1 = document.createElement("input");
+		var oNewItem2 = document.createElement("input");
+		var oNewItem3 = document.createElement("text");
+		var oNewItem4 = document.createElement("button");
+		var oNewLine = document.createElement("br");
+        container.id = "containerId" + this.containerId++; 
+		oNewItem3.innerHTML = "<B> : </B>";
+        oNewItem4.innerHTML = "Delete";
+        oNewItem4.addEventListener('click', function(){ me.deleteInput(inputDiv,container.id) }, false) ;
+		container.appendChild(oNewItem1);
+		container.appendChild(oNewItem3);
+		container.appendChild(oNewItem2);
+		container.appendChild(oNewItem4);
+		container.appendChild(oNewLine);
+        inputDiv.appendChild(container);
+	},
+    getValue: function(div) {
+        var pairs = $(div);
+            for (var i = 1; i < pairs.childNodes.length; i++) {
+                this.value[pairs.childNodes[i].childNodes[0].value] = pairs.childNodes[i].childNodes[2].value;   
+            }
+    },
+	deleteInput: function(div,id) {
+        div.removeChild($(id));       
+    }
+}
+
+Event.observe(window, "load", function(){
+ 
+    DA.log = YAHOO.log; // Just use the YAHOO logger...
+    new YAHOO.widget.LogReader(null);
+    
+    var para = new Parameters();
+    Event.observe($('createParameter'), 'click', function(){
+        para.createInput("pairs");
+    });
+
+    var url = $("url");
+
+    var io = new DA.io.JsonIO(url.value);
+
+    function callback (o, actualArgs){
+        buildTree(o);
+        $("goget").disabled = url.disabled = false;
+        $('actualArgs').innerHTML = "";
+        $('actualArgs').appendChild(document.createTextNode("Actual Arguments passed:" + $H(actualArgs).inspect()));
+    }
+    
+    function errorHandler (e) {
+        if (e && e.type == 'INVALID_CONTENTTYPE') {
+            $("treeDiv").innerHTML = e.body;
+        } else {
+            var s = "";
+            for (var p in e) {
+                try {
+                    var v = e[p];
+                    if (typeof v == 'function') {continue}
+                    s += (p + ":" + v + "\n");
+                } catch (er) {  }
+            }
+            alert("error:" + s);
+        }
+    }
+
+    io.callback     = callback;
+    io.errorHandler = errorHandler;
+
+    var goget = function () {
+        para.getValue($("pairs"));
+        io.url = url.value;
+        var checked = $A(document.forms['urlfoo'].argtype).find(function(e){return e.checked===true});
+        var mode = checked && checked.value;
+        DA.log("Sending Request...");
+        $("goget").disabled = url.disabled = true;
+
+        switch (mode) {
+        case 'params':
+            io.execute(para.value);
+            break;
+        case 'params,callback':
+            io.execute(para.value, callback);
+            break;
+        case 'params,callback,meta':
+            io.execute(para.value, { callback: callback, errorHandler: errorHandler });
+            break;
+        default:
+            DA.log('Unknown param test mode', 'error');
+        }
+        
+        DA.log("Request sent, waiting...");
+        return false;
+    };
+
+    Event.observe($("goget"), "click", goget);
+    document.forms["urlfoo"].onsubmit = goget;
+});
+
+
+</script>
+
+</head>
+
+<body>
+<form name="urlfoo" id="urlfoo">
+<input name="url" id="url" size="150" style="width:40%"/>
+<br/>
+<input type='radio' name='argtype' value='params' checked='true'>Params only</input>
+<input type='radio' name='argtype' value='params,callback'>Params, Callback</input>
+<input type='radio' name='argtype' value='params,callback,meta'>Params, and Callback/ErrorHandler passed in a meta-object (DWR-style)</input>
+</form>
+<button id="goget">Get JSON</button>
+<hr />
+
+<div id="paraDiv">
+    <input type="button" id="createParameter" value="Create Parameter Pair"><br>
+    <div id="pairs">
+    </div>
+</div>
+<hr />
+<div id="actualArgs"></div>
+<div class="container">
+  <div id="treeDiv">
+  <i>JSON response object will be displayed here.</i>
+  </div>
+</div>
+
+</body>
+</html>
+

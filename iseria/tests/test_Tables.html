@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_Tables.html 1398 2007-06-13 02:39:35Z faiz_kazi $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_Tables.html $ -->
+<html>
+<head>
+<title>Miscellaneous tests</title>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop-min.js"></script>
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/tables/tables.js"></script>
+<script src="../src/common/logging/logging.js"></script>
+
+<style>
+td.td_Style {
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+table.my_table_Style {
+    width: 75%;
+}
+table.my_table_Style>colgroup>col.col0 {
+    background-color: red;
+}
+table.my_table_Style>colgroup>col.col4 {
+    background-color: green;
+}
+</style>
+</head>
+
+<body>
+
+  <div id="my_div" style="border:1px dotted gray;width:90%;height:60%;overflow:auto;">
+  </div>
+
+  <hr />
+
+  <div style="height:20%">
+  <div style="float:left;width:50%">
+  Rows: <input id="my_rows" value="9"/> 
+  Columns: 
+  <textarea id="my_columns" rows="7" cols="60">
+  [ 
+    { name: "#",      width: "5%"  },
+    { name: "Album",  width: "40%" }, 
+    { name: "Artist", width: "30%" },
+    { name: "Year",   width: "10%" },
+    { name: "Genre",  width: "15"  }
+  ]
+  </textarea>
+  <br> 
+  Data: 
+  <textarea id="my_data" rows="8" cols="60">
+  [
+    [1, "Sgt Peppers Lonely Hearts Club Band", "The Beatles", 1967, "Psychedelic Rock" ],
+    [2, "Dark Side Of The Moon", "Pink Floyd", 1972, "Concept Rock" ],
+    [3, "Transformer", "Lou Reed", 1974, "Glam Rock" ],
+    [4, "Brain Salad Surgery", "Emerson, Lake and Palmer", 1974, "Progressive Rock" ],
+    [5, "The Wall", "Pink Floyd", 1980, "Rock Opera" ],
+    [6, "Synchronicity", "The Police", 1983, "Rock" ],
+    [7, "Heavy Weather", "Weather Report", 1976, "Jazz-Rock" ]
+  ]
+  </textarea>
+  </div>
+  <div style="float:left;width:30%">
+  <button id="my_button">Add a TABLE to the &lt;DIV&gt; above:</button>
+  <button id="my_clear_button">Clear the &lt;DIV&gt;</button>
+  </div>
+
+  </div>
+
+  <script>
+  Event.observe( $("my_button"), 'click', function() {
+      var table = DA.widget.makeATable(
+                      $("my_rows").value, 
+                      eval('(' + $("my_columns").value + ')'), 
+                      {
+                          table: "my_table_Style",
+                          td:    "td_Style"
+                      }, 
+                      eval('(' + $("my_data").value + ')')
+                  );
+      $("my_div").appendChild(table);
+  });
+  Event.observe( $("my_clear_button"), 'click', function() {
+      $("my_div").innerHTML = '';
+  });
+  </script>
+
+</body>
+
+</html>

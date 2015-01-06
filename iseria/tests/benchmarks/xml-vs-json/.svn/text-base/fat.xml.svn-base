@@ -1,0 +1,2693 @@
+<ajx_ma_list.cgi>
+<mail_list>
+	<uid>25305</uid>
+	<sno>708</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:57:28</date>
+	<internal>2007/02/13-09:57:33</internal>
+	<subject>r23735 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/archive</subject>
+</mail_list>
+<mail_list>
+	<uid>25304</uid>
+	<sno>709</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-18:53:18</date>
+	<internal>2007/02/13-09:53:24</internal>
+	<subject>r23734 - AddOn/Autobacs/trunk/src/com/autobacs/absx/noticestatus</subject>
+</mail_list>
+<mail_list>
+	<uid>25303</uid>
+	<sno>710</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>13</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis1@dreamarts.co.jp</from>
+	<date>2007/02/13-18:52:52</date>
+	<internal>2007/02/13-09:52:59</internal>
+	<subject>r23733 - in AddOn/QDX/trunk/module/template/portal/document: businesslink demand enactment
+ examination faq manual provisional review stipulation</subject>
+</mail_list>
+<mail_list>
+	<uid>25302</uid>
+	<sno>711</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-18:52:42</date>
+	<internal>2007/02/13-09:52:50</internal>
+	<subject>[trac-HIBIKI] #1302: [本108]配信先状況一覧のCSV出力においてタイトルと内容がずれている</subject>
+</mail_list>
+<mail_list>
+	<uid>25301</uid>
+	<sno>712</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>1</attachment>
+	<toself>0</toself>
+	<size>13</size>
+	<to>irie@tis.co.jp</to>
+	<from>小谷 明美 </from>
+	<date>2007/02/13-18:51:11</date>
+	<internal>2007/02/13-09:51:18</internal>
+	<subject>[QDP:03268] 【SmartDB定期リリース】20070213版をリリースしました</subject>
+</mail_list>
+<mail_list>
+	<uid>25300</uid>
+	<sno>713</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>a_kodani@dreamarts.co.jp</from>
+	<date>2007/02/13-18:46:35</date>
+	<internal>2007/02/13-09:46:40</internal>
+	<subject>r23732 - AddOn/QDX/hibikibin/webapp/WEB-INF/lib</subject>
+</mail_list>
+<mail_list>
+	<uid>25299</uid>
+	<sno>714</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>86</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>a_kodani@dreamarts.co.jp</from>
+	<date>2007/02/13-18:46:24</date>
+	<internal>2007/02/13-09:46:35</internal>
+	<subject>r23731 - in AddOn/QDX/trunk/documents/javadoc: iseqdx-javadoc iseqdx-javadoc/jp/co/dreamarts
+/insuite/qdx iseqdx-javadoc/jp/co/dreamarts/insuite/qdx/category iseqdx-javadoc/jp/co/dreamarts/insuite
+/qdx/netit iseqdx-javadoc/jp/co/dreamarts/insuite/qdx/search iseqdx-javadoc/jp/co/dreamarts/insuite/qdx
+/version iseqdx-javadoc/jp/co/dreamarts/insuite/qdx/workflow smartcab-javadoc smartcab-javadoc/jp/co
+/dreamarts/insuite/smartcab smartcab-javadoc/jp/co/dreamarts/insuite/smartcab/impl smartdb-javadoc smartdb-javadoc
+/jp/co/dreamarts/insuite/brd smartdb-javadoc/jp/co/dreamarts/insuite/brd/binder smartdb-javadoc/jp/co
+/dreamarts/insuite/brd/button smartdb-javadoc/jp/co/dreamarts/insuite/brd/service</subject>
+</mail_list>
+<mail_list>
+	<uid>25298</uid>
+	<sno>715</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>6</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:45:04</date>
+	<internal>2007/02/13-09:45:10</internal>
+	<subject>r23730 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/telephonebook
+</subject>
+</mail_list>
+<mail_list>
+	<uid>25297</uid>
+	<sno>716</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:44:39</date>
+	<internal>2007/02/13-09:44:44</internal>
+	<subject>r23729 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup
+/publicrange</subject>
+</mail_list>
+<mail_list>
+	<uid>25296</uid>
+	<sno>717</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:44:13</date>
+	<internal>2007/02/13-09:44:17</internal>
+	<subject>r23728 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup
+/destination</subject>
+</mail_list>
+<mail_list>
+	<uid>25295</uid>
+	<sno>718</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:43:47</date>
+	<internal>2007/02/13-09:43:53</internal>
+	<subject>r23727 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/wholecompany</subject>
+</mail_list>
+<mail_list>
+	<uid>25294</uid>
+	<sno>719</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>7</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:43:23</date>
+	<internal>2007/02/13-09:43:35</internal>
+	<subject>r23726 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/department</subject>
+</mail_list>
+<mail_list>
+	<uid>25293</uid>
+	<sno>720</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-18:43:21</date>
+	<internal>2007/02/13-09:43:28</internal>
+	<subject>Verify 1301585</subject>
+</mail_list>
+<mail_list>
+	<uid>25292</uid>
+	<sno>721</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:42:47</date>
+	<internal>2007/02/13-09:42:55</internal>
+	<subject>r23725 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/department/category</subject>
+</mail_list>
+<mail_list>
+	<uid>25291</uid>
+	<sno>722</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:42:27</date>
+	<internal>2007/02/13-09:42:31</internal>
+	<subject>r23724 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/branchoffice</subject>
+</mail_list>
+<mail_list>
+	<uid>25290</uid>
+	<sno>723</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>7</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:41:51</date>
+	<internal>2007/02/13-09:42:00</internal>
+	<subject>r23723 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/documentreceptionbox</subject>
+</mail_list>
+<mail_list>
+	<uid>25289</uid>
+	<sno>724</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:41:18</date>
+	<internal>2007/02/13-09:41:25</internal>
+	<subject>r23722 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/documentreceptionbox/category</subject>
+</mail_list>
+<mail_list>
+	<uid>25288</uid>
+	<sno>725</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>6</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:40:52</date>
+	<internal>2007/02/13-09:41:00</internal>
+	<subject>r23721 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/archive</subject>
+</mail_list>
+<mail_list>
+	<uid>25287</uid>
+	<sno>726</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:40:24</date>
+	<internal>2007/02/13-09:40:29</internal>
+	<subject>r23720 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/archive/category</subject>
+</mail_list>
+<mail_list>
+	<uid>25286</uid>
+	<sno>727</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>TIS 稲富様 </to>
+	<from>寺田 渉 </from>
+	<date>2007/02/13-18:38:33</date>
+	<internal>2007/02/13-09:38:48</internal>
+	<subject>[QDP:03267] QA_全社ポータル_20070213（DA）.xls を更新</subject>
+</mail_list>
+<mail_list>
+	<uid>25285</uid>
+	<sno>728</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>TIS 西川様 </to>
+	<from>寺田 渉 </from>
+	<date>2007/02/13-18:27:55</date>
+	<internal>2007/02/13-09:28:10</internal>
+	<subject>[QDP:03266] ワークフロー_文書管理 を更新</subject>
+</mail_list>
+<mail_list>
+	<uid>25284</uid>
+	<sno>729</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-18:27:39</date>
+	<internal>2007/02/13-09:27:46</internal>
+	<subject>[trac-HIBIKI] #1096: [店81]　「担当者」＋「店長秘」で送信できないようにする。</subject>
+</mail_list>
+<mail_list>
+	<uid>25283</uid>
+	<sno>730</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-18:26:26</date>
+	<internal>2007/02/13-09:26:32</internal>
+	<subject>[trac-HIBIKI] #1226: [本56]ソートすると、過去５日分配信の表示がすべての期間での抽出に変更になる。</subject>
+</mail_list>
+<mail_list>
+	<uid>25282</uid>
+	<sno>731</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-18:22:35</date>
+	<internal>2007/02/13-09:22:41</internal>
+	<subject>Verify 1301589</subject>
+</mail_list>
+<mail_list>
+	<uid>25281</uid>
+	<sno>732</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>TIS 春岡様 </to>
+	<from>寺田 渉 </from>
+	<date>2007/02/13-18:18:23</date>
+	<internal>2007/02/13-09:18:41</internal>
+	<subject>[QDP:03265] ワークフロー_Office WOP-0006 を更新</subject>
+</mail_list>
+<mail_list>
+	<uid>25280</uid>
+	<sno>733</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-18:17:41</date>
+	<internal>2007/02/13-09:17:48</internal>
+	<subject>r23719 - AddOn/Autobacs/trunk/src/com/autobacs/absx/category</subject>
+</mail_list>
+<mail_list>
+	<uid>25279</uid>
+	<sno>734</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-18:17:00</date>
+	<internal>2007/02/13-09:17:08</internal>
+	<subject>r23718 - AddOn/Autobacs/trunk/src/com/autobacs/resources</subject>
+</mail_list>
+<mail_list>
+	<uid>25278</uid>
+	<sno>735</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-18:16:48</date>
+	<internal>2007/02/13-09:16:54</internal>
+	<subject>r23717 - Stores/trunk/src/jp/co/dreamarts/insuite/resources</subject>
+</mail_list>
+<mail_list>
+	<uid>25277</uid>
+	<sno>736</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-18:11:20</date>
+	<internal>2007/02/13-09:11:28</internal>
+	<subject>r23716 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/documentworkflow/documentreceptionbox
+</subject>
+</mail_list>
+<mail_list>
+	<uid>25276</uid>
+	<sno>737</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>1</attachment>
+	<toself>0</toself>
+	<size>9</size>
+	<to>ファイズさん </to>
+	<from>武藤孝司 </from>
+	<date>2007/02/13-18:08:20</date>
+	<internal>2007/02/13-09:08:21</internal>
+	<subject>【コクヨ】バグDB「1301609」について  ファイズさん</subject>
+</mail_list>
+<mail_list>
+	<uid>25275</uid>
+	<sno>738</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-18:08:10</date>
+	<internal>2007/02/13-09:08:18</internal>
+	<subject>Fixed 1301600</subject>
+</mail_list>
+<mail_list>
+	<uid>25274</uid>
+	<sno>739</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>e-support@dreamarts.co.jp</to>
+	<from>Hiroyuki_Nagai@kokuyo.co.jp</from>
+	<date>2007/02/13-18:00:47</date>
+	<internal>2007/02/13-09:04:18</internal>
+	<subject>【コクヨ】スマートページの利用状況リスト出力について</subject>
+</mail_list>
+<mail_list>
+	<uid>25273</uid>
+	<sno>740</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>bai@dreamarts.co.jp</from>
+	<date>2007/02/13-18:03:00</date>
+	<internal>2007/02/13-09:03:09</internal>
+	<subject>r23715 - SmartCabinet/trunk/src/jp/co/dreamarts/insuite/smartcab/impl</subject>
+</mail_list>
+<mail_list>
+	<uid>25272</uid>
+	<sno>741</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>e-support@dreamarts.co.jp</to>
+	<from>kennaka@tis.co.jp</from>
+	<date>2007/02/13-18:00:55</date>
+	<internal>2007/02/13-08:59:17</internal>
+	<subject>本番稼動後のエラーログ出力内容問合せ</subject>
+</mail_list>
+<mail_list>
+	<uid>25271</uid>
+	<sno>742</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>Kentaro_Nakajima@kokuyo.co.jp</to>
+	<from>高橋 直樹 </from>
+	<date>2007/02/13-17:57:50</date>
+	<internal>2007/02/13-08:57:52</internal>
+	<subject>Re: 【仕様確認】SmartDBについて：【通知定義：Velocityマクロ】</subject>
+</mail_list>
+<mail_list>
+	<uid>25270</uid>
+	<sno>743</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>1</attachment>
+	<toself>0</toself>
+	<size>20</size>
+	<to>M. Sato</to>
+	<from>ikuo takahashi</from>
+	<date>2007/02/13-17:51:46</date>
+	<internal>2007/02/13-08:51:56</internal>
+	<subject>Re: ログイン後のエラー画面について</subject>
+</mail_list>
+<mail_list>
+	<uid>25269</uid>
+	<sno>744</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>m_kanaya@dreamarts.co.jp</to>
+	<from>haruoka </from>
+	<date>2007/02/13-17:48:06</date>
+	<internal>2007/02/13-08:48:15</internal>
+	<subject>[QDP:03264] 【オフィス支援】　追加変更_Office_20070213（TIS）.xls　更新しました。</subject>
+</mail_list>
+<mail_list>
+	<uid>25268</uid>
+	<sno>745</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:43:02</date>
+	<internal>2007/02/13-08:43:10</internal>
+	<subject>r23714 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/telephonebook
+</subject>
+</mail_list>
+<mail_list>
+	<uid>25267</uid>
+	<sno>746</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:42:25</date>
+	<internal>2007/02/13-08:42:30</internal>
+	<subject>r23713 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup
+/publicrange</subject>
+</mail_list>
+<mail_list>
+	<uid>25266</uid>
+	<sno>747</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:41:58</date>
+	<internal>2007/02/13-08:42:05</internal>
+	<subject>r23712 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup
+/destination</subject>
+</mail_list>
+<mail_list>
+	<uid>25265</uid>
+	<sno>748</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:41:26</date>
+	<internal>2007/02/13-08:41:31</internal>
+	<subject>r23711 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/wholecompany</subject>
+</mail_list>
+<mail_list>
+	<uid>25264</uid>
+	<sno>749</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:40:59</date>
+	<internal>2007/02/13-08:41:03</internal>
+	<subject>r23710 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/department</subject>
+</mail_list>
+<mail_list>
+	<uid>25263</uid>
+	<sno>750</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:40:31</date>
+	<internal>2007/02/13-08:40:35</internal>
+	<subject>r23709 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/branchoffice</subject>
+</mail_list>
+<mail_list>
+	<uid>25262</uid>
+	<sno>751</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:39:54</date>
+	<internal>2007/02/13-08:40:04</internal>
+	<subject>r23708 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/documentreceptionbox</subject>
+</mail_list>
+<mail_list>
+	<uid>25261</uid>
+	<sno>752</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-17:39:30</date>
+	<internal>2007/02/13-08:39:36</internal>
+	<subject>r23707 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/archive</subject>
+</mail_list>
+<mail_list>
+	<uid>25260</uid>
+	<sno>753</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>9</size>
+	<to>ikuo190@gmail.com</to>
+	<from>M.Sato </from>
+	<date>2007/02/13-17:29:13</date>
+	<internal>2007/02/13-08:29:15</internal>
+	<subject>Re: ログイン後のエラー画面について</subject>
+</mail_list>
+<mail_list>
+	<uid>25259</uid>
+	<sno>754</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis1@dreamarts.co.jp</from>
+	<date>2007/02/13-17:25:13</date>
+	<internal>2007/02/13-08:25:19</internal>
+	<subject>r23706 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/document/stipulation</subject>
+</mail_list>
+<mail_list>
+	<uid>25258</uid>
+	<sno>755</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis1@dreamarts.co.jp</from>
+	<date>2007/02/13-17:24:30</date>
+	<internal>2007/02/13-08:24:37</internal>
+	<subject>r23705 - AddOn/QDX/trunk/module/template/portal/document/enactment</subject>
+</mail_list>
+<mail_list>
+	<uid>25257</uid>
+	<sno>756</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>1</attachment>
+	<toself>0</toself>
+	<size>851</size>
+	<to>Kiyoshi Ohama </to>
+	<from>mmaru@tis.co.jp</from>
+	<date>2007/02/13-17:17:19</date>
+	<internal>2007/02/13-08:23:01</internal>
+	<subject>[QDP:03263] 【ＱＡ、不具合報告、機能追加変更依頼】(2007/02/09現在）状況報告</subject>
+</mail_list>
+<mail_list>
+	<uid>25256</uid>
+	<sno>757</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>t_taguchi@dreamarts.co.jp</from>
+	<date>2007/02/13-17:16:15</date>
+	<internal>2007/02/13-08:16:22</internal>
+	<subject>r23704 - AddOn/QDX/branches/DA/module/template/brd/EditFilter/items/custom</subject>
+</mail_list>
+<mail_list>
+	<uid>25255</uid>
+	<sno>758</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>16</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis1@dreamarts.co.jp</from>
+	<date>2007/02/13-17:15:46</date>
+	<internal>2007/02/13-08:15:59</internal>
+	<subject>r23703 - in AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/informationsharing: branchoffice
+ department</subject>
+</mail_list>
+<mail_list>
+	<uid>25254</uid>
+	<sno>759</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>zhang@dreamarts.co.jp</from>
+	<date>2007/02/13-17:14:51</date>
+	<internal>2007/02/13-08:14:55</internal>
+	<subject>r23702 - Sales/trunk/module/template/erm/AccountInfoCSV</subject>
+</mail_list>
+<mail_list>
+	<uid>25253</uid>
+	<sno>760</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-17:10:39</date>
+	<internal>2007/02/13-08:10:50</internal>
+	<subject>Fixed 1301594</subject>
+</mail_list>
+<mail_list>
+	<uid>25252</uid>
+	<sno>761</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>6</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>yz_xu@dreamarts.co.jp</from>
+	<date>2007/02/13-17:04:51</date>
+	<internal>2007/02/13-08:04:55</internal>
+	<subject>r23701 - in SmartCabinet/trunk/src/jp/co/dreamarts/insuite: resources smartcab/account</subject>
+</mail_list>
+<mail_list>
+	<uid>25251</uid>
+	<sno>762</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>1</attachment>
+	<toself>0</toself>
+	<size>15</size>
+	<to>M. Sato</to>
+	<from>ikuo takahashi</from>
+	<date>2007/02/13-17:00:43</date>
+	<internal>2007/02/13-08:00:51</internal>
+	<subject>Re: ログイン後のエラー画面について</subject>
+</mail_list>
+<mail_list>
+	<uid>25250</uid>
+	<sno>763</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>西田　利誌 </to>
+	<from>金谷　正伸 </from>
+	<date>2007/02/13-16:58:48</date>
+	<internal>2007/02/13-07:58:55</internal>
+	<subject>[QDP:03262] 【オフィス支援】　不具合等_Office_20070213（DA）.xls　更新しました。</subject>
+</mail_list>
+<mail_list>
+	<uid>25249</uid>
+	<sno>764</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>7</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-16:58:24</date>
+	<internal>2007/02/13-07:58:28</internal>
+	<subject>r23700 - in Stores/trunk/src/jp/co/dreamarts/insuite/scp: action form</subject>
+</mail_list>
+<mail_list>
+	<uid>25248</uid>
+	<sno>765</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>7</size>
+	<to>ikuo190@gmail.com</to>
+	<from>M.Sato </from>
+	<date>2007/02/13-16:56:38</date>
+	<internal>2007/02/13-07:56:40</internal>
+	<subject>Re: ログイン後のエラー画面について</subject>
+</mail_list>
+<mail_list>
+	<uid>25247</uid>
+	<sno>766</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-16:55:18</date>
+	<internal>2007/02/13-07:55:26</internal>
+	<subject>r23699 - SmartDB/trunk/module/template/brd/FormDesign</subject>
+</mail_list>
+<mail_list>
+	<uid>25246</uid>
+	<sno>767</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-16:41:08</date>
+	<internal>2007/02/13-07:41:22</internal>
+	<subject>Fixed 105000638</subject>
+</mail_list>
+<mail_list>
+	<uid>25245</uid>
+	<sno>768</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-16:41:07</date>
+	<internal>2007/02/13-07:41:16</internal>
+	<subject>Reopen 1301350</subject>
+</mail_list>
+<mail_list>
+	<uid>25244</uid>
+	<sno>769</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-16:39:48</date>
+	<internal>2007/02/13-07:39:53</internal>
+	<subject>r23698 - AddOn/Autobacs/trunk/module/template/absx/SetStoreIP</subject>
+</mail_list>
+<mail_list>
+	<uid>25243</uid>
+	<sno>770</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-16:35:57</date>
+	<internal>2007/02/13-07:36:02</internal>
+	<subject>Verify 1301587</subject>
+</mail_list>
+<mail_list>
+	<uid>25242</uid>
+	<sno>771</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-16:33:49</date>
+	<internal>2007/02/13-07:33:59</internal>
+	<subject>[trac-HIBIKI] #1238: [本68]無関係な文字列で検索してもヒットしてしまう。</subject>
+</mail_list>
+<mail_list>
+	<uid>25241</uid>
+	<sno>772</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>7</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-16:33:48</date>
+	<internal>2007/02/13-07:33:53</internal>
+	<subject>r23697 - Stores/trunk/src/jp/co/dreamarts/insuite/scp/action</subject>
+</mail_list>
+<mail_list>
+	<uid>25240</uid>
+	<sno>773</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>11</size>
+	<to>Mami Nishikawa </to>
+	<from>寺田 渉 </from>
+	<date>2007/02/13-16:33:20</date>
+	<internal>2007/02/13-07:33:37</internal>
+	<subject>[QDP:03261] Re: WN0010 『決定⇒(公開)のみのフェーズ対応』 リリース</subject>
+</mail_list>
+<mail_list>
+	<uid>25239</uid>
+	<sno>774</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-16:28:09</date>
+	<internal>2007/02/13-07:28:16</internal>
+	<subject>Fixed 1301589</subject>
+</mail_list>
+<mail_list>
+	<uid>25238</uid>
+	<sno>775</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>Faiz Kazi </to>
+	<from>Mari Nishio </from>
+	<date>2007/02/13-16:25:55</date>
+	<internal>2007/02/13-07:25:53</internal>
+	<subject>[Fwd: Re: Questions for Zapatec library]</subject>
+</mail_list>
+<mail_list>
+	<uid>25237</uid>
+	<sno>776</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>bai@dreamarts.co.jp</from>
+	<date>2007/02/13-16:25:24</date>
+	<internal>2007/02/13-07:25:29</internal>
+	<subject>r23696 - SmartCabinet/trunk/module/template/smartcab/EditForm/items</subject>
+</mail_list>
+<mail_list>
+	<uid>25236</uid>
+	<sno>777</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-16:24:42</date>
+	<internal>2007/02/13-07:24:48</internal>
+	<subject>Reopen 1301454</subject>
+</mail_list>
+<mail_list>
+	<uid>25235</uid>
+	<sno>778</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-16:24:25</date>
+	<internal>2007/02/13-07:24:30</internal>
+	<subject>Fixed 105000613</subject>
+</mail_list>
+<mail_list>
+	<uid>25234</uid>
+	<sno>779</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-16:18:24</date>
+	<internal>2007/02/13-07:18:31</internal>
+	<subject>r23695 - SmartCabinet/trunk/module/template/smartcab/EditForm/items</subject>
+</mail_list>
+<mail_list>
+	<uid>25233</uid>
+	<sno>780</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-16:10:10</date>
+	<internal>2007/02/13-07:10:17</internal>
+	<subject>[trac-HIBIKI] #1274: [本88]配信先＝０の通知も登録が可能。エラーにしてもらえないでしょうか？</subject>
+</mail_list>
+<mail_list>
+	<uid>25232</uid>
+	<sno>781</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-16:10:08</date>
+	<internal>2007/02/13-07:10:13</internal>
+	<subject>r23694 - Stores/trunk/src/jp/co/dreamarts/insuite/scp/action</subject>
+</mail_list>
+<mail_list>
+	<uid>25231</uid>
+	<sno>782</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>2</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-16:09:01</date>
+	<internal>2007/02/13-07:09:06</internal>
+	<subject>B 1301589</subject>
+</mail_list>
+<mail_list>
+	<uid>25230</uid>
+	<sno>783</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>1</attachment>
+	<toself>0</toself>
+	<size>12</size>
+	<to>M. Sato</to>
+	<from>ikuo takahashi</from>
+	<date>2007/02/13-16:04:51</date>
+	<internal>2007/02/13-07:04:59</internal>
+	<subject>Re: ログイン後のエラー画面について</subject>
+</mail_list>
+<mail_list>
+	<uid>25229</uid>
+	<sno>784</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:54:49</date>
+	<internal>2007/02/13-06:54:56</internal>
+	<subject>Defer 1301538</subject>
+</mail_list>
+<mail_list>
+	<uid>25228</uid>
+	<sno>785</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:51:59</date>
+	<internal>2007/02/13-06:52:05</internal>
+	<subject>Fixed 1301578</subject>
+</mail_list>
+<mail_list>
+	<uid>25227</uid>
+	<sno>786</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>高橋 直樹 </to>
+	<from>松尾多香紀 </from>
+	<date>2007/02/13-15:51:17</date>
+	<internal>2007/02/13-06:51:24</internal>
+	<subject>[ESC:00389] Re: 【破棄依頼】 【ESC依頼】【調査状況の確認】Sm@rtDB 文書内のログイン不能ユーザの表示仕様</subject>
+</mail_list>
+<mail_list>
+	<uid>25226</uid>
+	<sno>787</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-15:50:04</date>
+	<internal>2007/02/13-06:50:25</internal>
+	<subject>[trac-HIBIKI] #1301: [本103]「スタッフ全員宛」+「担当者」の指定が可能で、実際に登録すると「スタッフ全員宛」のみの指定で登録できてしまう
+	</subject>
+</mail_list>
+<mail_list>
+	<uid>25225</uid>
+	<sno>788</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-15:50:03</date>
+	<internal>2007/02/13-06:50:12</internal>
+	<subject>r23693 - AddOn/Autobacs/trunk/module/template/absx/Notice</subject>
+</mail_list>
+<mail_list>
+	<uid>25224</uid>
+	<sno>789</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-15:49:56</date>
+	<internal>2007/02/13-06:50:10</internal>
+	<subject>[trac-HIBIKI] #1301: [本103]「スタッフ全員宛」+「担当者」の指定が可能で、実際に登録すると「スタッフ全員宛」のみの指定で登録できてしまう</subject>
+</mail_list>
+<mail_list>
+	<uid>25223</uid>
+	<sno>790</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-15:49:54</date>
+	<internal>2007/02/13-06:50:03</internal>
+	<subject>r23692 - Stores/trunk/module/template/scp/Notice</subject>
+</mail_list>
+<mail_list>
+	<uid>25222</uid>
+	<sno>791</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-15:49:09</date>
+	<internal>2007/02/13-06:49:15</internal>
+	<subject>[trac-HIBIKI] #1301: [本103]「スタッフ全員宛」+「担当者」の指定が可能で、実際に登録すると「スタッフ全員宛」のみの指定で登録できてしまう
+	</subject>
+</mail_list>
+<mail_list>
+	<uid>25221</uid>
+	<sno>792</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:48:08</date>
+	<internal>2007/02/13-06:48:13</internal>
+	<subject>Spec 105000639</subject>
+</mail_list>
+<mail_list>
+	<uid>25220</uid>
+	<sno>793</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>t_mutou@dreamarts.co.jp</from>
+	<date>2007/02/13-15:47:16</date>
+	<internal>2007/02/13-06:47:20</internal>
+	<subject>r23691 - in SmartDB/trunk: module/template/brd/DocumentList src/jp/co/dreamarts/insuite/brd
+/action</subject>
+</mail_list>
+<mail_list>
+	<uid>25219</uid>
+	<sno>794</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>10</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis1@dreamarts.co.jp</from>
+	<date>2007/02/13-15:46:27</date>
+	<internal>2007/02/13-06:46:33</internal>
+	<subject>r23690 - in AddOn/QDX/trunk/src/jp/co/kyuden/portal/document: enactment provisional</subject>
+</mail_list>
+<mail_list>
+	<uid>25218</uid>
+	<sno>795</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>t_mutou@dreamarts.co.jp</from>
+	<date>2007/02/13-15:46:08</date>
+	<internal>2007/02/13-06:46:13</internal>
+	<subject>r23689 - in SmartDB/trunk/module/template/brd: DocumentList TopPage</subject>
+</mail_list>
+<mail_list>
+	<uid>25217</uid>
+	<sno>796</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis1@dreamarts.co.jp</from>
+	<date>2007/02/13-15:45:37</date>
+	<internal>2007/02/13-06:45:40</internal>
+	<subject>r23688 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/document/common</subject>
+</mail_list>
+<mail_list>
+	<uid>25216</uid>
+	<sno>797</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>6</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis1@dreamarts.co.jp</from>
+	<date>2007/02/13-15:45:09</date>
+	<internal>2007/02/13-06:45:16</internal>
+	<subject>r23687 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/document/stipulation</subject>
+</mail_list>
+<mail_list>
+	<uid>25215</uid>
+	<sno>798</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:40:11</date>
+	<internal>2007/02/13-06:40:17</internal>
+	<subject>Fixed 1301608</subject>
+</mail_list>
+<mail_list>
+	<uid>25214</uid>
+	<sno>799</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:38:56</date>
+	<internal>2007/02/13-06:39:01</internal>
+	<subject>Spec 105000639</subject>
+</mail_list>
+<mail_list>
+	<uid>25213</uid>
+	<sno>800</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>13</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>sakurai@dreamarts.co.jp</from>
+	<date>2007/02/13-15:37:38</date>
+	<internal>2007/02/13-06:37:48</internal>
+	<subject>r23686 - Sales/trunk/src/jp/co/dreamarts/insuite/crm/customer/impl</subject>
+</mail_list>
+<mail_list>
+	<uid>25212</uid>
+	<sno>801</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>9</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>bai@dreamarts.co.jp</from>
+	<date>2007/02/13-15:37:29</date>
+	<internal>2007/02/13-06:37:35</internal>
+	<subject>r23685 - SmartCabinet/trunk/module/template/smartcab/EditForm/items</subject>
+</mail_list>
+<mail_list>
+	<uid>25211</uid>
+	<sno>802</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:37:01</date>
+	<internal>2007/02/13-06:37:05</internal>
+	<subject>Verify 1301599</subject>
+</mail_list>
+<mail_list>
+	<uid>25210</uid>
+	<sno>803</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:32:06</date>
+	<internal>2007/02/13-06:32:12</internal>
+	<subject>B 1301609</subject>
+</mail_list>
+<mail_list>
+	<uid>25209</uid>
+	<sno>804</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>2</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:25:00</date>
+	<internal>2007/02/13-06:25:05</internal>
+	<subject>A 105000639</subject>
+</mail_list>
+<mail_list>
+	<uid>25208</uid>
+	<sno>805</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>faiz_kazi@dreamarts.co.jp</from>
+	<date>2007/02/13-15:20:51</date>
+	<internal>2007/02/13-06:20:56</internal>
+	<subject>r23684 - AddOn/QDX/branches/DA/media/js/qdx</subject>
+</mail_list>
+<mail_list>
+	<uid>25207</uid>
+	<sno>806</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-15:20:19</date>
+	<internal>2007/02/13-06:20:27</internal>
+	<subject>[trac-HIBIKI] #1238: [本68]無関係な文字列で検索してもヒットしてしまう。</subject>
+</mail_list>
+<mail_list>
+	<uid>25206</uid>
+	<sno>807</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>12</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-15:20:18</date>
+	<internal>2007/02/13-06:20:23</internal>
+	<subject>r23683 - in Stores/trunk: module/template/scp/NoticeList src/jp/co/dreamarts/insuite/resources
+ src/jp/co/dreamarts/insuite/scp/action src/jp/co/dreamarts/insuite/scp/form</subject>
+</mail_list>
+<mail_list>
+	<uid>25205</uid>
+	<sno>808</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>石川様 </to>
+	<from>金谷　正伸 </from>
+	<date>2007/02/13-15:19:06</date>
+	<internal>2007/02/13-06:19:14</internal>
+	<subject>[QDP:03260] 【文書管理】　不具合等_文書管理_20070213（DA).xls　更新しました。</subject>
+</mail_list>
+<mail_list>
+	<uid>25204</uid>
+	<sno>809</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>2</size>
+	<to>Kiyoshi Ohama </to>
+	<from>丸山　毅 </from>
+	<date>2007/02/13-15:17:06</date>
+	<internal>2007/02/13-06:17:08</internal>
+	<subject>Re: 17時から20分～30分くらいお時間いただけますか？</subject>
+</mail_list>
+<mail_list>
+	<uid>25203</uid>
+	<sno>810</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>2</size>
+	<to>丸山　毅 </to>
+	<from>Kiyoshi Ohama </from>
+	<date>2007/02/13-15:10:02</date>
+	<internal>2007/02/13-06:09:59</internal>
+	<subject>Re: 17時から20分～30分くらいお時間いただけますか？</subject>
+</mail_list>
+<mail_list>
+	<uid>25202</uid>
+	<sno>811</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>2</size>
+	<to>Kiyoshi Ohama </to>
+	<from>丸山　毅 </from>
+	<date>2007/02/13-15:07:53</date>
+	<internal>2007/02/13-06:07:55</internal>
+	<subject>17時から20分～30分くらいお時間いただけますか？</subject>
+</mail_list>
+<mail_list>
+	<uid>25201</uid>
+	<sno>812</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:02:39</date>
+	<internal>2007/02/13-06:02:47</internal>
+	<subject>Verify 105000593</subject>
+</mail_list>
+<mail_list>
+	<uid>25200</uid>
+	<sno>813</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-15:01:38</date>
+	<internal>2007/02/13-06:01:43</internal>
+	<subject>Verify 1301575</subject>
+</mail_list>
+<mail_list>
+	<uid>25199</uid>
+	<sno>814</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-14:58:28</date>
+	<internal>2007/02/13-05:58:44</internal>
+	<subject>[trac-HIBIKI] #1229: [本59]宛先でソートしても正しく整列しない。</subject>
+</mail_list>
+<mail_list>
+	<uid>25198</uid>
+	<sno>815</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>7</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-14:58:27</date>
+	<internal>2007/02/13-05:58:34</internal>
+	<subject>r23682 - in Stores/trunk/src/jp/co/dreamarts/insuite/scp: action sorter</subject>
+</mail_list>
+<mail_list>
+	<uid>25197</uid>
+	<sno>816</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>春岡様 </to>
+	<from>金谷　正伸 </from>
+	<date>2007/02/13-14:57:52</date>
+	<internal>2007/02/13-05:58:01</internal>
+	<subject>[QDP:03259] 【オフィス支援】　追加変更_Office_20070213（DA）.xls　更新しました。</subject>
+</mail_list>
+<mail_list>
+	<uid>25196</uid>
+	<sno>817</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>11</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>sakurai@dreamarts.co.jp</from>
+	<date>2007/02/13-14:50:23</date>
+	<internal>2007/02/13-05:50:27</internal>
+	<subject>r23681 - in Sales/trunk/src/jp/co/dreamarts/insuite: crm/customer/impl resources sales/model
+/impl</subject>
+</mail_list>
+<mail_list>
+	<uid>25195</uid>
+	<sno>818</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>sakurai@dreamarts.co.jp</from>
+	<date>2007/02/13-14:48:13</date>
+	<internal>2007/02/13-05:48:17</internal>
+	<subject>r23680 - Framework/branches/1_0_x/src/jp/co/dreamarts/insuite/common/session</subject>
+</mail_list>
+<mail_list>
+	<uid>25194</uid>
+	<sno>819</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>ikuo190@gmail.com</to>
+	<from>M.Sato </from>
+	<date>2007/02/13-14:40:54</date>
+	<internal>2007/02/13-05:40:56</internal>
+	<subject>Re: ログイン後のエラー画面について</subject>
+</mail_list>
+<mail_list>
+	<uid>25193</uid>
+	<sno>820</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-14:23:04</date>
+	<internal>2007/02/13-05:23:09</internal>
+	<subject>[trac-HIBIKI] #1300: 「店舗」お知らせより表示された通知詳細画面で「戻る」リックをクリックしても戻らない</subject>
+</mail_list>
+<mail_list>
+	<uid>25192</uid>
+	<sno>821</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>金谷　正伸 </to>
+	<from>ishikawa</from>
+	<date>2007/02/13-14:20:35</date>
+	<internal>2007/02/13-05:21:06</internal>
+	<subject>[QDP:03258] 【文書管理】追加変更_文書管理_20070213（TIS）.xls更新しました</subject>
+</mail_list>
+<mail_list>
+	<uid>25191</uid>
+	<sno>822</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>丸山　毅 </to>
+	<from>Kiyoshi Ohama </from>
+	<date>2007/02/13-14:19:28</date>
+	<internal>2007/02/13-05:19:27</internal>
+	<subject>Re: [Fwd: （送付）第26回 定例進捗会議 議事録の送付]</subject>
+</mail_list>
+<mail_list>
+	<uid>25190</uid>
+	<sno>823</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>6</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>a_kodani@dreamarts.co.jp</from>
+	<date>2007/02/13-14:16:34</date>
+	<internal>2007/02/13-05:16:44</internal>
+	<subject>r23679 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/qdx/smartcab/linkItem</subject>
+</mail_list>
+<mail_list>
+	<uid>25189</uid>
+	<sno>824</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>9</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>a_kodani@dreamarts.co.jp</from>
+	<date>2007/02/13-14:13:50</date>
+	<internal>2007/02/13-05:13:56</internal>
+	<subject>r23678 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/qdx/smartcab/linkItem</subject>
+</mail_list>
+<mail_list>
+	<uid>25188</uid>
+	<sno>825</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>11</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>a_kodani@dreamarts.co.jp</from>
+	<date>2007/02/13-14:11:35</date>
+	<internal>2007/02/13-05:11:40</internal>
+	<subject>r23677 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/brd/action</subject>
+</mail_list>
+<mail_list>
+	<uid>25187</uid>
+	<sno>826</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-14:00:26</date>
+	<internal>2007/02/13-05:00:36</internal>
+	<subject>Fixed 1301601</subject>
+</mail_list>
+<mail_list>
+	<uid>25186</uid>
+	<sno>827</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>松尾 多香紀 </to>
+	<from>高橋 直樹 </from>
+	<date>2007/02/13-13:59:21</date>
+	<internal>2007/02/13-04:59:33</internal>
+	<subject>[ESC:00388] 【破棄依頼】 【ESC依頼】【調査状況の確認】Sm@rtDB 文書内のログイン不能ユーザの表示仕様</subject>
+</mail_list>
+<mail_list>
+	<uid>25185</uid>
+	<sno>828</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>7</size>
+	<to>Faiz Kazi </to>
+	<from>Mari Nishio </from>
+	<date>2007/02/13-13:58:58</date>
+	<internal>2007/02/13-04:58:56</internal>
+	<subject>Re: AjaxMailer development</subject>
+</mail_list>
+<mail_list>
+	<uid>25184</uid>
+	<sno>829</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to></to>
+	<from>trac-HIBIKI</from>
+	<date>2007/02/13-13:58:34</date>
+	<internal>2007/02/13-04:58:41</internal>
+	<subject>[trac-HIBIKI] #1295: [本101]回答文書抽出の回答データCSV出力内容について。</subject>
+</mail_list>
+<mail_list>
+	<uid>25183</uid>
+	<sno>830</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:58:22</date>
+	<internal>2007/02/13-04:58:25</internal>
+	<subject>r23676 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/telephonebook
+</subject>
+</mail_list>
+<mail_list>
+	<uid>25182</uid>
+	<sno>831</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:57:52</date>
+	<internal>2007/02/13-04:57:57</internal>
+	<subject>r23675 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup
+/publicrange</subject>
+</mail_list>
+<mail_list>
+	<uid>25181</uid>
+	<sno>832</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:57:26</date>
+	<internal>2007/02/13-04:57:35</internal>
+	<subject>r23674 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/originalgroup
+/destination</subject>
+</mail_list>
+<mail_list>
+	<uid>25180</uid>
+	<sno>833</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:56:58</date>
+	<internal>2007/02/13-04:57:04</internal>
+	<subject>r23673 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/wholecompany</subject>
+</mail_list>
+<mail_list>
+	<uid>25179</uid>
+	<sno>834</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:56:30</date>
+	<internal>2007/02/13-04:56:43</internal>
+	<subject>r23672 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/department</subject>
+</mail_list>
+<mail_list>
+	<uid>25178</uid>
+	<sno>835</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:56:01</date>
+	<internal>2007/02/13-04:56:08</internal>
+	<subject>r23671 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/department/category</subject>
+</mail_list>
+<mail_list>
+	<uid>25177</uid>
+	<sno>836</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>t_mutou@dreamarts.co.jp</from>
+	<date>2007/02/13-13:55:42</date>
+	<internal>2007/02/13-04:55:48</internal>
+	<subject>r23670 - SmartDB/trunk/module/template/brd/DocumentList</subject>
+</mail_list>
+<mail_list>
+	<uid>25176</uid>
+	<sno>837</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:55:32</date>
+	<internal>2007/02/13-04:55:37</internal>
+	<subject>r23669 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/informationsharing
+/branchoffice</subject>
+</mail_list>
+<mail_list>
+	<uid>25175</uid>
+	<sno>838</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:54:57</date>
+	<internal>2007/02/13-04:55:02</internal>
+	<subject>r23668 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/documentreceptionbox</subject>
+</mail_list>
+<mail_list>
+	<uid>25174</uid>
+	<sno>839</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:54:17</date>
+	<internal>2007/02/13-04:54:25</internal>
+	<subject>r23667 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/documentreceptionbox/category</subject>
+</mail_list>
+<mail_list>
+	<uid>25173</uid>
+	<sno>840</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>西田　利誌 </to>
+	<from>金谷　正伸 </from>
+	<date>2007/02/13-13:53:23</date>
+	<internal>2007/02/13-04:53:32</internal>
+	<subject>[QDP:03257] 【オフィス支援】　QA_Office_20070213（DA).xls　更新しました。</subject>
+</mail_list>
+<mail_list>
+	<uid>25172</uid>
+	<sno>841</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-13:53:13</date>
+	<internal>2007/02/13-04:53:21</internal>
+	<subject>Fixed 1301605</subject>
+</mail_list>
+<mail_list>
+	<uid>25171</uid>
+	<sno>842</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>2</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-13:52:50</date>
+	<internal>2007/02/13-04:52:54</internal>
+	<subject>A 105000637</subject>
+</mail_list>
+<mail_list>
+	<uid>25170</uid>
+	<sno>843</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:52:09</date>
+	<internal>2007/02/13-04:52:18</internal>
+	<subject>r23666 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/archive</subject>
+</mail_list>
+<mail_list>
+	<uid>25169</uid>
+	<sno>844</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>5</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>tis2@dreamarts.co.jp</from>
+	<date>2007/02/13-13:51:21</date>
+	<internal>2007/02/13-04:51:27</internal>
+	<subject>r23665 - AddOn/QDX/trunk/src/jp/co/kyuden/portal/office/batch/reorganization/documentworkflow
+/archive/category</subject>
+</mail_list>
+<mail_list>
+	<uid>25168</uid>
+	<sno>845</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>Kiyoshi Ohama </to>
+	<from>丸山　毅 </from>
+	<date>2007/02/13-13:48:01</date>
+	<internal>2007/02/13-04:48:02</internal>
+	<subject>Re: [Fwd: （送付）第26回 定例進捗会議 議事録の送付]</subject>
+</mail_list>
+<mail_list>
+	<uid>25167</uid>
+	<sno>846</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>ishida@dreamarts.co.jp</from>
+	<date>2007/02/13-13:45:56</date>
+	<internal>2007/02/13-04:46:00</internal>
+	<subject>r23664 - Stores/trunk/src/jp/co/dreamarts/insuite/scp/action</subject>
+</mail_list>
+<mail_list>
+	<uid>25166</uid>
+	<sno>847</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>1</attachment>
+	<toself>0</toself>
+	<size>96</size>
+	<to>Kentaro_Nakajima@kokuyo.co.jp</to>
+	<from>高橋 直樹 </from>
+	<date>2007/02/13-13:44:46</date>
+	<internal>2007/02/13-04:44:49</internal>
+	<subject>Re: 追検証：Re: SmartDBについて:【アカウント選択部品に選んでいる「廃止ユーザー」の動き】</subject>
+</mail_list>
+<mail_list>
+	<uid>25165</uid>
+	<sno>848</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>8</size>
+	<to>e-support-esc</to>
+	<from>松尾多香紀 </from>
+	<date>2007/02/13-13:38:36</date>
+	<internal>2007/02/13-04:38:49</internal>
+	<subject>[ESC:00387] Re: 【ESC依頼】Sm@rtDB フィルタ定義の検索キーワードの仕様</subject>
+</mail_list>
+<mail_list>
+	<uid>25164</uid>
+	<sno>849</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>m_kanaya@dreamarts.co.jp</to>
+	<from>北村　誠 </from>
+	<date>2007/02/13-13:38:19</date>
+	<internal>2007/02/13-04:38:27</internal>
+	<subject>[QDP:03256] 【文書管理】ワークフロー_文書管理.xls 更新しました</subject>
+</mail_list>
+<mail_list>
+	<uid>25163</uid>
+	<sno>850</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>4</size>
+	<to>svn-commit@moe.dreamarts.co.jp</to>
+	<from>n_niiya@dreamarts.co.jp</from>
+	<date>2007/02/13-13:33:09</date>
+	<internal>2007/02/13-04:33:14</internal>
+	<subject>r23663 - SmartDB/branches/QDX/src/jp/co/dreamarts/insuite/brd/action</subject>
+</mail_list>
+<mail_list>
+	<uid>25162</uid>
+	<sno>851</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>2</size>
+	<to>金谷 正伸 </to>
+	<from>Kiyoshi Ohama </from>
+	<date>2007/02/13-13:28:07</date>
+	<internal>2007/02/13-04:28:05</internal>
+	<subject>本日の定例は中止します。</subject>
+</mail_list>
+<mail_list>
+	<uid>25161</uid>
+	<sno>852</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>hibiki_bugs@moe.dreamarts.co.jp</to>
+	<from>hibiki_bugs@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-13:26:23</date>
+	<internal>2007/02/13-04:26:32</internal>
+	<subject>Reopen 1301578</subject>
+</mail_list>
+<mail_list>
+	<uid>25160</uid>
+	<sno>853</sno>
+	<priority>3</priority>
+	<seen>0</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>0</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>w_terada@dreamarts.co.jp</to>
+	<from>稲富　哲憲 </from>
+	<date>2007/02/13-13:25:48</date>
+	<internal>2007/02/13-04:25:47</internal>
+	<subject>[QDP:03255] ＱＡ全社ポータル「Z-134」について</subject>
+</mail_list>
+<mail_list>
+	<uid>25159</uid>
+	<sno>854</sno>
+	<priority>3</priority>
+	<seen>1</seen>
+	<flagged>0</flagged>
+	<replied>0</replied>
+	<forwarded>0</forwarded>
+	<deleted>1</deleted>
+	<attachment>0</attachment>
+	<toself>0</toself>
+	<size>3</size>
+	<to>kyuden_sdb@moe.dreamarts.co.jp</to>
+	<from>kyuden_sdb@moe.dreamarts.co.jp</from>
+	<date>2007/02/13-13:24:18</date>
+	<internal>2007/02/13-04:24:23</internal>
+	<subject>Fixed 105000507</subject>
+</mail_list>
+</ajx_ma_list.cgi>

@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+    <body STYLE='font-size:3px;'>
+
+<script src="./random_data.js"></script>
+    <div id='container' STYLE='background-color:#cee; font-size:5px;'>
+</div>
+
+<script>
+    var opt='style=\'color:red; fontFamily:\\"MS PÉSÉVÉbÉN, monospace\\" ; fontSize:9px; padding:2px 2px 2px 2px;\' ';
+
+    for ( var r = 0 ; r < cell_data.length ; r++ ){
+	var row = cell_data[ r ];
+	document.write( ' " ' );
+	for ( var c = 0 ; c < 20 ; c++ ){
+//	    document.write( "&lt;td style="color:red; fontFamily = "MS P&gt; " + row[ c ]  + "&lt;/td&gt;" );
+
+	    // normal 
+//	    document.write( "&lt;td&gt; &lt;div&gt;" + row[ c ] + "&lt;/div&gt; &lt;/td&gt;" );
+	    
+	    // class
+//	    document.write( "&lt;td&gt; &lt;div class='lipton'&gt; " + row[ c ] + "&lt;/div&gt; &lt;/td&gt;" );
+
+	    // sytle
+	    document.write( "&lt;td&gt; &lt;div " + opt + "&gt;" + row[ c ] + "&lt;/div&gt; &lt;/td&gt;" );
+
+	}
+	document.write( ' ", ' );
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+.x-combo-list .x-combo-selected {background-color: #FFFFCC;}
+
+.da_accountSelectorList {
+	padding:5px;
+	width:100%
+}
+.da_accountSelectorList li{
+	height:20px;
+	padding:1px;
+}

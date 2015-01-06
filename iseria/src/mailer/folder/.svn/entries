@@ -1,0 +1,70 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/mailer/folder
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2014-04-15T04:42:52.836787Z
+2383
+jl_zhou
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+folder-tree.css
+file
+
+
+
+
+2014-03-24T10:59:30.000000Z
+5f0061c8d19f77e848b28ec8fd315d5c
+2009-02-16T08:34:18.289631Z
+1836
+ya_song
+has-props
+
+folder-tree.js
+file
+
+
+
+
+2014-04-15T05:32:34.000000Z
+3fa8eb40693c394725885dcef4703fb0
+2014-04-15T04:42:52.836787Z
+2383
+jl_zhou
+has-props
+
+images
+dir
+
+folder-operate-dialog.css
+file
+
+
+
+
+2014-03-24T10:59:30.000000Z
+a6c4da60fa5da6ee1d230c5e92b6ce90
+2009-02-16T08:34:18.289631Z
+1836
+ya_song
+has-props
+

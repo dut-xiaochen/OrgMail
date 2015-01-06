@@ -1,0 +1,125 @@
+.da_toggleOuter {
+    vertical-align: top;
+    align: left;
+    width: 1%;
+}
+.da_toggleCollapse {
+	margin:     5px;
+	height:     9px;
+	width:      9px;
+	cursor:     pointer;
+    background: url(/images/PLUS.gif) 0px 0px no-repeat;
+}
+.da_toggleExpand {
+	margin:     5px;
+	height:     9px;
+	width:      9px;
+	cursor:     pointer;
+    background: url(/images/MINUS.gif) 0px 0px no-repeat;
+}
+.da_toggleNull {
+	margin:     5px;
+	height:     9px;
+	width:      9px;
+	cursor:     default;
+    background: url(/images/null.gif) 0px 0px no-repeat;
+}
+.da_nvPairSet {
+	width: 100%;
+}
+.da_nvPairSetCollapsed {
+	border-spacing: 5px;
+	width: 100%;
+}
+.da_nvPairSetExpanded {
+	border-spacing: 5px;
+	width: 100%;
+}
+.da_nvCollapsedPair {
+    padding-right: 20px;
+}
+.da_nvExpandedPair {
+	width: 100%;
+}
+.da_nvPairOuter {
+	white-space: nowrap;
+	line-height: 20px;
+	float: left;
+}
+.da_nvPairCollapseName {
+    white-space: nowrap;
+    font-weight: bold;
+    padding: 1px;
+    width: auto;
+}
+.da_nvPairExpandName {
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: right;
+    padding: 1px;
+    width: 5%;
+}
+.da_nvPairValue {
+    text-align: left;
+	width: auto;
+	padding: 1px;
+	overflow: hidden;
+}
+.da_nvPairExpand {
+    text-align: left;
+	width: auto;
+	padding: 1px;
+	overflow: hidden;
+}
+.da_nvPairRow {
+    text-align: left;
+	width: auto;
+	padding: 1px;
+	overflow: hidden;
+}
+.da_nvPairIcon {
+    text-align: right;
+    vertical-align: middle;
+    padding: 0px 5px 0px 3px;
+	width: auto;
+}
+.da_nvPairHTML {
+    text-align: left;
+    vertical-align: middle;
+    padding: 0px 5px 0px 3px;
+	width: auto;
+}
+.da_nvPairSeparator {
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: left;
+    padding: 1px;
+	width: auto;
+}
+.da_nvPairBorder {
+	background: url(/images/mailwaku_line_brdotted.gif) 0px 0px;
+	width: 100%;
+	background-repeat: repeat-x;
+}
+.da_nvPairHidden {
+	display: none;
+}
+.da_nvPairFloatLeft {
+	float: left;
+}
+.da_nvPairFloatRight {
+	float: right;
+}
+.da_nvPairBreak {
+	word-break: break-all;
+}
+div#message_headerAttachmentSeparator{
+	overflow:auto;
+}
+.da_nvPairSeparator4scroll {
+        height: 80px;
+        overflow: auto;
+}
+.da_nvPairDivider{
+		height: 4px;
+}

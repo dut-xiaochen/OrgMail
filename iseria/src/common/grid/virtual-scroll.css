@@ -1,0 +1,125 @@
+div.da_columnResizer {
+   width: 16px;
+   height: 100%;
+   position: relative;
+   left: 0px;
+   display: inline;
+   cursor: w-resize;
+   color: #ddd;
+}
+
+table.da_virtualScrollingTable {
+   table-layout: fixed; 
+   width : 100%;
+}
+
+table.da_virtualScrollingHeaderTable {
+   table-layout: fixed; 
+   width : 100%;
+}
+table.da_virtualScrollingTable td {
+   /* W3C Box-model means we cannot use l/r paddding
+    * if we want to fool around with the width */
+   padding       : 2px 0px 2px 0px;
+   text-indent   : 2px;/* Use text-indent instead of l-padding */
+   margin        : 0px;
+   overflow      : hidden;
+   white-space   : nowrap;
+}
+
+table.da_virtualScrollingTableLoading {
+   table-layout: fixed; 
+   width : 100%;
+   background-image: url('/images/popy_wait.gif');
+   background-repeat: no-repeat;
+   background-position: top center;
+}
+table.da_virtualScrollingTableLoading td {
+   visibility: hidden;
+}
+table.da_virtualScrollingTableLoading tr {
+   visibility: hidden;
+}
+
+table.da_virtualScrollingTableEmpty {
+   table-layout: fixed; 
+   width : 100%;
+}
+table.da_virtualScrollingTableEmpty td {
+   visibility: hidden;
+}
+table.da_virtualScrollingTableEmpty tr {
+   visibility: hidden;
+}
+
+
+table.da_virtualScrollingHeaderTable td {
+   /* W3C Box-model means we cannot use l/r paddding
+    * if we want to fool around with the width */
+   /*padding          : 2px 0px 2px 0px;*/
+   border-left      : 1px solid #777;
+   margin           : 0px;
+   text-align       : left;
+   background-color : #ddd;
+   overflow         : hidden;
+   white-space      : nowrap;
+   font-weight      : bold;
+}
+table.da_virtualScrollingHeaderTable td span {
+   overflow         : hidden;
+   height           : 16px;
+   cursor           : pointer;
+}
+/*Rows that are selected (either by the mouse/keyboard) by the user*/
+tr.da_gridSelectedRow { 
+    background-color : #131398;
+    color            : white;
+}
+
+/*Hacks to support Fake-tables...*/
+
+div.da_virtualScrollingTable {
+   width : 100%;
+}
+
+div.da_virtualScrollingTable div.da_rowdiv {
+   margin        : 0px;
+   overflow      : hidden;
+   white-space   : nowrap;
+   width         : 100%;
+   line-height: 100%;
+}
+
+div.da_virtualScrollingTable div.da_rowdiv div {
+   float         : left;
+   padding       : 2px 0px 2px 0px;
+   margin        : 0px;
+   overflow      : hidden;
+   white-space   : nowrap;
+}
+
+div.da_virtualScrollingTableLoading {
+   width : 100%;
+   background-image: url('/images/popy_wait.gif');
+   background-repeat: no-repeat;
+   background-position: top center;
+}
+
+div.da_virtualScrollingTableLoading div {
+   visibility: hidden;
+}
+
+div.da_virtualScrollingTableEmpty {
+   width : 100%;
+}
+
+div.da_virtualScrollingTableEmpty div {
+   visibility: hidden;
+}
+
+/*Rows that are selected (either by the mouse/keyboard) by the user*/
+div.da_gridSelectedRow { 
+    background-color : #dddddd;
+/*  color            : white;*/
+}
+

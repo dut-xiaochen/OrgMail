@@ -1,0 +1,112 @@
+<html>
+<head>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/rico/v1.1.2/rico.js"></script>
+<script src="../../../src/common/DA/DA.js"></script>
+<script src="../../../src/common/logging/logging.js"></script>
+<script>
+
+function slurp(array){
+  window.__array = array;
+
+}
+
+Event.observe(window, "load", function(){
+ 
+  var logger = new DA.logging.Logger();
+
+  var time_diff = DA.logging.time_diff; // function import
+
+  Event.observe($("btn_json"), "click", function(){
+    $("btn_json").disabled = true;
+    var startTime = new Date()
+    window.__array = [];
+    new Ajax.Request("thin.json", {
+      method: 'get',
+      onSuccess: function(transport) {
+        var transportDone = new Date();
+        var arr = eval(transport.responseText);
+        slurp(arr);
+	var doneTime = new Date();
+        logger.log(
+	   "JSON total: " + time_diff(startTime, doneTime) + "ms :: " + 
+	   "transport time: " + time_diff(startTime, transportDone) + "ms. " + 
+	   "EVAL time taken: " + time_diff(transportDone, doneTime) +"ms. " + 
+	   "(ARRAY of size: "+ arr.length + ")");
+        $("btn_json").disabled = false;
+      }
+    });
+  });
+
+  Event.observe($("btn_xml"), "click", function(){
+    $("btn_xml").disabled = true;
+    // fields and sizes (in chars) ; note that we do not use the size anymore
+    var elemsToPick = [
+     { name: "uid", size: 5 },
+     { name: "subject", size: 55 }, 
+     { name: "from", size: 12 },
+     { name: "to", size: 12 },
+     { name: "date", size: 12 },
+     { name: "priority", size: 1 }
+    ];
+    var startTime = new Date();
+    window.__array = [];
+    new Ajax.Request("fat.xml", {
+      method: 'get',
+      onSuccess: function(transport) {
+         var transportDone = new Date();
+         var ajaxResponse = transport.responseXML;
+         var newRows = new Array();
+         var mlElems = ajaxResponse.getElementsByTagName("mail_list");
+         for (var i=0; i<mlElems.length; i++) {
+             newRows.push(
+               elemsToPick.map(function(e) {
+     	         var ePick = mlElems[i].getElementsByTagName(e.name);
+     	         //var cellContent = ePick.length>0 && RicoUtil.getContentAsString(ePick[0]); //.substring(0,e.size);
+     	         var cellContent = ePick.length>0 && ePick[0].firstChild && ePick[0].firstChild.nodeValue; //.substring(0,e.size);
+     	         return cellContent && cellContent != "" ? cellContent : '&nbsp';
+     	       })
+     	     );
+     	     //newRows.push( ["42", "Hi!", "me@you.com", "you@me.com", "2007/01/01", "3"] );
+     	     //newRows[i] = ["42", "Hi!", "me@you.com", "you@me.com", "2007/01/01", "3"] ;
+         }
+         slurp(newRows); 
+	 var doneTime = new Date();
+         logger.log("XML total: " + time_diff(startTime, doneTime) + "ms ::" + 
+	     "transport time: " + time_diff(startTime, transportDone) + "ms. " + 
+	     "Parsing took: " + time_diff(transportDone, doneTime) +"ms. " + 
+	     "(ARRAY of size: "+ newRows.length + ")");
+         $("btn_xml").disabled = false;
+      }
+    });
+  });
+
+  Event.observe($("btn_results"), "click", function(){
+    var index = prompt("Which i? ");
+    var arr = window.__array[index];
+    $("ol_results").innerHTML = "";
+    arr.each(function(e) {
+      var li = document.createElement("li");
+      li.innerHTML = e;
+      $("ol_results").appendChild(li);
+    });
+  });
+
+});
+</script>
+</head>
+
+<body>
+<button id="btn_json">JSON GO!</button>
+<button id="btn_xml">XML GO!</button>
+<hr>
+<button id="btn_results">Results? </button>
+<br>
+<ol id="ol_results">
+
+</ol>
+
+<hr />
+</body>
+
+</html>

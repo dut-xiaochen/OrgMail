@@ -1,0 +1,36 @@
+div.da_messageSearcherItem,
+div.da_messageSearcherGuide,
+div.da_messageSearcherNomatch,
+div.da_messageSearcherResult {
+	border: 0px;
+	margin: 0px 10px 0px 10px;
+	padding: 1px;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+div.da_messageSearcherGrid {
+	border: 0px;
+	margin: 10px;
+	padding: 0px;
+	width: auto;
+	overflow: auto;
+}
+
+.da_messageSearcherItemTable,
+.da_messageSearcherResultTable {
+	width: 100%;
+}
+
+.da_messageSearcherItemTd,
+.da_messageSearcherResultTd {
+	border: solid 1px #999999;
+	padding: 1px;
+	white-space: nowrap;
+}
+
+.da_messageSearcherItemTable .col0,
+.da_messageSearcherResultTable .col0 {
+	background-color: #ffffcc;
+}

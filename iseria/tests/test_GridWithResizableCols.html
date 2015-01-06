@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_GridWithResizableCols.html 1398 2007-06-13 02:39:35Z faiz_kazi $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_GridWithResizableCols.html $ -->
+<html>
+<head>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/rico/v1.1.2/rico-livegrid.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop-min.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/reset/reset.css"/>
+
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/logger/assets/logger.css"/>
+
+<script src="/cgi-bin/ajax_mailer.cgi"></script>
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/tables/tables.js"></script>
+<link href="../src/common/tables/tables.css" rel="stylesheet" type="text/css"/>
+<script src="../src/common/logging/logging.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/grid/virtual-scroll.js"></script>
+<link href="../src/common/grid/virtual-scroll.css" rel="stylesheet" type="text/css"/>
+<!-- FIXME: mailer-specific JS include -->
+<script src="../src/mailer/mailer.js"></script>
+<script src="../src/mailer/mboxgrid/mboxgrid.js"></script>
+
+</head>
+
+<body>
+
+  <div id="generated_grid_container" 
+       style="margin:20px;width:70%;height:40%;border:1px dotted gray;display:none;"></div>
+  <input id="folderid1" size="6" disabled="true"/>
+  <i>
+    <b>Hint:</b>
+    Use testJSON-IO.html with /cgi-bin/ajx_ma_dir.cgi to find the folder ID.
+  </i>
+  <button id="generate_grid">Generate a grid.</button>
+  <script>
+  Event.observe(window, 'load', function(){
+    DA.log = YAHOO.log; // Just use the YAHOO logger...
+    var l = new YAHOO.widget.LogReader(null/*create for us*/, {fontSize:"75%"}); 
+    l.collapse();
+  });
+  Event.observe($('generate_grid'), 'click', function(){
+      var btn = $('generate_grid');
+      var mboxGrid = new DA.mailer.widget.MboxGrid(); 
+      btn.innerHTML = "Activate the grid using the folder id:";
+      $('folderid1').disabled = false;
+      btn.onclick = function() {
+          var id = $('folderid1').value;
+          $("generated_grid_container").appendChild( mboxGrid.containerElem );
+          $("generated_grid_container").style.display = 'block';
+          mboxGrid.changeFolder(id);
+          btn.disabled = true;
+      };
+  });
+  </script>
+  
+
+
+
+</body>
+
+</html>
+

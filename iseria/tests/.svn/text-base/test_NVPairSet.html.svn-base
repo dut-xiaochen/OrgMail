@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id$ $HeadURL$ -->
+<html>
+<head>
+<script src="/cgi-bin/ajax_mailer.cgi"></script>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo-debug.js"></script>
+<script src="/js/yui/v2.2.0a/event/event-min.js"></script>
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/misc/nvpairs.js"></script>
+<link href="../src/common/misc/nvpairs.css" type="text/css" rel="StyleSheet"/>
+
+<script>
+Event.observe(window, 'load', function(){
+    
+    var nvpair = {
+        "From"   : {
+           name:  "From",
+           value: "faiz_kazi@dreamarts.co.jp"
+        },
+        "To"     : {
+           name:  "To",
+           value: "ml_chen@dreamarts.co.jp"
+        },
+        "Subject": {
+           name:  "Subject",
+           value: "Hi!"
+        },
+        "Date"   : {
+           name:  "Date",
+           value: "2007-03-19"
+       }
+    };
+    
+    var nvPairs = new DA.widget.NVPairSet( $('nvpaircontainer'), nvpair, ["From","Subject","Date"]);
+    nvPairs.expand();
+    
+    Event.observe($('add'), 'click', function(){      
+        nvPairs.put($F("newKey"),$F("newName"),$F("newValue"));
+        $("newKey").value = "";
+        $("newName").value = "";
+        $("newValue").value = "";
+        nvPairs.expand();
+    });
+
+    Event.observe($('delete'), 'click', function(){      
+        nvPairs.remove($F("key"));
+        $("key").value = "";
+        nvPairs.expand();
+    });
+    
+    Event.observe($('display'), 'click', function(){
+        if($('display').value == 'Hide the NVPairSet')
+        {
+            nvPairs.hide();
+            $('display').value = 'Show the NVPairSet';
+        }
+        else
+        {
+            nvPairs.show();
+            $('display').value = 'Hide the NVPairSet';
+        }
+    });
+});
+</script>
+
+<style>
+div.mailbox{
+	border:1px solid gray;
+    width:600px;
+	background: #ddeedd;
+    overflow: auto;
+}
+div.option{
+	border:1px solid gray;
+    width:600px;
+	background: #eeddee;
+}
+</style>
+
+
+</head>
+
+<body>
+    <div id="nvpaircontainer" class="mailbox" style="display: block;">
+    </div>
+    <p><p>
+    
+    <div class="option">
+        <p>
+        <div id="input">
+            <input type="text" id="newKey"><br>
+            <input type="text" id="newName" ><br>
+            <input type="text" id="newValue" ><br>
+            <input type="button" id="add" value="Add new NVPair"><br><br>
+        </div>
+        <p>
+        <div id="remove">
+            <input type="text" id="key" ><br>
+            <input type="button" id="delete" value="Delete NVPair"><br><br>
+        </div>
+        <div>
+            <input type="button" id="display" value="Hide the NVPairSet" >     
+        </div>
+    </div>
+</body>
+</html>

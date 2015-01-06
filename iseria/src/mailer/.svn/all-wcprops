@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/iseria/!svn/ver/2498/insuite-ui/trunk/src/mailer
+END
+mailer.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/iseria/!svn/ver/2378/insuite-ui/trunk/src/mailer/mailer.js
+END
+org_mail.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/iseria/!svn/ver/2274/insuite-ui/trunk/src/mailer/org_mail.js
+END
+mboxrw.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/iseria/!svn/ver/1468/insuite-ui/trunk/src/mailer/mboxrw.js
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/iseria/!svn/ver/2091/insuite-ui/trunk/src/mailer/Makefile
+END
+application.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/iseria/!svn/ver/2474/insuite-ui/trunk/src/mailer/application.js
+END

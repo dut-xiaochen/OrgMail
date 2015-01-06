@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 7
+.*.swp
+
+K 13
+svn:mergeinfo
+V 48
+/insuite-ui/branches/V3.0.5_PSLR/tests:2243-2248
+END

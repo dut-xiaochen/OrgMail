@@ -1,0 +1,115 @@
+/* $Id: searchbox.js 1397 2007-06-13 02:17:47Z faiz_kazi $ -- $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/common/misc/searchbox.js $ */
+/*for JSLINT undef checks*/
+/*extern DA Prototype YAHOO */
+/* 
+ * Copyright (c) 2007, DreamArts. All rights reserved. 
+ * TODO: message 
+ * version: ?? 
+ */ 
+if (('undefined' === typeof DA) || ('undefined' === typeof DA.widget) ) {
+    throw "DEPENDENCY ERROR: DA.widget is not defined.";
+}
+if (('undefined' === typeof Prototype) ) {
+    throw "DEPENDENCY ERROR: Prototype is not included.";
+}
+if (('undefined' === typeof YAHOO)) {
+    throw "DEPENDENCY ERROR: YAHOO is not included.";
+}
+
+
+/*
+ * @class SearchBox
+ * @constructor 
+ * @param field   {HTMLSpanElement}
+ * @param textBox {HTMLTextInputElement}
+ * @param button  {HTMLButtonElement}
+ * @param button  {Object} An instance of a DA button widget // TODO:
+ */
+DA.widget.SearchBox = function(field, textBox, button, menuData) {
+
+    this.field   = field;
+    this.textBox = textBox; // TODO: check these
+    this.button  = button;
+    this.icon    = document.createElement('img');
+    this.select  = document.createElement('span');
+    this.arrow   = document.createElement('img');
+    
+    this.icon.src  = DA.vars.imgRdir + '/ico_mail_search.gif';
+    this.arrow.src = DA.vars.imgRdir + '/ico_mail_arrow.gif';
+    this.arrow.id  = 'da_searchBox_arrow';
+    this.arrow.style.cursor = 'pointer';
+    
+    this.field.appendChild(this.icon);
+    this.field.appendChild(this.select);
+    this.field.appendChild(this.arrow);
+    
+    this.button.onclick    = this._buttonClicked.bindAsEventListener(this);
+    this.textBox.onkeyup   = this._handleKeyUp.bindAsEventListener(this);
+    this.textBox.onkeydown = this._handleKeyDown.bindAsEventListener(this);
+    
+    this.onSearch = new YAHOO.util.CustomEvent("onSearch");
+    
+    this.menu = new DA.widget.PulldownMenuController("da_searchBox", this.arrow, menuData, {
+        onTrigger: function(e) {
+            var srcElem = YAHOO.util.Event.getTarget(e);
+            
+            if (!srcElem || !srcElem.id) { 
+                return false; 
+            }
+            
+            var srcId = srcElem.id;
+            
+            if (!srcId.match(/^da\_searchBox\_arrow$/)) {
+                return false;
+            }
+            
+            return true;
+        }
+    });
+    
+};
+
+DA.widget.SearchBox.prototype = {
+
+    _buttonClicked: function() {
+        
+        var conditions = this.getConditions();
+
+        this.onSearch.fire({
+            text:       this.textBox.value,
+            conditions: conditions
+        });
+    },
+
+    _handleKeyUp: function() {
+        var value = this.textBox.value;
+        // TODO: This was commented out for bug: 915268
+        /*
+        if (value && value !== "") {
+            this.button.disabled = false;
+        } else {
+            this.button.disabled = true;
+        }
+        */
+    },
+
+    _handleKeyDown: function(e) {
+        var charCode = YAHOO.util.Event.getCharCode(e);
+        if (charCode === 13) { // Enter
+            this._buttonClicked();
+        }
+    },
+
+    getConditions: function() {
+        return {};
+    },
+    
+    changeField: function() {
+    },
+
+    reset: function () {
+        this.textBox.value = '';
+    }
+    
+};
+

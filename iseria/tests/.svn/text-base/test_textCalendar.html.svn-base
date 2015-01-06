@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- -Adding Firebug-lite: For console.log support in IE, Opera, etc -->
+<script src="/js/firebuglite/v1.0-b1/firebug.js"></script>
+<script src="/js/prototype/v1.6.0_rc1/prototype-comp.js"></script>
+
+<script>
+window.userConfig = {
+    imgRdir: '/images',
+    cgiRdir: '/cgi-bin'
+};
+</script>
+<link href="../src/common/calendar/calendar.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/DA/DA-min.js"></script>
+<script src="../src/common/calendar/calendar.js"></script>
+<script src="../src/common/calendar/textcalendar.js"></script>
+
+<style>
+</style>
+</head>
+
+<body>
+
+  <h3><i>Firebug is available. Please press F12 to see the console.</i></h3>
+
+  <input type=text value="" id="text">
+  <button id="start">Start</button><br>
+
+  <script>
+
+    Event.observe( "start", 'click', function() {
+        var cal = new DA.textCal.DateSelector("text", "cal1", {
+			minYear: 2005,
+			maxYear: 2015
+        });
+    });
+
+  </script>
+
+</body>
+
+</html>

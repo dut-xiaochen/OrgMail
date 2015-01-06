@@ -1,0 +1,52 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/common/rpc
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2010-01-25T10:30:58.284954Z
+2058
+faiz_kazi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+rpc.js
+file
+
+
+
+
+2013-03-05T01:15:00.000000Z
+4038b766e1248b9deb1923c965fd8050
+2007-08-24T09:43:52.660449Z
+1494
+faiz_kazi
+
+json-rpc.js
+file
+
+
+
+
+2013-03-05T01:15:00.000000Z
+34e35feaa5daa9d824a6046d7f0d478f
+2010-01-25T10:30:58.284954Z
+2058
+faiz_kazi
+

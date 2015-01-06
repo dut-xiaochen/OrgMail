@@ -1,0 +1,198 @@
+/**
+ * [seen]
+ * s1: Seen/Read     (既読)
+ * s0: Unseen/Unread (未読)
+ *
+ * [flagged]
+ * f0: Unflagged (マーク無し)
+ * f1: Flag On   (マーク)
+ * 
+ * [attachment]
+ * a0: No attachments
+ * a1: Has attachment(s)
+ *
+ * [priority]
+ * p3: NORMAL
+ * p5: LOW
+ * p1: HIGH
+ *
+ */
+
+/*seen*/
+tr.s1 { 
+    background-color:#f0f0f0; /*grayed out means seen*/
+    cursor: pointer; /*clickable*/
+}
+tr.s1 td.seen { text-indent:-30px; }
+/*unseen*/
+tr.s0 { 
+   font-weight:bold; /*new messages are in bold*/
+   cursor: pointer;  /*clickable*/
+}
+tr.s0 td.seen {
+    background-image: url('/images/ico_fc_mail.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px; 
+}
+td.seen { text-indent:-30px; }
+
+
+/*マーク(flag) */
+/*ON */
+tr.f1 td.flagged  { 
+    background-image: url('/images/icons_mail_flag_on.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px; 
+}
+/*OFF */
+tr.f0 td.flagged  { text-indent:-30px; }
+/*unspecified(DEFAULT:OFF)*/
+td.flagged  { text-indent:-30px; }
+
+
+/*attachment(s)*/
+/*YES*/
+tr.a1 td.attachment { 
+    background-image: url('/images/ico_mail_attach.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px; 
+}
+/*NO*/
+tr.a0 td.attachment { text-indent:-30px; }
+/*unspecified(DEFAULT:NO)*/
+td.attachment { text-indent:-30px; }
+
+
+
+/*priority*/
+/*LOW*/
+tr.p5 td.priority { 
+    background-image: url('/images/ico_mail_low.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px;
+}
+/*NORMAL priority*/
+tr.p3 td.priority { text-indent:-30px; }
+/*HIGH*/
+tr.p1 td.priority { 
+    background-image: url('/images/ico_mail_high.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px;
+}
+/*unspecified(DEFAULT:NORMAL)*/
+td.priority { text-indent:-30px; }
+
+
+/* FIXME: Ideally this should best be defined only 
+ *         in virtual-scroll.css, but it'll have to
+ *         be put in here as well (CSS works that way)
+ */
+tr.da_gridSelectedRow { 
+    background-color : #dddddd;
+/*  color            : white;*/
+}
+
+
+/*Fake-table hacks*/
+
+/*for some reason, applying da_gridSelectedRow to the parent div alone didn't work on IE*/
+div.da_gridSelectedRow div { 
+    background-color : #dddddd;
+/*  color            : white;*/
+}
+
+/*seen*/
+div.s1 { 
+    cursor: pointer; /*clickable*/
+}
+div.s1 div.seen { text-indent:-30px; }
+/*unseen*/
+div.s0 { 
+   font-weight:bold; /*new messages are in bold*/
+   cursor: pointer;  /*clickable*/
+}
+div.s0 div.seen {
+    background-image: url('/images/ico_fc_mail.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px; 
+}
+div.seen { text-indent:-30px; }
+
+
+/*マーク(flag) */
+/*ON */
+div.f1 div.flagged  { 
+    background-image: url('/images/icons_mail_flag_on.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px; 
+}
+/*OFF */
+div.f0 div.flagged  { text-indent:-30px; }
+/*unspecified(DEFAULT:OFF)*/
+div.flagged  { text-indent:-30px; }
+
+
+/*attachment(s)*/
+/*YES*/
+div.a1 div.attachment { 
+    background-image: url('/images/ico_mail_attach.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px; 
+}
+/*NO*/
+div.a0 div.attachment { text-indent:-30px; }
+/*unspecified(DEFAULT:NO)*/
+div.attachment { text-indent:-30px; }
+
+
+
+/*priority*/
+/*LOW*/
+div.p5 div.priority { 
+    background-image: url('/images/ico_mail_low.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px;
+}
+/*NORMAL priority*/
+div.p3 div.priority { text-indent:-30px; }
+/*HIGH*/
+div.p1 div.priority { 
+    background-image: url('/images/ico_mail_high.gif'); background-position: center center; 
+    background-repeat: no-repeat; text-indent:-30px;
+}
+/*unspecified(DEFAULT:NORMAL)*/
+div.priority { text-indent:-30px; }
+
+/*text indent*/
+div.subject  { text-indent:4px; }
+div.from     { text-indent:4px; }
+div.date     { text-indent:4px; }
+div.size     { text-indent:4px; text-align: right; }
+
+/* replied */
+div.priority { text-indent:-10px; 
+background-position: center center;
+} 
+
+div.r1 div.subject
+{
+	background-image: url('/images/ja/ico_sc_reply.gif');
+	background-repeat: no-repeat;
+	background-position:left;
+	text-indent:16px;
+	height:16px;
+}
+
+div.w1 div.subject
+{
+
+     background-image: url('/images/ja/ico_sc_forward.gif');
+        background-repeat: no-repeat;
+        background-position:left;
+        text-indent:16px;
+        height:16px;
+}
+
+
+/*deleted*/
+div.d1   {
+    background-image    : url( /images/maillist_strikeback.gif );
+    background-repeat   : repeat-x;
+    background-position : center left;
+}
+
+table.da_virtualScrollingHeaderTable tr td {
+    height:  16px;
+    border-bottom: 1px solid #999;
+}

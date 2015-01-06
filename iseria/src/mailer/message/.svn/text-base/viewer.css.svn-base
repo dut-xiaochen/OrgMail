@@ -1,0 +1,101 @@
+div.da_messageViewerHeader {
+	border: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+	padding: 0px;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.da_messageViewerHeaderTable {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.da_messageViewerHeaderContents {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.da_messageViewerBodyContents {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.da_messageViewerHeaderTableTopLeft {
+	background: url(/images/mailwaku_br_tl.gif) 0px 0px no-repeat;
+	align: right;
+}
+
+.da_messageViewerHeaderTableTopRight {
+	background: url(/images/mailwaku_br_tr.gif) 0px 0px no-repeat;
+}
+
+.da_messageViewerHeaderTableMiddleLeft {
+	background: url(/images/mailwaku_br_l_bg.gif) 0px 0px repeat-y;
+	width: 2px;
+}
+
+.da_messageViewerHeaderTableMiddleCenter {
+	background: url(/images/mailwaku_br_bg.gif) 0px 0px;
+}
+
+.da_messageViewerHeaderTableMiddleRight {
+	background: url(/images/mailwaku_br_r_bg.gif) 0px 0px repeat-y;
+}
+
+.da_messageViewerHeaderTableBottomLeft {
+	background: url(/images/mailwaku_br_bl.gif) 0px 0px no-repeat;
+}
+
+.da_messageViewerHeaderTableBottomRight {
+	background: url(/images/mailwaku_br_br.gif) 0px 0px no-repeat;
+}
+
+.da_messageViewerHeaderAttachmentEnabled {
+	cursor: pointer;
+}
+
+.da_messageViewerHeaderAttachmentDisabled {
+	cursor: default;
+}
+
+.da_messageViewerHeaderAttachmentPulldownMenu {
+    background-color:#fefff0;
+    border:solid 1px #a5a69c;
+    border-width:1px 1px 0px 1px;
+    
+}
+
+.da_messageViewerHeaderAttachmentPulldownMenu ul {
+
+    border:solid 1px #a5a69c;
+    border-width:0px 0px 1px 0px;
+    
+}
+
+.da_messageViewerHeaderAttachmentPulldownMenu li {
+ 
+    border:solid 1px #fefff0;
+	background-color: #e3e4d4;
+    border-width:1px 1px 0 1px;
+	
+}
+
+.da_messageViewerHeaderAttachmentPulldownMenu li.selected {
+
+    background-color:#cbccbb;
+
+}
+

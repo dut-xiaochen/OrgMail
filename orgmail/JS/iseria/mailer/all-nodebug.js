@@ -563,30 +563,23 @@ DA.util = {
     lockData: {},
 
     lock: function(name) {
-        if (DA.mailer.util.getOperationFlag() !== "" && DA.mailer.util.getOperationFlag() !== OrgMailer.vars.org_mail_gid.toString()){
-			if (DA.mailer.util.getOperationWarnedFlag().indexOf(OrgMailer.vars.org_mail_gid.toString()) < 0){
-				if (OrgMailer.vars.operation_warned === 0){
-					OrgMailer.vars.operation_warned = 1;
-					DA.mailer.util.setOperationWarnedFlag(OrgMailer.vars.org_mail_gid);
-					DA.util.warn(DA.locale.GetText.t_("MESSAGE_CHANGE_TAB_ERROR"));
-					DA.mailer.util.autoCloseWaitingMask();
-					DA.waiting.show(DA.locale.GetText.t_("MESSAGE_CHANGE_TAB_WAITING_MESSAGE"));
-				}
-			}
-            return false;
-        }
-        if (this.existsLock(name)) {
+		var operationFlag = DA.mailer.util.getOperationFlag();
+        if ((operationFlag !== "" && operationFlag.indexOf(OrgMailer.vars.org_mail_gid.toString()) < 0) || this.existsLock(name)) {
             return false;
         } else {
-            DA.mailer.util.setOperationFlag(OrgMailer.vars.org_mail_gid.toString());
+			operationFlag += OrgMailer.vars.org_mail_gid.toString() + name;
+            DA.mailer.util.setOperationFlag(operationFlag);
             this.lockData[name] = true;
             return true;
         }
     },
     
     unlock: function(name) {
-		if (DA.mailer.util.getOperationFlag() !== "" && DA.mailer.util.getOperationFlag() === OrgMailer.vars.org_mail_gid.toString()){
-        	DA.mailer.util.setOperationFlag('');
+		var operationFlag = DA.mailer.util.getOperationFlag();
+		var reg = null;
+		if (operationFlag !== "" && operationFlag.indexOf(OrgMailer.vars.org_mail_gid.toString() + name) >= 0){
+			reg = new RegExp(OrgMailer.vars.org_mail_gid.toString() + name, 'g');
+        	DA.mailer.util.setOperationFlag(operationFlag.replace(reg,''));
         	DA.mailer.util.setOperationWarnedFlag('');
 		}
         delete this.lockData[name];
@@ -12808,7 +12801,7 @@ DA.mailer.FolderTreeController.prototype = {
 	     * @returns {Boolean} if TRUE, continue the drag; if FALSE, the drag will be aborted.
 	     */
 	    this.drag.clickValidator= function(e) {
-			if (DA.mailer.util.getOperationFlag() !== '' && DA.mailer.util.getOperationFlag() !== OrgMailer.vars.org_mail_gid.toString()){
+			if (DA.mailer.util.getOperationFlag() !== '' && DA.mailer.util.getOperationFlag().indexOf(OrgMailer.vars.org_mail_gid.toString()) < 0){
 				return false;
 			} else{
 				return true;
@@ -22551,7 +22544,7 @@ YAHOO.extend(DA.mailer.dd.MboxMail, YAHOO.util.DDProxy, {
      * @returns {Boolean} if TRUE, continue the drag; if FALSE, the drag will be aborted.
      */
     clickValidator: function(e) {
-		if (DA.mailer.util.getOperationFlag() !== '' && DA.mailer.util.getOperationFlag() !== OrgMailer.vars.org_mail_gid.toString()){
+		if (DA.mailer.util.getOperationFlag() !== '' && DA.mailer.util.getOperationFlag().indexOf(OrgMailer.vars.org_mail_gid.toString()) < 0){
 			return false;
 		}
         var selectedMails = this.mboxGrid.getSelected(); // REF: Using getSelected for obtaining count
@@ -23196,3 +23189,4 @@ YAHOO.extend(DA.mailer.widget.AddressAutoComplete, YAHOO.widget.AutoComplete, {
 
 
 
+                                                                                                                                                                                                                                                                                     

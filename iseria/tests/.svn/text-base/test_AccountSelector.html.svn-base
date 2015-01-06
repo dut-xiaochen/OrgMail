@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_Dialog.html 1398 2007-06-13 02:39:35Z faiz_kazi $ $HeadURL: http://yuki.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_Dialog.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link href="/js/extjs/v2.1/resources/css/core.css" rel="StyleSheet" type="text/css"/>
+<link href="/js/extjs/v2.1/resources/css/combo.css" rel="StyleSheet" type="text/css"/>
+<link href="/js/extjs/v2.1/resources/css/form.css" rel="StyleSheet" type="text/css"/>
+<script src="/js/prototype/v1.6.0_rc1/prototype-comp.js"></script>
+<script src="/js/extjs/v2.1/adapter/ext/ext-base.js"></script>
+<script src="/js/extjs/v2.1/ext-all.js"></script>
+
+<script>
+window.userConfig = {
+    imgRdir: '/images',
+    cgiRdir: '/cgi-bin'
+};
+</script>
+<link href="../src/common/account/selector.css" rel="StyleSheet" type="text/css"/>
+<link href="../src/common/reset/reset-min.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/dui/DAAccountSelector.js"></script>
+<script src="../src/common/DA/DA-min.js"></script>
+<script src="../src/common/account/selector.js"></script>
+
+<style>
+</style>
+</head>
+
+<body>
+
+  <table width=100%>
+  <tr>
+    <td width=100%>
+      <div id="accountSelector"></div>
+    </td>
+  </tr>
+  </table>
+  <button id="makeSelector">Make Selector.</button>
+  <button id="makeIdList">Make IdList.</button>
+  
+  <script>
+
+  Event.observe( $("makeSelector"), 'click', function() {
+      // MAIN
+      window.selector = new DA.ug.AccountSelector ({
+          selectorNode: $("accountSelector"),
+          appType: "scheduler",
+          onlyOne: true,
+          initRecord: [{
+              id: "1000011",
+              type: "1",
+              name: "ユーザ１"
+          }],
+          initContents: "Empty",
+          denyRemove: true,
+          searchTitle: "検索:"
+      });
+  });
+  
+  Event.observe( $("makeIdList"), 'click', function() {
+      alert(window.selector.recordList());
+  });
+  
+  </script>
+
+</body>
+
+</html>

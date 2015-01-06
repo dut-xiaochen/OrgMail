@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_ThreePane.html 1398 2007-06-13 02:39:35Z faiz_kazi $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_ThreePane.html $ -->
+<html>
+<head>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop-debug.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="stylesheet" type="text/css"/>
+<link href="/js/yui/v2.2.0a/reset/reset-min.css" rel="stylesheet" type="text/css"/>
+
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/layout/three-pane.js"></script>
+<link rel="StyleSheet" href="../src/common/layout/three-pane.css" type="text/css">
+
+<style>
+html, body {
+  width   : 100%;
+  height  : 100%;
+}
+div.custom_left {
+  background: #ff8888;
+}
+div#right_top_pane0 {
+  background: #88ff88;
+}
+div#right_bottom_pane0 {
+  background: #8888ff;
+}
+div.threepanecontainer {
+  border:  1px dotted gray;
+  width:   90%;
+  height:  60%;
+  margin: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+  <h3>Three-pane without a handle-attached element</h3>
+  
+  <div id="my_div0" class="da_threePaneContainer threepanecontainer">
+    <div id="left_pane0" class="custom_left">my left pane.</div>
+    <div id="vdivider0"></div>
+    <div id="right_pane0">
+      <div id="right_top_pane0">my right top pane</div>
+      <div id="hdivider0"></div>
+      <div id="right_bottom_pane0">my right bottom pane</div>
+    </div>
+  </div>
+
+  <button id="my_button0">Make the above div a 3-pane...</button>
+  
+  <h3>Three-pane with an attached handle element</h3>
+  <style>
+  div#parasite1 {
+    background-color: #dddddd;
+    width: 100%;
+    height: 80px;
+  }
+  div#right_bottom_pane1 {
+    background-color: #f2f2f2;
+    width:100%;
+  }
+  div#upper {
+    background-color: #e3e3e3;
+    height: 20%;
+    overflow: auto;
+  }
+  pre#lower {
+    height: 80%;
+    width:100%;
+    overflow:auto;
+  }
+  </style>
+  <div id="my_div1" class="threepanecontainer">
+    <div id="left_pane1" class="custom_left">my left pane.</div>
+    <div id="vdivider1"></div>
+    <div id="right_pane1">
+      <div id="right_top_pane1">my right top pane</div>
+      <div id="hdivider1"></div>
+      <div id="right_bottom_pane1">
+        <div id="upper">
+          There's something here.
+	  <ol>
+            <li>Milk</li>
+            <li>Cola</li>
+            <li>Juice</li>
+            <li>Soda</li>
+	  </ol>
+	</div>
+        <pre id="lower">
+Try the Moo Shu Pork.  It is especially good today.
+
+"Speak, thou vast and venerable head," muttered Ahab, "which, though
+ungarnished with a beard, yet here and there lookest hoary with mosses; speak,
+mighty head, and tell us the secret thing that is in thee.  Of all divers,
+thou has dived the deepest.  That head upon which the upper sun now gleams has
+moved amid the world's foundations.  Where unrecorded names and navies rust,
+and untold hopes and anchors rot; where in her murderous hold this frigate
+earth is ballasted with bones of millions of the drowned; there, in that awful
+water-land, there was thy most familiar home.  Thou hast been where bell or
+diver never went; has slept by many a sailer's side, where sleepless mothers
+would give their lives to lay them down.  Thou saw'st the locked lovers when
+leaping from their flaming ship; heart to heart they sank beneath the exulting
+wave; true to each other, when heaven seemed false to them.  Thou saw'st the
+murdered mate when tossed by pirates from the midnight deck; for hours he fell
+into the deeper midnight of the insatiate maw; and his murderers still sailed
+on unharmed -- while swift lightnings shivered the neighboring ship that would
+have borne a righteous husband to outstretched, longing arms.  O head! thou has
+seen enough to split the planets and make an infidel of Abraham, and not one
+syllable is thine!"
+		-- H. Melville, "Moby Dick"
+        </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="my_button1">Make the above div a 3-pane...</button>
+
+  <script>
+  Event.observe(window, "load", function(){
+    DA.log = YAHOO.log; // Just use the YAHOO logger...
+    var lr = new YAHOO.widget.LogReader();
+    lr.collapse();
+    window.__threePane = [];
+    new Number(2).times(function(n){
+        Event.observe( $("my_button" + n), 'click', function() {
+            var params = {
+                leftPane:        $("left_pane" + n),
+                rightPane:       $("right_pane" + n),
+                rightTopPane:    $("right_top_pane" + n),
+                rightBottomPane: $("right_bottom_pane" + n),
+                vDivider:        $("vdivider" + n),
+                hDivider:        $("hdivider" + n)
+            };
+            window.__threePane[n] = new DA.widget.ThreePane( params );
+            if (n===1) {
+                window.__threePane[n].onYResized = function(lp, tp, bp){
+                    var tY = tp.offsetHeight;
+                    var bY = bp.offsetHeight;
+                    DA.log("tp:" + tY + ",bp:" + bY + "." );
+                    var lower = $('lower');
+                    var upper = $('upper');
+                    var foo = lower.offsetHeight+1 + upper.offsetHeight +1;
+                    var percs = DA.util.toPercentages([lower.offsetHeight, upper.offsetHeight]);
+                    
+                };
+            }
+
+        });
+        });
+    });
+
+  </script>
+
+</body>
+
+</html>

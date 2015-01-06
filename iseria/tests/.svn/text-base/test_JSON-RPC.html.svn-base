@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_JSON-IO.html 1433 2007-07-18 09:15:51Z faiz_kazi $ $HeadURL: http://yuki/svn/iseria/insuite-ui/trunk/tests/test_JSON-IO.html $ -->
+<html>
+<head>
+<title>JSON RPC Test Case</title>
+<!-- Prototype -->
+<script src="/js/prototype/v1.6.0_rc0/prototype.js"></script>
+<!-- YUI -->
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/connection/connection.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/container/container.js"></script>
+<script src="/js/yui/v2.2.0a/treeview/treeview.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="stylesheet" type="text/css"/>
+<link href="/js/yui/v2.2.0a/reset/reset-min.css" rel="stylesheet" type="text/css"/>
+<link href="/js/yui/v2.2.0a/treeview/assets/tree.css" rel="stylesheet" type="text/css"/>
+<!-- DA -->
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/rpc/rpc.js"></script>
+<script src="../src/common/rpc/json-rpc.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/treeview/assets/tree.css"/>
+<style>
+#treeDiv {
+  border:3px solid green;
+  background:#eeddbb;
+  height:60%;
+  width:60%;
+  overflow:auto;
+  margin: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+body {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+  height: 80%;
+}
+div.container {
+  height: 600px;
+}
+.yui-log {
+  top: 200px;
+}
+</style>
+
+<script>
+function clearTree() { $("treeDiv").innerHTML = "" ; }
+function buildTree(obj) {
+    var tree = new YAHOO.widget.TreeView($("treeDiv"));
+    var root = tree.getRoot();
+    function nv(p, v, node) {
+        if (typeof(v) != "function") { 
+          var tmpNode = new YAHOO.widget.TextNode({
+            label: p + " (" + ((v && v.length && v.grep) ? "array" : typeof(v)) + ")"
+          }, node, false);
+          populate(v, tmpNode);
+        }
+    }
+    function populate(o, node){
+        if (typeof(o) == "object") {
+          //var props = (o && o.length && o.grep) ? o.toArray() : $H(o).keys().sort();
+          if (o && o.length && o.grep) {
+            for (var i=0; i<o.length; i++){
+              var v = o[i];
+              nv(i,v, node);
+            }
+          } else {
+            $H(o).keys().sort().each(function(p){
+              var v = o[p];
+              nv(p,v, node);
+            });
+          }
+        } else {
+          var tmpNode = new YAHOO.widget.TextNode({label:o}, node);
+        }
+    }
+    populate(obj, root);
+    tree.draw();
+}
+
+Event.observe(window, "load", function(){
+ 
+    DA.log = YAHOO.log; // Just use the YAHOO logger...
+    new YAHOO.widget.LogReader(null);
+    
+    var urlElem = $("url");
+    var remoteMethodElem = $('remoteMethod'); 
+    
+    function callback (o, actualArgs){
+        buildTree(o);
+        $("goget").disabled = urlElem.disabled = false;
+        $('actualArgs').innerHTML = "";
+        $('actualArgs').appendChild(document.createTextNode("Actual Arguments passed:" + $H(actualArgs).inspect()));
+    }
+
+    window.testObj = { };
+    
+    var setrpc = function () {
+        testObj.remoteCall = DA.RPC.JSON.makeRPC(
+                urlElem.value, 
+                remoteMethodElem.value, 
+                testObj,
+                null,
+                callback
+        );
+        return false;
+    };
+
+    function errorHandler (e) {
+        if (e && e.type == 'INVALID_CONTENTTYPE') {
+            $("treeDiv").innerHTML = e.body;
+        } else {
+	    if ('string' === typeof e) {
+	    	alert(e);
+	    } else {
+                var s = "";
+                for (var p in e) {
+                    try {
+                        var v = e[p];
+                        if (typeof v == 'function') {continue}
+                        s += (p + ":" + v + "\n");
+                    } catch (er) {  }
+                }
+                alert("error:" + s);
+	    }
+        }
+        $("goget").disabled = urlElem.disabled = false;
+    }
+
+
+    var goget = function () {
+        var checked = $A(document.forms['urlfoo'].argtype).find(function(e){return e.checked===true});
+        var mode = checked && checked.value;
+        DA.log("Sending Request...");
+        $("goget").disabled = urlElem.disabled = true;
+
+        var args;
+        var jsonargs = $('jsonargs');
+        try {
+            args = eval('('+ jsonargs.value +')');
+        } catch(e) {
+            alert("Not valid JSON: " + jsonargs.value);
+            $("goget").disabled = urlElem.disabled = false;
+            return false;
+        }
+
+        // TODO: add a test for array detection too
+        switch (mode) {
+        case 'params':
+            testObj.remoteCall(args);
+            break;
+        case 'params,callback':
+            testObj.remoteCall(args, callback);
+            break;
+        case 'params,callback,meta':
+            testObj.remoteCall(args, { success: callback, error: errorHandler, failure: errorHandler });
+            break;
+        default:
+            DA.log('Unknown param test mode', 'error');
+        }
+        
+        DA.log("Request sent, waiting...");
+        return false;
+    };
+
+    Event.observe($("goget"), "click", goget);
+    Event.observe('url', 'change', setrpc);
+    Event.observe('remoteMethod', 'change', setrpc);
+    setrpc();
+    document.forms["urlfoo"].onsubmit = goget;
+});
+
+
+</script>
+
+</head>
+
+<body>
+<p>
+This test case covers <code>DA.RPC.JSON</code> static class - specifically, the 
+<code>makeRPC</code> method. Example:
+<pre style="background-color:#ddd">
+    // Create an object
+    var myObj = {
+        /**
+         * Create a method which is a proxy to a JSON-RPC
+         * @method factorial
+         * @param n {Number}
+         * @returns {Number}
+        factorial:  DA.RPC.JSON.makeRPC('/cgi-bin/json_rpc.cgi', 'factorial'),
+        /**
+         * @method showResult
+         */
+        showResult: function (o) {
+            alert("Result is: ": o);
+        }
+    };
+
+    // Call the method (it will invoke 'factorial' on the server)
+    myObj.factorial(4, {
+        success: myObj.showResult,
+        scope:   myObj
+    });
+
+    // showResult will be called, and an alert box with "Result is: 24" will be displayed
+
+</pre>
+</p>
+<div style="margin-top:10px;">
+<form name="urlfoo" id="urlfoo">
+URL: <input name="url" id="url" size="150" style="width:30%" value="/faiz/silly"/>
+Remote Method: <input name="remoteMethod" id="remoteMethod" size="150" style="width:10%" value="capitalize"/>
+<br/>
+<input type='radio' name='argtype' value='params' checked='true'>Params only</input>
+<input type='radio' name='argtype' value='params,callback'>Params, Callback</input>
+<input type='radio' name='argtype' value='params,callback,meta'>Params, and Callback/ErrorHandler passed in a meta-object (DWR-style)</input>
+<br />
+<textarea name="jsonargs" id="jsonargs" cols="50">/*args here*/</textarea>
+</form>
+<button id="goget">Get JSON</button>
+</div>
+<hr />
+<div id="actualArgs"></div>
+<div class="container">
+  <div id="treeDiv">
+  <i>JSON response object will be displayed here.</i>
+  </div>
+</div>
+<i>Note: needs Prototype version 1.5.1 and above (1.6.0_rc0 testes OK)</i>
+
+</body>
+</html>
+

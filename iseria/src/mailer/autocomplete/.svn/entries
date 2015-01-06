@@ -1,0 +1,54 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/mailer/autocomplete
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2010-09-21T06:30:44.000964Z
+2144
+yp_shao
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+autocomplete.css
+file
+
+
+
+
+2014-03-24T10:59:30.000000Z
+b6d52271826193accaedfea1df4e865e
+2007-06-13T02:17:47.471009Z
+1397
+faiz_kazi
+has-props
+
+autocomplete.js
+file
+
+
+
+
+2014-03-24T10:59:30.000000Z
+6a15e9a830f1b16d1bdbba333f672d3d
+2010-09-21T06:30:44.000964Z
+2144
+yp_shao
+has-props
+

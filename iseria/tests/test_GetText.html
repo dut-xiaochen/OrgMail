@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_GetText.html 1837 2009-02-16 08:35:00Z ya_song $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_GetText.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/locale/message.js"></script>
+<script src="../src/common/locale/ja/message_core.js"></script>
+<script src="../src/common/locale/ja/message_custom.js"></script>
+<style>
+</style>
+</head>
+
+<body>
+
+  Keyword: <input type=text id="key" value=""><button id="my_button">GetText</button><br>
+  GetText: <input type=text id="value" value="">
+   
+  <script>
+  Event.observe( $("my_button"), 'click', function() {
+    document.getElementById("value").value = DA.locale.GetText.t_(document.getElementById("key").value);
+  });
+  
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id$ $HeadURL$ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/connection/connection.js"></script>
+<script src="/js/yui/v2.2.0a/container/container.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="StyleSheet" type="text/css"/>
+<link href="../src/common/dialog/dialog.css" rel="StyleSheet" type="text/css"/>
+
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/logging/logging.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/locale/message.js"></script>
+<script src="../src/common/locale/ja/message_core.js"></script>
+<script src="../src/common/locale/ja/message_custom.js"></script>
+<script src="../src/common/dialog/dialog.js"></script>
+<script src="../src/mailer/mailer.js"></script>
+<script src="../src/mailer/dialog/dialog.js"></script>
+
+<script src="/cgi-bin/ajax_mailer.cgi"></script>
+
+<style>
+</style>
+</head>
+
+<body>
+
+  <button id="makeDialog">Make Dialogs.</button>
+  <button id="showDialog" disabled>Show Dialogs.</button>
+  <button id="hideDialog" disabled>Hidden Dialogs.</button>   
+  
+  <script>
+  /*Event.observe(window, 'load', function(){
+      DA.log = YAHOO.log; // Just use the YAHOO logger...
+      new YAHOO.widget.LogReader(); 
+  });*/
+
+  Event.observe( $("makeDialog"), 'click', function() {
+      // MAIN
+      var message = new DA.widget.MessageDialog (
+          "messageDialog", "メッセージダイアログ", "メッセージ内容", {
+              onEnter: function() {
+                  alert("Message enter");
+                  return true;
+              },
+              
+              onCancel: function() {
+                  alert("Message cancel");
+                  return true;
+              }
+          }
+      );
+      
+      var string = new DA.widget.StringChangerDialog (
+          "stringChangerDialog", "文字列変更ダイアログ", "初期パラメータ", {
+              onEnter: function() {
+                  alert("String changer enter");
+                  return true;
+              },
+              
+              onCancel: function() {
+                  alert("String changer cancel");
+                  return true;
+              }
+          }
+      );
+      
+      var upload = new DA.widget.FileUploadDialog (
+          "fileUploadDialog", "ファイルアップロードダイアログ", {
+              onEnter: function() {
+                  alert("File upload enter");
+                  return true;
+              },
+              
+              onCancel: function() {
+                  alert("File upload cancel");
+                  return true;
+              }
+          }
+      );
+      
+      $("makeDialog").disabled = true;
+      $("showDialog").disabled = false;
+      $("hideDialog").disabled = false;
+      
+      Event.observe( $("showDialog"), 'click', function() {
+          message.show();
+          string.show();
+          upload.show();
+      });
+
+      Event.observe( $("hideDialog"), 'click', function() {
+          message.hide();
+          string.hide();
+          upload.hide();
+      });
+  });
+  
+  </script>
+
+</body>
+
+</html>

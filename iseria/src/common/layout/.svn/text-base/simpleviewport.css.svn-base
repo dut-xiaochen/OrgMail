@@ -1,0 +1,18 @@
+.simple-viewport .scroll-left-btn {
+     background-repeat: no-repeat;
+     background-image: url(/images/ise_simplevp_scroll_left.gif);
+     cursor: pointer;
+}
+
+.simple-viewport .scroll-right-btn {
+     background-repeat: no-repeat;
+     background-image: url(/images/ise_simplevp_scroll_right.gif);
+     cursor: pointer;
+}
+
+.simple-viewport .btn-disabled {
+	opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 10000;
+    cursor: default;
+}

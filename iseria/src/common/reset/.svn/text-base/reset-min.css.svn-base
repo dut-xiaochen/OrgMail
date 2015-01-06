@@ -1,0 +1,1 @@
+html,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote{margin:0;padding:0;}img,html{border:0;}ol,ul {list-style:none;}caption,th {text-align:left;}q:before,q:after{content:'';}

@@ -1,0 +1,454 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+<head>
+<title>
+ Overview
+</title>
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script>
+function asd() {
+	
+		parent.document.title="tables.js Overview";
+	
+}
+</script>
+</head>
+<body bgcolor="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> 	<font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top">
+<em>
+<b></b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<center>
+	
+	   <h2>tables.js</h2>
+	
+</center>
+
+	
+
+
+<h4>Summary</h4>
+<p>
+	
+		No overview generated for 'tables.js'<BR/><BR/>
+	
+</p>
+
+<hr>
+
+
+    <table border="1" cellpadding="3" cellspacing="0" width="100%">
+    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
+    <td colspan=2><font size="+2">
+    
+        <b>Class Summary</b>
+    
+    </font></td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="DA/widget/TwoColumnResizer.html">DA.widget.TwoColumnResizer</a></b></td>
+    <td>&nbsp;</td>
+    </tr>
+    
+    </table>
+    <hr/> 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+        <pre class="sourceview"><span class="comment">/*
+ * Copyright (c) 2007, DreamArts. All rights reserved.
+ * TODO: message
+ * version: ??
+ *
+ * Utilities for HTML Table manipulation in Javascript.
+ */</span>
+
+<span class="reserved">if</span> (!DA || !DA.widget) {
+    throw <span class="literal">"ERROR: missing DA.js"</span>; <span class="comment">// TODO: formalize/cleanup</span>
+}
+
+DA.tableutils = {
+
+     resizeHandles: <span class="reserved">function</span>(table, config) {
+        <span class="reserved">if</span> (!table) {
+            <span class="comment">// TODO: handle error</span>
+        }
+
+        <span class="reserved">if</span> (!config) {
+            config = {}; <span class="comment">//TODO:</span>
+        }
+
+        <span class="comment">// TODO: For now, we assume that there will</span>
+        <span class="comment">//       be just a single colgroup and several</span>
+        <span class="comment">//       cols.</span>
+        var cols = table.getElementsByTagName(<span class="literal">"col"</span>);
+
+        <span class="reserved">if</span> (!cols) {} <span class="comment">// TODO: handle error</span>
+
+        var handles = []; <span class="comment">// Collect resizeHandles here</span>
+
+        <span class="reserved">for</span> (var i=0; i&lt;(cols.length-1); i++) {
+            handles.push(new DA.widget.TwoColumnResizer(table, cols[i],cols[i+1],config));
+        }
+
+        <span class="reserved">return</span> handles;
+    }
+   
+
+};
+
+<span class="comment">/**
+ * Generate a new HTML TABLE DOM element with the given parameters.
+ *
+ * <span class="attrib">@method</span> makeATable
+ * <span class="attrib">@param</span> rows integer The number of rows
+ * <span class="attrib">@param</span> columns (integer) The number of columns
+ *                    OR,
+ *                (array)   An array of hashes, each hash
+ *                          having data that describes on column:
+ *                          Example:
+ *                          [ { name: "Column Title", width: "10%" }, ... ]
+ * <span class="attrib">@param</span> styleInfo (object) A hash containing CSS (className) information
+ *                          Key: element name,  Value: CSS class name
+ *                          Example:
+ *                          { table: "my_table_Style", td: "my_cell_Style" }
+ * <span class="attrib">@param</span> data (array) An array of arrays; each element contains HTML that
+ *                     Will be inserted into the cells.
+ *                     Example:
+ *                     [ [1, "A", "abc"],  [2, "B", "def"], .. ]
+ * <span class="attrib">@return</span> HTMLTableElement
+ */</span>
+DA.widget.makeATable = <span class="reserved">function</span>(rows,      <span class="comment">/* int */</span>
+                                columns,   <span class="comment">/* int OR array of hashes */</span>
+                                styleInfo, <span class="comment">/* hash */</span>
+                                data       <span class="comment">/* array of arrays */</span>) 
+{
+    var ncolumns = 1;   <span class="comment">// The number of columns; use the integer mode as default</span>
+    var thr, colgroup;  <span class="comment">// Tentative references to be made to the TABLE head row and COLGROUP</span>
+    <span class="reserved">if</span>(!styleInfo) styleInfo = {}; <span class="comment">// Just to avoid NP checks</span>
+    <span class="reserved">if</span>(!rows) rows = 1; <span class="comment">// Default number of rows is one</span>
+    <span class="reserved">if</span>(!columns)   { 
+        ncolumns = 1; <span class="comment">// use the integer mode</span>
+    } <span class="reserved">else</span> {
+        <span class="reserved">if</span> (<span class="literal">'number'</span> == typeof columns) { <span class="comment">// Using simple (integer) mode</span>
+            ncolumns = columns;
+        } <span class="reserved">else</span> {
+            <span class="reserved">if</span> (columns.each) { <span class="comment">// see if this is an array</span>
+                <span class="comment">// Using verbose mode (Array of Hashes)</span>
+                colgroup = document.createElement(<span class="literal">"colgroup"</span>);
+                var hasHead = false;
+                var thnames = columns.map(<span class="reserved">function</span>(_col){
+                    var col = document.createElement(<span class="literal">"col"</span>);
+                    col.width = _col.width;
+                    colgroup.appendChild(col);
+                    <span class="reserved">if</span> (_col.name) hasHead = true;
+                    <span class="reserved">return</span> hasHead ? _col.name : <span class="literal">'&amp;nbsp'</span>; 
+                });
+                <span class="reserved">if</span> (hasHead) {
+                    thr = document.createElement(<span class="literal">"tr"</span>);
+                    <span class="reserved">if</span> (styleInfo.tr) thr.className = styleInfo.tr;
+                    thnames.each(<span class="reserved">function</span>(name) {
+                        var th = document.createElement(<span class="literal">"th"</span>);
+                        <span class="reserved">if</span> (styleInfo.th) th.className = styleInfo;
+                        th.innerHTML = name;
+                        thr.appendChild(th);
+                    });
+                }
+                ncolumns = thnames.length; <span class="comment">// </span>
+            }
+        }
+    }
+
+    <span class="reserved">if</span>(!data) data = [];
+
+    var table = document.createElement(<span class="literal">'table'</span>);
+    var tbody = document.createElement(<span class="literal">'tbody'</span>);
+    <span class="reserved">if</span> (colgroup) {
+        table.appendChild(colgroup);
+    }
+    <span class="reserved">if</span> (thr) {
+        var thead = document.createElement(<span class="literal">"thead"</span>);
+        thead.appendChild(thr);
+        table.appendChild(thead);
+    }
+    table.appendChild(tbody);
+    table.className = styleInfo.table;
+    tbody.className = styleInfo.table;
+    <span class="reserved">for</span> (var i=0; i&lt;rows; i++) { <span class="comment">// for each row</span>
+        var tr = document.createElement(<span class="literal">"tr"</span>);
+        <span class="reserved">if</span> (styleInfo.tr) tr.className = styleInfo.tr;
+        
+        var rowData = data[i] || [];
+        <span class="reserved">for</span> (var j=0; j&lt;ncolumns; j++) { <span class="comment">// for each cell</span>
+            var td = document.createElement(<span class="literal">"td"</span>);
+            <span class="reserved">if</span>(styleInfo.td) td.className = styleInfo.td;
+            td.innerHTML = rowData[j] || <span class="literal">"&amp;nbsp;"</span>;
+            tr.appendChild(td);
+        }
+        
+        tbody.appendChild(tr);
+
+    }
+
+    <span class="reserved">return</span> table;
+
+};
+
+<span class="comment">/*
+ * A utility object which encapsulates table column resizing 
+ * (for 2 adjacent columns).&lt;p&gt;
+ * The methods moveLeft and moveRight allow the column divider to
+ * be moved a few pixels left or right, thus resizing both the
+ * columns.
+ * <span class="attrib">@class</span> TwoColumnResizer
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@param</span> lcol HTMLColElement (&amp;tl;col&amp;gt;) The left column.
+ * <span class="attrib">@param</span> rcol HTMLColElement (&amp;lt;col&amp;gt;) The right column.
+ * <span class="attrib">@param</span> config Hash Configuration options:
+ *                     maintainPercentage: (Boolean) if true, 
+ *                                         set the width in percentage 
+ *                                         instead of pixels.
+ *                     minWidth:           (Integer) minimum column width
+ *                                         in PIXELS.
+ */</span>
+DA.widget.TwoColumnResizer = <span class="reserved">function</span>(table,<span class="comment">// TODO</span>
+                                      lcol  <span class="comment">/*HTMLColElement*/</span>, 
+                                      rcol  <span class="comment">/*HTMLColElement*/</span>,
+                                      config<span class="comment">/*Hash*/</span>) {
+    <span class="reserved">this</span>.lcol = lcol;
+    <span class="reserved">this</span>.rcol = rcol;
+    <span class="reserved">this</span>.table = table;
+    <span class="reserved">this</span>.config = Object.extend({
+        maintainPercentage: false,
+        minWidth:           10
+    }, config || {});
+
+};
+
+<span class="comment">// Members</span>
+DA.widget.TwoColumnResizer.<span class="reserved">prototype</span> = {
+
+    <span class="comment">// FIXME: Dirty browser detected hack - Mozilla needs this</span>
+    tableLayoutHack:  (BrowserDetect.browser == <span class="literal">'Mozilla'</span> || BrowserDetect.browser == <span class="literal">'Firefox'</span>),
+    
+    <span class="comment">/**
+     * Move the divider of the 2 columns pixels pixels to the right.
+     * &lt;p&gt;&lt;b&gt;WARNING&lt;/b&gt;DOES NOT check if the param is valid (is an integer or not)
+     * <span class="attrib">@method</span> moveRight
+     * <span class="attrib">@param</span> pixels Integer 
+     */</span>
+    moveRight: <span class="reserved">function</span>(pixels) {
+        <span class="reserved">if</span> (<span class="reserved">this</span>.tableLayoutHack)
+            <span class="reserved">this</span>.table.style.tableLayout = <span class="literal">"auto"</span>;
+        <span class="comment">// TODO: optimize</span>
+        var rwidth = <span class="reserved">this</span>.rcol.offsetWidth;
+        var lwidth = <span class="reserved">this</span>.lcol.offsetWidth;
+        <span class="reserved">if</span> (rwidth - pixels &lt;= <span class="reserved">this</span>.config.minWidth) pixels = rwidth - <span class="reserved">this</span>.config.minWidth; 
+        <span class="reserved">if</span> (lwidth + pixels &lt;= <span class="reserved">this</span>.config.minWidth) pixels = <span class="reserved">this</span>.config.minWidth - lwidth;
+        <span class="comment">// DA_DEBUG_START</span>
+        DA.log(<span class="literal">"hack? "</span> + <span class="reserved">this</span>.tableLayoutHack + <span class="literal">", table: "</span> + <span class="reserved">this</span>.table.id + <span class="literal">", moveRight:"</span> + pixels, <span class="literal">"info"</span>, <span class="literal">"TwoColumnResizer"</span>);
+        <span class="comment">// DA_DEBUG_END</span>
+        <span class="reserved">this</span>.rcol.width = (rwidth - pixels) + <span class="literal">"px"</span>; 
+        <span class="reserved">this</span>.lcol.width = (lwidth + pixels) + <span class="literal">"px"</span>;
+	
+        <span class="comment">// TODO: handle maintainPercentage is it is true.</span>
+        <span class="reserved">if</span> (<span class="reserved">this</span>.tableLayoutHack)
+            <span class="reserved">this</span>.table.style.tableLayout = <span class="literal">"fixed"</span>;
+    },
+
+    <span class="comment">/**
+     * Move the divider of the 2 columns pixels pixels to the left.
+     * &lt;p&gt;&lt;b&gt;WARNING&lt;/b&gt;DOES NOT check if the param is valid (is an integer or not)
+     * <span class="attrib">@method</span> moveLeft
+     * <span class="attrib">@param</span> pixels Integer
+     */</span>
+    moveLeft: <span class="reserved">function</span>(pixels) {
+        <span class="reserved">this</span>.moveRight(-pixels);
+    },
+
+    <span class="comment">/**
+     * Resizinng is done in pixels; calling this method will reset the columns in
+     * their calculated percentages.
+     * <span class="attrib">@method</span> setWidthsAsPercentage
+     */</span> 
+    setWidthsAsPercentage: <span class="reserved">function</span>() {
+        var totalW = <span class="reserved">this</span>.table.offsetWidth;
+        var lperc =  (<span class="reserved">this</span>.lcol.offsetWidth / totalW) * 100;
+        var rperc =  (<span class="reserved">this</span>.rcol.offsetWidth / totalW) * 100;
+        <span class="reserved">this</span>.rcol.width = rperc + <span class="literal">"%"</span>;
+        <span class="reserved">this</span>.lcol.width = lperc + <span class="literal">"%"</span>;
+    }
+
+};
+
+<span class="comment">// TODO: cleanup</span>
+DA.tableutils.verty = document.createElement(<span class="literal">"div"</span>);
+DA.tableutils.verty.style.width = <span class="literal">"1px"</span>;
+DA.tableutils.verty.style.height = <span class="literal">"100px"</span>;
+DA.tableutils.verty.style.backgroundColor = <span class="literal">"#ddddff"</span>;
+DA.tableutils.verty.style.postion = <span class="literal">"absolute"</span>;
+DA.tableutils.verty.style.display = <span class="literal">"none"</span>;
+DA.tableutils.verty.style.cursor = <span class="literal">"w-resize"</span>;
+DA.tableutils.verty.innerHTML = <span class="literal">"|"</span>;
+
+DA.widget.TwoColumnResizeHandle = <span class="reserved">function</span>(
+        table <span class="comment">/*HTMLTableElement*/</span>,
+        elem <span class="comment">/*HTMLElement*/</span>, 
+        resizers <span class="comment">/*TwoColumnResizer (or, an Array of)*/</span>) {
+
+
+    <span class="comment">// TODO: null checks, sanity checks</span>
+    <span class="reserved">this</span>.elem = elem;
+
+    <span class="reserved">this</span>.resizers = YAHOO.lang.isArray(resizers) ? resizers : [resizers];
+    
+    var me = <span class="reserved">this</span>;
+    
+    var proxyEl = DA.tableutils.verty;
+    document.body.appendChild(proxyEl);
+
+    var dd = new YAHOO.util.DragDrop(<span class="reserved">this</span>.elem);
+    var startX = 0;
+    dd.onMouseDown = <span class="reserved">function</span>(e) {
+        startX = YAHOO.util.Event.getPageX(e);
+        proxyEl.style.position = <span class="literal">"absolute"</span>;
+        proxyEl.style.display = <span class="literal">"block"</span>;
+        <span class="comment">//proxyEl.style.height = table.offsetHeight + "px";</span>
+        proxyEl.style.height = table.parentNode.offsetHeight + <span class="literal">"px"</span>;
+        proxyEl.style.left = (startX - 4) + <span class="literal">"px"</span>;
+        proxyEl.style.top = (YAHOO.util.Event.getPageY(e) - 10) + <span class="literal">"px"</span>;
+    };
+    dd.onDrag = <span class="reserved">function</span>(e) {
+        var curX = YAHOO.util.Event.getPageX(e);
+        var offset = curX - startX;
+        <span class="reserved">if</span> (offset)
+        proxyEl.style.left = (curX - 4) + <span class="literal">"px"</span>;
+    };
+    dd.onMouseUp = <span class="reserved">function</span>(e) {
+        var curX = YAHOO.util.Event.getPageX(e);
+        var offset = curX - startX;
+        me.resizers.each(<span class="reserved">function</span>(resizer){
+            resizer.moveRight(offset);
+            resizer.setWidthsAsPercentage();
+        });
+        proxyEl.style.display = <span class="literal">"none"</span>;
+	
+    };
+
+};
+
+<span class="comment">/* :vim:expandtab */</span>
+</pre>
+	<hr>
+
+
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> <font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top"><em>
+<b></b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<font size="-1">
+
+</font>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Mon Mar 26 12:11:18 2007</div>
+</body>
+</html>

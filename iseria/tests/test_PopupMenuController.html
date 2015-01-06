@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_PopupMenuController.html 1837 2009-02-16 08:35:00Z ya_song $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_PopupMenuController.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="StyleSheet" type="text/css"/>
+<script src="/js/yui/v2.2.0a/container/container_core.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/menu/menu.js"></script>
+<link href="../src/common/menu/menu.css" rel="StyleSheet" type="text/css"/>
+
+<script src="/cgi-bin/ajax_mailer.cgi"></script>
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/event/event.js"></script>
+
+<script src="../src/common/logging/logging.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/menu/popup.js""></script>
+<script src="../src/common/locale/message.js"></script>
+<script src="../src/common/locale/ja/message_core.js"></script>
+<script src="../src/common/locale/ja/message_custom.js"></script>
+<script src="../src/mailer/mailer.js"></script>
+
+
+<style>
+</style>
+</head>
+
+<body oncontextmenu="return false;">
+
+  <div id="ppm_trigger">Popup Menu trigger.(Please mouse-left click here.)</div><br><br>
+  <div id="pdm_trigger">Pulldown Menu trigger with toggle system.(Please mouse-left click here.)</div><br><br>
+  <div id="ctm_trigger">Context Menu trigger.(Please mouse-right click here.)</div><br><br>
+  <input type=text id="func" value="">&nbsp;<button id="enable">enable</button>&nbsp;<button id="disable">disable</button>&nbsp;<button id="trash">Trash</button>
+
+  <script>
+  /*Event.observe(window, 'load', function(){
+      DA.log = YAHOO.log; // Just use the YAHOO logger...
+      new YAHOO.widget.LogReader(); 
+  });*/
+
+  // MAIN
+  var menuData = {
+      order: [
+          ['open', 'close'],
+          ['trash', 'spam'],
+          ['create', 'delete', 'rename'],
+          ['import', 'export'],
+          ['filter']
+      ],
+      items: {
+          open : {
+              text: DA.locale.GetText.t_("FOLDER_OPEN_MENU"),
+              onclick: function() {
+                  alert("open click");
+              }
+          },
+          close: {
+              text: DA.locale.GetText.t_("FOLDER_CLOSE_MENU"),
+              onclick: function() {
+                  alert("close click");
+              }
+          },
+          trash: {
+              text: DA.locale.GetText.t_("WASTE_TRASH_MENU", DA.locale.GetText.t_("TRASH")),
+              onclick: function() {
+                  alert("trash click");
+              }
+          },
+          spam: {
+              text: DA.locale.GetText.t_("WASTE_TRASH_MENU", DA.locale.GetText.t_("SPAM")),
+              onclick: function() {
+                  alert("spam click");
+              }
+          },
+          create: {
+              text: DA.locale.GetText.t_("FOLDER_ADD_MENU"),
+              onclick: function() {
+                  alert("add click");
+              }
+          },
+          'delete': {
+              text: DA.locale.GetText.t_("FOLDER_DELETE_MENU"),
+              onclick: function() {
+                  alert("delete click");
+              }
+          },
+          rename: {
+              text: DA.locale.GetText.t_("FOLDER_RENAME_MENU"),
+              onclick: function() {
+                  alert("renamet click");
+              }
+          },
+          'import': {
+              text: DA.locale.GetText.t_("FOLDER_IMPORT_MENU"),
+              onclick: function() {
+                  alert("import click");
+              }
+          },
+          'export': {
+              text: DA.locale.GetText.t_("FOLDER_EXPORT_MENU"),
+              onclick: function() {
+                  alert("export click");
+              }
+          },
+          filter: {
+              text: DA.locale.GetText.t_("FOLDER_FILTER_MENU"),
+              onclick: function() {
+                  alert("filter click");
+              }
+          }
+      }
+  };
+  var ppmc = new DA.widget.PopupMenuController (
+      "ppm_popup", "ppm_trigger", menuData, {
+          onTrigger: function(e) {
+              var srcId = DA.event.srcElement(e);
+                    
+              if (srcId === this.triggerId) {
+                  return true;
+              } else {
+                  return false;
+              }
+          }
+      }
+  );
+  var pdmc = new DA.widget.PulldownMenuController (
+      "pdm_popup", "pdm_trigger", menuData, {
+          onTrigger: function(e) {
+              var srcId = DA.event.srcElement(e);
+                    
+              if (srcId === this.triggerId) {
+                  return true;
+              } else {
+                  return false;
+              }
+          }
+      }
+  );
+  var ctmc = new DA.widget.ContextMenuController (
+      "ctm_popup", "ctm_trigger", menuData, {
+          onTrigger: function(e) {
+              var srcId = DA.event.srcElement(e);
+                    
+              if (srcId === this.triggerId) {
+                  return true;
+              } else {
+                  return false;
+              }
+          }
+      }
+  );
+  
+  Event.observe($("enable"), 'click', function() {
+      ppmc.enabled($("func").value);
+//      pdmc.enabled($("func").value);
+  });
+  Event.observe($("disable"), 'click', function() {
+      ppmc.disabled($("func").value);
+//      pdmc.disabled($("func").value);
+  });
+  Event.observe($("trash"), 'click', function() {
+      ppmc.text('trash', $("func").value);
+//      pdmc.text('trash', $("func").value);
+  });
+  
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+/* $Id: tables.js 2259 2011-08-11 09:06:26Z ch_zhang $ -- $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/common/tables/tables.js $ */
+/*for JSLINT undef checks*/
+/*extern BrowserDetect DA Prototype YAHOO */
+/*
+ * Copyright (c) 2007, DreamArts. All rights reserved.
+ * TODO: message
+ * version: ??
+ *
+ * Utilities for HTML Table manipulation in Javascript.
+ */
+
+if (!DA || !DA.widget) {
+    throw "ERROR: missing DA.js"; // TODO: formalize/cleanup
+}
+
+/**
+ * Set of utility functions related to tables.
+ */
+DA.tableutils = {
+    /**
+     * TODO: Should this be general?
+     * TODO: This seems to be slow on Firefox.
+     * @method getComputedWidths
+     * @param  {NodeList} (usually a (Node) list of TABLE COL elements)
+     * @returns {Array} an array of numbers representing the 
+     *                  computed widths of each node (typically column)
+     */
+    getComputedWidths: function(list /*HTMLNodeList*/) {
+        // DA_DEBUG_START
+        var __start_time = new Date();
+        // DA_DEBUG_END
+        // TODO: null-checks
+        var widths = []; // Array of positive numbers
+        for (var i=0; i<list.length; i++) {
+            widths.push( list[i].offsetWidth );
+        }
+        // DA_DEBUG_START
+        DA.log("getComputedWidths took:" + DA.util.time_diff(__start_time) + "ms", "time", "tables");
+        // DA_DEBUG_END
+        return widths;
+    }
+};
+
+/**
+ * Generate a new HTML TABLE DOM element with the given parameters.
+ * <p>
+ * TODO: <ol>
+ *         <li> Must this be refacored to DA.widget.Tables.createNew? </li>
+ *         <li> How about some more generic JS-DOM/CSS mapping? Like ParenScript? </li>
+ *       </ol>
+ * </p>
+ * @method makeATable
+ * @static
+ * @param rows integer The number of rows
+ * @param columns {Int}   The number of columns
+ *                        OR,
+ *                {Array} An array of hashes, each hash
+ *                        having data that describes on column:
+ *                        Example:
+ *                        [ { name: "Column Title", width: "10%" }, ... ]
+ *                        COL elements will be created, and each will be
+ *                        given a generated className of 'colN'... (starting from 0..(n-1))
+ * @param styleInfo {Object} A hash containing CSS (className) information
+ *                           Key: element name,  Value: CSS class name
+ *                           Example:
+ *                           { table: "my_table_Style", td: "my_cell_Style" }
+ * @param data {Array} (AoA) An array of arrays; each element contains HTML that
+ *                     Will be inserted into the cells.
+ *                     Example:
+ *                     [ [1, "A", "abc"],  [2, "B", "def"], .. ]
+ * @return HTMLTableElement
+ */
+DA.widget.makeATable = function(rows,      /* int */
+                                columns,   /* int OR array of hashes */
+                                styleInfo, /* hash */
+                                data       /* array of arrays */) 
+{
+    var ncolumns = 1;   // The number of columns; use the integer mode as default
+    var thr, colgroup;  // Tentative references to be made to the TABLE head row and COLGROUP
+    styleInfo = styleInfo ? styleInfo : {}; // Just to avoid NP checks
+    rows = rows ? rows : 1; // Default number of rows is one
+    var hasHead = false;
+    var thnames = [];
+    if(!columns)   { 
+        ncolumns = 1; // use the integer mode
+    } else {
+        if ('number' === typeof columns) { // Using simple (integer) mode
+            ncolumns = columns;
+        } else {
+            if (columns.each) { // see if this is an array
+                // Using verbose mode (Array of Hashes)
+                colgroup = document.createElement("colgroup");
+                hasHead = false;
+                thnames = columns.map(function(_col, index){
+                    var col = document.createElement("col");
+                    col.width = _col.width;
+                    col.className = 'col' + index;
+                    colgroup.appendChild(col);
+                    if (_col.name) { hasHead = true; }
+                    return hasHead ? _col.name : '&nbsp'; 
+                });
+                colgroup.span = thnames.length;
+                if (hasHead) {
+                    thr = document.createElement("tr");
+                    if (styleInfo.tr) { thr.className = styleInfo.tr; }
+                    thnames.each(function(name) {
+                        var th = document.createElement("th");
+                        if (styleInfo.th) { th.className = styleInfo; } 
+                        th.innerHTML = name;
+                        thr.appendChild(th);
+                    });
+                }
+                ncolumns = thnames.length; // 
+            }
+        }
+    }
+
+    data = data ? data : [];
+
+    var table = document.createElement('table');
+    var tbody = document.createElement('tbody');
+    if (colgroup) {
+        table.appendChild(colgroup);
+    }
+    var thead;
+    if (thr) {
+        thead = document.createElement("thead");
+        thead.appendChild(thr);
+        table.appendChild(thead);
+    }
+    table.appendChild(tbody);
+    table.className = styleInfo.table;
+    tbody.className = styleInfo.table;
+    var tr;
+    var td;
+    var rowData;
+    var stripeClass;
+    for (var j,i=0; i<rows; i++) { // for each row
+        tr = document.createElement("tr");
+        // striping!
+        stripeClass = (i % 2) ? 'odd' : 'even';
+        tr.className = styleInfo.tr ? 
+                (styleInfo.tr + ' ' + stripeClass) : stripeClass;
+        rowData = data[i] || [];
+        for (j=0; j<ncolumns; j++) { // for each cell
+            td = document.createElement("td");
+            if(styleInfo.td) { td.className = styleInfo.td; }
+            td.innerHTML = rowData[j] || "&nbsp;";
+            tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+    }
+
+    return table;
+
+};
+
+
+/*
+ * Everything below needs YUI's drag-and-drop
+ */
+if (YAHOO && YAHOO.util && YAHOO.util.DragDrop) {
+
+/*
+ * A utility object which encapsulates table column resizing 
+ * (usually for 2 adjacent columns).<p>
+ * The methods moveLeft and moveRight allow the column divider to
+ * be moved a few pixels left or right, thus resizing both the
+ * columns.
+ * @class ColumnResizer
+ * @constructor
+ * @param table {Object} HTMLTableElement (&tl;table&gt;)
+ * @param config Hash Configuration options:
+ *                     maintainPercentage: (Boolean) if true, 
+ *                                         set the width in percentage 
+ *                                         instead of pixels.
+ *                     minWidth:           (Integer) minimum column width
+ *                                         in PIXELS.
+ */
+DA.widget.ColumnResizer = function(table  /*HTMLTableElement*/,
+                                   config /*hash*/) {
+    this.table = table; // TODO: really a table? null?
+    // TODO: We are assuming that we have cols. If we don't,
+    //       then we need to 'treat' this table and generate
+    //       a simple list of cols.
+    // TODO: We are also making the assumption that IF there
+    //       are cols, they are just a simple sequence
+    this._cols = this.table.getElementsByTagName("col");
+    // TODO: copy-pasted from TwoColumnResizer... any ideas?
+    this.config = Object.extend({
+        maintainPercentage: true, // TODO: no point actually setting this to false?
+        minWidth:           20
+    }, config || {});
+
+};
+
+DA.widget.ColumnResizer.prototype = {
+
+    /**
+     * @field table HTMLTableElement
+     */
+    table: null,
+
+    /**
+     * @field _cols HTMLNodeList (of HTMLCol elements)
+     * @private
+     */
+    _cols: null,
+
+    /**
+     * @method getComputedWidths
+     * @return Array of numbers
+     */
+    getComputedWidths: function() {
+        return DA.tableutils.getComputedWidths(this._cols);
+    },
+
+    /**
+     * Move the divider of the 2 given columns (l is the index of the left column) 
+     * pixels pixels to the right.
+     * <p><b>WARNING</b>DOES NOT check if the param is valid (is an integer or not)
+     * @method moveRight
+     * @param l Index of the left column (index begins from 0)
+     * @param pixels Integer
+     */
+    moveRight: function(l/*number*/, pixels/*number*/) {
+        this.preResize(l, pixels);
+        if (this.tableLayoutHack) {
+            this.table.style.tableLayout = "auto";
+        }
+        var compWidths = this.getComputedWidths();
+        // DA_DEBUG_START
+        DA.log("compwidths[1]:"+compWidths, "info", "tables");
+        // DA_DEBUG_END
+        // DA_DEBUG_START
+        DA.log("compwidths[2]:"+this.getComputedWidths(), "info", "tables");
+        // DA_DEBUG_END
+        var minW = this.config.minWidth;
+        var lwidth = compWidths[l];
+        var rwidth = compWidths[l+1];
+        // Only if the current width is greater than the minimum allowed, check
+        // whether applying the pixel width resize will break things (IE barfs when negative
+        // width values are set)
+        if ((rwidth > minW) && (rwidth - pixels <= minW)) { pixels = rwidth - minW; }
+        if ((lwidth > minW) && (lwidth + pixels <= minW)) { pixels = minW - lwidth; }
+        compWidths[l] = (lwidth + pixels);
+        compWidths[l+1] = (rwidth - pixels);
+        this._setNewWidths(compWidths);
+        if (this.tableLayoutHack) {
+            this.table.style.tableLayout = "fixed";
+        }
+        this.postResize(l, pixels);
+    },
+
+    /**
+     * @methods _setNewWidths
+     * @private
+     */
+    _setNewWidths: function(widths /*Array of numbers*/) {
+        if (!widths || (widths.length !== this._cols.length)) {
+            // DA_DEBUG_START
+            DA.log("table COLUMNS does not match new widths", "error", "ColumnResizer");
+            // DA_DEBUG_END
+            return;
+        }
+        var widthsToSet = (this.config.maintainPercentage) ?
+               this._fairPercentages(DA.util.toPercentages(widths)) : widths;
+        // DA_DEBUG_START
+        DA.log("widths:"+widthsToSet+", t:"+widthsToSet, "info", "ColumnResizer");
+        // DA_DEBUG_END
+        var func = (this.config.maintainPercentage) ? 
+               this.setColWidthPerc : this.setColWidth;
+        widthsToSet.each( func.bind(this) );
+        widthsToSet.each( func.bind(this) );
+    },
+
+    /**
+     * Converts the given array of percentages (which could be floats)
+     * to rounded-values (integers), based on a crude rule of 'fairness'.
+     * All the values are rounded-off to their nearest integer, and 
+     * and depending on whether the sum of rounded-off percentages
+     * is equal to, greater than, or less than 100, adjusts the values
+     * so that the values that were affected the most by the rounding-off
+     * get compensated.
+     * FIXME: This is probably slow. Too much Prototype nonsense.
+     * FIXME: Oh, and it has nothing specific to do with tables.
+     * 
+     * @method _fairPercentages
+     * @private
+     * @param arr {Array} Array of numbers.
+     * @returns {Array} array of positive integers.
+     */
+    _fairPercentages: function(arr) {
+        var approxes = []; // approximations
+        // Get an array of rounded-off values.
+        var no_zero_flag = true;
+        var rounded = arr.map(function(p,i){
+            var r = Math.round(p); // r: rounded value
+            if(r<1){
+            	no_zero_flag = false;
+            }
+            approxes.push({  
+                i:      i,   // The index of the rounded value
+                profit: r-p  // benefit (or negative benefit) of the rounding off
+            });
+            return r;
+        });
+        // See if the rounding-off yielded a neat total of 100 (100%)
+        var total = rounded.inject(0, function (a,b){return a+b;});
+        if (total===100&&no_zero_flag) {
+            return rounded; // good enough; we're done
+        }
+        // Compensation
+        if (total > 100) {
+            // Re-order the approximations;
+            // positive round-offs first
+            approxes.sortBy(function (a,b){
+                return a.profit > b.profit;
+            });
+            // For each extra 1-percent, compensate
+            // the rounded value which benefitted the most
+            (total-100).times(function(i){
+                var index = approxes[i].i;
+                --rounded[index];
+            });    
+        } else if (total < 100) {
+            // Re-order the approximations;
+            // negative round-offs first
+            approxes.sortBy(function (a,b){
+                return b.profit > a.profit;
+            });
+            // For each missing 1-percent, compensate
+            // the rounded value which was reduced the most 
+            (100-total).times(function(i){
+                var index = approxes[i].i;
+                ++rounded[index];
+            });    
+        }
+        var num;
+        var sum = 0;
+        var temp = 0;
+        for(var i = 0; i < rounded.length; i ++){
+        	if(rounded[i]<1){
+        		sum = sum + (1-rounded[i]);
+        		rounded[i]=1;
+        	}
+        	if(rounded[i]>temp){
+        		temp = rounded[i];
+        		num = i;
+        	}
+        }
+        if(sum!==0){
+        	rounded[num]=rounded[num]-sum;
+        }
+        // Should now be all compensated and 
+        // total 100%.
+        return rounded;
+
+    },
+
+    /**
+     * @method _setColWidth
+     * @param  w {number} width in pixels
+     * @param  colIndex {number} index of the column
+     * @protected
+     */
+    setColWidth: function(w, colIndex) {
+        this._cols[colIndex].width = (w + "px");
+    },
+
+    /**
+     * @method _setColWidthPerc
+     * @param  w {number} width in percentage
+     * @param  colIndex {number} index of the column
+     * @protected
+     */
+    setColWidthPerc: function(w, colIndex) {
+        this._cols[colIndex].width = (w + "%");
+    },
+
+
+ 
+    // FIXME: Dirty browser detected hack - Mozilla needs this
+    tableLayoutHack:  (BrowserDetect.browser === 'Mozilla' || BrowserDetect.browser === 'Firefox'),
+
+    /**
+     * pre-hook
+     * @method preResize
+     * @protected
+     */
+    preResize: Prototype.emptyFunction,
+     
+    /**
+     * post-hook
+     * @method postResize
+     * @protected
+     */
+    postResize: Prototype.emptyFunction
+
+};
+
+/*
+ * A utility object which encapsulates table column resizing 
+ * (usually for 2 adjacent columns).<p>
+ * The methods moveLeft and moveRight allow the column divider to
+ * be moved a few pixels left or right, thus resizing both the
+ * columns.
+ * @class TwoColumnResizeHandle
+ * @constructor
+ * @param table   {HTMLTableElement} (&tl;table&gt;)
+ * @param elem    {HTMLElement} node that will actually be the drag element.
+ * @param resizer {Object} instance of ColumnResizer
+ * @param index   {int} Index of the column division (Example: 0 - first, second column)
+ */ 
+DA.widget.TwoColumnResizeHandle = function(
+        table   /*HTMLTableElement*/,
+        elem    /*HTMLElement*/, 
+        resizer /*TwoColumnResizer*/,
+        index   /*number*/) {
+    this.index = index;
+    this.resizer = resizer;
+    this.table = table;
+    this.init(elem); // YUI wants this
+    // TODO: null checks, sanity checks
+    var msg; // TODO: cleanup
+    if ('number' !== typeof index) {
+        msg = "ERROR: index not supplied for TwoColumnResizeHandle";
+        // DA_DEBUG_START
+        DA.log(msg, "error", "TwoColumnResizeHandle");
+        // DA_DEBUG_END
+        throw msg;
+    }
+};
+
+// Inherit from YAHOO DragDrop, and override:
+YAHOO.lang.extend(DA.widget.TwoColumnResizeHandle, YAHOO.util.DragDrop, {
+    
+    /**
+     * @property resizer
+     * @type {Object} Instance of ColumnResizer
+     */
+    resizer: null,
+
+    /**
+     * An invisible div that follows the mouse on drag.
+     * (Mary had a little lamb)
+     * @property _lamb
+     * @private
+     * @type {HTMLDivElement}
+     */
+    _lamb: null,
+
+    /**
+     * Out custom proxy element; a thin line that shows where
+     * the table columns will divide.
+     * @property _proxyEl
+     * @private
+     * @type {HTMLDivElement}
+     */
+    _proxyEl: null,
+
+    /**
+     * @see YAHOO.util.DragDrop#onMouseDown
+     */
+    onMouseDown: function(e) {
+     
+        // Create a proxy element: A thin vertical line (a DIV)
+        // that will follow the mouse on the X-axis indicating
+        // where the columns will be resized
+        this._proxyEl = document.createElement("div");
+        var proxyEl = this._proxyEl;
+        proxyEl.className = 'da_columnResizeLineActive';
+        // Attach the proxy to the body; it is now positioned 
+        // relative to the window
+        document.body.appendChild(this._proxyEl);
+
+        var startX = YAHOO.util.Event.getPageX(e);
+        var tableY = YAHOO.util.Dom.getY(this.table);
+
+        Object.extend(proxyEl.style, {
+            height: this.table.parentNode.offsetHeight + "px",
+            left: startX + "px",
+            top:  tableY + "px"
+        });
+
+        // Calculate X-constraints: Use the width fields
+        var widths = this.resizer.getComputedWidths();
+        var rcolW = widths[this.index + 1];
+        var lcolW = widths[this.index];
+        // TODO: use something smarter that resizer.config.minWidth
+        var minW = this.resizer.config.minWidth;
+
+        // YUI stuff
+        this.setInitPosition();
+        this.setXConstraint( lcolW-minW,  rcolW-minW );
+
+        // Create an invisible, follow-around div
+        this._lamb = document.createElement("div");
+        this._lamb.innerHTML = '&nbsp;';
+        document.body.appendChild(this._lamb);
+        var lambStyle = this._lamb.style;
+        Object.extend(lambStyle, { // TODO: optimize
+            height : "10px",
+            width  : "10px",
+            cursor : 'w-resize',
+            position : 'absolute',
+            // Place the invisible follow-around div in such a way that
+            // it's center falls where the mouse is
+            top : (YAHOO.util.Event.getPageY(e) - 4) + "px" ,
+            left : (startX - 4) + "px"
+        });
+        
+    },
+
+    /**
+     * @see YAHOO.util.DragDrop#onDrag
+     */
+    onDrag: function(e) {
+        var curX = YAHOO.util.Event.getPageX(e);
+        // Check constraints TODO: see if YUI can do this for us (think it should be)
+        if (curX < this.minX || curX > this.maxX) { return; }
+        this._proxyEl.style.left = curX + "px";
+        this._lamb.style.left = (curX - 4) + "px";
+        this._lamb.style.top = (YAHOO.util.Event.getPageY(e) - 4) + "px";
+    },
+
+    /**
+     * @see YAHOO.util.DragDrop#onMouseUp
+     */
+    onMouseUp: function(e) {
+        var curX = YAHOO.util.Dom.getX( this._proxyEl );
+        var offset = curX - this.startPageX;
+        this.resizer.moveRight(this.index, offset);
+        this._proxyEl.style.display = "none";
+        // Remove the invisible follow-around div
+        document.body.removeChild(this._lamb);
+        // Remove the thin vertical column divider line
+        document.body.removeChild(this._proxyEl);
+    }
+
+});
+
+}
+
+/* :vim:expandtab */

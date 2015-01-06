@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id$ $HeadURL$ -->
+<html>
+<head>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop-debug.js"></script>
+<link href="/js/yui/v2.2.0a/logger/assets/logger.css" rel="stylesheet" type="text/css"/>
+<link href="/js/yui/v2.2.0a/reset/reset-min.css" rel="stylesheet" type="text/css"/>
+
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/layout/three-pane.js"></script>
+<link rel="StyleSheet" href="../src/common/layout/three-pane.css" type="text/css">
+
+<script src="../src/common/layout/panel.js"></script>
+<link rel="StyleSheet" href="../src/common/layout/panel.css" type="text/css">
+
+
+<style>
+html,body {
+ width:   100%;
+ height:  100%;
+ margin:  0px;
+ padding: 0px;
+}
+div.custom_left {
+}
+div#right_top_pane {
+  
+}
+div#right_bottom_pane {
+}
+div.threepanecontainer {
+  width:   90%;
+  height:  90%;
+  margin: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+  <h3>Three-pane with fancy design...</h3>
+  
+  <div id="my_div" class="da_threePaneContainer threepanecontainer">
+    <div id="left_pane" class="custom_left">my left pane.</div>
+    <div id="vdivider"></div>
+    <div id="right_pane">
+      <div id="right_top_pane">my right top pane</div>
+      <div id="hdivider"></div>
+      <div id="right_bottom_pane">my right bottom pane</div>
+    </div>
+  </div>
+
+  <button id="my_button">Make the above div a 3-pane...</button>
+  <button id="mk_panel_left">Panelify Left</button>
+  <button id="mk_panel_right_top">Panelify Right-Top</button>
+  <button id="mk_panel_right_bottom">Panelify Right-Bottom</button>
+  
+  <script>
+  Event.observe(window, "load", function(){
+    DA.log = YAHOO.log; // Just use the YAHOO logger...
+    var lr = new YAHOO.widget.LogReader();
+    lr.collapse();
+
+    Event.observe( $("my_button"), 'click', function() {
+        var params = {
+            leftPane:        $("left_pane"),
+            rightPane:       $("right_pane"),
+            rightTopPane:    $("right_top_pane"),
+            rightBottomPane: $("right_bottom_pane"),
+            vDivider:        $("vdivider"),
+            hDivider:        $("hdivider")
+        };
+        window.__threePane = new DA.widget.ThreePane( params );
+
+    });
+
+    window.__panes = [];
+
+    Event.observe('mk_panel_left', 'click', function(){ 
+            var n = $("left_pane");
+            var p = new DA.widget.Panel(null);
+            this.disabled = true;
+            DA.dom.moveAllChildren(n, p.contentsNode);
+            n.appendChild(p.node);
+            __panes.push(p);
+            p.fixHeights();
+    });
+
+    Event.observe('mk_panel_right_top', 'click', function(){ 
+            var n = $("right_top_pane");
+            var p = new DA.widget.Panel(null);
+            this.disabled = true; 
+            DA.dom.moveAllChildren(n, p.contentsNode);
+            n.appendChild(p.node);
+            __panes.push(p);
+            p.fixHeights();
+    });
+    Event.observe('mk_panel_right_bottom', 'click', function(){ 
+            var n = $("right_bottom_pane");
+            var p = new DA.widget.Panel(null, {titleBar: false});
+            this.disabled = true; 
+            DA.dom.moveAllChildren(n, p.contentsNode);
+            n.appendChild(p.node);
+            __panes.push(p);
+            p.fixHeights();
+    });
+
+  });
+
+  </script>
+
+ 
+</body>
+
+</html>

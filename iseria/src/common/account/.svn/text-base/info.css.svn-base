@@ -1,0 +1,46 @@
+.da_ugInformationListLine {
+}
+
+.da_ugInformationListIcon {
+}
+
+.da_ugInformationListName {
+}
+
+.da_ugInformationListEmail {
+}
+
+.da_ugInformationListTitle {
+}
+
+.da_ugInformationListRegist {
+	cursor: pointer;
+}
+
+.da_ugInformationListPopup {
+	cursor: pointer;
+}
+
+.da_ugInformationListDelete {
+	cursor: pointer;
+}
+
+.da_ugInformationListLink {
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+}
+
+.da_ugInformationListNoLink {
+	cursor: pointer;
+	color: black;
+	text-decoration: none;
+}
+
+.da_ugInformationListOverflowAuto {
+	overflow: auto;
+}
+
+.da_ugInfromationListExternal {
+	color: red;
+}

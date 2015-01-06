@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_Dialog.html 1398 2007-06-13 02:39:35Z faiz_kazi $ $HeadURL: http://yuki.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_Dialog.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- -Adding Firebug-lite: For console.log support in IE, Opera, etc -->
+<script src="/js/firebuglite/v1.0-b1/firebug.js"></script>
+<script src="/js/extjs/v2.1/adapter/ext/ext-base.js"></script>
+<script src="/js/extjs/v2.1/ext-all-debug.js"></script>
+<link href="/js/extjs/v2.1/resources/css/ext-all.css" rel="StyleSheet" type="text/css"/>
+
+<script>
+window.userConfig = {
+    imgRdir: '/images',
+    cgiRdir: '/cgi-bin'
+};
+</script>
+<script src="../src/common/DA/DA-min.js"></script>
+<script src="../src/common/layout/simpleviewport.js"></script>
+<link href="../src/common/layout/simpleviewport.css" rel="StyleSheet" type="text/css"/>
+
+<style>
+body, html {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+div#container {
+    border: 1px dashed #ddd;
+    width: 40%;
+    overflow: hidden;
+}
+div#big-component {
+    border: 1px dashed yellow;
+}
+</style>
+<script>
+    Ext.onReady(function () {
+
+        window.Test = {};
+
+        var bigComponent = new Ext.BoxComponent({
+            width: 1000,
+            height: 33,
+            onRender: function (ct, pos) {
+                this.el = ct.createChild({
+                    tag:    'div',
+                    style:  {
+                        'background-color': '#bbb',
+                        'font-size':        '9pt',
+                        overflow:           'hidden'
+                    },
+                    html: "This text is inside a very long Ext.BoxComponent. " + 
+                            "A very, very, " +
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "REALLY very, " + 
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "REALLY very, " + 
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "REALLY very, " + 
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "very, very, very, " +
+                            "long div."
+                });
+            },
+            renderTo: Ext.get('big-component')
+        });
+
+
+        var disableBtn = new Ext.Button({
+            renderTo: document.body,
+            handler: function () {
+                if (this._disabled) {
+                    Test.simpleViewPort.enable();
+                    this._disabled = false;
+                    this.setText("Disable");
+                } else {
+                    Test.simpleViewPort.disable();
+                    this._disabled = true;
+                    this.setText("Enable");
+                }
+            },
+            _disabled: false,
+            disabled: true,
+            text: "Disable"
+        });
+
+        new Ext.Button({
+            renderTo: document.body,
+            handler: function () {
+                this.disable();
+                var svp = new DA.widget.SimpleViewPort({
+                    renderTo: Ext.get('container'),
+                    style: {
+                        height: "40px",
+                        border: "1px dashed red"
+                    },
+                    items: [bigComponent]
+                });
+                Test.simpleViewPort = svp;
+                disableBtn.enable();
+            },
+            text: "Create a SimpleViewPort."
+        });
+
+
+    });
+</script>
+
+</head>
+
+<body>
+
+  <h3><i>Firebug is available. Please press F12 to see the console.</i></h3>
+
+
+  <div id="container">
+    This text is inside the container DIV. The container's width is 40% of the window.
+  </div>
+
+  <div id="big-component">
+    A Very large component will be rendered here.
+  </div>
+
+  <hr />
+
+
+</body>
+
+</html>

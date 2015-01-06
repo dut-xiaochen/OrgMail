@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_JSON-IO.html 1398 2007-06-13 02:39:35Z faiz_kazi $ $HeadURL: http://yuki.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_JSON-IO.html $ -->
+<html>
+<head>
+<title>Store Message</title>
+<!-- Prototype -->
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<!-- YUI -->
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/container/container.js"></script>
+<!-- Google Gears -->
+<script src="/js/google-gears/gears_init.js"></script>
+<!-- DA -->
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+
+<script>
+Event.observe(window, 'load', function(){
+    var selectbox = $("folderid1");
+    var io = new DA.io.JsonIO("/cgi-bin/ajx_ma_dir.cgi");
+    var folder_num;
+    io.callback = function(o){
+        for (folder_num = 0; folder_num < o.folder_list.length; folder_num++)
+        {
+            var opt = document.createElement("option");
+            opt.value = o.folder_list[folder_num].fid;
+            opt.innerHTML = o.folder_list[folder_num].name;
+            selectbox.appendChild(opt);
+        }
+    };
+    io.execute();
+    
+    var goSave = function () {
+      
+        var numOfMail = $F('end_sno') - $F('start_sno');      
+        var new_io = new DA.io.JsonIO("/cgi-bin/ajx_ma_list.cgi");
+        new_io.callback = function(o){
+            var count = 0;
+            for (;count <= numOfMail; count++)
+            {
+                handleSave(o.mail_list[count]);
+            }
+            displayRecentMailers();
+        };
+        new_io.execute({'fid'      : selectbox.value,
+                        'start_sno': $F('start_sno'),
+                        'end_sno'  : $F('end_sno')});
+        $('start_sno').value = "";
+        $('end_sno').value = "";
+    };
+    
+    Event.observe($("btn_save"), "click", goSave);
+});
+</script>
+<style>
+table {
+    background-color: #eeddaa;
+    empty-cells: show
+}
+tr {
+    background-color: #eeddaa;
+}
+td {
+    border: solid 1px #eeddee;
+}
+</style>
+</head>
+
+<body>
+  <p><b></>store Mailers on local computer</b>
+  
+  <table>
+    <tr>
+      <td valign="middle">
+        <select id="folderid1">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">start_sno<input type="text" id="start_sno"></td>
+      <td valign="middle">end_sno<input type="text" id="end_sno"></td>
+      <td valign="middle"><button id="btn_save">Save</button></td>
+    </tr>
+  </table>
+  
+  <p><b>Stored Mailers:</b>
+
+  <p><span id="status">&nbsp;</span>
+</body>
+<script>
+<!-- ================= -->
+<!-- Begin Gears code. -->
+var db;
+init();
+
+// Open this page's local database.
+function init() {
+  // Make sure we have Gears. If not, tell the user.
+  if (!window.google || !google.gears) {
+    if (confirm("This page requires Gears to be installed. Install now?")) {
+      location.href = "http://gears.google.com/";
+      return;
+    }
+  }
+
+  try {
+    db = google.gears.factory.create('beta.database', '1.0');
+  } catch (ex) {
+    setError('Could not create database: ' + ex.message);
+  }
+
+  if (db) {
+    db.open('database-mailer');
+    db.execute('create table if not exists MAIL_INF' +
+               ' (html varchar(4000), attachment varchar(255),' +
+               ' className varchar(255), deleted varchar(255),' +
+               ' fid varchar(255), flagged varchar(255),' +
+               ' forwarded varchar(255), internal varchar(255),' +
+               ' open_m varchar(255),priority varchar(255),' +
+               ' replied varchar(255),seen varchar(255),' + 
+               ' sno varchar(255), srid varchar(255),' +
+               ' toself varchar(255), type varchar(255),' + 
+               ' uid varchar(255), Timestamp int)');
+
+    // Initialize the UI at startup.
+    displayRecentMailers();
+  }
+
+  // Enable or disable UI elements
+  var init_succeeded = !!db;
+  var inputs = document.getElementsByTagName('input');
+  for (var i = 0, el; el = inputs[i]; i++) {
+    el.disabled = !init_succeeded;
+  }
+
+}
+
+function handleSave(mail) {
+  if (!google.gears.factory || !db) {
+    return;
+  }
+  var currTime = new Date().getTime();
+
+  db.execute('insert into MAIL_INF values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', 
+             [mail.html, mail.meta.attachment, mail.meta.className, mail.meta.deleted,
+              mail.meta.fid, mail.meta.flagged, mail.meta.forwarded, mail.meta.internal, 
+              mail.meta.open_m, mail.meta.priority, mail.meta.replied, mail.meta.seen, 
+              mail.meta.sno, mail.meta.srid, mail.meta.toself, mail.meta.type, mail.meta.uid, currTime]);
+}
+
+function displayRecentMailers() {
+    
+  var storedMailer = [];
+  try {
+      
+    var rs = db.execute('select * from MAIL_INF order by Timestamp desc');
+    var index = 0;
+    while (rs.isValidRow()) {
+        storedMailer[index] = [];
+        for (var col = 0; col < 18; ++col) {
+            storedMailer[index][col] = rs.field(col);
+        }
+
+      ++index;
+      rs.next();
+    }
+    rs.close();
+
+  } catch (e) {
+    throw new Error(e.message);
+  }
+  var status = $("status");
+  status.innerHTML = '';
+  var ma_title = document.createElement('tr');
+  var col_name0 = document.createElement('td');
+  col_name0.innerHTML = "";
+  var col_name1 = document.createElement('td');
+  col_name1.innerHTML = "html";
+  var col_name2 = document.createElement('td');
+  col_name2.innerHTML = "attachment";
+  var col_name3 = document.createElement('td');
+  col_name3.innerHTML = "className";
+  var col_name4 = document.createElement('td');
+  col_name4.innerHTML = "deleted";
+  var col_name5 = document.createElement('td');
+  col_name5.innerHTML = "fid";
+  var col_name6 = document.createElement('td');
+  col_name6.innerHTML = "flagged";
+  var col_name7 = document.createElement('td');
+  col_name7.innerHTML = "forwarded";
+  var col_name8 = document.createElement('td');
+  col_name8.innerHTML = "internal";
+  var col_name9 = document.createElement('td');
+  col_name9.innerHTML = "open_m";
+  var col_name10= document.createElement('td');
+  col_name10.innerHTML = "priority";
+  var col_name11= document.createElement('td');
+  col_name11.innerHTML = "replied";
+  var col_name12= document.createElement('td');
+  col_name12.innerHTML = "seen";
+  var col_name13= document.createElement('td');
+  col_name13.innerHTML = "sno";
+  var col_name14= document.createElement('td');
+  col_name14.innerHTML = "srid";
+  var col_name15= document.createElement('td');
+  col_name15.innerHTML = "toself";
+  var col_name16= document.createElement('td');
+  col_name16.innerHTML = "type";
+  var col_name17= document.createElement('td');
+  col_name17.innerHTML = "uid";
+  var col_name18= document.createElement('td');
+  col_name18.innerHTML = "currTime";
+  ma_title.appendChild(col_name0);
+  ma_title.appendChild(col_name1);
+  ma_title.appendChild(col_name2);
+  ma_title.appendChild(col_name3);
+  ma_title.appendChild(col_name4);
+  ma_title.appendChild(col_name5);
+  ma_title.appendChild(col_name6);
+  ma_title.appendChild(col_name7);
+  ma_title.appendChild(col_name8);
+  ma_title.appendChild(col_name9);
+  ma_title.appendChild(col_name10);
+  ma_title.appendChild(col_name11);
+  ma_title.appendChild(col_name12);
+  ma_title.appendChild(col_name13);
+  ma_title.appendChild(col_name14);
+  ma_title.appendChild(col_name15);
+  ma_title.appendChild(col_name16);
+  ma_title.appendChild(col_name17);
+  ma_title.appendChild(col_name18);
+  status.appendChild(ma_title);
+  for (var i = 0; i < storedMailer.length; ++i) {
+    var bullet = '(' + (i + 1) + ')';
+    var ma_tr = document.createElement('tr');
+    var tr_id = document.createElement('td');
+    tr_id.innerHTML = bullet;
+    ma_tr.appendChild(tr_id);
+    for (var j = 0; j < 18; ++j) {
+        var ma_td = document.createElement('td');
+        ma_td.innerHTML = storedMailer[i][j];
+        ma_tr.appendChild(ma_td);
+    }
+    status.appendChild(ma_tr);
+  }
+}
+<!-- End Gears code. -->
+<!-- ================= -->
+</script>
+</html>
+

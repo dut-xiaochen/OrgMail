@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: test_TopTitleController.html 1837 2009-02-16 08:35:00Z ya_song $ $HeadURL: http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/tests/test_TopTitleController.html $ -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+
+<script src="/cgi-bin/ajax_mailer.cgi"></script>
+
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop.js"></script>
+<script src="/js/yui/v2.2.0a/connection/connection.js"></script>
+<script src="/js/yui/v2.2.0a/container/container.js"></script>
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/reset/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/logger/assets/logger.css"/>
+
+<!--DA-->
+<link href="../src/common/menu/menu.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/DA/DA.js"></script>
+<!--Locale-->
+<script src="../src/common/locale/message.js"></script>
+<script src="../src/common/locale/ja/message_core.js"></script>
+<script src="../src/common/locale/ja/message_custom.js"></script>
+<!--JSON/IO-->
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/io/fileupload-io.js"></script>
+
+<!-- Common -->
+<!-- TopPanel -->
+<script src="../src/common/menu/panel.js"></script>
+<script src="../src/common/event/event.js"></script>
+<!-- context-menu needed by treeview -->
+<script src="../src/common/menu/popup.js"></script>
+
+<!-- Mailer -->
+<script src="../src/mailer/mailer.js"></script>
+<!-- TopPanel -->
+<script src="../src/mailer/toppanel/viewer.js"></script>
+<link href="../src/mailer/toppanel/viewer.css" rel="StyleSheet" type="text/css"/>
+<!-- Message -->
+<script src="../src/common/account/info.js"></script>
+<script src="../src/common/file/info.js"></script>
+<link href="../src/common/misc/nvpairs.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/common/misc/nvpairs.js"></script>
+<link href="../src/mailer/message/viewer.css" rel="StyleSheet" type="text/css"/>
+<script src="../src/mailer/message/viewer.js"></script>
+
+<!--  top panel -->
+<script src="../src/common/toppanel/title.js"></script>
+<link href="../src/common/toppanel/title.css" rel="StyleSheet" type="text/css"/>
+
+
+<!-- REPLACE_AREA_TO_PATCH_END -->
+
+
+<style>
+
+body {
+   width:100%;
+}
+
+/* container */
+div#top_panel_container {
+   width: 100%;
+   height: 51px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div id="top_panel_container" oncontextmenu="return false;" >
+    <div id="top_panel" class="top_panel" ></div>
+    <div id="panel_menu" class="panel_menu"></div>
+  </div>
+  
+ 
+
+  <script>
+ 
+  Event.observe(window, 'load', function(){
+      DA.init();
+      var title = {
+        name: 'メール検索',
+        icon: '/ico_fc_sceml.gif',
+        alt: 'あると'
+      };
+      window.__topPanel = new DA.widget.TopTitleController (
+        $("top_panel"), $("panel_menu"), title
+      );
+      
+      
+  });
+
+  </script>
+
+</body>
+
+</html>

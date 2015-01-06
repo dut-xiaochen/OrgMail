@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/iseria/!svn/ver/1397/insuite-ui/trunk/tests/benchmarks/xml-vs-json
+END
+fat.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/iseria/!svn/ver/1397/insuite-ui/trunk/tests/benchmarks/xml-vs-json/fat.xml
+END
+prof.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/iseria/!svn/ver/1397/insuite-ui/trunk/tests/benchmarks/xml-vs-json/prof.html
+END
+thin.json
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/iseria/!svn/ver/1397/insuite-ui/trunk/tests/benchmarks/xml-vs-json/thin.json
+END

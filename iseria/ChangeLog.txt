@@ -1,0 +1,132 @@
+ * 2007/06/06
+   * MboxGrid (メール一覧)
+     * FIXED: QADB: 915727 (..移動・削除時の「読み込み中」の表示をスキップする )
+       This is part of an IO optimization which reduces HTTP calls as well
+       as fixes an issue with the original Rico LiveGrid.
+       Deleting/moving rows from the VirtualScrollingTable will not be handled
+       more intelligently.
+
+ * 2007/05/28
+   * MboxGrid (メール一覧)
+     * IMPLEMENTED: Multiple mail selection with the SHIFT modifier.
+
+ * 2007/05/25
+   * ThreePane: Fix for bug: 914555 (...メール一覧は下に表示されることがある)
+     CSS fixes that involve the use of absolutely positioned DIVs instead of
+     floated DIVs.
+
+
+ * 2007/05/23
+   * FolderTree (フォルダー一覧): Drag and Drop fixes:
+     Fixed the DDTarget memory leak issue: Mail drag-and-drop (メール移動)
+     is now working.
+
+ * 2007/05/11
+   * Address-AutoComplete (incremental search): First implementation
+   * CSS fixes
+   * ThreePane: bordered layout
+   * MboxGrid Drag/Drop: Fixed a CSS bug: Made the Drag-drop proxy element
+     invisible (The envelope icon)
+
+
+  * 2007/05/06
+   * MboxGrid (メール一覧)
+     * FIXED: QADB: 915000 (..右メニューに、「未読にする」が表示されない..)
+     * FIXED: QADB: 915030 (..未読にするとメール一覧上のスタイルが崩れる.. )
+     * IMPLEMENTED: Multiple-selection is context-aware:
+       For a selection of mails that all have the same status, the
+       context-menu (右クリックメニュー) will show only the option to switch
+       to the other state. Inversely, if the selection contains both states
+       i.e., some mails are read (既読) while others are unread (未読) the
+       menu will show both options - mark as read (既読にする) and mark as
+       unread (未読にする). The same for Flagged, etc
+
+ * 2007/05/06
+   * MboxGrid (メール一覧)
+     * FIXED: QADB: 914913 (宛先に自分のメールアドレスが存在する場合は...)
+       The font color for mails directly addressed to the recipient
+       will now be correctly read from the settings.
+     * IMPLEMENTED: 削除 (mail deletion)
+       Mails can now be deleted from the context-menu.
+       Supports multiple deletion via CTRL-click.
+
+ * 2007/05/02
+   * MboxGrid (メール一覧)
+     * FIXED: QADB: 914942
+       An optimization in the row-blanking lead caused this - the grid
+       was not getting blanked when it really ought to (when there are 
+       no mails in a folder). This is now fixed.
+
+
+ * 2007/05/02
+   * MboxGrid (メール一覧)
+     * PERFORMANCE IMPROVEMENT: Enabled the 'Fake-table' optimization
+       The VirtualScrollingTable for MboxGrid is now built out of DIVs,
+       which yeilds much faster refresh times.
+       3-7 times faster than before.
+     * IMPLEMENTED: Column resize for 'Fake-table'
+     * APPEARANCE(見た目): 
+       1. Removed the dotted border.
+       2. Seen messages (既読) are now no longer displayed with a gray
+          background.
+       3. Removed cell borders lines.
+
+
+ * 2007/04/27
+   * MboxGrid (メール一覧)
+     * PERFORMANCE IMPROVEMENT: 'Tiny Scroll' optimization: 
+       For scrolls of small offset sizes (Example, scrolling 1-2 rows),
+       a 'row-shifting' optimization is performed (shifting rows from the top
+       to the bottom, or vice-versa)
+       before: 300 ms,  after: 70 ms  (For a single-row scroll)  - 
+       (IE6 on a P4 3.2GHz)
+     * FIXED: 914873, 914801, 914814
+      
+
+ * 2007/04/26
+   * MboxGrid (メール一覧)
+     * PERFORMANCE IMPROVEMENT: Reduced the start-up time
+       before: 8~18 secs, after: 1 sec
+
+
+ * 2007/04/25
+   * MboxGrid (メール一覧)
+     * ADDED: Icons for high priority, low priority
+     * ADDED: Icons for seen/unseen (未読、既読)
+     * ENHANCEMENT: Resize Performance optimization - faster (height) resizing 
+       When resizing the window, there should be a 50% - 200%
+       performance increase.
+   * ThreePane
+     * ENHANCEMENT: Puppy (パピー)
+       1. Loading indication during IMAP folder update (INBOX クリック)
+       2. Loading indication when a mail is loaded (メール詳細)
+       3. Puppy appears within the ThreePane (no outside it)
+       4. ThreePane now fills up the unused area on the bottom.
+     * FIXED: MessageViewer (mail preview): (メール詳細)
+       Layout and CSS has been fixed. Opening the preview
+       no longer breaks the ThreePane layout in IE
+       FIX for QADB bug: 914869
+     
+
+  * 2007/04/24
+    * MboxGrid (メール一覧)a
+      * FIXED: Grid scrolling issue with the ContextMenu (右クリックメニュー)
+        Scrolling is now temporarily disabled whenever the Context-menu is
+        brought up.
+      * FIXED: QADB Bug: 914802
+        Right-clicking a row (右クリック) now correctly also selects the row.
+      * FIXED: Row selection caching corrected
+        Row selection will now correctly not retain selected state
+        across folders.
+      * IMPLEMENTED: MessageSearcher support (詳細検索)
+      * ENHANCEMENT: Grid Row-Refresh Performance Enhancement:
+        Scrollbar size updates are now done only when 
+        the data changes (during JSON-IO) instead of on each refresh.
+        Scrolling is now around 20% faster.
+
+     
+  * 2007/04/23
+    * MboxGrid (メール一覧)a
+      * IMPLEMENTED: support for flag, unflag, mark-as-read, mark-as-unread.
+      * IMPLEMENTED: Visual indication for row selection.
+

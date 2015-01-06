@@ -1,0 +1,130 @@
+<!-- FIXME: This test case is due for a cleanup... -->
+<html>
+<head>
+<script src="/js/prototype/v1.4.0/prototype.js"></script>
+<script src="/js/rico/v1.1.2/rico-livegrid.js"></script>
+<script src="/js/yui/v2.2.0a/yahoo/yahoo.js"></script>
+<script src="/js/yui/v2.2.0a/event/event.js"></script>
+<script src="/js/yui/v2.2.0a/dom/dom.js"></script>
+<script src="/js/yui/v2.2.0a/dragdrop/dragdrop-min.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/reset/reset.css"/>
+
+<script src="/js/yui/v2.2.0a/logger/logger-min.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/yui/v2.2.0a/logger/assets/logger.css"/>
+
+<script src="../src/common/DA/DA.js"></script>
+<script src="../src/common/tables/tables.js"></script>
+<script src="../src/common/logging/logging.js"></script>
+<script src="../src/common/io/io.js"></script>
+<script src="../src/common/io/json-io.js"></script>
+<script src="../src/common/grid/virtual-scroll.js"></script>
+
+<style>
+table.my_fixedTable {
+   /*width: 95%;*/
+   table-layout: fixed;
+}
+table.my_fixedTable_header {
+   /*width: 95%;*/
+   table-layout: fixed;
+}
+td.my_cell {
+    /*
+    padding       : 2px 0px 2px 3px;
+    margin        : 0px;
+    */
+    border-bottom : 1px solid #b8b8b8;
+    border-right  : 1px solid #b8b8b8;
+    height        : 22px;
+    overflow      : hidden;
+    font-size     : 11px;
+    /*
+    line-height: 12px;
+    */
+}
+.first {
+   border-left  : 1px solid #b8b8b8;
+}
+.tableCellHeader {
+   padding          : 2px 0px 2px 3px;
+   text-align       : left;
+   font-size        : 11px;
+   border-top       : 1px solid #b8b8b8;
+   border-right     : 1px solid #b8b8b8;
+   background-color : #cecece;
+}
+div.da_liveGridCell {
+   overflow: hidden;
+   height: 100%;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- container -->
+<div id="my_div" style="height:70%;width:70%;margin:10px;border:1px dotted gray;overflow:auto;"></div>
+
+
+  <div>
+    <div>
+    Folder ID?
+    <input id="my_fid" type="text" size="4"/> 
+       <i>
+       <b>Hint:</b>
+       Use testJSON-IO.html with /cgi-bin/ajx_ma_dir.cgi to find the folder ID.
+       </i>
+    </div>
+    <div>
+    Number of rows?
+    <input id="my_num_rows" type="text" value="10" size="2"/>
+    </div>
+  </div>
+  <button id="my_button">Make a GRID in the &lt;DIV&gt; above</button>
+
+  <script>
+
+  Event.observe(window, 'load', function(){
+    DA.log = YAHOO.log; // Just use the YAHOO logger...
+    new YAHOO.widget.LogReader(); 
+  });
+
+
+  Event.observe( $("my_button"), 'click', function() {
+
+      $("my_div").innerHTML = "";
+
+      // MAIN
+      window.myNewTable = DA.widget.makeATable(
+          (parseInt($("my_num_rows").value) + 2),
+          [
+             { name: "#",       width: "5%"  },
+             { name: "Subject", width: "35%" },
+             { name: "From",    width: "25%" },
+             { name: "To",      width: "20%" },
+             { name: "Date",    width: "10%" },
+             { name: "Priority",width: "5%"  }
+          ],
+          {
+             table: "my_fixedTable",
+             td:    "my_cell"
+          }         
+      );
+      myNewTable.id = "my_dear_table";
+      $("my_div").appendChild(myNewTable);
+      var vst = new DA.widget.VirtualScrollingTable ({
+          visibleRows: parseInt($("my_num_rows").value),
+          elem:        myNewTable.id,
+          url:         '/cgi-bin/ajx_ma_list.cgi',
+          urlParams: {
+             fid: $('my_fid').value
+          }
+      });
+  });
+  </script>
+
+</body>
+
+</html>
+

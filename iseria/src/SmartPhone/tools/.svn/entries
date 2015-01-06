@@ -1,0 +1,54 @@
+8
+
+dir
+2498
+http://svn.dev.dreamarts.co.jp/svn/iseria/insuite-ui/trunk/src/SmartPhone/tools
+http://svn.dev.dreamarts.co.jp/svn/iseria
+
+
+
+2014-04-17T07:55:01.509504Z
+2388
+xy_dong
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ba841608-c186-11db-9c4a-af02bb2b0c85
+
+smartphone_js_comp.sh
+file
+
+
+
+
+2014-04-22T12:12:23.000000Z
+5a0ebb742e24534fef38d1959edb385f
+2014-04-17T07:55:01.509504Z
+2388
+xy_dong
+has-props
+
+dojo-release-1.4.2-shrinksafe.tar.gz
+file
+
+
+
+
+2013-05-16T07:10:26.000000Z
+08227ec6bff975a9997786f35c6cb9a6
+2013-05-14T11:27:21.582130Z
+2341
+s_ooe
+has-props
+
