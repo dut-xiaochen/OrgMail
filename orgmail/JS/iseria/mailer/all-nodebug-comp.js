@@ -2776,6 +2776,7 @@ return _373[i].split("=")[1];
 var _375=window.setInterval(function(){
 if(DA.mailer.util.getOperationFlag()===""){
 DA.waiting.hide();
+OrgMailer.vars.mask_show=0;
 OrgMailer.vars.operation_warned=0;
 window.clearInterval(_375);
 if(!OrgMailer.vars.is_blured){

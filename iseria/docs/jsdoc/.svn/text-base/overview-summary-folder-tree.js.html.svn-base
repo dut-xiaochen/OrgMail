@@ -1,0 +1,1928 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+<head>
+<title>
+ Overview
+</title>
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script>
+function asd() {
+	
+		parent.document.title="folder-tree.js Overview";
+	
+}
+</script>
+</head>
+<body bgcolor="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> 	<font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top">
+<em>
+<b></b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<center>
+	
+	   <h2>folder-tree.js</h2>
+	
+</center>
+
+	
+
+
+<h4>Summary</h4>
+<p>
+	
+		No overview generated for 'folder-tree.js'<BR/><BR/>
+	
+</p>
+
+<hr>
+
+
+    <table border="1" cellpadding="3" cellspacing="0" width="100%">
+    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
+    <td colspan=2><font size="+2">
+    
+        <b>Class Summary</b>
+    
+    </font></td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="DA/mailer/FolderLabeler.html">DA.mailer.FolderLabeler</a></b></td>
+    <td>FolderLabeler
+ </td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="DA/mailer/FolderTreeController.html">DA.mailer.FolderTreeController</a></b></td>
+    <td>FolderTreeController
+ </td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="DA/mailer/FolderTreePopup.html">DA.mailer.FolderTreePopup</a></b></td>
+    <td>&nbsp;</td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="DA/mailer/QuotaController.html">DA.mailer.QuotaController</a></b></td>
+    <td>QuotaController
+ </td>
+    </tr>
+    
+    </table>
+    <hr/> 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+	<a name="method_summary"><!-- --></a>
+	<table border="1" cellpadding="3" cellspacing="0" width="100%">
+		<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+			<td colspan=2>
+				<font size="+2">
+					<b>Method Summary</b>
+				</font>
+			</td>
+		</tr>
+	
+		
+		   <tr bgcolor="white" class="TableRowColor">
+		      <td align="right" valign="top" width="1%">
+			 <font size="-1">
+			    <code>static&nbsp;void</code>
+			 </font>
+		      </td>
+		      <td>
+			 <code>
+			    <b>
+			       <a href="GLOBALS.html#!s!__DA.mailer.FolderTreeController.onSelect">__DA.mailer.FolderTreeController.onSelect</a></b>()
+			 </code>
+			 <br>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 
+		      </td>
+		   </tr>
+		
+		   <tr bgcolor="white" class="TableRowColor">
+		      <td align="right" valign="top" width="1%">
+			 <font size="-1">
+			    <code>static&nbsp;void</code>
+			 </font>
+		      </td>
+		      <td>
+			 <code>
+			    <b>
+			       <a href="GLOBALS.html#!s!__DA.mailer.FolderTreeController.onTrash">__DA.mailer.FolderTreeController.onTrash</a></b>()
+			 </code>
+			 <br>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 
+		      </td>
+		   </tr>
+		
+	
+	</table>
+    <p>
+
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+        <pre class="sourceview"><span class="comment">/*
+Copyright (c) 2007, DreamArts. All rights reserved.
+TODO: message
+version: ??
+*/</span>
+<span class="reserved">if</span> (!DA || !DA.mailer || !DA.util) {
+    alert(<span class="literal">"ERROR: missing DA.js or mailer.js"</span>); <span class="comment">// TODO: formalize/cleanup</span>
+}
+
+<span class="reserved">if</span> (!YAHOO || !YAHOO.util || !YAHOO.widget) {
+    alert(<span class="literal">"ERROR: missing yahoo.js or treeview.js"</span>); <span class="comment">// TODO: formalize/cleanup</span>
+}
+
+<span class="comment">/**
+ * Builds a IMAP folder-tree and renders it with a YUI TreeView widget. 
+ * 
+ * Usage: 
+ *   var ftc = new DA.mailer.FolderTreeController();
+ * 
+ * <span class="attrib">@class</span> FolderTreeController
+ * <span class="attrib">@uses</span> 
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@param</span> treeNode HTMLElement DOM node in which to draw the tree.
+ *        quotaStoNode HTMLElement DOM node for storage QUOTA.
+ *        quotaMesNode HTMLElement DOM node for message QUOTA.
+ *        cbhash Call back method in hash.
+ */</span>
+DA.mailer.FolderTreeController = <span class="reserved">function</span>(topNode, treeNode, importNode, quotaStoNode, quotaMesNode, cbhash) {
+    
+    <span class="reserved">this</span>.jsonIO = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_dir.cgi'</span> );
+
+    var me = <span class="reserved">this</span>;
+
+    <span class="reserved">this</span>.jsonIO.callback = <span class="reserved">function</span>(o) {
+        <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+            me._initDragDrop(o);
+            me._drawTree(o);
+            me._viewQuota(o);
+            me._setDragDrop(o);
+        }
+    };
+    <span class="reserved">this</span>.jsonIO.errorHandler = <span class="reserved">function</span>(e) {
+        DA.util.warn(<span class="literal">"Error"</span>);
+    };
+
+    <span class="reserved">this</span>.topNode    = topNode;
+    <span class="reserved">this</span>.treeNode   = treeNode;
+    <span class="reserved">this</span>.importNode = importNode;
+    <span class="reserved">this</span>.quota      = new DA.mailer.QuotaController(quotaStoNode, quotaMesNode);
+    <span class="reserved">if</span> (DA.util.isFunction(cbhash[<span class="literal">'onSelect'</span>])) {
+        <span class="reserved">this</span>.onSelect = cbhash[<span class="literal">'onSelect'</span>];
+    } <span class="reserved">else</span> {
+        <span class="reserved">this</span>.onSelect = <span class="reserved">function</span> () {};
+    }
+    <span class="reserved">if</span> (DA.util.isFunction(cbhash[<span class="literal">'onTrash'</span>])) {
+        <span class="reserved">this</span>.onTrash = cbhash[<span class="literal">'onTrash'</span>];
+    } <span class="reserved">else</span> {
+        <span class="reserved">this</span>.onTrash = <span class="reserved">function</span> () {};
+    }
+    
+    <span class="reserved">this</span>.init();
+    new DA.mailer.FolderTreePopup(treeNode,<span class="reserved">this</span>);
+
+};
+
+<span class="comment">/**
+ * Members
+ */</span>
+DA.mailer.FolderTreeController.<span class="reserved">prototype</span> = {
+
+    topNode: null,
+
+    <span class="comment">/**
+     * The HTML DOM element in which the TreeView will be drawn.
+     * <span class="attrib">@property</span> treeNode
+     * <span class="attrib">@type</span>: HTMLElement
+     */</span>
+    treeNode: null,
+
+    <span class="comment">/**
+     * Import Form.
+     */</span>
+    importNode: null,
+    
+    <span class="comment">/**
+     * QuotaController object.
+     */</span>
+    quota: null,
+    
+    <span class="comment">/**
+     * The object containing the folder tree structure and meta-data.
+     * <span class="attrib">@property</span> folderData
+     * <span class="attrib">@type</span> Object
+     * 
+     */</span>
+    folderData: null, <span class="comment">/* JSON */</span>
+
+    <span class="comment">/**
+     * YUI TreeView objecy
+     * <span class="attrib">@property</span> treeView
+     * <span class="attrib">@type</span> Object YAHOO.widget.TreeView 
+     */</span>
+    treeView: null, <span class="comment">/* YUI TreeView object */</span>
+
+    <span class="comment">/**
+     * JSON IO utility
+     * <span class="attrib">@property</span> jsonIO
+     * <span class="attrib">@type</span> Object DA.io.JsonIO
+     */</span>
+    jsonIO: new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_dir.cgi'</span> ),
+
+    <span class="comment">/**
+     * Init.
+     * <span class="attrib">@method</span> init
+     */</span>
+    init: <span class="reserved">function</span>() {
+        <span class="reserved">this</span>.jsonIO.execute();
+    },
+    
+    <span class="comment">/**
+     * Tree Data.
+     */</span>
+    treeData: {},
+    
+    <span class="comment">/**
+     * Selected Fid.
+     */</span>
+    selectedFid: null,
+    
+    <span class="comment">/**
+     * Drag and Drop targeted Fid.
+     */</span>
+    targetedFid: null,
+
+    <span class="comment">/**
+     * Drag and Drop source Fid.
+     */</span>
+    sourceFid: null,
+
+    <span class="comment">/**
+     * Next Fid.
+     */</span>
+    nextFid: null,
+    
+    <span class="comment">/**
+     * Select Function.
+     */</span>
+    onSelect: null,
+    
+    <span class="comment">/**
+     * Trash Function.
+     */</span>
+    onTrash: null,
+    
+    <span class="comment">/**
+     * Created Drag and Drop frame.
+     */</span>
+    DDFrameCreated: false,
+
+    <span class="comment">/**
+     * Drag and Drop method.
+     */</span>    
+    _dragDrop: <span class="reserved">function</span>(id, sGroup, config) {
+        <span class="reserved">if</span> (id) {
+            <span class="reserved">this</span>.init(id, sGroup, config);
+            <span class="reserved">if</span> (!<span class="reserved">this</span>.DDFrameCreated) {
+                <span class="reserved">this</span>.DDFrameCreated = true;
+                <span class="reserved">this</span>.initFrame();
+            }
+        }
+    },
+    
+    <span class="comment">/**
+     * init Drag and Drop.
+     */</span>
+    _initDragDrop: <span class="reserved">function</span>(o) {
+        var me = <span class="reserved">this</span>;
+ 
+        YAHOO.extend(me._dragDrop, YAHOO.util.DDProxy);
+          
+        me._dragDrop.<span class="reserved">prototype</span>.createFrame = <span class="reserved">function</span>() {
+            var self = <span class="reserved">this</span>;
+            var body = document.body;
+
+            <span class="comment">//if (!body || !body.firstChild) {</span>
+            <span class="comment">//    setTimeout( function() { self.createFrame(); }, 50 );</span>
+            <span class="comment">//    return;</span>
+            <span class="comment">//}</span>
+
+            var div = <span class="reserved">this</span>.getDragEl();
+
+            <span class="reserved">if</span> (!div) {
+                div    = document.createElement(<span class="literal">"div"</span>);
+                div.id = <span class="reserved">this</span>.dragElId;
+                var s  = div.style;
+
+                s.position   = <span class="literal">"absolute"</span>;
+                s.visibility = <span class="literal">"hidden"</span>;
+                s.border     = <span class="literal">"1px"</span>;
+                s.filter     = <span class="literal">"alpha(opacity=50)"</span>;
+                s.opacity    = 0.5;
+                s.zIndex     = 999;
+                s.cursor     = <span class="literal">"pointer"</span>;
+                s.whiteSpace = <span class="literal">"nowrap"</span>;
+
+                body.insertBefore(div, body.firstChild);
+            }
+        };
+
+        me._dragDrop.<span class="reserved">prototype</span>.onDragEnter = <span class="reserved">function</span>(e, divId) {
+            var fid = me._divId2fid(divId);
+            <span class="reserved">if</span> (me._dropOk(fid) &amp;&amp; fid != me.sourceFid &amp;&amp; fid != me._parent(me.sourceFid)) {
+                me._addClass(divId, <span class="literal">"labelTargeted"</span>);
+            }
+        };
+        
+        me._dragDrop.<span class="reserved">prototype</span>.onDragOut = <span class="reserved">function</span>(e, divId) {
+            var fid = me._divId2fid(divId);
+            <span class="reserved">if</span> (me._dropOk(fid) &amp;&amp; fid != me.sourceFid &amp;&amp; fid != me._parent(me.sourceFid)) {
+                me._removeClass(divId, <span class="literal">"labelTargeted"</span>);
+            }
+        };
+        
+        me._dragDrop.<span class="reserved">prototype</span>.onDragDrop = <span class="reserved">function</span>(e, divId) {
+            var fid = me._divId2fid(divId);
+            <span class="reserved">if</span> (me._dropOk(fid) &amp;&amp; fid != me.sourceFid &amp;&amp; fid != me._parent(me.sourceFid)) {
+                me._removeClass(divId, <span class="literal">"labelTargeted"</span>);
+                me._move(me.sourceFid, fid);
+            }
+        };
+        
+        me._dragDrop.<span class="reserved">prototype</span>.startDrag = <span class="reserved">function</span>(x, y) {
+        };
+        
+        me._dragDrop.<span class="reserved">prototype</span>.endDrag = <span class="reserved">function</span>(e) {
+        };
+        
+        me._dragDrop.<span class="reserved">prototype</span>.onMouseDown = <span class="reserved">function</span>(e) {
+            var fid = me._divId2fid(<span class="reserved">this</span>.id);
+            me.sourceFid = fid;
+            
+            var cur = <span class="reserved">this</span>.getDragEl();
+            cur.innerHTML = me.treeData[fid][<span class="literal">'labeler'</span>].dummy();
+        };
+        
+        me._dragDrop.<span class="reserved">prototype</span>.onMouseUp = <span class="reserved">function</span>(e) {
+        };
+    },
+    
+    <span class="comment">/*
+     * Set Drag and Drop Object.
+     */</span>
+    _setDragDrop: <span class="reserved">function</span>(o) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">for</span> (var fid in me.treeData) {
+            delete me.treeData[fid][<span class="literal">'drag'</span>];
+            delete me.treeData[fid][<span class="literal">'drop'</span>];
+            <span class="reserved">if</span> (me._dragOk(fid)) {
+                me.treeData[fid][<span class="literal">'drag'</span>] = new me._dragDrop(me._fid2divId(fid), <span class="literal">"folderTree"</span>);
+            }
+            <span class="comment">// DA_DEBUG_START</span>
+            <span class="reserved">else</span> {
+                DA.log(<span class="literal">"_dropOk? not for id: "</span> + fid + <span class="literal">", name: "</span> + me.treeData[fid].name, <span class="literal">"info"</span>, <span class="literal">"folder-tree.js"</span>);
+            }
+            <span class="comment">// DA_DEBUG_END</span>
+            <span class="reserved">if</span> (me._dropOk(fid)) {
+                me.treeData[fid][<span class="literal">'drop'</span>] = new YAHOO.util.DDTarget(me._fid2divId(fid), <span class="literal">"folderTree"</span>);
+            }
+        }
+        
+    },
+    
+    <span class="comment">/*
+     * View Quota.
+     */</span>
+    _viewQuota: <span class="reserved">function</span>(o) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">this</span>.quota.set(o);
+        <span class="reserved">this</span>.quota.view();
+        
+    },
+    
+    <span class="comment">/**
+     * Draw the tree from the (json) object.
+     * <span class="attrib">@method</span> init
+     * <span class="attrib">@private</span> 
+     * <span class="attrib">@param</span> Object corresponding to ajx_ma_dir.cgi
+     */</span>
+    _drawTree: <span class="reserved">function</span>(o) {
+        var topFid;
+        var firstFolders = [];
+        var folders = o.folder_list || [];
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">for</span> (var i = 0; i &lt; folders.length; i ++) {
+            var fo = folders[i]; me.treeData[fo.fid] = {};
+            <span class="reserved">for</span> (var key in fo) {
+                me.treeData[fo.fid][key] = fo[key];
+            }
+            me.treeData[fo.fid][<span class="literal">'selected'</span>] = 0;
+            me.treeData[fo.fid][<span class="literal">'children'</span>] = [];
+            me.treeData[fo.fid][<span class="literal">'labeler'</span>] = new DA.mailer.FolderLabeler(<span class="reserved">this</span>.topNode, <span class="reserved">this</span>.treeNode, me._data(fo.fid));
+            
+            <span class="reserved">if</span> (fo.parent == 0) {
+                topFid = fo.fid;
+            } <span class="reserved">else</span> {
+                me.treeData[fo.parent][<span class="literal">'children'</span>].push(me._data(fo.fid));
+                <span class="reserved">if</span> (me._parent(fo.fid) == topFid) {
+                    firstFolders.push(fo.fid);
+                }
+            }
+        }
+        
+        me.treeView = new YAHOO.widget.TreeView( me.treeNode );
+        me.nextFid  = o.next_fid;
+
+        <span class="reserved">this</span>.topNode.innerHTML = me.treeData[topFid][<span class="literal">'labeler'</span>].root();
+
+        var root = me.treeView.getRoot();
+        <span class="reserved">for</span> (var i = 0; i &lt; firstFolders.length; i ++) {
+            var fid = firstFolders[i];
+            me._populate(me.treeData[fid], root);
+            me.treeView.subscribe(<span class="literal">"labelClick"</span>, <span class="reserved">function</span>(node){
+                me._select(node.data.id);
+                <span class="reserved">return</span> false;
+            });
+        }
+                
+        me.treeView.draw();
+
+    },
+
+    <span class="comment">/**
+     * Draw a singe node, and recursively draw it's children (if any)
+     * TODO: cleanup the doc-comments
+     * <span class="attrib">@method</span> _populate
+     * <span class="attrib">@private</span> 
+     * <span class="attrib">@param</span> _f node info (Object)
+     * <span class="attrib">@param</span> parentNode YAHOO.widget.*Node
+     */</span>
+    _populate: <span class="reserved">function</span> (f, parentNode) {
+        var me      = <span class="reserved">this</span>;
+        var node = new YAHOO.widget.TextNode({
+          label: f.labeler.label(),
+          id   : f.fid
+        }, parentNode);
+        
+        delete me.treeData[f.fid][<span class="literal">'node'</span>];
+        me.treeData[f.fid][<span class="literal">'node'</span>] = node;
+
+        <span class="reserved">for</span> (var i = 0; i &lt; f.children.length; i ++) {
+            me._populate(f.children[i], node);
+        }
+    },
+    
+    _open: <span class="reserved">function</span>(fid) {
+        var node = <span class="reserved">this</span>._node(fid);
+        
+        node.expand();
+    },
+    
+    _close: <span class="reserved">function</span> (fid) {
+        var node = <span class="reserved">this</span>._node(fid);
+        
+        node.collapse();
+    },
+    
+    _refresh: <span class="reserved">function</span>(fid) {
+        var node = <span class="reserved">this</span>._node(fid);
+        
+        node.refresh();
+    },
+    
+    _select: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._selectOk(fid)) {
+            var node = <span class="reserved">this</span>._node(fid);
+            
+            <span class="reserved">if</span> (me.selectedFid) {
+                me._clearRecent(me.selectedFid);
+                me._removeClass(me._fid2divId(me.selectedFid), <span class="literal">"labelSelected"</span>);
+            }
+            {
+                me._addClass(me._fid2divId(fid), <span class="literal">"labelSelected"</span>);
+            }
+ 
+            me.selectedFid = fid;
+            
+            me._update(fid);
+            
+            <span class="reserved">this</span>.onSelect(fid);
+        }
+
+    },
+    
+    _update: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._updateOk(fid)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"update"</span>, <span class="literal">"fid"</span> : fid };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_list.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._setCounts(o);
+                }
+            };
+            
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+
+    },
+    
+    _create: <span class="reserved">function</span>(fid, name, type) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._createOk(fid)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"create"</span>, <span class="literal">"fid"</span> : fid, <span class="literal">"name"</span> : name, <span class="literal">"type"</span> : type };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_dir.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._createUI(fid, name, type);
+
+                    <span class="reserved">if</span> (DA.util.isEmpty(o.next_fid)) {
+                        DA.util.warn(<span class="literal">"Error"</span>);
+                    } <span class="reserved">else</span> {
+                        me.nextFid = o.next_fid;
+                    }
+                }
+            };
+            
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+        
+    },
+    
+    _createUI: <span class="reserved">function</span>(fid, name, type) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._createOk(fid)) {
+            var c        = {};
+            var node     = me._node(fid);
+            var next_fid = me.nextFid;
+            var trash_m, messages_e, unseen_e, recent_e;
+            
+            <span class="reserved">if</span> (DA.vars.config[<span class="literal">'delete'</span>] == 1) {
+                trash_m = 1;
+            } <span class="reserved">else</span> {
+                trash_m = 0;
+            }
+            
+            <span class="reserved">if</span> (DA.vars.config[<span class="literal">'count'</span>] == <span class="literal">"all"</span> || DA.vars.config[<span class="literal">'count'</span>] == <span class="literal">"half"</span>) {
+                messages_e = 1;
+            } <span class="reserved">else</span> {
+                messages_e = 0;
+            }
+            
+            <span class="reserved">if</span> (DA.vars.config[<span class="literal">'count'</span>] == <span class="literal">"all"</span>) {
+                unseen_e = 1;
+            } <span class="reserved">else</span> {
+                unseen_e = 0;
+            }
+            
+            <span class="reserved">if</span> (DA.vars.config[<span class="literal">'recent'</span>] == <span class="literal">"on"</span>) {
+                recent_e = 1;
+            } <span class="reserved">else</span> {
+                recent_e = 0;
+            }
+            
+            <span class="reserved">if</span> (type == 18) {
+                c = {
+                    <span class="literal">'fid'</span>         : next_fid,
+                    <span class="literal">'parent'</span>      : fid,
+                    <span class="literal">'uidvalidity'</span> : 0,
+                    <span class="literal">'type'</span>        : 18, 
+                    <span class="literal">'name'</span>        : name,
+                    <span class="literal">'icon'</span>        : DA.vars.imgRdir + <span class="literal">'/ico_14_folder_c.gif'</span>,
+                    <span class="literal">'alt'</span>         : <span class="literal">''</span>,
+                    <span class="literal">'select'</span>      : 0,
+                    <span class="literal">'update'</span>      : 0,
+                    <span class="literal">'create'</span>      : 1,
+                    <span class="literal">'rename'</span>      : 1,
+                    <span class="literal">'delete'</span>      : 1,
+                    <span class="literal">'move'</span>        : 1,
+                    <span class="literal">'import'</span>      : 0,
+                    <span class="literal">'export'</span>      : 0,
+                    <span class="literal">'filter'</span>      : 0,
+                    <span class="literal">'move_f'</span>      : 1,
+                    <span class="literal">'move_m'</span>      : 0,
+                    <span class="literal">'open_m'</span>      : 0,
+                    <span class="literal">'trash_m'</span>     : trash_m,
+                    <span class="literal">'messages'</span>    : 0,
+                    <span class="literal">'unseen'</span>      : 0,
+                    <span class="literal">'recent'</span>      : 0,
+                    <span class="literal">'messages_e'</span>  : messages_e,
+                    <span class="literal">'unseen_e'</span>    : unseen_e,
+                    <span class="literal">'recent_e'</span>    : recent_e,
+                    <span class="literal">'selected'</span>    : 0,
+                    <span class="literal">'children'</span>    : []
+                };
+            } <span class="reserved">else</span> <span class="reserved">if</span> (type == 17) {
+                c = {
+                    <span class="literal">'fid'</span>         : next_fid,
+                    <span class="literal">'parent'</span>      : fid,
+                    <span class="literal">'uidvalidity'</span> : 0,
+                    <span class="literal">'type'</span>        : 17, 
+                    <span class="literal">'name'</span>        : name,
+                    <span class="literal">'icon'</span>        : DA.vars.imgRdir + <span class="literal">'/ico_14_folder_c.gif'</span>,
+                    <span class="literal">'alt'</span>         : <span class="literal">''</span>,
+                    <span class="literal">'select'</span>      : 1,
+                    <span class="literal">'update'</span>      : 1,
+                    <span class="literal">'create'</span>      : 0,
+                    <span class="literal">'rename'</span>      : 1,
+                    <span class="literal">'delete'</span>      : 1,
+                    <span class="literal">'move'</span>        : 1,
+                    <span class="literal">'import'</span>      : 1,
+                    <span class="literal">'export'</span>      : 1,
+                    <span class="literal">'filter'</span>      : 1,
+                    <span class="literal">'move_f'</span>      : 0,
+                    <span class="literal">'move_m'</span>      : 1,
+                    <span class="literal">'open_m'</span>      : 1,
+                    <span class="literal">'trash_m'</span>     : trash_m,
+                    <span class="literal">'messages'</span>    : 0,
+                    <span class="literal">'unseen'</span>      : 0,
+                    <span class="literal">'recent'</span>      : 0,
+                    <span class="literal">'messages_e'</span>  : messages_e,
+                    <span class="literal">'unseen_e'</span>    : unseen_e,
+                    <span class="literal">'recent_e'</span>    : recent_e,
+                    <span class="literal">'selected'</span>    : 0,
+                    <span class="literal">'children'</span>    : []
+                };
+            } <span class="reserved">else</span> {
+                c = {
+                    <span class="literal">'fid'</span>         : next_fid,
+                    <span class="literal">'parent'</span>      : fid,
+                    <span class="literal">'uidvalidity'</span> : 0,
+                    <span class="literal">'type'</span>        : 16, 
+                    <span class="literal">'name'</span>        : name,
+                    <span class="literal">'icon'</span>        : DA.vars.imgRdir + <span class="literal">'/ico_14_folder_c.gif'</span>,
+                    <span class="literal">'alt'</span>         : <span class="literal">''</span>,
+                    <span class="literal">'select'</span>      : 1,
+                    <span class="literal">'update'</span>      : 1,
+                    <span class="literal">'create'</span>      : 1,
+                    <span class="literal">'rename'</span>      : 1,
+                    <span class="literal">'delete'</span>      : 1,
+                    <span class="literal">'move'</span>        : 1,
+                    <span class="literal">'import'</span>      : 1,
+                    <span class="literal">'export'</span>      : 1,
+                    <span class="literal">'filter'</span>      : 1,
+                    <span class="literal">'move_f'</span>      : 1,
+                    <span class="literal">'move_m'</span>      : 1,
+                    <span class="literal">'open_m'</span>      : 1,
+                    <span class="literal">'trash_m'</span>     : trash_m,
+                    <span class="literal">'messages'</span>    : 0,
+                    <span class="literal">'unseen'</span>      : 0,
+                    <span class="literal">'recent'</span>      : 0,
+                    <span class="literal">'messages_e'</span>  : messages_e,
+                    <span class="literal">'unseen_e'</span>    : unseen_e,
+                    <span class="literal">'recent_e'</span>    : recent_e,
+                    <span class="literal">'selected'</span>    : 0,
+                    <span class="literal">'children'</span>    : []
+                };
+            }
+            
+            me.treeData[next_fid] = c;
+            
+            me._populate(me.treeData[next_fid], node);
+            
+            me._refresh(next_fid);
+        }
+
+    },
+
+    _rename: <span class="reserved">function</span>(fid, name) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._renameOk(fid)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"rename"</span>, <span class="literal">"fid"</span> : fid, <span class="literal">"name"</span> : name };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_dir.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._renameUI(fid, name);
+
+                    <span class="reserved">if</span> (DA.util.isEmpty(o.next_fid)) {
+                        DA.util.warn(<span class="literal">"Error"</span>);
+                    } <span class="reserved">else</span> {
+                        me.nextFid = o.next_fid;
+                    }
+                }
+            };
+
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+        
+    },
+    
+    _renameUI: <span class="reserved">function</span>(fid, name) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._renameOk(fid)) {
+             var c = me._data(fid);
+             var labeler = me._labeler(fid);
+        
+             c[<span class="literal">'name'</span>] = name;
+
+             labeler.refresh();
+        }
+
+    },
+    
+    _move: <span class="reserved">function</span>(src, dst) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._dragOk(src) &amp;&amp; me._dropOk(dst)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"move"</span>, <span class="literal">"fid"</span> : src, <span class="literal">"target_fid"</span> : dst };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_dir.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._moveUI(src, dst);
+
+                    <span class="reserved">if</span> (DA.util.isEmpty(o.next_fid)) {
+                        DA.util.warn(<span class="literal">"Error"</span>);
+                    } <span class="reserved">else</span> {
+                        me.nextFid = o.next_fid;
+                    }
+                }
+            };
+
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+        
+    },
+    
+    _moveUI: <span class="reserved">function</span>(src, dst) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._dragOk(src) &amp;&amp; me._dropOk(dst)) {
+            var cp = me._data(me._parent(src));
+            var cs = me._data(src);
+            var cd = me._data(dst);
+
+            cs[<span class="literal">'parent'</span>] = dst;
+            <span class="reserved">for</span> (var i = 0; i &lt; cp[<span class="literal">'children'</span>].length; i ++) {
+                <span class="reserved">if</span> (cp[<span class="literal">'children'</span>][i][<span class="literal">'fid'</span>] == src) {
+                    cd[<span class="literal">'children'</span>].push(cs);
+                    cp[<span class="literal">'children'</span>].splice(i, 1);
+                }
+            }
+
+            me.treeView.removeNode(me._node(src), true);
+            me._populate(cs, me._node(dst));
+
+            me._refresh(me._parent(src));
+            me._refresh(dst);
+            
+            me._setDragDrop();
+        }
+
+    },
+    
+    _delete: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._deleteOk(fid)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"delete"</span>, <span class="literal">"fid"</span> : fid };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_dir.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._deleteUI(fid);
+
+                    <span class="reserved">if</span> (DA.util.isEmpty(o.next_fid)) {
+                        DA.util.warn(<span class="literal">"Error"</span>);
+                    } <span class="reserved">else</span> {
+                        me.nextFid = o.next_fid;
+                    }
+                }
+            };
+
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+        
+    },
+    
+    _deleteUI: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._deleteOk(fid)) {
+            var node = me._node(fid);
+            
+            delete me.treeData[fid];
+            
+            me.treeView.removeNode(node, true);
+            
+            me._refresh(fid);
+                        
+            me._setDragDrop();
+        }
+
+    },
+
+    _filter: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._filterOk(fid)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"submit"</span>, <span class="literal">"fid"</span> : fid, <span class="literal">"uid"</span> : <span class="literal">"all"</span> };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_filter.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._setCounts(o);
+                    me._filterUI(fid);
+                }
+            };
+            
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+
+    },
+    
+    _filterUI: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._filterOk(fid)) {
+        }
+        
+    },
+    
+    _export: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._exportOk(fid)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"export"</span>, <span class="literal">"fid"</span> : fid, <span class="literal">"uid"</span> : <span class="literal">"all"</span>, <span class="literal">"archive"</span> : <span class="literal">"1"</span> };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_move.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    <span class="reserved">if</span> (!DA.util.isEmpty(o.file)) {
+                        me._viewQuota(o);
+                        me._exportUI(fid, o.file);
+                    } <span class="reserved">else</span> {
+                        DA.util.warn(<span class="literal">"Error"</span>);
+                    }
+                }
+            };
+
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+        
+    },
+
+    _exportUI: <span class="reserved">function</span>(fid, file) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._exportOk(fid)) {
+            var url = DA.vars.cgiRdir + <span class="literal">'/ma_ajx_download.cgi?proc=archive&amp;file='</span> + file;
+            DA.windowController.winOpen(url, <span class="literal">''</span>, 800, 600);
+        }
+
+    },
+    
+    _import: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._importOk(fid)) {
+
+            YAHOO.util.Dom.get(<span class="reserved">this</span>.importNode).fid.value = fid;
+            
+            var io = new DA.io.FileUploadIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_move.cgi'</span>, <span class="reserved">this</span>.importNode );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._setCounts(o);
+                    me._importUI(fid);
+                }
+            };
+
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+            
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _importUI: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._importOk(fid)) {
+        }
+
+    },
+    
+    _trash: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me._trashOk(fid)) {
+            var h  = { <span class="literal">"proc"</span> : <span class="literal">"delete"</span>, <span class="literal">"fid"</span> : fid, <span class="literal">"uid"</span> : <span class="literal">"all"</span> };
+            var io = new DA.io.JsonIO( DA.vars.cgiRdir + <span class="literal">'/ajx_ma_move.cgi'</span>, h );
+            
+            io.callback = <span class="reserved">function</span>(o) {
+                <span class="reserved">if</span> (DA.mailer.util.checkResult(o)) {
+                    me._viewQuota(o);
+                    me._trashUI(fid);
+                    
+                    <span class="comment">// this.onTrash(fid);</span>
+                }
+            };
+
+            io.errorHandler = <span class="reserved">function</span>(e) {
+                DA.util.warn(<span class="literal">"Error"</span>);
+            };
+        
+            io.execute();
+            
+            delete io;
+        }
+        
+    },
+
+    _trashUI: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me._trashOk(fid)) {
+            me._clearCount(fid);
+        }
+
+    },
+
+    _selectOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'select'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _updateOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'update'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _createOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'create'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _renameOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'rename'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _dragOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'move'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _dropOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'move_f'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+        
+    },
+    
+    _deleteOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'delete'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+        
+    },
+
+    _filterOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'filter'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+
+    _exportOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'export'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+
+    _importOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'import'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _trashOk: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'trash'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+
+    _selected: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+
+        <span class="reserved">if</span> (me.treeData[fid][<span class="literal">'selected'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+
+    },
+    
+    _data: <span class="reserved">function</span>(fid) {
+        <span class="reserved">return</span> <span class="reserved">this</span>.treeData[fid];
+    },
+    
+    _node: <span class="reserved">function</span>(fid) {
+        <span class="reserved">return</span> <span class="reserved">this</span>.treeData[fid][<span class="literal">'node'</span>];
+    },
+    
+    _labeler: <span class="reserved">function</span>(fid) {
+        <span class="reserved">return</span> <span class="reserved">this</span>.treeData[fid][<span class="literal">'labeler'</span>];
+    },
+    
+    _recount: <span class="reserved">function</span>(fid) {
+        <span class="reserved">this</span>.treeData[fid].refresh();
+    },
+    
+    _parent: <span class="reserved">function</span>(fid) {
+        <span class="reserved">return</span> <span class="reserved">this</span>.treeData[fid][<span class="literal">'parent'</span>];
+    },
+    
+    _setCounts: <span class="reserved">function</span>(o) {
+        var me = <span class="reserved">this</span>;
+        var counts = o.count_list;
+        
+        <span class="reserved">if</span> (counts) {
+            <span class="reserved">for</span> (var i = 0; i &lt; counts.length; i ++) {
+                me._setCount(counts[i][<span class="literal">'fid'</span>], counts[i][<span class="literal">'messages'</span>], counts[i][<span class="literal">'unseen'</span>], counts[i][<span class="literal">'recent'</span>]);
+            }
+        }
+    },
+
+    _setCount: <span class="reserved">function</span>(fid, messages, unseen, recent) {
+        var me = <span class="reserved">this</span>;
+        var labeler = me._labeler(fid);
+        
+        <span class="reserved">if</span> (!DA.util.isEmpty(messages)) {
+            labeler.messages(messages);
+        }
+        
+        <span class="reserved">if</span> (!DA.util.isEmpty(unseen)) {
+            labeler.unseen(unseen);
+        }
+        
+        <span class="reserved">if</span> (!DA.util.isEmpty(recent)) {
+            labeler.recent(recent);
+        }
+        
+        labeler.refresh();
+               
+    },
+
+    _clearCount: <span class="reserved">function</span>(fid) {
+        var me = <span class="reserved">this</span>;
+        
+        me._setCount(fid, 0, 0, 0);
+
+    },
+    
+    _clearRecent: <span class="reserved">function</span>(fid) {
+        var me =<span class="reserved">this</span>;
+        
+        me._setCount(fid, null, null, 0);
+        
+    },
+    
+    _fid2divId: <span class="reserved">function</span>(fid) {
+        var divId =  <span class="literal">'folderTreeDivId_'</span> + fid;
+        
+        <span class="reserved">return</span> divId;        
+    },
+    
+    _divId2fid: <span class="reserved">function</span>(divId) {
+        var array = divId.split(<span class="literal">"_"</span>);
+        
+        <span class="reserved">return</span> array[1];
+    },
+    
+    _lock: <span class="reserved">function</span>() {
+        <span class="reserved">if</span> (DA.util.lock(<span class="literal">'folder'</span>)) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            DA.util.warn(<span class="literal">"Error"</span>);
+            <span class="reserved">return</span> false;
+        }
+    },
+    
+    _unlock: <span class="reserved">function</span>() {
+        <span class="reserved">return</span> DA.util.unlock(<span class="literal">'folder'</span>);
+    },
+    
+    _addClass: <span class="reserved">function</span>(divId, cname) {
+        var el = YAHOO.util.Dom.get(divId);
+        YAHOO.util.Dom.addClass(el, cname);
+    },
+
+    _removeClass: <span class="reserved">function</span>(divId, cname) {
+        var el = YAHOO.util.Dom.get(divId);
+        YAHOO.util.Dom.removeClass(el, cname);
+    }
+    
+};
+
+<span class="comment">/**
+ * Folder Labeler. 
+ * 
+ * Usage: 
+ *   var fl = new DA.mailer.FolderLabeler();
+ * 
+ * <span class="attrib">@class</span> FolderLabeler
+ * <span class="attrib">@uses</span> 
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@param</span> data folder object.
+ */</span>
+DA.mailer.FolderLabeler = <span class="reserved">function</span>(topNode, treeNode, data) {
+    <span class="reserved">this</span>.topNode  = topNode;
+    <span class="reserved">this</span>.treeNode = treeNode;
+    <span class="reserved">this</span>.data = data;
+};
+
+<span class="comment">/**
+ * Members
+ */</span>
+DA.mailer.FolderLabeler.<span class="reserved">prototype</span> = {
+
+    topNode: null,
+    
+    treeNode: null,
+
+    data: null,
+
+    fid: <span class="reserved">function</span>() {
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'fid'</span>];
+    },
+
+    divId: <span class="reserved">function</span>() {
+        <span class="reserved">return</span> <span class="literal">'folderTreeDivId_'</span> + <span class="reserved">this</span>.data[<span class="literal">'fid'</span>];
+    },
+    
+    node: <span class="reserved">function</span>() {
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'node'</span>];
+    },
+    
+    messagesEnable: <span class="reserved">function</span>() {
+        <span class="reserved">if</span> (<span class="reserved">this</span>.data[<span class="literal">'messages_e'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+    },
+    
+    unseenEnable: <span class="reserved">function</span>() {
+        <span class="reserved">if</span> (<span class="reserved">this</span>.data[<span class="literal">'unseen_e'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+    },
+    
+    recentEnable: <span class="reserved">function</span>() {
+        <span class="reserved">if</span> (<span class="reserved">this</span>.data[<span class="literal">'recent_e'</span>] == 1) {
+            <span class="reserved">return</span> true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">return</span> false;
+        }
+    },
+    
+    messages: <span class="reserved">function</span>(n) {
+        <span class="reserved">if</span> (!DA.util.isEmpty(n)) {
+            <span class="reserved">this</span>.data[<span class="literal">'messages'</span>] = n;
+        }
+        
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'messages'</span>];
+    },
+    
+    unseen: <span class="reserved">function</span>(n) {
+        <span class="reserved">if</span> (!DA.util.isEmpty(n)) {
+            <span class="reserved">this</span>.data[<span class="literal">'unseen'</span>] = n;
+        }
+        
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'unseen'</span>];
+    },
+    
+    recent: <span class="reserved">function</span>(n) {
+        <span class="reserved">if</span> (!DA.util.isEmpty(n)) {
+            <span class="reserved">this</span>.data[<span class="literal">'recent'</span>] = n;
+        }
+        
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'recent'</span>];
+    },
+
+    name: <span class="reserved">function</span>() {
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'name'</span>];
+    },
+    
+    icon: <span class="reserved">function</span>() {
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'icon'</span>];
+    },
+    
+    alt: <span class="reserved">function</span>() {
+        <span class="reserved">return</span> <span class="reserved">this</span>.data[<span class="literal">'alt'</span>];
+    },
+    
+    _image: <span class="reserved">function</span>() {
+        var i = <span class="reserved">this</span>.icon();
+        var a = <span class="reserved">this</span>.alt();
+        var src = (DA.util.isEmpty(i)) ?
+                  <span class="literal">''</span> : <span class="literal">' src="'</span> + DA.util.escape(i) + <span class="literal">'"'</span>;
+        var alt = (DA.util.isEmpty(a)) ?
+                  <span class="literal">''</span> : <span class="literal">' alt="'</span> + DA.util.escape(a) + <span class="literal">'"'</span>;
+        var image = <span class="literal">'&lt;img'</span> + src + alt + <span class="literal">' border=0&gt;'</span>;
+        
+        <span class="reserved">return</span> image;
+    },
+    
+    _name: <span class="reserved">function</span>() {
+        var n = <span class="reserved">this</span>.name();
+        var name = DA.util.encode(n);
+        
+        <span class="reserved">return</span> name;
+    },
+    
+    _count: <span class="reserved">function</span>() {
+        var count = <span class="literal">''</span>;
+        var messages = <span class="reserved">this</span>.messages();
+        var unseen   = <span class="reserved">this</span>.unseen();
+        var recent   = <span class="reserved">this</span>.recent();
+        
+        <span class="reserved">if</span> (<span class="reserved">this</span>.messagesEnable()) {
+            <span class="reserved">if</span> (<span class="reserved">this</span>.unseenEnable()) {
+                count = <span class="literal">'['</span> + DA.util.encode(unseen) + <span class="literal">'/'</span> + DA.util.encode(messages) + <span class="literal">']'</span>;
+            } <span class="reserved">else</span> {
+                count = <span class="literal">'['</span> + DA.util.encode(messages) + <span class="literal">']'</span>;
+            }
+        } <span class="reserved">else</span> {
+            <span class="reserved">if</span> (<span class="reserved">this</span>.unseenEnable()) {
+                count = <span class="literal">'['</span> + DA.util.encode(unseen) + <span class="literal">']'</span>;
+            } <span class="reserved">else</span> {
+                count = <span class="literal">''</span>;
+            }
+        }
+        <span class="reserved">if</span> (<span class="reserved">this</span>.recentEnable()) {
+            <span class="reserved">if</span> (recent != 0) {
+                count += <span class="literal">'&amp;nbsp;'</span>;
+                count += <span class="literal">'('</span> + DA.util.encode(recent) + <span class="literal">')'</span>;
+            }
+        }
+        
+        <span class="reserved">return</span> count;
+    },
+
+    root: <span class="reserved">function</span>() {
+        var f = <span class="reserved">this</span>.data;
+        var space = <span class="literal">'&amp;nbsp;'</span>;
+        var cname = (<span class="reserved">this</span>.recentEnable() &amp;&amp; <span class="reserved">this</span>.recent() &gt; 0) ? <span class="literal">' class="ygtvlabel labelRecent"'</span> : <span class="literal">'ygtvlabel'</span>;
+        var label = <span class="literal">'&lt;div id="'</span> + <span class="reserved">this</span>.divId() + <span class="literal">'"&gt;'</span>
+                  + <span class="literal">'&lt;a href="javascript:DA.mailer.util.treeOpenAll(\'</span><span class="literal">' + this.treeNode.id + '</span>\<span class="literal">');" class="'</span> + cname + <span class="literal">'"&gt;'</span>
+                  + <span class="reserved">this</span>._image() + space
+                  + <span class="reserved">this</span>._name() + space
+                  + <span class="reserved">this</span>._count() + <span class="literal">'&lt;/a&gt;&lt;/div&gt;'</span>;
+
+        <span class="reserved">return</span> label;
+    },
+    
+    label: <span class="reserved">function</span>() {
+        var f = <span class="reserved">this</span>.data;
+        var space = <span class="literal">'&amp;nbsp;'</span>;
+        var cname = (<span class="reserved">this</span>.recentEnable() &amp;&amp; <span class="reserved">this</span>.recent() &gt; 0) ? <span class="literal">' class="labelRecent"'</span> : <span class="literal">''</span>;
+        var label = <span class="literal">'&lt;div id="'</span> + <span class="reserved">this</span>.divId() + <span class="literal">'"'</span> + cname + <span class="literal">'&gt;'</span>
+                  + <span class="reserved">this</span>._image() + space
+                  + <span class="reserved">this</span>._name() + space
+                  + <span class="reserved">this</span>._count() + <span class="literal">'&lt;/div&gt;'</span>;
+
+        <span class="reserved">return</span> label;
+    },
+    
+    dummy: <span class="reserved">function</span>() {
+        var f = <span class="reserved">this</span>.data;
+        var space = <span class="literal">'&amp;nbsp;'</span>;
+        var cname = (<span class="reserved">this</span>.recentEnable() &amp;&amp; <span class="reserved">this</span>.recent() &gt; 0) ? <span class="literal">' class="labelRecent"'</span> : <span class="literal">''</span>;
+        var dummy = <span class="reserved">this</span>._image() + space
+                  + <span class="reserved">this</span>._name() + space
+                  + <span class="reserved">this</span>._count();
+
+        <span class="reserved">return</span> dummy;
+    },
+    
+    refresh: <span class="reserved">function</span>() {
+        var node = <span class="reserved">this</span>.node();
+        
+        node.getLabelEl().innerHTML = <span class="reserved">this</span>.label();
+    }
+};
+
+<span class="comment">/**
+ * Quota Controller. 
+ * 
+ * Usage: 
+ *   var qc = new DA.mailer.QuotaController();
+ * 
+ * <span class="attrib">@class</span> QuotaController
+ * <span class="attrib">@uses</span> 
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@param</span> data json object.
+ */</span>
+DA.mailer.QuotaController = <span class="reserved">function</span>(storageNode, messagesNode) {
+    <span class="reserved">this</span>.storageNode  = storageNode;
+    <span class="reserved">this</span>.messagesNode = messagesNode;
+};
+
+<span class="comment">/**
+ * Members
+ */</span>
+DA.mailer.QuotaController.<span class="reserved">prototype</span> = {
+    storageNode: null,
+    
+    messagesNode: null,
+
+    storageQuota: null,
+    
+    messagesQuota: null,
+    
+    storageUse: null,
+    
+    messagesUse: null,    
+
+    storageOver: null,
+    
+    messagesOver: null,
+    
+    _storage: <span class="reserved">function</span>() {
+        var storageQuota = <span class="reserved">this</span>.storageQuota;
+        var storageUse   = <span class="reserved">this</span>.storageUse;
+        var storage = <span class="literal">''</span>;
+        
+        <span class="reserved">if</span> (!DA.util.isEmpty(storageQuota) &amp;&amp; !DA.util.isEmpty(storageUse)) {
+            storage = <span class="literal">'&amp;lt;'</span> + DA.util.encode(storageUse) + <span class="literal">'/'</span> + DA.util.encode(storageQuota) + <span class="literal">'&amp;gt;KB'</span>;
+        }
+        
+        <span class="reserved">return</span> storage;
+    },
+    
+    _messages: <span class="reserved">function</span>() {
+        var messagesQuota = <span class="reserved">this</span>.messagesQuota;
+        var messagesUse   = <span class="reserved">this</span>.messagesUse;
+        var messages;
+        
+        <span class="reserved">if</span> (!DA.util.isEmpty(messagesQuota) &amp;&amp; !DA.util.isEmpty(messagesUse)) {
+            messages = <span class="literal">'&amp;lt;'</span> + DA.util.encode(messagesUse) + <span class="literal">'/'</span> + DA.util.encode(messagesQuota) + <span class="literal">'&amp;gt;MSG'</span>;
+        }
+        
+        <span class="reserved">return</span> messages;
+    },
+
+    set: <span class="reserved">function</span>(data) {
+        <span class="reserved">this</span>.storageQuota  = data[<span class="literal">'quota'</span>][<span class="literal">'storage'</span>];
+        <span class="reserved">this</span>.messagesQuota = data[<span class="literal">'quota'</span>][<span class="literal">'messages'</span>];
+        <span class="reserved">this</span>.storageUse    = data[<span class="literal">'use'</span>][<span class="literal">'storage'</span>];
+        <span class="reserved">this</span>.messagesUse   = data[<span class="literal">'use'</span>][<span class="literal">'messages'</span>];
+        
+        <span class="reserved">if</span> (parseInt(<span class="reserved">this</span>.storageQuota) &lt;= parseInt(<span class="reserved">this</span>.storageUse)) {
+            <span class="reserved">this</span>.storageOver = true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">this</span>.storageOver = false;
+        }
+        
+        <span class="reserved">if</span> (parseInt(<span class="reserved">this</span>.messagesQuota) &lt;= parseInt(<span class="reserved">this</span>.messagesUse)) {
+            <span class="reserved">this</span>.messagesOver = true;
+        } <span class="reserved">else</span> {
+            <span class="reserved">this</span>.messagesOver = false;
+        }
+
+    },
+    
+    view: <span class="reserved">function</span>() {
+        var storage  = <span class="reserved">this</span>._storage();
+        var messages = <span class="reserved">this</span>._messages();
+        
+        <span class="reserved">if</span> (!DA.util.isEmpty(storage)) {
+            <span class="reserved">this</span>.storageNode.innerHTML = storage;
+            <span class="reserved">if</span> (<span class="reserved">this</span>.storageOver) {
+                YAHOO.util.Dom.removeClass(<span class="reserved">this</span>.storageNode, <span class="literal">"quotaNormal"</span>);
+                YAHOO.util.Dom.addClass(<span class="reserved">this</span>.storageNode, <span class="literal">"quotaWarn"</span>);
+            } <span class="reserved">else</span> {
+                YAHOO.util.Dom.removeClass(<span class="reserved">this</span>.storageNode, <span class="literal">"quotaWarn"</span>);
+                YAHOO.util.Dom.addClass(<span class="reserved">this</span>.storageNode, <span class="literal">"quotaNormal"</span>);
+            }
+        }
+        <span class="reserved">if</span> (!DA.util.isEmpty(messages)) {
+            <span class="reserved">this</span>.messagesNode.innerHTML = messages;
+            <span class="reserved">if</span> (<span class="reserved">this</span>.messagesOver) {
+                YAHOO.util.Dom.removeClass(<span class="reserved">this</span>.messagesNode, <span class="literal">"quotaNormal"</span>);
+                YAHOO.util.Dom.addClass(<span class="reserved">this</span>.messagesNode, <span class="literal">"quotaWarn"</span>);
+            } <span class="reserved">else</span> {
+                YAHOO.util.Dom.removeClass(<span class="reserved">this</span>.messagesNode, <span class="literal">"quotaWarn"</span>);
+                YAHOO.util.Dom.addClass(<span class="reserved">this</span>.messagesNode, <span class="literal">"quotaNormal"</span>);
+            }
+        }
+        
+    }
+
+};
+<span class="comment">/**
+ * Builds a folder-tree's popup Menu.
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@param</span> ftc  instance of "DA.mailer.FolderTreeController"
+ * <span class="attrib">@param</span> node HTMLElement DOM node in which to draw the tree.
+ */</span>
+DA.mailer.FolderTreePopup = <span class="reserved">function</span>(node, ftc){
+    <span class="reserved">this</span>.ftc      = ftc;
+    <span class="reserved">this</span>.treeData = ftc.treeData; 
+    <span class="reserved">this</span>.domNode  = node;
+    <span class="reserved">this</span>._init();
+}
+<span class="comment">/**
+ * Members
+ */</span>
+DA.mailer.FolderTreePopup.<span class="reserved">prototype</span> = {
+    <span class="comment">/**
+     * Tree Data.
+     */</span>
+    treeData: {},
+    <span class="comment">/**
+     * The object containing popup Menu-data.
+     */</span>
+    menuData: {},
+    _pop: null,
+
+    _open: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue) {
+        var me = p_oValue[0];
+        me.treeData[p_oValue[1]][<span class="literal">'open_m'</span>] =1;
+        me.ftc._open(p_oValue[1]);
+    },
+    
+    _close: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue) {
+        var me = p_oValue[0];
+        me.treeData[p_oValue[1]][<span class="literal">'open_m'</span>] =0;        
+        me.ftc._close(p_oValue[1]);
+    },
+    
+    _trash: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue) {
+        var me = p_oValue[0];
+        me.ftc._trash(p_oValue[1]);      
+    },
+    
+    _create: <span class="reserved">function</span>(me,fid,name,type) {
+        var me = me;
+        me.ftc._create(fid,name,type);       
+    },
+    
+    _delete: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue) {
+        var me = p_oValue[0];
+        me.ftc._delete(p_oValue[1]);      
+    },
+    
+    _rename: <span class="reserved">function</span>(me,fid,name) {
+        var me = me;
+        me.ftc._rename(fid,name);       
+        
+    },
+    
+    _import: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue) {
+        var me = p_oValue[0];
+        me.ftc._import(p_oValue[1]);      
+    },
+    
+    _export: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue) {
+        var me = p_oValue[0];
+        me.ftc._export(p_oValue[1]);        
+    },
+    
+    _filter: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue) {
+        var me = p_oValue[0];
+        me.ftc._filter(p_oValue[1]);        
+    },
+    
+    _inputDg: <span class="reserved">function</span>(p_sType, p_aArgs, p_oValue){
+        var me       = p_oValue[0];
+        var fid      = p_oValue[1];
+        var type     = p_oValue[2];
+        var flg      = p_oValue[3];
+        var clsFg    = true;
+     <span class="comment">//   var pmtStr   = ["作成するフォルダ名を入力して下さい。","変更するフォルダ名を入力して下さい。"];</span>
+     var pmtStr=[<span class="literal">"1"</span>,<span class="literal">"2"</span>];
+        var _pmtStr  = <span class="literal">""</span>;
+        <span class="reserved">if</span>(<span class="literal">"_create"</span> == flg){
+            _pmtStr = pmtStr[0];
+        }<span class="reserved">else</span>{
+            _pmtStr = pmtStr[1];
+        }
+        var body  = document.body;
+        var div   = document.createElement(<span class="literal">"div"</span>);
+        var s              = div.style;
+        s.position         = <span class="literal">'absolute'</span>;
+        s.fontsize         = <span class="literal">'2pt'</span>;
+        s.solid            = <span class="literal">'909090'</span>;
+        s.zIndex           = <span class="literal">'999'</span>;
+        s.backgroundcolor  = <span class="literal">'FFFFFF'</span>;
+        s.display          = <span class="literal">''</span>;
+        s.width            = <span class="literal">'300px'</span>
+        s.left             = $(<span class="literal">"mytreecontextmenu"</span>).style.left;
+        s.top              = $(<span class="literal">"mytreecontextmenu"</span>).style.pixelTop+10; 
+        body.insertBefore(div, body.firstChild);
+        div.innerHTML = <span class="literal">'&lt;div id="makeDir"  onmouseover="dialog_F = true;" onmouseout="dialog_F = false;" style="position:absolute; font-size:12px; border:1px solid #909090; z-index:6; background-color: #FFFFFF; left: 0px; top: 0px;"&gt;'</span>
+                      + <span class="literal">'&lt;div id="" style="background-color: #d3d3d3; margin:1px 1px 1px 1px ; padding:3px 2px 2px 2px;"&gt;'</span>+_pmtStr
+                      +<span class="literal">'&lt;img src="../images/aqbtn_close_s.gif" width="14" height="14" align="top" style="cursor:pointer;" onClick="closeMenu('</span>+clsFg+<span class="literal">')" /&gt;&lt;/div&gt;'</span>
+                      + <span class="literal">'&lt;div id="" style="background-color: #efefef; margin:1px 1px 1px 1px ; padding:3px 2px 2px 2px;"&gt;&lt;input id="dirName" type="text" style="width:150;" /&gt;&lt;input type="submit" value="設定" onClick="excute()" /&gt;&lt;/div&gt;'</span>
+                      + <span class="literal">'&lt;/div&gt;'</span>;
+        
+        var txtObj = $(<span class="literal">"dirName"</span>);
+        txtObj.focus();
+        <span class="reserved">if</span>(<span class="literal">"_rename"</span> == flg){
+            txtObj.value = p_oValue[4];
+        }
+        excute = <span class="reserved">function</span>(){
+           <span class="reserved">if</span>(<span class="literal">"_create"</span> == flg){
+               me._create(me,fid,txtObj.value,type);
+           }<span class="reserved">else</span>{
+               me._rename(me,fid,txtObj.value);
+           }
+           
+           s.display = <span class="literal">"none"</span>;
+           txtObj.value=<span class="literal">""</span>;
+       }
+       closeMenu = <span class="reserved">function</span>(clsFg){
+           <span class="reserved">if</span>(clsFg){
+               s.display    = <span class="literal">"none"</span>;
+               txtObj.value = <span class="literal">""</span>;
+               document.onmouseup = undefined;
+           }
+           <span class="reserved">if</span>(!dialog_F){
+               s.display    = <span class="literal">"none"</span>;
+               txtObj.value = <span class="literal">""</span>;
+               document.onmouseup = undefined;
+           }
+       }
+       
+       document.onmouseup=closeMenu;
+    },
+    
+    <span class="comment">/**
+     * put the corresponding  tree's popupMenu data into menuData[].
+     * <span class="attrib">@param</span> {Object} node
+     */</span>
+    _makePopupMenu: <span class="reserved">function</span>(node) {
+        var me = <span class="reserved">this</span>;
+        var menuGroup1 = [];
+        var menuGroup2 = [];
+        var menuGroup3 = [];
+        var menuGroup4 = [];
+        
+        var fid  = node[<span class="literal">'fid'</span>];
+        var type = node[<span class="literal">'type'</span>];
+        var name = node[<span class="literal">'name'</span>];
+        <span class="comment">/**
+         * menu item list.
+         */</span>
+        me.menuData = {};
+        me.menuData = [
+            [
+                {text: <span class="literal">"下位を開く "</span>,       onclick:{fn: me._open,obj:[me,fid]},disabled: true},
+                {text: <span class="literal">"下位を閉じる "</span>,       onclick:{fn: me._close,obj: [me, fid]},disabled: true},
+                {text: <span class="literal">"ごみ箱を空にする"</span>, onclick:{fn: me._trash,obj: [me, fid]},disabled: true}
+            ],
+            [
+                {text: <span class="literal">"削除"</span>,             onclick:{fn: me._delete,obj: [me,fid]},disabled: true},
+                {text: <span class="literal">"フォルダを追加"</span>,   onclick:{fn: me._inputDg,obj: [me,fid,type,<span class="literal">"_create"</span>]},disabled: true},
+                {text: <span class="literal">"フォルダ名の変更"</span>, onclick:{fn: me._inputDg,obj:[me,fid,null,<span class="literal">"_rename"</span>,name]},disabled: true}
+            ],
+            [
+                {text: <span class="literal">"インポート "</span>,       onclick:{fn: me._import,obj:[me,fid]},disabled: true},
+                {text: <span class="literal">"エクスポート "</span>,     onclick:{fn: me._export,obj:[me,fid]},disabled: true}
+            ],
+            [
+                {text: <span class="literal">"フィルタを実行 "</span>,   onclick:{fn: me._filter,obj:[me,fid]},disabled: true}
+            ]
+        ];
+         <span class="reserved">if</span>(node[<span class="literal">'parent'</span>] == 0){
+            <span class="reserved">if</span>(node[<span class="literal">'open_m'</span>] == 0){
+                me.menuData[0][0][<span class="literal">'disabled'</span>]= false;
+            }<span class="reserved">else</span> <span class="reserved">if</span>(node[<span class="literal">'open_m'</span>] ==1 ){
+                me.menuData[0][1][<span class="literal">'disabled'</span>]= false;
+            }
+        }<span class="reserved">else</span>{
+            <span class="comment">// 下位フォルダ</span>
+            <span class="reserved">if</span>(node.children.length &gt;= 1){
+                <span class="reserved">if</span>(node[<span class="literal">'open_m'</span>] == 0){
+                    me.menuData[0][0][<span class="literal">'disabled'</span>]= false;
+                }<span class="reserved">else</span> <span class="reserved">if</span>(node[<span class="literal">'open_m'</span>] == 1){
+                    me.menuData[0][1][<span class="literal">'disabled'</span>]= false;
+                }
+            }
+            <span class="comment">// 削除</span>
+            <span class="reserved">if</span>(node[<span class="literal">'delete'</span>] == 1){
+                me.menuData[1][0][<span class="literal">'disabled'</span>]= false;
+            }
+            <span class="comment">// フォルダを追加</span>
+            <span class="reserved">if</span>(node[<span class="literal">'create'</span>] == 1){
+                 me.menuData[1][1][<span class="literal">'disabled'</span>]= false;
+            }
+            <span class="comment">// フォルダ名の変更</span>
+            <span class="reserved">if</span>(node[<span class="literal">'rename'</span>] == 1){
+                me.menuData[1][2][<span class="literal">'disabled'</span>]= false;
+            }
+            <span class="comment">// インポート</span>
+            <span class="reserved">if</span>(node[<span class="literal">'import'</span>] == 1){
+                me.menuData[2][0][<span class="literal">'disabled'</span>]= false;
+            }
+            <span class="comment">// エクスポート</span>
+            <span class="reserved">if</span>(node[<span class="literal">'export'</span>] == 1){
+                me.menuData[2][1][<span class="literal">'disabled'</span>]= false;
+            }
+            <span class="comment">//フィルタを実行</span>
+            <span class="reserved">if</span>(node[<span class="literal">'filter'</span>] == 1){
+                me.menuData[3][0][<span class="literal">'disabled'</span>]= false;
+            }
+            <span class="comment">//ごみ箱を空にする  ,SPAMを空にする</span>
+            <span class="reserved">if</span>(node[<span class="literal">'type'</span>] == 14){
+                me.menuData[0][2][<span class="literal">'disabled'</span>]= false;
+            }<span class="reserved">else</span> <span class="reserved">if</span>(node[<span class="literal">'type'</span>] == 15){
+                me.menuData[0][2][<span class="literal">'disabled'</span>]= false;
+                me.menuData[0][2][<span class="literal">'text'</span>]= <span class="literal">"SPAMを空にする"</span>;
+            }<span class="reserved">else</span>{
+                me.menuData[0][2] = [];
+             }
+        }
+    },
+
+    <span class="comment">/**
+     * "contextmenu" event handler for the element(s) that triggered the display of the context menu
+     * <span class="attrib">@param</span> {Object} p_oEvent
+     * <span class="attrib">@param</span> {Object} p_oMenu
+     */</span>
+    _onTriggerContextMenu: <span class="reserved">function</span>(p_oEvent, p_oMenu,e){
+        
+       
+        <span class="comment">/**
+         * Returns a TextNode instance that corresponds to the DOM
+         * element whose "contextmenu" event triggered the display
+         * of the context menu.
+         * <span class="attrib">@param</span> {Object} p_oTarget
+         */</span>
+        GetTextNodeFromEventTarget = <span class="reserved">function</span>(p_oTarget){
+
+            var temp=p_oTarget.split(<span class="literal">"_"</span>);
+            <span class="reserved">return</span> me.treeData[temp[1]];
+
+        }
+
+        var me=<span class="reserved">this</span>.meObj;
+        var oTextNode = GetTextNodeFromEventTarget(<span class="reserved">this</span>.contextEventTarget.id);
+        
+        <span class="reserved">if</span>(oTextNode) {
+            me._makePopupMenu(oTextNode);
+            me._pop._show(me.menuData);
+        }
+    },
+    
+    <span class="comment">/**
+     * Init.
+     * <span class="attrib">@method</span> init
+     */</span>
+    _init: <span class="reserved">function</span>(){
+        var me             = <span class="reserved">this</span>;
+        me._pop = new DA.mailer.popupMenu(me,me.domNode,true,me._onTriggerContextMenu);
+        
+    }
+
+}
+</pre>
+	<hr>
+
+
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> <font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top"><em>
+<b></b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<font size="-1">
+
+</font>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Mon Mar 26 12:11:18 2007</div>
+</body>
+</html>

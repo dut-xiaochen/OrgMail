@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/iseria/!svn/ver/1673/insuite-ui/trunk/build
+END
+test-order.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/iseria/!svn/ver/469/insuite-ui/trunk/build/test-order.sh
+END
+thirdparty-all.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/iseria/!svn/ver/1257/insuite-ui/trunk/build/thirdparty-all.js
+END
+da.list
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/iseria/!svn/ver/1673/insuite-ui/trunk/build/da.list
+END

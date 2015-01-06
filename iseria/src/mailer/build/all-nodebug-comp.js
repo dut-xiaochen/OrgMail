@@ -2766,6 +2766,9 @@ var key=OrgMailer.vars.cookie_key+"-org_mail";
 var _373=document.cookie.split(";");
 for(var i=0;i<_373.length;i++){
 if(_373[i].split("=")[0].replace(/(^\s*)|(\s*$)/g,"")===key){
+if(typeof _373[i].split("=")[1]==="undefined"){
+return "";
+}
 return _373[i].split("=")[1];
 }
 }
@@ -2773,6 +2776,7 @@ return _373[i].split("=")[1];
 var _375=window.setInterval(function(){
 if(DA.mailer.util.getOperationFlag()===""){
 DA.waiting.hide();
+OrgMailer.vars.mask_show=0;
 OrgMailer.vars.operation_warned=0;
 window.clearInterval(_375);
 if(!OrgMailer.vars.is_blured){
@@ -12819,5 +12823,4 @@ me.listController.addList(o.user_list);
 io.errorHandler=function(e){
 DA.util.warn(DA.locale.GetText.t_("BULKINFO_ERROR"));
 };
-io.execute({proc:"extract",aid:_c45.id,lang:_c45.lang});
-}
+io.execute({proc:"extract",aid:_c45

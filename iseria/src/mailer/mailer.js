@@ -191,6 +191,7 @@ DA.mailer.util = {
 		var atuoCloser = window.setInterval(function(){
 			if (DA.mailer.util.getOperationFlag() === ""){
 				DA.waiting.hide();
+				OrgMailer.vars.mask_show = 0;
 				OrgMailer.vars.operation_warned = 0;
 				window.clearInterval(atuoCloser);
 				if (!OrgMailer.vars.is_blured){

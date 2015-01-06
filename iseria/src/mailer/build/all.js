@@ -5268,6 +5268,9 @@ DA.mailer.util = {
 		var cookies = document.cookie.split(";");
 		for (var i = 0; i < cookies.length ; i++) {
 			if (cookies[i].split("=")[0].replace(/(^\s*)|(\s*$)/g, "") === key) {
+				if ( typeof cookies[i].split("=")[1] === "undefined"){
+					return "";
+				}
 				return cookies[i].split("=")[1];
 			}
 		}
@@ -5277,6 +5280,7 @@ DA.mailer.util = {
 		var atuoCloser = window.setInterval(function(){
 			if (DA.mailer.util.getOperationFlag() === ""){
 				DA.waiting.hide();
+				OrgMailer.vars.mask_show = 0;
 				OrgMailer.vars.operation_warned = 0;
 				window.clearInterval(atuoCloser);
 				if (!OrgMailer.vars.is_blured){
@@ -23571,12 +23575,4 @@ YAHOO.extend(DA.mailer.widget.AddressAutoComplete, YAHOO.widget.AutoComplete, {
         io.execute({
             proc: 'extract',
             aid: oResultData.id,
-            lang: oResultData.lang
-        });
-    }
-});
-
-
-
-
-             
+            lang: oResultDa

@@ -179,6 +179,14 @@ window.onload = function(){
 	document.cookie = '$session->{sid}\-org_mail=$org_mail_gid;';
 }
 
+window.onclick = function(){
+	OrgMailer.vars.is_blured = false;
+	if (DA.mailer.util.getOperationFlag() === '' || DA.mailer.util.getOperationFlag().indexOf(OrgMailer.vars.org_mail_gid.toString()) >= 0){
+		return;
+	}
+	document.cookie = '$session->{sid}\-org_mail=$org_mail_gid;';
+}
+
 window.onfocus = function(){
 	OrgMailer.vars.is_blured = false;
 	if (DA.mailer.util.getOperationFlag() !== ''){
@@ -191,6 +199,7 @@ window.onfocus = function(){
 				DA.util.warn(DA.locale.GetText.t_("MESSAGE_CHANGE_TAB_ERROR"));
 				OrgMailer.vars.is_blured = false;
 				DA.mailer.util.autoCloseWaitingMask();
+				OrgMailer.vars.mask_show = 1;
 				DA.waiting.show(DA.locale.GetText.t_("MESSAGE_CHANGE_TAB_WAITING_MESSAGE"));
 			}
 		}
@@ -207,7 +216,9 @@ window.onblur = function(e) {
         var w = document.body.clientWidth;
         var h = document.body.clientHeight;
         if (x >= 0 && x <= w && y >= 0 && y <= h) {
-
+			if (OrgMailer.vars.mask_show === 1){
+				window.focus();
+			}
         } else {
 			OrgMailer.vars.is_blured = true;
 		}
