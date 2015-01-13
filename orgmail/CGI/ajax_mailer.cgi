@@ -10,6 +10,7 @@ BEGIN {
 	use DA::Ajax::Mailer();
 	use DA::Gettext;
 }
+use strict;
 
 my $r = shift;
 
@@ -33,9 +34,12 @@ sub main {
 	## New CBP for SYOKKI ================================================
     DA::Custom::ma_new_init_check($session, 'ajxmailer');
     ## ===================================================================
-
+	
 	my $error;
 	my $org_mail_gid = $query->param("org_mail_gid");
+	if ($org_mail_gid eq ""){
+		$org_mail_gid = $session->{user};
+	}
 	if ($c->{login}) {
 		unless (DA::Ajax::Mailer::conv_master($session)) {
 			$error = DA::Ajax::Mailer::convert_mailer(t_("設定が移行できません。"));
@@ -50,9 +54,7 @@ sub main {
 	}
 
 	my $messages = DA::Ajax::Mailer::get_messages($session, $c);
-
 	if ($c->{html} =~ /^(index|viewer|editor|searcher)$/) {
-		
 		if ($error) {
 			DA::Ajax::Mailer::errorpage($session, $error, "nobutton");
 		} else {
@@ -81,7 +83,7 @@ sub main {
 								$result->{title} .= DA::Ajax::Mailer::convert_mailer(t_(" メール作成"));
 							}
 							
-							my $html = &get_template($session, "$base/$name\.html", $result, $messages, 1, $query->param("org_mail_gid"), false);
+							my $html = &get_template($session, "$base/$name\.html", $result, $messages, 1, $org_mail_gid, 0);
 							   $html = DA::Charset::convert(\$html, DA::Ajax::Mailer::external_charset(), DA::Ajax::Mailer::mailer_charset());
 							$htmls->{$name} = $html;
 						}
@@ -89,9 +91,9 @@ sub main {
 						$result->{html}->{viewer} = $htmls->{viewer};
 						$result->{html}->{editor} = $htmls->{editor};
 					}
-					my $isMailerBox = ($c->{html} eq "index") ? true : false;
+					my $isMailerBox = ($c->{html} eq "index") ? 1 : 0;
 					print "Content-Type: text/html\n\n";
-					print &get_template($session, "$base/$c->{html}.html", $result, $messages, 1, $query->param("org_mail_gid"), $isMailerBox);
+					print &get_template($session, "$base/$c->{html}.html", $result, $messages, 1, $org_mail_gid, $isMailerBox);
 				}
 			}
 		}
@@ -156,7 +158,9 @@ sub get_template($$$$;$;$;$) {
 		$json =~ s/<\/(script)>/<\\\/$1>/ig;
 	}
 	if (!$isMailBox) {
-		$isMailBox = false;
+		$isMailBox = "false";
+	} else{
+		$isMailBox = "true";
 	}
 	# $json is external charset.
 	my $head_before =<<end_buf;

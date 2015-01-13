@@ -6,7 +6,9 @@ use strict;
 use Getopt::Long;
 use IO::File;
 
+
 my $func_patch_stderr = "";
+
 
 # パッチ用共通関数
 # 2010/03/24 
@@ -60,6 +62,54 @@ sub is_func_patch_err {
 }
 
 
+# variable_list.datの書き換え。
+# パラメータの追加があれば設定ファイルを書き換える。
+# paramsの追加のみ可能
+#
+# paramsの既存のtypeなどの変更は不可
+# CGIの追加は不可
+# ruleなどのparams以外の追加、変更は不可
+# 
+# $rules    : cgiに追加するパラメータ名とtypeの値のハッシュ
+# $rules->{/cgi-bin/block_cell.cgi} = {
+#        window => 'text'
+# };
+# $nobackup : 
+#     0: バックアップする
+#     1: バックアップしない
+sub rewrite_variable_list_dat {
+	my ($rules, $nobackup) = @_;
+
+	my $file = "$DA::Vars::p->{custom_dir}/variable_list.dat";
+	Patch::log("# rewrite_variable_dat target : $file", 2);
+
+	my $rewrite = 0;
+
+	my $data = YAML::Syck::LoadFile($file);
+	foreach my $key (keys %$rules) {
+		if (exists $data->{$key}) {
+			my $params = $data->{$key}->[0]->{params};
+			my $rule = $rules->{$key};
+			foreach my $param (keys %$rule) {
+				my $type  = $rule->{$param};
+				if (!exists $params->{$param}) {
+					$params->{$param}->{'type'} = $type;
+					$rewrite = 1;
+				}
+			}
+		}
+	}
+
+	if ($rewrite) {
+		unless($nobackup){
+			my $date=DA::CGIdef::get_date("Y4MMDD-HHMISS");
+			if(-f "$file"){
+				&exe("cp -p $file $file\.$date");
+			}
+		}
+		YAML::Syck::DumpFile($file, $data);
+	}
+}
 # 設定ファイルの書き換え。
 # パラメータの追加、更新があれば設定ファイルを書き換える。
 # podの変更だけの場合は書き換えない。

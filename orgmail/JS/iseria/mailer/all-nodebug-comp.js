@@ -727,9 +727,9 @@ this.tipNode[id]=node;
 }
 node.style.visibility="hidden";
 for(i=0;i<len;i++){
-list+=["<tr><td style=\"\" onmouseout=\"this.parentNode.style.backgroudColor='red';\" onmouseover=\"this.parentNode.style.backgroudColor='black';\" onclick=\"var clickedDom = document.getElementById('"+_11b+"'); clickedDom.innerHTML='"+_119[i]+"';DA.tip.close('DASpellCheckList')\" nowrap><font color=\"#000000\">",_119[i],"</font></td></tr>"].join("");
+list+=["<tr><td nowrap><font color=\"#000000\">",_119[i],"</font></td></tr>"].join("");
 }
-var html=["<table border=\"0\" width=\"150\" cellspacing=\"0\" cellpadding=\"0\">","<tr>","  <td width=\"100%\" bgcolor=\"#000000\">","  <table border=\"0\" width=\"100%\" cellspacing=\"1\" cellpadding=\"0\">","  <tr>","    <td width=\"100%\" bgcolor=\"#FFFFE0\" nowrap>","      <font color=\"#000000\">",_118,"</font>","    </td>","  </tr>","  <tr>","    <td width=\"100%\" bgcolor=\"#FFFFE0\">","    <table border=\"0\" cellspacing=\"1\">",list,"</table>","    </td>","  </tr>","  </table>","  </td>","</tr>","</table>"].join("\n");
+var html=["<table border=\"0\" width=\"150\" cellspacing=\"0\" cellpadding=\"0\">","<tr>","  <td width=\"100%\" bgcolor=\"#000000\">","  <table border=\"0\" width=\"100%\" cellspacing=\"1\" cellpadding=\"0\">","  <tr>","    <td width=\"100%\" bgcolor=\"#0066cc\" nowrap>","      <font color=\"#ffffff\">",_118,"</font>","    </td>","  </tr>","  <tr>","    <td width=\"100%\" bgcolor=\"#FFFFE0\">","    <table border=\"0\" cellspacing=\"1\">",list,"</table>","    </td>","  </tr>","  </table>","  </td>","</tr>","</table>"].join("\n");
 node.innerHTML=html;
 DA.shim.open(node);
 node.style.visibility="";
@@ -3822,6 +3822,7 @@ if(!_467){
 this.resize();
 this.scroll();
 }
+DA.customEvent.fire("addUgInformationAfter",this,{sno:sno,u:u});
 },insertToTop:function(u,_46e){
 var l={};
 var n={};

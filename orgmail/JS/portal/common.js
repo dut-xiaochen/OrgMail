@@ -56,33 +56,34 @@ function Pop4Ajax(Url,Width,Height,POSX,POSY){
     }
 }
 function Pop4AjaxWithMailAccount(Url,Width,Height,POSX,POSY){
-	var Param='width='+Width+',height='+Height+',resizable=1';
-	var key = document.getElementById("portal_mail_cookie_key").value + "-org_mail";
-	
-	var cookies = document.cookie.split(";");
-	var cookieAccount = "";
-	var loginAccount = "";
-	for (var i = 0; i < cookies.length ; i++) {
-		if (cookies[i].split("=")[0].replace(/(^\s*)|(\s*$)/g, "") === key) {
-			cookieAccount = cookies[i].split("=")[1];
-		}
-		if (cookies[i].split("=")[0].replace(/(^\s*)|(\s*$)/g, "") === "INSUITE-Enterprise") {
-			loginAccount = cookies[i].split("=")[1].split(".")[0];
-		}
-	}
-	if (cookieAccount === ""){
-		cookieAccount = loginAccount;
-	}
-	var mailAccount = (document.getElementById("protal_mail_data_account")) ? document.getElementById("protal_mail_data_account").value : cookieAccount;
-	if (mailAccount !== cookieAccount){
-		var result = confirm("Are you sure?");
-		if (!result){
-			return;
-		}
-	}
-	document.cookie = key + "=" + mailAccount;
-	Url += "&org_mail_box=" + mailAccount;
-	Url += "&org_mail_gid=" + mailAccount;
+    var Param='width='+Width+',height='+Height+',resizable=1';
+    var key="";
+    var mailAccount="";
+    if(document.getElementById("portal_mail_cookie_key")){
+        key = document.getElementById("portal_mail_cookie_key").value + "-org_mail";
+    }
+    if(document.getElementById("protal_mail_data_account")){
+        mailAccount = document.getElementById("protal_mail_data_account").value;
+    }
+    var cookies = document.cookie.split(";");
+    var cookieAccount = "";
+    for (var i = 0; i < cookies.length ; i++) {
+        if (cookies[i].split("=")[0].replace(/(^\s*)|(\s*$)/g, "") === key) {
+            cookieAccount = cookies[i].split("=")[1];
+        }
+    }
+    if (mailAccount === ""){
+        mailAccount = cookieAccount;
+    }
+    if (mailAccount !== cookieAccount){
+        var result = confirm("Are you sure?");
+        if (!result){
+            return;
+        }
+    }
+    document.cookie = key + "=" + mailAccount;
+    Url += "&org_mail_box=" + mailAccount;
+    Url += "&org_mail_gid=" + mailAccount;
     var pwin=window.open(setUrl(Url),'',Param);
     if (POSX != null && POSX != '' && POSY != null && POSY != '') {
         pwin.moveTo(POSX, POSY);

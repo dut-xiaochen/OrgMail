@@ -596,9 +596,9 @@ sub get_cookie {
     	my ($key,$value) = split(/\=/,$http_cookie,2);
        	$key=~s/^\s+//; $key=~s/\s+$//;
        	$value=~s/^\s+//; $value=~s/\s+$//;
-       	if ($key eq "$session->{sid}\-org_mail") { 
-			$sec=$value; 
-		} 
+       	if ($key eq "$session->{sid}\-org_mail") {
+			$sec=$value;
+		}
     }
 	# 選択された組織メールの権限チェック
 	if ($sec && $sec ne $session->{user}) { 
@@ -1205,11 +1205,16 @@ sub rewrite_make_mail_result4ajx {
     		my $org_temp = "$session->{temp_dir}/$session->{sid}.org_mail";
 			File::Copy::copy($org_ma_temp,$org_temp);
 
-        	my $name=DA::Mailer::escape_mail_name($master->{mail_name});
+        	my $name = $master->{mail_name};
         	if (DA::CGIdef::iskanji($name, DA::Ajax::Mailer::mailer_charset())) {
+        		if ($imaps->{custom}->{base64_no_escape} ne 'on') {
+        			$name = DA::Mailer::escape_mail_name($name);
+        		}
             	$name=DA::Mailer::fold_mime_txt($name, 0, 
 						DA::Ajax::Mailer::mailer_charset(), 
 						($data->{charset} eq 'UTF-8') ? "UTF-8" : "ISO-2022-JP");
+        	} else {
+        		$name = DA::Mailer::escape_mail_name($name);
         	}
         	$result->{mime}->{head}->{'From'}="\"$name\" <$master->{send_address}>";
 			if ($data->{reply_use}) {
@@ -1342,11 +1347,16 @@ sub rewrite_make_mail_result4ajx {
             	DA::Error::system_error($session);
         	}
         } else { #　送信前の操作
-        	my $name=DA::Mailer::escape_mail_name($master->{mail_name});
+        	my $name = $master->{mail_name};
         	if (DA::CGIdef::iskanji($name, DA::Ajax::Mailer::mailer_charset())) {
+        		if ($imaps->{custom}->{base64_no_escape} ne 'on') {
+        			$name = DA::Mailer::escape_mail_name($name);
+        		}
            		$name=DA::Mailer::fold_mime_txt($name, 0, 
 					DA::Ajax::Mailer::mailer_charset(), 
 					($data->{charset} eq 'UTF-8') ? "UTF-8" : "ISO-2022-JP");
+        	} else {
+        		$name = DA::Mailer::escape_mail_name($name);
         	}
         	$result->{mime}->{head}->{'From'}="\"$name\" <$master->{send_address}>";
 			if ($data->{reply_use}) {
@@ -2093,11 +2103,16 @@ sub backup_org_operation($$$$$$$) {
 
 		    if ($org_mail->{mode} =~ /(new|edit)/) {
 		    
-		        	my $name=DA::Mailer::escape_mail_name($master->{mail_name});
+		        	my $name = $master->{mail_name};
 		        	if (DA::CGIdef::iskanji($name, DA::Ajax::Mailer::mailer_charset())) {
+		        		if ($imaps->{custom}->{base64_no_escape} ne 'on') {
+        					$name = DA::Mailer::escape_mail_name($name);
+        				}
 		            	$name=DA::Mailer::fold_mime_txt($name, 0, 
 								DA::Ajax::Mailer::mailer_charset(), 
 								($data->{charset} eq 'UTF-8') ? "UTF-8" : "ISO-2022-JP");
+		        	} else {
+		        		$name = DA::Mailer::escape_mail_name($name);
 		        	}
 		        	$result->{mime}->{head}->{'From'}="\"$name\" <$master->{send_address}>";
 					if($imaps->{custom}->{org_hide_sender} ne 'on'){

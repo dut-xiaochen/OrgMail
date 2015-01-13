@@ -34,26 +34,25 @@ my $ajxmailer_window_width  = $mail->{window_width}  || 1024;
 my $ajxmailer_window_height = $mail->{window_height} || 620;
 my $ajxmailer_window_pos_x  = $mail->{window_pos_x}  || 0;
 my $ajxmailer_window_pos_y  = $mail->{window_pos_y}  || 0;
+
 # 組織メール
 my $orgmail_config=DA::IS::get_sys_custom($session,'org_mail');
 my $cookie_script;
-#if ($orgmail_config->{keep_alive} eq 'off') {
+if ($orgmail_config->{keep_alive} eq 'off') {
     # AjaxMailer の起動時にアカウントをリセットする
-#    my $cookie      = "$session->{sid}\-org_mail=$session->{user}";
-#	$cookie_script  = "document.cookie='$cookie';";
-#}
-my $mail_account;
-if ($mail->{default_mail_account}) {
-	if ($mail->{default_mail_account} eq "AjxaMailer") {
-		$mail_account = $session->{user};
+	my $mail_account;
+	if ($mail->{default_mail_account}) {
+		if ($mail->{default_mail_account} eq "AjxaMailer") {
+			$mail_account = $session->{user};
+		} else {
+			$mail_account = $mail->{default_mail_account};
+		}
 	} else {
-		$mail_account = $mail->{default_mail_account};
+		$mail_account = $session->{user};
 	}
-} else {
-	$mail_account = $session->{user};
+	my $cookie = "$session->{sid}\-org_mail=$mail_account";
+	$cookie_script = "document.cookie='$cookie';";
 }
-my $cookie = "$session->{sid}\-org_mail=$mail_account";
-$cookie_script  = "document.cookie='$cookie';";
 $cookie_script .= "document.cookie='$session->{sid}\-operation_flag=';";
 $cookie_script .= "document.cookie='$session->{sid}\-operation_warned=';";
 
@@ -189,7 +188,6 @@ var AjaxMailerWindowWidth  = '$ajxmailer_window_width';
 var AjaxMailerWindowHeight = '$ajxmailer_window_height';
 var AjaxMailerWindowPosX   = '$ajxmailer_window_pos_x';
 var AjaxMailerWindowPosY   = '$ajxmailer_window_pos_y';
-
 function AjaxMailer(CHK,ADD_URL) {
 	$cookie_script
 	var width  = parseInt(AjaxMailerWindowWidth, 10);

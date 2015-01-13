@@ -2,12 +2,13 @@
 BEGIN {
 	use DA::Init();
 }
+
 use strict;
 
 my $server_type=$ARGV[0];
 
-my $patch_ver = '3.4.2';
-my $last_ver  = '3.4.1';
+my $patch_ver = '3.4.3';
+my $last_ver  = '3.4.2';
 # インストール前一つバージョンをチェック
 &check_ver ($last_ver,$patch_ver);
 

@@ -183,10 +183,12 @@ sub parallel_useragent {
 			$buffer{"ex_$num"} .= $cookie->{$num}->{tag};
 		}
 
-		my $cache_file = "ex_$num\.$session->{sid}";
-		DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
-		print OUT $buffer{"ex_$num"};
-		close(OUT);
+		if ($DA::Vars::p->{ex_cache} ne 'off' && $expr->{$num}->{cache_on} eq 1) {
+			my $cache_file = "ex_$num\.$session->{sid}";
+			DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
+			print OUT $buffer{"ex_$num"};
+			close(OUT);
+		}
 
 		$buffer{"ex_$num"} = &insert_div_tag(DA::Portal::cover_frame(
 			$session,
@@ -308,9 +310,9 @@ sub get_ex {
 	my $filter = DA::Portal::get_filter($num);
 	$filter->{auth_user} = $sso->{basic_user};
 	$filter->{auth_pass} = $sso->{basic_pass};
-	$filter->{auth_url} = $pr->{url};
-	$filter->{kanji_code} = $pr->{kanji_code};
-	$filter->{cache_on} = $pr->{cache_on};
+	$filter->{auth_url}    = $pr->{url};
+	$filter->{kanji_code}  = $pr->{kanji_code};
+	$filter->{cache_on}    = $pr->{cache_on};
 	$filter->{cache_embed} = $pr->{cache_embed};
 
 	# getHander4ex で必要な情報をセット
@@ -453,9 +455,11 @@ sub get_ex {
 			        . "$title</b></td>"
 			        . "</tr></table><br>\n";
 		}
-		DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
-		print OUT $buffer;
-		close(OUT);
+		if ($DA::Vars::p->{ex_cache} ne 'off' && $pr->{cache_on} eq 1) {
+			DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
+			print OUT $buffer;
+			close(OUT);
+		}
 
 		$buffer.= &insert_refresh_js($port, $num, $pr->{refresh_time});
 		$buffer = &insert_div_tag($buffer, "__REFRESH_DIV__", $nodiv);
@@ -498,9 +502,11 @@ sub get_ex {
 
 		DA::Custom::override_portlet_iframe_buffer($session,$pr,$num,\$buffer);
 
-		DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
-		print OUT $buffer;
-		close(OUT);
+		if ($DA::Vars::p->{ex_cache} ne 'off' && $pr->{cache_on} eq 1) {
+			DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
+			print OUT $buffer;
+			close(OUT);
+		}
 
 		$buffer = &cover_frame(
 			$session,
@@ -560,9 +566,11 @@ sub get_ex {
 					$buffer .= $cookie->{tag};
 				}
 
-				DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
-				print OUT $buffer;
-				close(OUT);
+				if ($DA::Vars::p->{ex_cache} ne 'off' && $pr->{cache_on} eq 1) {
+					DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
+					print OUT $buffer;
+					close(OUT);
+				}
 
 				$buffer = &cover_frame(
 					$session,
@@ -600,9 +608,12 @@ sub get_ex {
 			$buffer .= $cookie->{tag};
 		}
 
-		DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
-		print OUT $buffer;
-		close(OUT);
+		if ($DA::Vars::p->{ex_cache} ne 'off' && $pr->{cache_on} eq 1) {
+			DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
+			print OUT $buffer;
+			close(OUT);
+		}
+
 		$buffer = &cover_frame(
 			$session,
 			$port,
@@ -680,9 +691,11 @@ sub get_ex {
 
 		DA::Custom::override_portlet_iframe_buffer($session,$pr,$num,\$buffer);
 
-		DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
-		print OUT $buffer;
-		close(OUT);
+		if ($DA::Vars::p->{ex_cache} ne 'off' && $pr->{cache_on} eq 1) {
+			DA::System::file_open(\*OUT,"> $session->{temp_dir}/$cache_file");
+			print OUT $buffer;
+			close(OUT);
+		}
 
 		$buffer = &cover_frame(
 			$session,

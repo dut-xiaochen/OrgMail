@@ -2615,7 +2615,7 @@ sub connect($;$;$;$) {
 	# $c->{nosessionerror}
     # $c->{org_mail}  接続する組織メール GID
 	my $logger = &_logger_init($session);
-	
+
 	unless ($imaps) {
 		$imaps = {};
 		if ($mode) {
@@ -3524,6 +3524,7 @@ sub folders($$;$;$) {
 	my $separator = $conf->{separator}; 
 	my $result    = {};
 	my $error;
+
 	if (&lock($session, "trans.folders")) {
 		if ($force || !&storable_exist($session, "folders")) {
 			if (DA::OrgMail::check_org_mail_permit($session)) {
@@ -6816,6 +6817,20 @@ sub detail_common($$$$) {
 					$error = &error("NOT_PARSE_HEADER", 9);
 				} else {
 					# アドレス
+					my $unescape = 1;
+					if ($imaps->{custom}->{base64_no_escape} eq 'on') {
+						if ($header{header_all} =~/INSUITE Enterprise ([\d\.]+) AjaxMailer/) {
+							my ($v1,$v2,$v3,$v4) = split(/\./,$1);
+							if ($v4!~/^\d+$/) {$v4=0;}
+							my $version = sprintf("%02d%02d%02d%02d",$v1,$v2,$v3,$v4);
+							if ($version ge '03040300') {
+								$unescape = 0;
+							}
+						} else {
+							$unescape = 0;
+						}
+					}
+
 					foreach my $f (qw(from send to cc bcc reply notification)) {
 						my $key_n = $f . "_name";
 						my $key_a = $f . "_addr";
@@ -6843,6 +6858,15 @@ sub detail_common($$$$) {
 									next;
 								}
 							}
+
+							if (DA::CGIdef::iskanji($name, &mailer_charset())) {
+								if ($unescape) {
+									$name = DA::Mailer::unescape_mail_name($name);
+								}
+							} else {
+								$name = DA::Mailer::unescape_mail_name($name);
+							}
+						
 							my ($id, $type) = &_parse_uid($users->{$i++});
 							if (my $card = &get_card($session, $imaps, $id, $type, $name, $addr)) {
 								push(@list, $card);
@@ -12237,11 +12261,15 @@ sub make_mail($$$$$$) {
 			$reply = $user_reply;
 		}
 	} else {
-		my $name = DA::Mailer::escape_mail_name($user_name);
-
+		my $name = $user_name;
 		if (DA::CGIdef::iskanji($name, &mailer_charset())) {
+			if ($imaps->{custom}->{base64_no_escape} ne 'on') {
+				$name = DA::Mailer::escape_mail_name($name);
+			}
 			$name = DA::Mailer::fold_mime_txt($name, 0, &mailer_charset(), $charset);
 			$encode = 1;
+		} else {
+			$name = DA::Mailer::escape_mail_name($name);
 		}
 
 		$from_p = "$user_name <$user_email>";
@@ -12322,11 +12350,16 @@ sub make_mail($$$$$$) {
 					if ($name eq "") {
 						$to = $email;
 					} else {
-						my $ename = DA::Mailer::escape_mail_name($name);
+						my $ename = $name;
 
 						if (DA::CGIdef::iskanji($ename, &mailer_charset())) {
+							if ($imaps->{custom}->{base64_no_escape} ne 'on') {
+								$ename = DA::Mailer::escape_mail_name($ename);
+							}
 							$ename = DA::Mailer::fold_mime_txt($ename, 76, &mailer_charset(), $charset);
 							$encode = 1;
+						} else {
+							$ename = DA::Mailer::escape_mail_name($ename);
 						}
 
 						$to = "\"$ename\" <$email>";
@@ -14634,7 +14667,7 @@ sub get_config($$$) {
 				"window_pos_x"       => $imaps->{mail}->{window_pos_x} || 0,
 				"window_pos_y"       => $imaps->{mail}->{window_pos_y} || 0,
 				"window_width"       => $imaps->{mail}->{window_width} || 1024,
-				"window_height"      => $imaps->{mail}->{window_height} || 620,
+				"window_height"      => $imaps->{mail}->{window_height} || 800,
 				"dir_width"          => $imaps->{mail}->{dir_width} || 300,
 				"list_height"        => $imaps->{mail}->{list_height} || 400,
 				"mail_to_resize_num" => $imaps->{mail}->{mail_to_resize_num} || 12,
@@ -14688,9 +14721,11 @@ sub get_config($$$) {
 			};
 
 			# 組織メール
-			my $tstp = &convert_mailer(DA::OrgMail::ajxmailer_set_threepane_toppanel_js($session, $imaps)) if (DA::OrgMail::check_org_mail_permit($session));
-			my $estp = &convert_mailer(DA::OrgMail::ajxmailer_set_editor_toppanel_js($session, $imaps)) if (DA::OrgMail::check_org_mail_permit($session));
-            my $sme  = &convert_mailer(DA::OrgMail::ajxmailer_set_message_editor_js($session, $imaps)) if (DA::OrgMail::check_org_mail_permit($session));
+			my ($tstp, $estp, $sme);
+
+			$tstp = &convert_mailer(DA::OrgMail::ajxmailer_set_threepane_toppanel_js($session, $imaps)) if (DA::OrgMail::check_org_mail_permit($session));
+			$estp = &convert_mailer(DA::OrgMail::ajxmailer_set_editor_toppanel_js($session, $imaps)) if (DA::OrgMail::check_org_mail_permit($session));
+			$sme  = &convert_mailer(DA::OrgMail::ajxmailer_set_message_editor_js($session, $imaps)) if (DA::OrgMail::check_org_mail_permit($session));
 
 			$tstp.= &convert_mailer(DA::Custom::ajxmailer_set_threepane_toppanel_js($session, $imaps));
 			$estp.= &convert_mailer(DA::Custom::ajxmailer_set_editor_toppanel_js($session, $imaps));
@@ -15701,8 +15736,8 @@ sub update_folder_name($$$$$$) {
 	}
 }
 
-sub get_name_form($;$;$) {
-	my ($value, $opt, $charset) = @_;
+sub get_name_form($;$;$;$) {
+	my ($value, $opt, $charset,$no_escape) = @_;
 	my ($name, $addr);
 	my $match = ($DA::Vars::p->{notes_mail}->{connect} eq 'on') ?
 					$MATCH_RULE->{NOTES_MAIL} : $MATCH_RULE->{EMAIL};
@@ -15710,7 +15745,11 @@ sub get_name_form($;$;$) {
 	if ($value =~ /^(?:"(.*?[^\\])"|([^\,]+))\s*\<\s*($match)\s*\>/) {
 		($name, $addr) = ($1||$2, $3);
 		$name = DA::Mailer::decode_header_field($name, 1, 1, $charset);
-		$name = DA::Mailer::unescape_mail_name($name);
+		if (DA::CGIdef::iskanji($name, &mailer_charset())) {
+			$name = DA::Mailer::unescape_mail_name($name) unless ($no_escape);
+		} else {
+			$name = DA::Mailer::unescape_mail_name($name);
+		}		
 	} elsif ($value =~ /\s*<\s*($match)\s*>/) {
 		($name, $addr) = ($1, $1);
 	} elsif ($value =~ /\s*($match)/) {
@@ -15718,7 +15757,11 @@ sub get_name_form($;$;$) {
 	} else {
 		($name, $addr) = ($value, undef);
 		$name = DA::Mailer::decode_header_field($name, 1, 1, $charset);
-		$name = DA::Mailer::unescape_mail_name($name);
+		if (DA::CGIdef::iskanji($name, &mailer_charset())) {
+			$name = DA::Mailer::unescape_mail_name($name) unless ($no_escape);
+		} else {
+			$name = DA::Mailer::unescape_mail_name($name);
+		}
 	}
 
 	if ($opt) {
@@ -17657,7 +17700,6 @@ sub print_detail_to_txt($$$$) {
 			my $from    = t_('差出人:').&_make_address_field($detail->{from})."\n";
 			my $to      = t_('宛先:').&_make_address_field($detail->{to})."\n";
 			my $cc      = t_('Cc:').&_make_address_field($detail->{cc})."\n";
-			my $bcc     = t_('Bcc:').&_make_address_field($detail->{bcc})."\n";
 			my ($attach, $body);
 
 			foreach my $aid (sort {$a <=> $b} keys %{$detail->{attach}}) {
@@ -17687,7 +17729,6 @@ sub print_detail_to_txt($$$$) {
 				print OUT DA::Charset::convert_to(\$from, $save_encode);
 				print OUT DA::Charset::convert_to(\$to, $save_encode);
 				print OUT DA::Charset::convert_to(\$cc, $save_encode);
-				print OUT DA::Charset::convert_to(\$bcc, $save_encode);
 				print OUT DA::Charset::convert_to(\$date, $save_encode);
 				print OUT DA::Charset::convert_to(\$attach, $save_encode);
 				print OUT DA::Charset::convert_to(\$body, $save_encode);
@@ -19990,9 +20031,11 @@ sub _in_header($$$$$$) {
 	my ($session, $imaps, $status, $header, $match, $seen) = @_;
 	my $charset  = &core_charset();
 	my $timezone = "+0000";
+	
+	my $no_escape = ($imaps->{custom}->{base64_no_escape} eq 'on') ? 1 : 0;
 
-	my $from    = &get_name_form($header->{From}->[0], 0, $charset);
-	my $to      = &get_name_form($header->{To}->[0], 0, $charset);
+	my $from    = &get_name_form($header->{From}->[0], 0, $charset, $no_escape);
+	my $to      = &get_name_form($header->{To}->[0], 0, $charset, $no_escape);
 	my $subject = DA::Mailer::decode_header_field
 					($header->{Subject}->[0], 1, 1, $charset);
 	my $date    = &format_date($header->{Date}->[0], undef, $timezone);
@@ -20020,8 +20063,8 @@ sub _in_header($$$$$$) {
 
 	my ($from_ext, $to_ext, $subject_ext);
 	if ($charset eq "UTF-8") {
-		$from_ext    = &get_name_form($header->{From}->[0], 0, $charset);
-		$to_ext      = &get_name_form($header->{To}->[0], 0, $charset);
+		$from_ext    = &get_name_form($header->{From}->[0], 0, $charset, $no_escape);
+		$to_ext      = &get_name_form($header->{To}->[0], 0, $charset, $no_escape);
 		$subject_ext = DA::Mailer::decode_header_field
 						($header->{Subject}->[0], 1, 1, $charset);
 	}
@@ -20119,7 +20162,14 @@ sub _filter_header($$$) {
 	foreach my $f (keys %{$header}) {
 		if ($f =~ /^(date)$/i) {
 			$h->{$f} = &format_date($header->{Date}->[0], undef, $timezone);
-		} else {
+		} elsif ($f =~ /^(to|from)$/i) {
+			$h->{$f} = DA::Mailer::decode_header_field
+						(join(",", @{$header->{$f}}), 1, 1, $charset);
+			my $unescape = ($imaps->{custom}->{base64_no_escape} eq 'on') ? 1 : 0;
+						
+			$h->{$f} = DA::Mailer::unescape_mail_name($h->{$f}) if ($unescape);
+			$h->{$f} = uc($h->{$f});
+		}else {
 			$h->{$f} = DA::Mailer::decode_header_field
 						(join(",", @{$header->{$f}}), 1, 1, $charset);
 			$h->{$f} = DA::Mailer::unescape_mail_name($h->{$f});
