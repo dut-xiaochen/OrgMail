@@ -668,8 +668,12 @@ DA.mail = {
 			});
 		}
 	},
+	switchOrgMailBySelectBox: function(){
+		var selected_mail_account = $("#DA_mail_account_select_Id").val();
+		this.switchOrgMail(selected_mail_account);
+	},
 	switchOrgMail: function(org_mail_gid) {
-		DA.mail.switchFolders(null,null,org_mail_gid,true);
+		DA.mail.switchFolders("folder",null,org_mail_gid,true);
 	},
 	toggleFilter: function(type) {
 		var args = {
@@ -1004,7 +1008,7 @@ unseenMailList:function(id){
 		var req = {
 			url: DA.vars.spCgiRdir + "/sp_ajx_api.cgi?proc=contents_json&func=mail&sub=folder&mail_func=list&org_mail_gid=" + org_mail_gid + "&org_changed=" + org_changed,
 			key: key,
-			expire: 30,
+			expire: 0,
 			onSuccessUrl: function() {
 				jsonCon.executeCache({}, key);
 			}
@@ -1216,7 +1220,9 @@ unseenMailList:function(id){
 		
 		var args = {
 			fid: 0,
-			mail_func: type
+			mail_func: type,
+			org_mail_gid: org_mail_gid,
+			org_changed: org_changed
 		};
 		var key = this.getKey('folder', args);
 
@@ -1235,33 +1241,33 @@ unseenMailList:function(id){
 			});
 		}
 
-		var onExecute = function() {
-			if (org_changed) {
-				readCon.execute([me.switchOrgMailParallelUrl(DA.mail.org_mail_gid)]);
-			} else {
-				readCon.execute([me.updateMailParallelUrl()]);
-			}
-		};
+		//var onExecute = function() {
+			// if (org_changed) {
+			// 	readCon.execute([me.switchOrgMailParallelUrl(DA.mail.org_mail_gid)]);
+			// } else {
+			// 	readCon.execute([me.updateMailParallelUrl()]);
+			// }
+		//};
 		if (type === "favorite") {
-			this.jsonConExecute('folder', args, false, true, key, {
+			this.jsonConExecute('folder', args, false, false, key, {
 				onSuccess: function() {
-					onExecute();
+					//onExecute();
 				},
 				noExecute: function() {
-					onExecute();
+					//onExecute();
 				}
 			});
 		} else {
-			if (DA.param.mail.folderInit && org_changed) {
-				onExecute();
+			if (DA.param.mail.folderInit && !org_changed) {
+				//onExecute();
 			} else {
 				this.jsonConExecute('folder', args, false, false, key, {
 					onSuccess: function() {
-						onExecute();
+						//onExecute();
 						DA.param.mail.folderInit = true;
 					},
 					noExecute: function() {
-						onExecute();
+						//onExecute();
 						DA.param.mail.folderInit = true;
 					}
 			 	});
@@ -1368,7 +1374,7 @@ unseenMailList:function(id){
 		switch (sub) {
 			case 'folder':
 				if (args.mail_func) {
-					id += "_" + DA.mail.org_mail_gid + "_" + args.mail_func;
+					id = args.mail_func + "_" + DA.mail.org_mail_gid;
 				}
 				break;
 			case "seen":

@@ -110,6 +110,17 @@ sub get_tmpl_mail($$$) {
 		 $params->{"MAIL_EDIT_" . uc($t) . "_JS"},
 		 $params->{"MAIL_EDIT_" . uc($t) . "_ANCHOR"}) = DA::SmartPhone::set_target_area($session, "address", "DA_mail_edit_address_" . $t . "_Id", "DA_mail_edit_address_" . $t . "_hidden_Id", [], "DA_mail_edit_Id");
 	}
+	my $options_tag = "";
+	my $options_account = &_get_json_mail4orglist($session, $c, $p);
+	foreach my $option_account (@{$options_account}) {
+		if ($option_account->{gid}) {
+			$options_tag .= "<option value='" . $option_account->{gid} . "'";
+			if ($c->{org_mail_gid} eq $option_account->{gid}){
+				$options_tag .= "selected";
+			}
+			$options_tag .= ">" . $option_account->{name} . "</option>";
+		}
+	}
 	foreach my $s (qw(list folder detail edit)) {
 		if ($s eq "folder") {
 			$params->{MAIL_FOLDER_LOOP} = [];
@@ -122,7 +133,8 @@ sub get_tmpl_mail($$$) {
 					MAIL_FOLDER_ID => "DA_mail_folder_$i\_Id",
 					MAIL_FOLDER_CONTENTS_ID => "DA_mail_folder_$i\_contents_Id",
 					MAIL_FOLDER_SELECTED => $selected,
-					MAIL_FOLDER_SUB_TITLE => ($i eq "favorite") ? t_("よく使うフォルダ") : t_("フォルダ一覧")
+					MAIL_FOLDER_SUB_TITLE => ($i eq "favorite") ? t_("よく使うフォルダ") : t_("フォルダ一覧") ,
+					MAIL_ACCOUNT_OPTIONS => $options_tag
 				});
 			}
 		} elsif ($s eq "list") {
@@ -1565,6 +1577,7 @@ sub _get_json_mail4edit($$;$;$) {
 	my $org_mail_gid;
 	if($c->{org_mail_gid} && $c->{org_mail_gid} ne "ajaxMailer"){	
 		$org_mail_gid = $c->{org_mail_gid};
+		DA::Session::update($session);
 	} else {
 		$org_mail_gid = $session->{user};
 	}
@@ -1575,6 +1588,7 @@ sub _get_json_mail4edit($$;$;$) {
 	} else {
 		$imaps = DA::Ajax::Mailer::connect($session, { "nosession" => 1, "org_mail" => $org_mail_gid});
 	}
+	
 	if ($imaps->{error}) {
 		DA::SmartPhone::errorpage($session, $imaps->{message});
 	}
@@ -1593,7 +1607,8 @@ sub _get_json_mail4edit($$;$;$) {
 					fid => $mail->{fid},
 					uid => $mail->{uid},
 					target_attach_list => $attachment,
-					nopreview => $c->{nopreview}
+					nopreview => $c->{nopreview},
+					org_mail_gid => $org_mail_gid
 				});
 			} else {
 				$res = DA::Ajax::Mailer::draft_mail($session, $imaps, {
